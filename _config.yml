@@ -1,0 +1,12 @@
+# Site settings
+title: micro blog (experimenting...)
+email: haxpor@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  ...
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://exp-blog.wasin.io" # the base hostname & protocol for your site
+twitter_username: haxpor
+github_username:  haxpor
+
+# Build settings
+markdown: rdiscount
