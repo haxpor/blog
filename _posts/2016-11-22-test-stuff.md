@@ -6,7 +6,8 @@ categories: blog
 tags: [test, test2]
 ---
 
-Updated from `master` branch.
+Updated for `master` branch.
+Updated 2nd times for `master` branch.
 
 This is a test for `code`.
 
