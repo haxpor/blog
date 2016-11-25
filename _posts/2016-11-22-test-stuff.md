@@ -5,6 +5,9 @@ date:   2016-11-22 14:12:00
 categories: blog
 tags: [test, test2]
 ---
+
+Updated from `master` branch.
+
 This is a test for `code`.
 
 Questions | Answers
