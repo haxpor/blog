@@ -6,4 +6,5 @@ categories: blog
 tags: [china, thailand, tax]
 ---
 
-Initial content update.
+Initial content update.  
+2nd line of update.
