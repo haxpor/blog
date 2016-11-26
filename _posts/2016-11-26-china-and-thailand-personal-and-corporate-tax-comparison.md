@@ -6,21 +6,17 @@ categories: blog
 tags: [china, thailand, tax]
 ---
 
-Very first thing that comes to mind when you need to base yourself long term in another country is *taxing*.
+*Taxing* is the very first thing to consider when basing yourself in another country for long term.
 
-Especially if you base yourself in China like me; very soon. There're several rules and possibly slightly more than few exceptions when calculate your tax. Most importantly, tax is dued in China `per month` compared to Thailand which is `per year`. Thus it's a lot more paper work and burden stuff you need to take care of. The latter is what I expect.
+Especially if you open and operate business there in China, you need to involve both `corporate tax` and `individual tax`.
 
-Also if you want to stay long term in China, and generate money, the only possible way I can think of after researching is **work permit**.
+## Reference Case
 
-In additional, I think about opening a company there thus I will involve two kind of taxes. Individual and corporate taxes.
-
-## Reference Example
-
-I will be taking a simple example without deducting any `allowance` which can be complicated to know as it's different from one to another in each country.
+Let's take a simple case getting rid of any `allowance` which can be complicated to know as it's different from one to another in each country. Thus we set it to `0`.
 
 The following case is set for easy comparison.
 
-**Case:** Assume company gets income monthly at <span style="color: blue;">`100,000.00 THB`</span> or <span style="color: red;">`19,413.65  RMB`</span>. In 1 year, company gets <span style="color: blue;">`1,200,000.00 THB`</span> or <span style="color: red;">`232,963.80 RMB`</span>.
+**Case:** Assume company gets monthly income at the rate <span style="color: blue;">`100,000.00 THB`</span> or <span style="color: red;">`19,413.65  RMB`</span>. In 1 year, company gets <span style="color: blue;">`1,200,000.00 THB`</span> or <span style="color: red;">`232,963.80 RMB`</span>.
 
 > Use <span style="color: blue;">blue</span> for Thai Baht, and <span style="color: red;">red</span> for Chinese Yuan for clearer visual at a glance.
 
@@ -31,23 +27,28 @@ Accomponay with the list of tax for all country [here](https://en.wikipedia.org/
 
 ### China
 
-Although as listed in link above, China's corporate tax is at `25%`. Shenzhen is in special economic zone. It's also accoridng to the type of company you would be registering. Especially for `FIPE` which stands for `China Foreign Invested Partnership Enterprise`. Tax is `0%`, or no tax at all. You get all the money to your company entity.
+Although as listed in link above, China's corporate tax is at `25%`. Shenzhen is in special economic zone. It's also accoridng to the type of company you would be registering. For `FIPE` which stands for `China Foreign Invested Partnership Enterprise`, with it tax is `0%`, or simply no tax at all. You get all the money to your company entity.
 
-In summary: Get `1,200,000.00 THB`
+In summary:  
+
+* Tax <span style="color: red;">`0 RMB`</span> or <span style="color: blue;">`0 THB`</span> in case of special economic area such as Shenzhen.
+* Tax <span style="color: red;">`58,240.94 RMB`</span> or <span style="color: blue;">`300,000.00 THB`</span> which is `25%`
 
 ### Thailand
 
 Plainly, it's 20%.
 
-In summary: Get `1,200,000.00` * `0.80` = `960,000.00 THB`
+In summary:  
+
+* Tax <span style="color: red;">`46,592.75 RMB`</span> or <span style="color: blue;">`240,000.00 THB`</span>
 
 ### Comparison
 
-You need to pay `20%` more for corporate tax in Thailand compared to business in Shenzhen, China.
+You need to pay `20%` for corporate tax in Thailand compared to `none` for special economic area in China such as Shenzhen.
 
 or
 
-You need to pay `5%` less for corporate tax in Thailand compared to business in non-economic zone in China.
+You need to pay `5%` less for corporate tax in Thailand compared to business in non-economic area in China.
 
 ## Individual tax
 
@@ -105,3 +106,5 @@ Now it depends on one big factor of `allowance` as we assume it to be `0` in bot
 In Thailand, there might be more options of allowance available, but seemingly less in China and possibly slighly hard to get.
 
 Thus watch out for this factor. But at the moment, we can see that doing business in special economic area such as Shenzhen in China is good for reducing corporate tax down to `0%`, and even without such area; individual tax is still less than by merely `33.86%` in China compared to Thailand.
+
+---
