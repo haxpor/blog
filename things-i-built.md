@@ -4,8 +4,6 @@ title: Things I Built
 permalink: /things-i-built/
 ---
 
-# Things I Built
-
 * **RealKo**
    
    <center><img src="http://media.tumblr.com/tumblr_lsnf9w5GJD1qj5i9r.jpg" alt="Drawing" style="width: 60%; border-radius: 10px;"/></center>  
