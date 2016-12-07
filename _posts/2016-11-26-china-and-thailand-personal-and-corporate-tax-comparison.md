@@ -107,4 +107,4 @@ In Thailand, there might be more options of allowance available, but seemingly l
 
 Thus watch out for this factor. But at the moment, we can see that doing business in special economic area such as Shenzhen in China is good for reducing corporate tax down to `0%`, and even without such area; individual tax is still less than by merely `33.86%` in China compared to Thailand.
 
----
+___

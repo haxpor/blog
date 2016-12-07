@@ -49,3 +49,5 @@ Other cost would be ad-hoc things we might need in day-to-day, it probably won't
 2,450 + 1,800 = 4,250 RMB per month.  
 2,450 + 2,100 = 4,550 RMB per month.  
 Thus _4,250-4,550_ RMB per month (at least)
+
+___

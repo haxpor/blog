@@ -42,4 +42,6 @@ root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `
 /proc/sys/net/ipv4/conf/eth0 ->  1
 /proc/sys/net/ipv4/conf/eth1 ->  1
 /proc/sys/net/ipv4/conf/lo ->  1
-```   
+```
+   
+___
