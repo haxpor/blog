@@ -32,11 +32,11 @@ customLayer = new BMap.CustomLayer({
 That `geotableId` refers to data table created via [http://lbsyun.baidu.com/data/mydata#/](http://lbsyun.baidu.com/data/mydata#/).  
 You can get into such section by clicking on highlighting blue color on the left side of main api console page as seen below.
 
-![Section to access data creation](../../../../images/data-creation-section-access.png)
+![Section to access data creation](../../../../images/locpeed/data-creation-section-access.png)
 
 I created a couple of data item via UI interface. Thus I get a working click-to-show popup, and everything is fine after that. So it's a matter of having a proper data first for no errors on running site.
 
-![Result from data creation](../../../../images/result-from-data-creation.png)
+![Result from data creation](../../../../images/locpeed/result-from-data-creation.png)
 
 ## Dynamic Adding Map Marker Data
 
