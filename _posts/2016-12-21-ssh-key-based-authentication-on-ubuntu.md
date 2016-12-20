@@ -22,9 +22,12 @@ By doing this, we disable normal SSH login with password. This increases securit
 2. Copy public key from clien system to target server by `ssh-copy-id root@target-host.com`; assume that `target-host.com` is your server's domain name. This command will copy public key to target server under specified username's directory.
 3. Now on client system, you can try log in via `ssh root@target-host.com`. It will prompt for passphase (if you enter it during step 1.).
 4. (optional) If you don't want to enter passphase every time, you can use `keychain` to solve the problem by following the steps as below.
-   * `sudo apt-get install keychain` to install `keychain`
-   * `keychain id_rsa`
-   * `. ~/.keychain/`uname -n`-sh`
+   * Execute `sudo apt-get install keychain` to install `keychain`
+   * Execute `keychain id_rsa`
+   * Execute
+      ```
+      . ~/.keychain/`uname -n`-sh
+      ```  
    You shoul add the last two commands into `~/.bashrc`. So that it will take effect every time you log in and even rebooting.
 
 ## Resource
