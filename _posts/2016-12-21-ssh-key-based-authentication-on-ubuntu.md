@@ -24,7 +24,7 @@ By doing this, we disable normal SSH login with password. This increases securit
 4. (optional) If you don't want to enter passphase every time, you can use `keychain` to solve the problem by following the steps as below.
    * `sudo apt-get install keychain` to install `keychain`
    * `keychain id_rsa`
-   * `. ~/.keychain/`uname -n`-sh
+   * `. ~/.keychain/\`uname -n\`-sh`
    You shoul add the last two commands into `~/.bashrc`. So that it will take effect every time you log in and even rebooting.
 
 ## Resource
