@@ -3,7 +3,7 @@
  */
 .site-header {
     min-height: 100px;
-    background-color: #f9513b;
+    background-color: #d73019;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -16,7 +16,7 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 2px 2px #aa0000;
 
     &,
     &:visited {
@@ -37,7 +37,7 @@
 
     .page-link {
         color: #EEEEEE;
-        text-shadow: 2px 2px #ff0000;
+        text-shadow: 2px 2px #aa0000;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
