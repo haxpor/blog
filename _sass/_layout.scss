@@ -2,24 +2,28 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    min-height: 100px;
+    background-color: #f9513b;
 
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
 .site-title {
-    font-size: 26px;
+
+    font-size: 30px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    text-shadow: 2px 2px #ff0000;
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: #EEEEEE;
+    }
+    &:link {
+        color: white;
     }
 }
 
@@ -32,7 +36,8 @@
     }
 
     .page-link {
-        color: $text-color;
+        color: #EEEEEE;
+        text-shadow: 2px 2px #ff0000;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
@@ -82,6 +87,8 @@
         .page-link {
             display: block;
             padding: 5px 10px;
+            color: black;
+            text-shadow: none;
         }
     }
 }
@@ -94,17 +101,46 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    background-color: $grey-color-dark;
+
+    a:link {
+        color: #f9513b;
+    }
+    a:visited {
+        color: #f9513b;
+    }
+    a:hover {
+        color: #AAAAAA;
+    }
+    a:selected {
+        color: #888888;
+    }
 }
 
 .footer-heading {
     font-size: 18px;
     margin-bottom: $spacing-unit / 2;
+    color: white;
 }
 
 .contact-list,
 .social-media-list {
     list-style: none;
     margin-left: 0;
+    color: #999999;
+
+    a:link {
+        color: #f9513b;
+    }
+    a:visited {
+        color: #f9513b;
+    }
+    a:hover {
+        color: #AAAAAA;
+    }
+    a:selected {
+        color: #888888;
+    }
 }
 
 .footer-col-wrapper {
