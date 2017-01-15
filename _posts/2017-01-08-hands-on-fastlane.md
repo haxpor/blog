@@ -265,6 +265,8 @@ Fastlane consists of multiple lanes to be configured and used. Notice `lane :<na
 * `screenshots` - take screenshots of application while running. This will be carried out at the same time of UI Tests.
 * `beta` will submit a new beta build to TestFlight but it will also check certification and provision profile first that they are up-to-date.
 
+> If need, you can grab my `FastFile` [here](https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9).
+
 ### Snapfile
 
 In order to take snapshot (or taking screenshots) of application while running automatically, you need to configure `Snapfile` but that file is not there inside `fastlane` directory initially.
@@ -338,6 +340,8 @@ project "./FastlaneTest.xcodeproj"
 
 That means we will do UI Tests (thus taking screenshots) on 4 devices for 3 languages for scheme name `FastlaneTestUITests`, and output result screenshots at `./screenshots`. It operates on our `./FastlaneTest.xcodeproj` file.
 
+> If need, you can grab my `Snapfile` [here](https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e).
+
 ## Run Fastlane
 
 We're all ready now. Phew! It's quite an effort.
@@ -350,7 +354,7 @@ We have following commands (lanes) for Fastlane to run.
 * `fastlane screenshot` - take screenshots as well as running UI Tests at the same time. Screenshots will be writen into `screenshots` directory inside XCode project directory.
 * `fastlane beta` - submit an application to beta TestFlight. It will take care certificate and provisioning profile for us too.
 
-## Some Results
+## Results
 
 * `fastlane itunes` is good enough that it will wait until application data is created on iTunes Connect website  
 
