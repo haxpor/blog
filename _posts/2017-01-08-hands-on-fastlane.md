@@ -38,12 +38,12 @@ As of this writing, version is `2.5.0`.
 
 Check the installation result by executing `fastlane --version`, you should be able to see something similar to this.
 
-```
+{% highlight text %}
 fastlane installation at path:
 /usr/local/lib/ruby/gems/2.2.0/gems/fastlane-2.5.0/bin/fastlane
 -----------------------------
 fastlane 2.5.0
-```
+{% endhighlight %}
 
 ## Creae a Testing iOS Project
 
@@ -69,7 +69,7 @@ Linking a button on second `UIViewController` needs a little bit of effort. You 
 
 Linking a button for its clicking action by holding down `Ctrl` button then clicking on the button and draggraing it onto the empty space of `ViewController.swift` file. The source code of `ViewController.swift` should have the following
 
-```swift
+{% highlight swift %}
 import UIKit
 
 class ViewController: UIViewController {
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         }
     }
 }
-```
+{% endhighlight %}
 
 With all these, we have basic UI elements that we need and each page can present another page; back and forth.
 
@@ -114,7 +114,7 @@ Before we proceed to using Fastlane tool. We will create Tests and UI Tests firs
 
 For simplicity as we don't really have meaningful things to test, we just assert for true. You should have code as follows in `FastlaneTestTests.swift` file.
 
-```swift
+{% highlight swift %}
 import XCTest
 @testable import FastlaneTest
 
@@ -137,7 +137,7 @@ class FastlaneTestTests: XCTestCase {
     }
     
 }
-```
+{% endhighlight %}
 
 ### UI Tests
 
@@ -145,7 +145,7 @@ Not only for testing purpose but UI Tests is also the building block to automate
 
 Inside `FastlaneTestUITests.swift`, add the following functions for each UI test case.
 
-```swift
+{% highlight swift %}
   func testUsernameIsWasin() {
         let firstnametextfieldTextField = XCUIApplication().textFields["firstNameTextField"]
         firstnametextfieldTextField.tap()
@@ -185,7 +185,7 @@ Inside `FastlaneTestUITests.swift`, add the following functions for each UI test
         // take a snapshot
         snapshot("newpage")
     }
-```
+{% endhighlight %}
 
 You can notice above that why we know which name should be used in referring to text field, and buttons. This is the benefit from setting the names of UI element in *Accessibility* section of *Identify Inspector* panel.
 
@@ -223,7 +223,7 @@ As of version `2.5.0`, the initial configuration file covers most of the things 
 Add the following code inside `platform :ios do` after 
 `before_all do ... end`
 
-```python
+{% highlight python %}
   desc "Upload app to iTunes connect"
   lane :itunes do
     produce(
@@ -238,13 +238,13 @@ Add the following code inside `platform :ios do` after
   lane :screenshots do
     snapshot
   end
-```
+{% endhighlight %}
 
 > You can execute `openssl rand -hex 12` to get randomized hexadecimal string to use as `sku`.
 
 and modify `lane :beta` to be as follows
 
-```python
+{% highlight python %}
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
@@ -257,7 +257,7 @@ and modify `lane :beta` to be as follows
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
   end
-```
+{% endhighlight %}
 
 Fastlane consists of multiple lanes to be configured and used. Notice `lane :<name>`.
 
@@ -298,7 +298,7 @@ You need to follow step 2, and 3 as shown on console above to properly hook thin
 
 Now modify the file to have the following code.
 
-```python
+{% highlight python %}
 # Uncomment the lines below you want to change by removing the # in the beginning
 
 # A list of devices you want to take the screenshots from
@@ -336,7 +336,7 @@ project "./FastlaneTest.xcodeproj"
 # For more information about all available options run
 # snapshot --help
 
-```
+{% endhighlight %}
 
 That means we will do UI Tests (thus taking screenshots) on 4 devices for 3 languages for scheme name `FastlaneTestUITests`, and output result screenshots at `./screenshots`. It operates on our `./FastlaneTest.xcodeproj` file.
 
@@ -374,7 +374,7 @@ We have following commands (lanes) for Fastlane to run.
    
    and successfully uploaded application during beta testing stage
    
-   ![fastlane application on TestFlight app](../../../../images/fastlane/testing-app-on-testflight.png)
+   ![fastlane application on TestFlight app](../../../../images/fastlane/fastlane-beta-testing-upload.png)
    
 * `fastlane test` result  
 
