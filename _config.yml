@@ -10,4 +10,4 @@ github_username:  haxpor
 instagram_username: haxpor
 
 # Build settings
-markdown: rdiscount
+markdown: kramdown
