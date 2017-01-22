@@ -61,3 +61,7 @@ Then you will see that Blender will create a new cube, select it, rename into `"
 
 * If you hold mouse over each Blender's UI element for a while, it will show a tool tip of python function that you can use it in the script.
 * Play around with each function in *Python Console* window at the bottom before combining them up in full script.
+* To know how to do something in code for certain actions we did directly on Blender GUI, just do some actions on Blender first, then look at *Info* window (on the top), you will see something like this for history of python functions called. Then you know which functions to call in python code.  
+
+   [![Blender Info Window with History](../../../../images/blender/blender-info-window.png)](../../../../images/blender/blender-info-window.png)  
+   <sub>Click on image to enlarge</sub>
