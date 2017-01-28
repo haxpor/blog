@@ -35,6 +35,8 @@ That's fun time 😂
 
 You can try out to receive "i Love u" if you need some love right now by scanning on the following QR Code.
 
+Also if you open this article on WeChat app, you can just hold down on QR Code image below, then you will see option "Extract QR code". It will take you to my WeChat bot account. Easy!
+
 ![fkit qrcode](../../../../images/fkit/qrcode-fkit-wechat-bot.jpg)
 
 ## FKit Development
