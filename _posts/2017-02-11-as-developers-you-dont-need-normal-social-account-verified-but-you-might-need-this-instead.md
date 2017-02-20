@@ -11,7 +11,7 @@ No doubt getting verified on account is such a privilege status you can have on 
 ![Levels's verified account on twitter](../../../../images/verified/social-account-verified.png)
 
 It can give you a sense of self-worth, and attention. But yes, real world is not going to give you away freely such verified status without you doing nothing.  
-I know it's a real hard work, you need to give something to the world, make impact, but I don't just you have a name clashed with another would give a somewhat solid chance for you to get verified.
+I know it's a real hard work, you need to give something to the world, make impact, there're lots of factors getting in the way for **verified** status.
 
 No matter what it is. It's ok.
 
