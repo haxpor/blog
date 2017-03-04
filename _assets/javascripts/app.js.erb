@@ -9,6 +9,16 @@ function consoleListOfAllPosts() {
 
 function showMainPagePicker(rooturl) {
 
+	var defaultValue = 1;
+
+	if (window.location.href.search('things-i-built') != -1) {
+		defaultValue = 2;
+	}
+	// root url is totally different from other urls
+	else if (window.location.href.search(rooturl) != -1) {
+		defaultValue = 0;
+	}
+
 	weui.picker([
 	{
 		label: "Back to Dashboard",
@@ -23,7 +33,7 @@ function showMainPagePicker(rooturl) {
     value: 2
   },
   ], {
-      defaultValue: [2],
+      defaultValue: [defaultValue],
       onChange: function (result) {
           
       },
