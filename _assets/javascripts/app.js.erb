@@ -1,0 +1,39 @@
+#= require vendor/weui.min
+
+// loop through all post and console out each post's title
+function consoleListOfAllPosts() {
+  <% site.posts.each do |post| %>
+    console.log(" <%= post.title %> ");
+  <% end %>
+}
+
+function showMainPagePicker() {
+	weui.picker([
+	{
+		label: "Home",
+		value: 0
+	},
+	{
+    label: "Things I Built",
+    value: 1
+  },
+  ], {
+      defaultValue: [1],
+      onChange: function (result) {
+          
+      },
+      onConfirm: function (result) {
+      		console.log("this is it: ", result);
+          var value = result[0].value;
+          if (value == 0) {
+          	window.location = "<% site.baseurl %>";
+          	console.log(window.location);
+          }
+          else if (value == 1) {
+          	window.location = "<% site.baseurl %>/things-i-built/";
+          	console.log(window.location);
+          }
+      },
+      id: 'hamburgerBtn'
+  });
+}

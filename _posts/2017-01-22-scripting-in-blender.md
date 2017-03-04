@@ -10,7 +10,7 @@ I started to use Blender for one of my work for client. There're times when I ne
 
 As for automation that we can achieve it in [iOS workflow via Fastlane](https://wasin.io/blog/2017/01/15/hands-on-fastlane.html) especially in automated testing/building, I'm slightly surprised to see that it has potential to be done in Blender as well.
 
-![Scripting in Blender](../../../../images/blender/blender-python-script.png)
+![Scripting in Blender](/assets/images/blender/blender-python-script.png)
 
 Above is the result I got from executing python script right inside Blender to automatically **create a new cube, rename its name, and move its location**.
 
@@ -20,11 +20,11 @@ Technically you can execute python script with Blender's GUI but Blender still r
 
 Firstly remove a cube as shown on *3D View* window, then you  choose a screen layout by clicking on *Choose Screen Layout* button then select *Scripting* as seen below.
 
-![Choose Screen Layout](../../../../images/blender/blender-choose-screen-layout.png)
+![Choose Screen Layout](/assets/images/blender/blender-choose-screen-layout.png)
 
 To have such UI element shows up, you need to select the panel as *Info* first as seen below.
 
-![Panel Type](../../../../images/blender/blender-panel-type.png)
+![Panel Type](/assets/images/blender/blender-panel-type.png)
 
 Now you will get layout ready to script in python.
 
@@ -53,7 +53,7 @@ print("Done creating MyCube at position " + strVector3(cube.location) + " with n
 
 Then name the file to `blender_cube_creation.py`. Finally, click on *Run Script*.
 
-![Name and run script](../../../../images/blender/blender-name-the-file-run-script.png)
+![Name and run script](/assets/images/blender/blender-name-the-file-run-script.png)
 
 Then you will see that Blender will create a new cube, select it, rename into `"MyLittleCube"`, and translate to `(0.0, 5.0, 0.0)`.
 
@@ -63,5 +63,5 @@ Then you will see that Blender will create a new cube, select it, rename into `"
 * Play around with each function in *Python Console* window at the bottom before combining them up in full script.
 * To know how to do something in code for certain actions we did directly on Blender GUI, just do some actions on Blender first, then look at *Info* window (on the top), you will see something like this for history of python functions called. Then you know which functions to call in python code.  
 
-   [![Blender Info Window with History](../../../../images/blender/blender-info-window.png)](../../../../images/blender/blender-info-window.png)  
+   [![Blender Info Window with History](/assets/images/blender/blender-info-window.png)](/assets/images/blender/blender-info-window.png)  
    <sub>Click on image to enlarge</sub>

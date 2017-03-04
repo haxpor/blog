@@ -24,7 +24,7 @@ In short just follow this [tutorial](https://raymii.org/s/tutorials/IPSEC_L2TP_v
 
 ## Original States of `accept_redirects`
 
-```json
+```shell
 root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `cat $vpn/accept_redirects`; done
 /proc/sys/net/ipv4/conf/all ->  0
 /proc/sys/net/ipv4/conf/default ->  0
@@ -35,7 +35,7 @@ root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `
 
 ## Original States of `send_redirects`
 
-```json
+```shell
 root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `cat $vpn/send_redirects`; done
 /proc/sys/net/ipv4/conf/all ->  1
 /proc/sys/net/ipv4/conf/default ->  1

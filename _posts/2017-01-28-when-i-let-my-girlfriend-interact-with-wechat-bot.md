@@ -14,19 +14,19 @@ Here is what I captured the conversation she talked with my bot. I captured it v
 
 > You might wonder how can I decrypt the message as it should be done via https and WeChat platform's encryption. I can as I disable encryption during the time of development. Surely for production, encryption would be back on.
 
-![fkit convo 1](../../../../images/fkit-convo/1.png)  
+![fkit convo 1](/assets/images/fkit-convo/1.png)  
 She began with `test` first.
 
-![fkit convo 2](../../../../images/fkit-convo/2.png)  
+![fkit convo 2](/assets/images/fkit-convo/2.png)  
 Then she followed up by calling me `stupid frog` !
 
-![fkit convo 3](../../../../images/fkit-convo/3.png)  
+![fkit convo 3](/assets/images/fkit-convo/3.png)  
 She sent a sticker but my WeChat bot doesn't support receiving this kind of message yet, thus it showed out as (translated to English) `not support message`.
 
-![fkit convo 4](../../../../images/fkit-convo/4.png)  
+![fkit convo 4](/assets/images/fkit-convo/4.png)  
 Same to previously message.
 
-![fkit convo 5](../../../../images/fkit-convo/5.png)  
+![fkit convo 5](/assets/images/fkit-convo/5.png)  
 Then she ended the conversation with `okie`.
 
 That's fun time 😂
@@ -37,7 +37,7 @@ You can try out to receive "i Love u" if you need some love right now by scannin
 
 Also if you open this article on WeChat app, you can just hold down on QR Code image below, then you will see option "Extract QR code". It will take you to my WeChat bot account. Easy!
 
-![fkit qrcode](../../../../images/fkit/qrcode-fkit-wechat-bot.jpg)
+![fkit qrcode](/assets/images/fkit/qrcode-fkit-wechat-bot.jpg)
 
 ## FKit Development
 

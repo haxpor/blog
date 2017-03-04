@@ -12,14 +12,14 @@ I got suggestion to enable Fast TCP Open (TFO) from a guy named *Leonard Woo* fr
 
 TFO is one of [congestion control algorithms](https://en.wikipedia.org/wiki/TCP_congestion_control) of TCP connection out there. What TFO solves is about reducing RTT (round-trip-time) from handshaking that TCP connection normally needs. Citing from [research paper](https://www1.icsi.berkeley.edu/~barath/papers/tfo-conext11.pdf) which states that it can gain about 10% or in some cases up to 40%.
 
-![result of speed gain of TFO](../../../../images/TFO/result-tfo-research-paper.png)
+![result of speed gain of TFO](/assets/images/TFO/result-tfo-research-paper.png)
 
 ## How to Enable on Ubuntu
 
 You need to have linux kernel at least 3.7.  
 You can check via `uname -r`, it will give the result similar to following.
 
-```
+```shell
 3.13.0-24-generic
 ```
 
@@ -27,14 +27,14 @@ Then follow the following steps to enable Fast TCP Open
 
 * Edit `/etc/sysctl.conf` and add the following line to its end of file  
 
-   ```
+   ```shell
    net.ipv4.tcp_fastopen = 3
    ```
 * Save a file.
 * Execute `sysctl -p` to make it taken into effect.
 * Make it permanent even after rebooting system by adding the following line into `/etc/rc.local`  
 
-   ```
+   ```shell
    echo 3 > /proc/sys/net/ipv4/tcp_fastopen
    ```
    
@@ -48,11 +48,11 @@ I checked on server side via 2 methods as stated in Monitoring Section in this [
 
 * Execute `ip tcp_metrics`
 
-   ![fo_cookie](../../../../images/TFO/fo_cookie.png)
+   ![fo_cookie](/assets/images/TFO/fo_cookie.png)
    
 * Execute `grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92  | column -t`
 
-   ![tfo metrics](../../../../images/TFO/tfo-fastopen-active.png)
+   ![tfo metrics](/assets/images/TFO/tfo-fastopen-active.png)
    
 Both result above confirm that it's a legit TFO connection.
 
