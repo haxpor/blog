@@ -7,28 +7,32 @@ function consoleListOfAllPosts() {
   <% end %>
 }
 
-function hasClass(el, cls) {
-  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
-}
+function showMainPagePicker(rooturl) {
 
-function showMainPagePicker() {
 	weui.picker([
 	{
-		label: "Home",
-		value: 0
+		label: "Back to Dashboard",
+		value: 0,
+	},
+	{
+		label: "Blog Home",
+		value: 1
 	},
 	{
     label: "Things I Built",
-    value: 1
+    value: 2
   },
   ], {
-      defaultValue: [1],
+      defaultValue: [2],
       onChange: function (result) {
           
       },
       onConfirm: function (result) {
           var value = result[0].value;
           if (value == 0) {
+          	window.location = rooturl;
+          }
+          else if (value == 1) {
           	window.location = "<% site.baseurl %>/";
           }
           else if (value == 1) {
