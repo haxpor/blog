@@ -7,6 +7,10 @@ function consoleListOfAllPosts() {
   <% end %>
 }
 
+function hasClass(el, cls) {
+  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+}
+
 function showMainPagePicker() {
 	weui.picker([
 	{
@@ -23,15 +27,12 @@ function showMainPagePicker() {
           
       },
       onConfirm: function (result) {
-      		console.log("this is it: ", result);
           var value = result[0].value;
           if (value == 0) {
-          	window.location = "<% site.baseurl %>";
-          	console.log(window.location);
+          	window.location = "<% site.baseurl %>/";
           }
           else if (value == 1) {
           	window.location = "<% site.baseurl %>/things-i-built/";
-          	console.log(window.location);
           }
       },
       id: 'hamburgerBtn'
