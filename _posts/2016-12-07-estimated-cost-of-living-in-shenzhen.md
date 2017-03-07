@@ -2,7 +2,7 @@
 layout: post
 title:  "Estimated Cost of Living in Shenzhen, China"
 date:   2016-12-07 02:45:00
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/post-thumbnail/china-flag.png
 categories: blog
 tags: [shenzhen, china, living, cost, cost of living]
 ---

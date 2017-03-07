@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Enable Fast TCP Open on Ubuntu"
 date:   2016-12-26 03:35:00
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/post-thumbnail/TCP_IP_logo.png
 categories: blog
 tags: [ubuntu, tfo, tcp, server]
 ---

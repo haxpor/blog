@@ -2,7 +2,7 @@
 layout: post
 title:  "Locpeed, Devlog #1"
 date:   2016-12-08 02:57:00
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/post-thumbnail/speedtest-logo.jpg
 categories: blog
 tags: [locpeed, devlog]
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Reference on Configuring VPN Server via IPSec + L2TP on Ubuntu 14.04"
 date:   2016-12-05 13:26:00
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/post-thumbnail/best-vpn.jpg
 categories: blog
 tags: [vpn, ipsec, l2tp, ubuntu]
 ---

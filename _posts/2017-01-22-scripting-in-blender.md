@@ -2,7 +2,7 @@
 layout: post
 title:  "Scripting in Blender"
 date:   2017-01-22 09:45
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/blender/blender-choose-screen-layout.png
 categories: blog
 tags: [blender, scripting]
 ---
