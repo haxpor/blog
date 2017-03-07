@@ -2,7 +2,7 @@
 layout: post
 title:  "When I Let My Girlfriend Interacts With My WeChat Bot"
 date:   2017-01-28 20:18
-thumbnail: /assets/images/post-thumbnail/weui-icon.png
+thumbnail: /assets/images/fkit/qrcode-fkit-wechat-bot.jpg
 categories: blog
 tags: [wechat, bot, ngrok]
 ---
