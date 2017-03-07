@@ -2,11 +2,34 @@
  * Site header
  */
 .site-header {
-    min-height: 100px;
+    min-height: 60px;
     background-color: rgba(0,0,0,0.90);
 
     // Positioning context for the mobile navigation icon
     position: relative;
+}
+
+.site-title-white-bold {
+    font-size: 30px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+    font-weight: 700;
+
+    &,
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
+    &:link {
+        color: white;
+        text-decoration: none;
+    }
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .site-title {
