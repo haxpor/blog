@@ -2,6 +2,7 @@
 layout: post
 title:  "Hands-On Fastlane"
 date:   2017-01-15 10:41:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [ios, fastlane, automation, integration, script]
 ---

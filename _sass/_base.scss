@@ -258,3 +258,22 @@ tr:nth-child(even) {
 .post-tags {
     font-weight: 400;
 }
+
+/**
+ * Override weui's settings.
+ */
+.weui-panel {
+    margin-top: 0px;
+}
+
+.weui-media-box__bd {
+    margin-left: 15px;
+}
+
+.weui-media-box__info {
+    margin-left: 0px;
+}
+
+.weui-media-box__thumb {
+    border-radius: 7px;
+}

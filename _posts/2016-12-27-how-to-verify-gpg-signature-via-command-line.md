@@ -2,6 +2,7 @@
 layout: post
 title:  "How to Verify GPG Signature via Command-line"
 date:   2016-12-27 11:19:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [ubuntu, gpg, signature, command]
 ---

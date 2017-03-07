@@ -3,7 +3,7 @@
  */
 .site-header {
     min-height: 100px;
-    background-color: #d73019;
+    background-color: rgba(0,0,0,0.90);
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -16,14 +16,19 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-    text-shadow: 2px 2px #aa0000;
 
     &,
     &:visited {
-        color: #EEEEEE;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
     &:link {
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
+    }
+    &:hover {
         color: white;
+        text-decoration: none;
     }
 }
 
@@ -37,8 +42,21 @@
 
     .page-link {
         color: #EEEEEE;
-        text-shadow: 2px 2px #aa0000;
         line-height: $base-line-height;
+
+        &,
+        &:visited {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+        }
+        &:link {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+        }
+        &:hover {
+            color: white;
+            text-decoration: none;
+        }
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -94,21 +112,25 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    border-top: 0px solid $grey-color-light;
     padding: $spacing-unit 0;
-    background-color: $grey-color-dark;
+    background-color: rgba(0,0,0,0.90);
 
     a:link {
-        color: #f9513b;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
     a:visited {
-        color: #f9513b;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
     a:hover {
-        color: #AAAAAA;
+        color: white;
+        text-decoration: none;
     }
     a:selected {
-        color: #888888;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
 }
 
@@ -125,16 +147,20 @@
     color: #999999;
 
     a:link {
-        color: #f9513b;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
     a:visited {
-        color: #f9513b;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
     a:hover {
-        color: #AAAAAA;
+        color: white;
+        text-decoration: none;
     }
     a:selected {
-        color: #888888;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
     }
 }
 

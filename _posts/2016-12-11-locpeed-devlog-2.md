@@ -2,6 +2,7 @@
 layout: post
 title:  "Locpeed, Devlog #2"
 date:   2016-12-11 20:10:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [locpeed, devlog]
 ---
