@@ -204,6 +204,11 @@ tr:nth-child(even) {
 .weui-media-box__thumb {
   border-radius: 7px; }
 
+.weui-media-box__title {
+  white-space: normal;
+  word-wrap: normal;
+  word-break: normal; }
+
 /**
  * Site header
  */
