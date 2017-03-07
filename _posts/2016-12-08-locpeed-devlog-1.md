@@ -2,6 +2,7 @@
 layout: post
 title:  "Locpeed, Devlog #1"
 date:   2016-12-08 02:57:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [locpeed, devlog]
 ---
@@ -29,7 +30,7 @@ At first, I thought I would play around with Google map API which I didn't reall
 With that reason, I changed my mind to try Baidu's Map API. If you take a peek at its [API document](http://developer.baidu.com/map/reference/index.php), you will see that its API is not complicated and just use plain old friend javascript.
 
 > I use [Bing translator](http://www.bing.com/translator/) to help me out translating the whole website. Seriously, Microsoft website is not blocked in China (at least in Shenzhen). Personally opinion is that, Bing translator does a better job than Google translator for whole website. It's very fast!.
-> ![bing translator](../../../../images/locpeed/bing-translator.png)
+> ![bing translator](/assets/images/locpeed/bing-translator.png)
 
 The good thing is they provide a great example resource of demos [here](http://lbsyun.baidu.com/index.php?title=jspopular).
 
@@ -60,7 +61,7 @@ I choosed to base the project on one of demos, then modified some of its javascr
 
 Thus I now get what I want basically.
 
-![locpeed initial](../../../../images/locpeed/locpeed-initial.png)
+![locpeed initial](/assets/images/locpeed/locpeed-initial.png)
 
 ## What I Learned From This
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "SSH Key-based Authentication on Ubuntu"
 date:   2016-12-21 01:07:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [ubuntu, ssh, authentication, key]
 ---
@@ -25,7 +26,7 @@ By doing this, we disable normal SSH login with password. This increases securit
    * Execute `sudo apt-get install keychain` to install `keychain`
    * Execute `keychain id_rsa`
    * Execute
-      ```
+      ```shell
       . ~/.keychain/`uname -n`-sh
       ```  
    You shoul add the last two commands into `~/.bashrc`. So that it will take effect every time you log in and even rebooting.

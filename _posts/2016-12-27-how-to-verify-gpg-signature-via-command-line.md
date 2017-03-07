@@ -2,6 +2,7 @@
 layout: post
 title:  "How to Verify GPG Signature via Command-line"
 date:   2016-12-27 11:19:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [ubuntu, gpg, signature, command]
 ---
@@ -23,11 +24,11 @@ In this case, we're going to use `gpg` application to do the work for us for an 
    Remember to start with signature file first, before the name of target file to verify.
 * That's it. If verification goes well, you should see output similar to this
    
-   ```
+   ```shell
    gpg: Signature made Sat Dec 24 10:27:07 2016 CST using RSA key ID 73EB5E11
-gpg: Good signature from "YuhangQin (Sign SSR-NG-R) <qinyuhangxiaoxiang@gmail.com>"
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: AAAA BBBB CCCC DDDD 00C6  3326 2A45 A972 73EB 5E11
+   gpg: Good signature from "YuhangQin (Sign SSR-NG-R) <qinyuhangxiaoxiang@gmail.com>"
+   gpg: WARNING: This key is not certified with a trusted signature!
+   gpg:          There is no indication that the signature belongs to the owner.
+   Primary key fingerprint: AAAA BBBB CCCC DDDD 00C6  3326 2A45 A972 73EB 5E11
    ```
 * Done.

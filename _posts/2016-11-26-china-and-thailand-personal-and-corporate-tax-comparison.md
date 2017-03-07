@@ -2,6 +2,7 @@
 layout: post
 title:  "China and Thailand Individual & Corporate Tax in Comparison"
 date:   2016-11-26 21:56:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [china, thailand, tax]
 ---

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+  <script type="text/javascript" src="{{ site.baseurl }}{% asset_path app %}"></script>
+
   {% include head.html %}
 
   <body>
@@ -13,8 +15,9 @@
       </div>
     </div>
 
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="weui-btn weui-btn_primary" style="border-radius: 0px">subscribe via RSS</a>
+    
     {% include footer.html %}
 
   </body>
-
 </html>

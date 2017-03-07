@@ -2,6 +2,7 @@
 layout: post
 title:  "Hands-On Fastlane"
 date:   2017-01-15 10:41:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [ios, fastlane, automation, integration, script]
 ---
@@ -16,7 +17,7 @@ I heard about *Fastlane* for quite some time. Unfortunately, for myself I didn't
 
 [Fastlane](http://fastlane.tools/) is an automated tools comprising of multiple sub-tools to help in each area of Apple App Development Workflow.
 
-![Fastlane logo](../../../../images/fastlane/fastlane-logo.png)
+![Fastlane logo](/assets/images/fastlane/fastlane-logo.png)
 
 What we're going to do is to create a simple 2 pages iOS application. Each page can switch back and forth to each other. There are simple text fields and buttons on those pages. We're going to test the following areas as provided by the tool
 
@@ -38,7 +39,7 @@ As of this writing, version is `2.5.0`.
 
 Check the installation result by executing `fastlane --version`, you should be able to see something similar to this.
 
-```
+```shell
 fastlane installation at path:
 /usr/local/lib/ruby/gems/2.2.0/gems/fastlane-2.5.0/bin/fastlane
 -----------------------------
@@ -51,19 +52,19 @@ We need to create a testing iOS project first.
 
 Now create a new iOS project with project type "Single View Application"
 
-![create a new project with single view application type](../../../../images/fastlane/fastlane-create-project-1.png)
+![create a new project with single view application type](/assets/images/fastlane/fastlane-create-project-1.png)
 
 Next, enter *Product Name*, and tick to enable *Include Unit Tests* and *Include UI Tests*.
 
-![set new project options](../../../../images/fastlane/fastlane-create-project-2.png)
+![set new project options](/assets/images/fastlane/fastlane-create-project-2.png)
 
 Set up your storyboard to be similar to the following. Only for 2nd `UIViewController` in which you need to assign its class to `ViewController.swift` as we will link a button click later.
 
-![storyboard setup](../../../../images/fastlane/ios-storyboard.png)
+![storyboard setup](/assets/images/fastlane/ios-storyboard.png)
 
 We need to link button of first `UIViewController` to show second `UIViewController` modally. This can be easily done by holding `Ctrl` then clicking on the button, dragging it to second `UIViewController` then finally releasing the mouse button. It will show a pop-up asking which way you're going to present it. Select "Present Modally".
 
-![storyboard-present-modally](../../../../images/fastlane/ios-storyboard-present-modally.png)
+![storyboard-present-modally](/assets/images/fastlane/ios-storyboard-present-modally.png)
 
 Linking a button on second `UIViewController` needs a little bit of effort. You need to display Assistant Editor by hitting `Cmd` + `Option` + `Delete`. 
 
@@ -98,11 +99,11 @@ With all these, we have basic UI elements that we need and each page can present
 
 Click on project name and add *Simplified Chinese*, and *French* for our additional localized language while *English* is the main development language.
 
-![project set up for localization](../../../../images/fastlane/project-setup-localization.png)
+![project set up for localization](/assets/images/fastlane/project-setup-localization.png)
 
 Now when you look at the *Project navigator* panel on the left, and click to expand main storyboard file. You will see something like this.
 
-![expanded main storyboard file](../../../../images/fastlane/expanded-main-storyboard-file.png)
+![expanded main storyboard file](/assets/images/fastlane/expanded-main-storyboard-file.png)
 
 Click on each language one by one to edit its translated text for UI elements which are labels, and buttons that we have on our storyboard. Feel free to just use Google translator service or any service you have. But don't just lazily put English text in it for all languages, we will see real result of this later after we run Fastlane.
 
@@ -198,7 +199,7 @@ You set following names
 
 Also make sure that *Accessibility* is ticked as Enabled.
 
-![setting names in accessibility](../../../../images/fastlane/setting-names-in-accessibility.png)
+![setting names in accessibility](/assets/images/fastlane/setting-names-in-accessibility.png)
 
 This is important as it will allow us to access UI element in UI test code by name.
 
@@ -275,7 +276,7 @@ We need to initialize it first by executing `fastlane snapshot init` at our XCod
 
 It will create `Snapfile` for us, along with other setting up files. Result of executing such command, you will see
 
-```
+```shell
 Successfully created SnapshotHelper.swift './fastlane/SnapshotHelper.swift'
 Successfully created new Snapfile at './fastlane/Snapfile'
 -------------------------------------------------------
@@ -358,31 +359,31 @@ We have following commands (lanes) for Fastlane to run.
 
 * `fastlane itunes` is good enough that it will wait until application data is created on iTunes Connect website  
 
-   ![fastlane itunes waiting](../../../../images/fastlane/fastlane-itunes-result.png)
+   ![fastlane itunes waiting](/assets/images/fastlane/fastlane-itunes-result.png)
    
 * `fastlane screenshots` will run UI Tests and take screenshots. Look inside `screenshots` directory inside XCode project directory, you will see 3 directories for each language we've set. Result screenshots are there.  
    
-   ![fastlane screenshots](../../../../images/fastlane/fastlane-screenshots.png)
+   ![fastlane screenshots](/assets/images/fastlane/fastlane-screenshots.png)
    
-   ![fastlane ui tests result](../../../../images/fastlane/fastlane-screenshots-result.png)
+   ![fastlane ui tests result](/assets/images/fastlane/fastlane-screenshots-result.png)
    
-   See its overall reporting of screenshots taken specifically at 3 particular times during flow of UI on iPhone5 (4-inch), iPhone6(4.7-inch), iPhone6Plus(5.5-inch), and iPad Pro(12.9-inch) each with 3 languages on latest iOS 10.2; total in 3x3x4=36 screenshots [here](../../../../statics/fastlane-screenshots/screenshots.html).
+   See its overall reporting of screenshots taken specifically at 3 particular times during flow of UI on iPhone5 (4-inch), iPhone6(4.7-inch), iPhone6Plus(5.5-inch), and iPad Pro(12.9-inch) each with 3 languages on latest iOS 10.2; total in 3x3x4=36 screenshots [here](/assets/htmls/fastlane-screenshots/screenshots.html).
    
 * `fastlane beta` while uploading a build to TestFlight  
 
-   ![fastlane TestFlight uploading](../../../../images/fastlane/fastlane-beta-testing-upload.png)
+   ![fastlane TestFlight uploading](/assets/images/fastlane/fastlane-beta-testing-upload.png)
    
    and successfully uploaded application during beta testing stage
    
-   ![fastlane application on TestFlight app](../../../../images/fastlane/fastlane-beta-testing-upload.png)
+   ![fastlane application on TestFlight app](/assets/images/fastlane/fastlane-beta-testing-upload.png)
    
 * `fastlane test` result  
 
-   ![fastlane test result](../../../../images/fastlane/ui-tests-result.png)
+   ![fastlane test result](/assets/images/fastlane/ui-tests-result.png)
    
 * `fastlane test` in action  
 
-   ![fastlane test in action](../../../../images/fastlane/ui-tests.gif)
+   ![fastlane test in action](/assets/images/fastlane/ui-tests.gif)
    
 ## What's Next?
 

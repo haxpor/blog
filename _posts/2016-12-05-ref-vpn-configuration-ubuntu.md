@@ -2,6 +2,7 @@
 layout: post
 title:  "Reference on Configuring VPN Server via IPSec + L2TP on Ubuntu 14.04"
 date:   2016-12-05 13:26:00
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [vpn, ipsec, l2tp, ubuntu]
 ---
@@ -24,7 +25,7 @@ In short just follow this [tutorial](https://raymii.org/s/tutorials/IPSEC_L2TP_v
 
 ## Original States of `accept_redirects`
 
-```json
+```shell
 root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `cat $vpn/accept_redirects`; done
 /proc/sys/net/ipv4/conf/all ->  0
 /proc/sys/net/ipv4/conf/default ->  0
@@ -35,7 +36,7 @@ root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `
 
 ## Original States of `send_redirects`
 
-```json
+```shell
 root@mail:~/Conf/vpn# for vpn in /proc/sys/net/ipv4/conf/*; do echo "$vpn -> " `cat $vpn/send_redirects`; done
 /proc/sys/net/ipv4/conf/all ->  1
 /proc/sys/net/ipv4/conf/default ->  1

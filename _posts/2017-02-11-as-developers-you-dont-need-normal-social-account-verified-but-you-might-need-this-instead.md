@@ -2,13 +2,14 @@
 layout: post
 title:  "As Developers You Don't Need Normal Social Account Verified, But You Might Need This Instead"
 date:   2017-02-11 19:06
+thumbnail: /assets/images/post-thumbnail/weui-icon.png
 categories: blog
 tags: [github, social, developers, verify, verified, account, git, gpg]
 ---
 
 No doubt getting verified on account is such a privilege status you can have on social network ecosystem.
 
-![Levels's verified account on twitter](../../../../images/verified/social-account-verified.png)
+![Levels's verified account on twitter](/assets/images/verified/social-account-verified.png)
 
 It can give you a sense of self-worth, and attention. But yes, real world is not going to give you away freely such verified status without you doing nothing.  
 I know it's a real hard work, you need to give something to the world, make impact, there're lots of factors getting in the way for **verified** status.
@@ -19,9 +20,9 @@ As developers, something you can do about it right now beside obsessing with suc
 
 You get that right. I mean something like this...
 
-![verified on commit as shown on Github](../../../../images/verified/commit-verified.png)  
+![verified on commit as shown on Github](/assets/images/verified/commit-verified.png)  
 
-![verified on commit as shown on Github - 2](../../../../images/verified/commit-verified2.png)
+![verified on commit as shown on Github - 2](/assets/images/verified/commit-verified2.png)
 
 Having that means every commit you've pushed is actually from you. It gives a sense of self-worth in every commit right?
 
@@ -43,7 +44,7 @@ What I tested is on macOS. But it should work similar to other platform, or you 
 * Execute `gpg --list-secret-keys --keyid-format LONG` to list GPG keys.  
    Result you got is similar to below  
    
-   ```
+   ```shell
    haxpors-mbp:verified haxpor$ gpg --list-secret-keys --keyid-format LONG
    /Users/haxpor/.gnupg/secring.gpg
    --------------------------------
@@ -79,7 +80,7 @@ These commands might not be needed but for safety, I recommend to do it anyway t
 
 * Edit `~/.gnupg/gpg.conf`, and add following to the file.  
    
-   ```
+   ```shell
    default-key BD496CEDB4686EF8
    no-tty
    ```
@@ -93,13 +94,13 @@ These commands might not be needed but for safety, I recommend to do it anyway t
 * Uncomment `use-agent` line in `~/.gnupg/gpg.conf`.
 * Add the following lines into `~/.gnupg/gpg-agent.conf`  
    
-   ```
+   ```shell
    use-standard-socket
    pinentry-program /usr/local/bin/pinentry-mac
    ```
 * Link pinentry and agent together by adding the following to `~/.bash_profile` (or your case might be `~/.profile`)
    
-   ```
+   ```shell
    if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
      source ~/.gnupg/.gpg-agent-info
      export GPG_AGENT_INFO

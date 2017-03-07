@@ -6,12 +6,13 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ "/css/vendor/weui.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
     <link rel="stylesheet" type="text/css" href="
 https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"></script>
-<script type="text/javascript">mermaid.initialize({startOnLoad:true});</script>
+	<script type="text/javascript">mermaid.initialize({startOnLoad:true});</script>
 </head>
