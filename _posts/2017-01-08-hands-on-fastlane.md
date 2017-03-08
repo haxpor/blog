@@ -46,7 +46,7 @@ fastlane installation at path:
 fastlane 2.5.0
 ```
 
-## Creae a Testing iOS Project
+## Create a Testing iOS Project
 
 We need to create a testing iOS project first.
 
