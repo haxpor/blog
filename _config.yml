@@ -1,13 +1,13 @@
 # Site settings
 title: Wasin's Blog
 title_part1: Wasin
-title_part2: "'s Blog "
+title_part2: "'s Blog"
 email: haxpor@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.wasin.io" # the base hostname & protocol for your site
-rooturl: "https://wasin.io" # blog is another sub-domain, this is for root domain
+dashboardurl: "http://dashboard.wasin.io" # blog is another sub-domain, this is for its dashboard
 twitter_username: haxpor
 github_username:  haxpor
 instagram_username: haxpor
