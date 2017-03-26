@@ -8,6 +8,12 @@ dl, dd, ol, ul, figure {
   padding: 0; }
 
 /**
+ * Bottom margin for hr
+ */
+hr {
+  margin-bottom: 25px; }
+
+/**
  * Basic styling
  */
 body {
