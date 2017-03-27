@@ -111,18 +111,37 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
+  background: #f9f9f9;
+  font-size: 1em;
+  border-left: .7em solid #ccc;
+  margin: 1em .5em;
+  padding: 1em 1.3em;
+  line-height: 1.2em;
+  quotes: "\201C""\201D";
 }
 
+blockquote:before {
+  color: #808080;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0;
+  vertical-align: -.41em;
+  padding: 0 .1em 0 .1em;
+}
 
+blockquote:after
+{
+    content: no-close-quote;
+}
+
+blockquote:first-child {
+  display: absolute;
+  padding-top: 1.3em;
+}
+
+blockquote:last-child {
+  display: absolute;
+}
 
 /**
  * Code formatting
@@ -143,8 +162,6 @@ code {
 pre {
     padding: 8px 12px;
     overflow: hidden;
-    border-left: 3px dashed #d6d6d6;
-    border-radius: 1px;
     word-break: break-all;
     word-wrap: break-word;
 
