@@ -40,8 +40,6 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-
-
 /**
  * Images
  */
@@ -132,18 +130,23 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 code {
     padding: 1px 5px;
+    white-space: pre-wrap;
 }
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
+    overflow: hidden;
+    border-left: 3px dashed #d6d6d6;
+    border-radius: 1px;
+    word-break: break-all;
+    word-wrap: break-word;
 
     > code {
         border: 0;
