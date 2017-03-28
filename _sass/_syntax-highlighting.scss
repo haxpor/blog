@@ -2,12 +2,12 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #fff;
+    background: #f9f9f9;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 14px;
-    padding-bottom: 1px;
-    border-radius: 5px;
+    padding-bottom: -17px;
+    overflow: hidden;
 
     @extend %vertical-rhythm;
 

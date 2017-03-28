@@ -149,21 +149,19 @@ blockquote:last-child {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid white;
+    border: 1px solid #f9f9f9;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
 }
 
 code {
     padding: 1px 5px;
-    white-space: pre-wrap;
 }
 
 pre {
     padding: 8px 12px;
-    overflow: hidden;
-    word-break: break-all;
-    word-wrap: break-word;
+    overflow-x: auto;
+    padding-bottom: 17px;
 
     > code {
         border: 0;
