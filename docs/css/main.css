@@ -115,19 +115,17 @@ blockquote:last-child {
 pre,
 code {
   font-size: 15px;
-  border: 1px solid white;
+  border: 1px solid #f9f9f9;
   border-radius: 5px;
-  background-color: #ffffff; }
+  background-color: #f9f9f9; }
 
 code {
-  padding: 1px 5px;
-  white-space: pre-wrap; }
+  padding: 1px 5px; }
 
 pre {
   padding: 8px 12px;
-  overflow: hidden;
-  word-break: break-all;
-  word-wrap: break-word; }
+  overflow-x: auto;
+  padding-bottom: 17px; }
   pre > code {
     border: 0;
     padding-right: 0;
@@ -470,12 +468,12 @@ tr:nth-child(even) {
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: #f9f9f9;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 14px;
-  padding-bottom: 1px;
-  border-radius: 5px; }
+  padding-bottom: -17px;
+  overflow: hidden; }
   .highlight .c {
     color: #998;
     font-style: italic; }

@@ -4,7 +4,6 @@ title:  "Model & Approach for Private Delivery of iOS Frameworks Using Cocoapods
 date:   2017-03-25 00:03
 thumbnail: /assets/images/post-thumbnail/cocoapods-icon.png
 categories: blog
-published: false
 tags: [cocoapods, pod, private, framework, ios, model]
 ---
 

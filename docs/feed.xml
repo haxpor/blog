@@ -6,9 +6,236 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Mar 2017 01:22:38 +0700</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 01:22:38 +0700</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 10:19:04 +0700</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 10:19:04 +0700</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>Model &amp; Approach for Private Delivery of iOS Frameworks Using Cocoapods</title>
+        <description>&lt;p&gt;Lately, I&amp;#39;ve been thinking about the way to deliver &lt;strong&gt;private&lt;/strong&gt; iOS frameworks to users using &lt;a href=&quot;https://cocoapods.org/&quot;&gt;Cocoapods&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Firstly, don&amp;#39;t get me wrong, I do love open source, I embrace the way of its approach, and even put tagline &lt;em&gt;Open source by default&lt;/em&gt; on my &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;Twitter profile&lt;/a&gt;. Yup, I do understand that not every situation or entity can go all-in with such approach. There will be certain circumstance that the project needs to be in closed-source forever, or for certain time period until it can be open, or due to as part of the deal that makes open source is not an option.&lt;/p&gt;
+
+&lt;p&gt;Whatever the reason it might be, having Cocoapods as your delivery and dependency management is still a leading choice. I do point it out because if we&amp;#39;re going to deliver frameworks privately through Cocoapod, there&amp;#39;s going to be additional effort.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s first understand the underlying system of Cocoapods, until we come to overall big picture of model to use it.&lt;/p&gt;
+
+&lt;h2&gt;Underlying&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Under the hood, there are 2 main things that work together for Cocoapods.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.podspec&lt;/code&gt; files&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;Specs&lt;/code&gt; repo contains multiple &lt;code&gt;.podspec&lt;/code&gt; files. Main &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;Spec repo&lt;/a&gt; of Cocoapods is used to serve general public frameworks to users. Your &lt;code&gt;pod install&lt;/code&gt; command will check to see information from this repo, and go down to check &lt;code&gt;.podspec&lt;/code&gt; file for specific version of target framework in order to know URL to pull down framework&amp;#39;s source code then finally integrate it with your Xcode project. See example of &lt;code&gt;.podspec&lt;/code&gt; file &lt;a href=&quot;https://github.com/CocoaPods/Specs/blob/master/Specs/d/a/2/Alamofire/4.4.0/Alamofire.podspec.json&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You notice that Spec repo is public, thus also &lt;code&gt;.podspec&lt;/code&gt; file. Anyone can take a peek, and get relavent information. Now you see the problem that such information can lead to information breached in term of closed-source approach. They might get to know which client you work with, or github URL. With those two information, competitors can imply or even try to download the project source code (if permission is not set properly, yup github project as served on Cocoapods can be set to be private. It&amp;#39;s just a matter how who can access.).&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;steps&quot;&gt;&lt;/a&gt;What we need to do is&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Self-host &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;Build framework in universal binary without exposing source code&lt;/li&gt;
+&lt;li&gt;Upload result framework to public server for user to grab&lt;/li&gt;
+&lt;li&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file and set its &lt;code&gt;source&lt;/code&gt; field to use URL as result from 3.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Self-host Spec repo&lt;/h3&gt;
+
+&lt;p&gt;To gain the benefit of setting the permission of &lt;code&gt;Specs&lt;/code&gt; repo, you have only option which is to do self-host of it.
+Even you do self-host, you also have an option of setting access permission to be in public or private. In this case, we&amp;#39;re primarily interested in private access.&lt;/p&gt;
+
+&lt;p&gt;Cocoapods has official document on &lt;a href=&quot;https://guides.cocoapods.org/making/private-cocoapods.html&quot;&gt;how to host private Specs repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Build framework in universal binary without exposing source code&lt;/h3&gt;
+
+&lt;p&gt;I came across this well explained &lt;a href=&quot;https://eladnava.com/publish-a-universal-binary-ios-framework-in-swift-using-cocoapods/&quot;&gt;article&lt;/a&gt; of how to publish a universal binary iOS framework using Cocoapods.&lt;/p&gt;
+
+&lt;p&gt;Only difference from what we&amp;#39;re trying achieving compared to that article is that, the author publishes it publicly. But we want it in private. Thus we have no need to involve using &lt;code&gt;pod trunk ...&lt;/code&gt; command as we don&amp;#39;t publish to the main public &lt;code&gt;Specs&lt;/code&gt; repo but to our private one.&lt;/p&gt;
+
+&lt;h3&gt;Upload result framework to public server&lt;/h3&gt;
+
+&lt;p&gt;Upload such built frameworks to our public server. Ensure that it&amp;#39;s in universal binary form thus it can be used to run on device and simulator. Ensure that you didn&amp;#39;t include any source code with it. Normally, aim for &lt;code&gt;.zip&lt;/code&gt; file. The content of &lt;code&gt;.zip&lt;/code&gt; file mainly contains &lt;code&gt;.framework&lt;/code&gt; along with &lt;code&gt;README&lt;/code&gt; or any relavent files if you need. All of them are at the same level. It might be as follows.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;framework-result.zip
+               |_ myFW.framework
+               |_ README
+               |_ strip-frameworks.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;strip-frameworks.sh&lt;/code&gt; is usually needed at the end when users want to publish the result application to AppStore. It will help stripping un-needed architecture from frameworks being in use. You can see and make use of &lt;a href=&quot;https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh&quot;&gt;strip-frameworks.sh&lt;/a&gt; by Realm. Insert it insidee &lt;em&gt;Build Phases&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Properly create a &lt;code&gt;.podspec&lt;/code&gt; file to match the version of such framework. The most important thing is &lt;code&gt;source&lt;/code&gt; field instead of providing github URL, you provide the end-result of URL of &lt;code&gt;.zip&lt;/code&gt; for users to download.&lt;/p&gt;
+
+&lt;h2&gt;Model&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now it&amp;#39;s time for a big picture to see how everything gets involved.
+Please note that I observe the main &lt;code&gt;Specs&lt;/code&gt; repo&amp;#39;s file structure then compare with our private one, there is slightly difference. So I include it here too.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Main &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
+  |_ 0
+     |_ 0
+         |_ framework-A
+                   |_ 1.0.0
+                         |_ framework-A.podspec
+                   |_ 1.0.1
+                         |_ framework-A.podspec
+                   |_ 1.1.0
+                         |_ framework-A.podspec
+         |_ framework-B
+                   |_ 1.0.0
+                         |_ framework-B.podspec
+         |_ 1
+            |_ ...
+         |_ 2
+            |_ ...
+    |_ 1
+       |_ 0
+          |_ ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Our private &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
+   |_ framework-A
+       |_ 1.0.0
+           |_ framework-A.podspec
+       |_ 1.0.1
+           |_ framework-A.podspec
+       |_ 1.1.0
+           |_ framework-A.podspec
+   |_ framework-B
+       |_ 1.0.0
+           |_ framework-B.podspec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I cloned the project and inspected, the following is what I found.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Each directory holds up to 40 MB&lt;/li&gt;
+&lt;li&gt;There are 3 layers of numerical directory for each framework to reside in i.e. &lt;code&gt;Specs/0/0/0/framework-A&lt;/code&gt;, &lt;code&gt;Specs/0/1/0/framework-B&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Each layer of numerical directory consists of directory ranging from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;9&lt;/code&gt;, also &lt;code&gt;a&lt;/code&gt; to &lt;code&gt;f&lt;/code&gt; in total of 16 directories&lt;/li&gt;
+&lt;li&gt;(as above for what I&amp;#39;ve found) &lt;code&gt;Specs&lt;/code&gt; repo can hold up to 163.84 GB in total. Right now it&amp;#39;s at 583 MB (0.584 GB) or 0.003%. I suspect this part is to optimize the directory system, not to make each individual directory too large&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I came up with two possible models; Variant A, and B.&lt;/p&gt;
+
+&lt;h3&gt;Variant A&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantA.png&quot; alt=&quot;Model Variant A&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Annotations&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
+&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
+&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; Each circle is &lt;strong&gt;private&lt;/strong&gt; &lt;code&gt;Specs&lt;/code&gt; repo exposed to selected external party (client)&lt;br&gt;
+&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties spanning into multiple groups&lt;/p&gt;
+
+&lt;h4&gt;Requirements&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
+&lt;li&gt;Paid Github acccount to have ability to create private repositories ($7/month)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Feature&lt;/h4&gt;
+
+&lt;p&gt;It allows another layer to control which party (client) can see such &lt;code&gt;Specs&lt;/code&gt; repo.
+Imagine if we have 2 clients. Each client might use multiple of frameworks and are different from ones used by another client.&lt;br&gt;
+Thus we will have 2 private &lt;code&gt;Specs&lt;/code&gt; repo one for each client.&lt;/p&gt;
+
+&lt;p&gt;We need to allow users (github account) to have read access towards such &lt;code&gt;Specs&lt;/code&gt; repo. So when they pull down via configured &lt;code&gt;Podfile&lt;/code&gt;, it will be fine.&lt;/p&gt;
+
+&lt;h4&gt;Summary&lt;/h4&gt;
+
+&lt;h5&gt;Pros&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Additional layer to manage and control which party can have access to which frameworks via private &lt;code&gt;Specs&lt;/code&gt; repo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Cons&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to manage and allow access for users towards such &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;Might not be feasible for who which doesn&amp;#39;t want to pay monthly in order to use Github&amp;#39;s private repositories feature&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Variant B&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantB.png&quot; alt=&quot;Model Variant B&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Annotations&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
+&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
+&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; One single &lt;code&gt;Specs&lt;/code&gt; repo exposed to general public&lt;br&gt;
+&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties treated as a single public group&lt;/p&gt;
+
+&lt;h4&gt;Requirement&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Feature&lt;/h4&gt;
+
+&lt;p&gt;It has no control layer over which party or users should have access towards our framework.
+Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and manage (allow users access) to it.&lt;/p&gt;
+
+&lt;p&gt;One caveat is that if users inspect the content inside &lt;code&gt;Specs&lt;/code&gt; repo, they will have information for all frameworks we have, and might be able to know which client we work with. But it might be less likely for normal users as when they&amp;#39;re done with configuring &lt;code&gt;Podfile&lt;/code&gt;, usually they have no time or interest to study our &lt;code&gt;Specs&lt;/code&gt; repo. Even if they do so, they have to try by trial and error to use the framework as most likely we will deliver document to client privately too.&lt;/p&gt;
+
+&lt;h4&gt;Summary&lt;/h4&gt;
+
+&lt;h5&gt;Pros&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No additional effort to manage each private &lt;code&gt;Specs&lt;/code&gt; repository as there is none to manage.&lt;/li&gt;
+&lt;li&gt;No additional cost, normal Github account will do the work&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Cons&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Users might gain information about our all frameworks and where to download; and possible to know which client we&amp;#39;ve worked with.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Final words&lt;/h2&gt;
+
+&lt;p&gt;Now we get to know models to use in delivery frameworks to clients privately, and even has options to choose one that is more suitable to use. To go further than that, it&amp;#39;s possible to reduce &lt;a href=&quot;#steps&quot;&gt;steps&lt;/a&gt; needed especially 2, 3, and 4 which are building framework, uploading, and creating a proper &lt;code&gt;.podspec&lt;/code&gt; via automated script.&lt;/p&gt;
+
+&lt;p&gt;Then even more advanced, for build step, we can make it more robust using automated build system (CI). The overall combination should be pleasant and extremely automated.&lt;/p&gt;
+
+&lt;p&gt;I might consider writing about automated build, and how to combine it with models we&amp;#39;ve learned for next articles. For now, we have models and technical background included with steps to accomplish as a foundation to further utilize Cocoapod in delivery and automated flow.&lt;/p&gt;
+
+&lt;p&gt;Until next time...&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Mar 2017 00:03:00 +0700</pubDate>
+        <link>http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</guid>
+        
+        <category>cocoapods</category>
+        
+        <category>pod</category>
+        
+        <category>private</category>
+        
+        <category>framework</category>
+        
+        <category>ios</category>
+        
+        <category>model</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Set up and Verify Applications and Terminal Commands to Work Reliably with Proxy on macOS and Linux</title>
@@ -1328,78 +1555,6 @@ You shoul add the last two commands into &lt;code&gt;~/.bashrc&lt;/code&gt;. So 
         <category>authentication</category>
         
         <category>key</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Locpeed, Devlog #2</title>
-        <description>&lt;h2&gt;HTTP is the Way&lt;/h2&gt;
-
-&lt;p&gt;After trying to solve the problem of HTTPs or mixed content, I found out a root cause.&lt;br&gt;
-Baidu&amp;#39;s Map API itself doesn&amp;#39;t serve on HTTPs. If try to access &lt;a href=&quot;https://maps.baidu.com&quot;&gt;https://maps.baidu.com&lt;/a&gt;, you will have non-working site and cannot use its features at all. Thus I suspect it&amp;#39;s the API itself. Only HTTP is to go now.&lt;/p&gt;
-
-&lt;p&gt;With this, I reconfigured my server to allow HTTP (I know it&amp;#39;s not safe) for &lt;strong&gt;certain&lt;/strong&gt; sub-domain to host this project.&lt;/p&gt;
-
-&lt;h2&gt;Adding Map Marker Data&lt;/h2&gt;
-
-&lt;p&gt;I also found a way to add map-marker data to load them into Map API too.&lt;br&gt;
-At first, it seems like mysteriuos usage of &lt;code&gt;geotableId&lt;/code&gt; as seen in following code.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;customLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CustomLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;geotableId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;201567&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//检索关键字&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//空格分隔的多字符串&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//过滤条件,参考http://developer.baidu.com/map/lbs-geosearch.htm#.search.nearby&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That &lt;code&gt;geotableId&lt;/code&gt; refers to data table created via &lt;a href=&quot;http://lbsyun.baidu.com/data/mydata#/&quot;&gt;http://lbsyun.baidu.com/data/mydata#/&lt;/a&gt;.&lt;br&gt;
-You can get into such section by clicking on highlighting blue color on the left side of main api console page as seen below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/locpeed/data-creation-section-access.png&quot; alt=&quot;Section to access data creation&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;I created a couple of data item via UI interface. Thus I get a working click-to-show popup, and everything is fine after that. So it&amp;#39;s a matter of having a proper data first for no errors on running site.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/locpeed/result-from-data-creation.png&quot; alt=&quot;Result from data creation&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;Dynamic Adding Map Marker Data&lt;/h2&gt;
-
-&lt;p&gt;The intention is not for administrator to manually add data after users submitted information through our service.&lt;br&gt;
-We have to do it dynamically via programming.&lt;/p&gt;
-
-&lt;p&gt;I researched around and found out a great technical community (although in Chinese). &lt;a href=&quot;http://blog.csdn.net/sd0902/article/details/8478427&quot;&gt;Here&lt;/a&gt; is a way to dynamically add data to Map API.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;#39;t add it to the project just yet. But knowing it&amp;#39;s possible slightly calms me down at this stage.&lt;/p&gt;
-
-&lt;h2&gt;Upated Project Direction&lt;/h2&gt;
-
-&lt;p&gt;At first, users have to test WiFi speed separately via &lt;a href=&quot;http://www.speedtest.net/&quot;&gt;http://www.speedtest.net/&lt;/a&gt;, then copy its URL to submit to our service, finally our service will store that data into database and render the location on map.&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s not good experience for first step. After some research, I found &lt;a href=&quot;https://www.npmjs.com/package/speedtest-net&quot;&gt;speedtest-net&lt;/a&gt; on NPM registry. As tested, it gave out a similar result as tested via SpeedTest app and via its website too! So now I believe we can utilize it to do all within our service.&lt;/p&gt;
-
-&lt;p&gt;With that, it&amp;#39;s highly towards making an app via hybrid solution. To make it available on website also is another thing.&lt;br&gt;
-At this stage, I will focus on making website version works (without relying on framework), then will work on mobile app (not decide which framework I will use)&lt;/p&gt;
-
-&lt;h2&gt;Finding Connected WiFi SSID&lt;/h2&gt;
-
-&lt;p&gt;I went through the project more and thought that I cannot basically show the location with Downloading/Uploading speed without connected &lt;em&gt;Wifi SSID&lt;/em&gt; or the name of connected WiFi. Users want to know which one they want to connect to get that reported speed.&lt;/p&gt;
-
-&lt;p&gt;As research, I might need &lt;a href=&quot;https://github.com/HondaDai/PhoneGap-WifiInfoPlugin&quot;&gt;PhoneGap-WifiInfoPlugin&lt;/a&gt;, or another one with iOS support &lt;a href=&quot;https://github.com/makeroo/WifiWizard&quot;&gt;https://github.com/makeroo/WifiWizard&lt;/a&gt;. I didn&amp;#39;t test it yet. But it&amp;#39;s good to have these information for further development.&lt;/p&gt;
-
-&lt;p&gt;With those twos, it might be possible that Cordova is the way to go if nothing else I can find for a choice of hybrid development.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 12 Dec 2016 03:10:00 +0700</pubDate>
-        <link>http://blog.wasin.io/blog/2016/12/12/locpeed-devlog-2.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/12/locpeed-devlog-2.html</guid>
-        
-        <category>locpeed</category>
-        
-        <category>devlog</category>
         
         
         <category>blog</category>
