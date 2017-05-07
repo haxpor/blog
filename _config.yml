@@ -22,3 +22,17 @@ assets:
   compress:
     css: sass
     js:  uglifier
+
+  assets:
+    - "*.png"
+    - "*.jpg"
+    - "*.jpeg"
+    - "*.gif"
+    - "*.html"
+
+  sources:
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/htmls
+    - _assets/css

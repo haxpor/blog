@@ -1,12 +1,5 @@
 #= require vendor/weui.min
 
-// loop through all post and console out each post's title
-function consoleListOfAllPosts() {
-  <% site.posts.each do |post| %>
-    console.log(" <%= post.title %> ");
-  <% end %>
-}
-
 function showMainPagePicker(rooturl) {
 
 	var defaultValue = 1;
@@ -43,10 +36,10 @@ function showMainPagePicker(rooturl) {
           	window.location = rooturl;
           }
           else if (value == 1) {
-          	window.location = "<% site.baseurl %>/";
+          	window.location = "<% environment.jekyll.baseurl %>/";
           }
           else if (value == 2) {
-          	window.location = "<% site.baseurl %>/things-i-built/";
+          	window.location = "<% environment.jekyll.baseurl %>/things-i-built/";
           }
       },
       id: 'hamburgerBtn'

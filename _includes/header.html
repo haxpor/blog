@@ -12,7 +12,7 @@
       </a>
       <div class="trigger">
         <a class="page-link" href="{{ site.dashboardurl }}">Back to Dashboard</a>
-        {% for page in site.pages %}
+        {% for page in pages %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
