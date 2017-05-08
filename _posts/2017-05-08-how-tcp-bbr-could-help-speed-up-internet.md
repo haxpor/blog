@@ -39,7 +39,7 @@ Refer to these notable excerpts I captured from its commit link.
 
 ![excerpt tcp-bbr 1](/assets/images/tcp-bbr/excerpt1.png)
 
-![excerpt tcp-bbr 2](/assets/images/tcp-bbr/excerpt1.png)
+![excerpt tcp-bbr 2](/assets/images/tcp-bbr/excerpt2.png)
 
 The factor of improvement is magnificent. Although numbers stated above would be as high as ~2kx. From what I got as tested it's roughly `~600x` when pull content from upstream via Github clone command, or `~30x` in downstream Internet speed in general. It's way better than before.
 
