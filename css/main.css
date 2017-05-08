@@ -459,6 +459,11 @@ tr:nth-child(even) {
 
 .post-content {
   margin-bottom: 30px; }
+  .post-content h1 {
+    font-size: 36px; }
+    @media screen and (max-width: 800px) {
+      .post-content h1 {
+        font-size: 32px; } }
   .post-content h2 {
     font-size: 32px; }
     @media screen and (max-width: 800px) {
