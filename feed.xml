@@ -1,30 +1,1565 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Wasin's Blog</title>
+    <description>I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
+</description>
+    <link>http://blog.wasin.io/</link>
+    <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 08 May 2017 12:52:16 +0800</pubDate>
+    <lastBuildDate>Mon, 08 May 2017 12:52:16 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Model &amp; Approach for Private Delivery of iOS Frameworks Using Cocoapods</title>
+        <description>&lt;p&gt;Lately, I&amp;#39;ve been thinking about the way to deliver &lt;strong&gt;private&lt;/strong&gt; iOS frameworks to users using &lt;a href=&quot;https://cocoapods.org/&quot;&gt;Cocoapods&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Firstly, don&amp;#39;t get me wrong, I do love open source, I embrace the way of its approach, and even put tagline &lt;em&gt;Open source by default&lt;/em&gt; on my &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;Twitter profile&lt;/a&gt;. Yup, I do understand that not every situation or entity can go all-in with such approach. There will be certain circumstance that the project needs to be in closed-source forever, or for certain time period until it can be open, or due to as part of the deal that makes open source is not an option.&lt;/p&gt;
+
+&lt;p&gt;Whatever the reason it might be, having Cocoapods as your delivery and dependency management is still a leading choice. I do point it out because if we&amp;#39;re going to deliver frameworks privately through Cocoapod, there&amp;#39;s going to be additional effort.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s first understand the underlying system of Cocoapods, until we come to overall big picture of model to use it.&lt;/p&gt;
+
+&lt;h2&gt;Underlying&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Under the hood, there are 2 main things that work together for Cocoapods.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.podspec&lt;/code&gt; files&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;Specs&lt;/code&gt; repo contains multiple &lt;code&gt;.podspec&lt;/code&gt; files. Main &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;Spec repo&lt;/a&gt; of Cocoapods is used to serve general public frameworks to users. Your &lt;code&gt;pod install&lt;/code&gt; command will check to see information from this repo, and go down to check &lt;code&gt;.podspec&lt;/code&gt; file for specific version of target framework in order to know URL to pull down framework&amp;#39;s source code then finally integrate it with your Xcode project. See example of &lt;code&gt;.podspec&lt;/code&gt; file &lt;a href=&quot;https://github.com/CocoaPods/Specs/blob/master/Specs/d/a/2/Alamofire/4.4.0/Alamofire.podspec.json&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You notice that Spec repo is public, thus also &lt;code&gt;.podspec&lt;/code&gt; file. Anyone can take a peek, and get relavent information. Now you see the problem that such information can lead to information breached in term of closed-source approach. They might get to know which client you work with, or github URL. With those two information, competitors can imply or even try to download the project source code (if permission is not set properly, yup github project as served on Cocoapods can be set to be private. It&amp;#39;s just a matter how who can access.).&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;steps&quot;&gt;&lt;/a&gt;What we need to do is&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Self-host &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;Build framework in universal binary without exposing source code&lt;/li&gt;
+&lt;li&gt;Upload result framework to public server for user to grab&lt;/li&gt;
+&lt;li&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file and set its &lt;code&gt;source&lt;/code&gt; field to use URL as result from 3.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Self-host Spec repo&lt;/h3&gt;
+
+&lt;p&gt;To gain the benefit of setting the permission of &lt;code&gt;Specs&lt;/code&gt; repo, you have only option which is to do self-host of it.
+Even you do self-host, you also have an option of setting access permission to be in public or private. In this case, we&amp;#39;re primarily interested in private access.&lt;/p&gt;
+
+&lt;p&gt;Cocoapods has official document on &lt;a href=&quot;https://guides.cocoapods.org/making/private-cocoapods.html&quot;&gt;how to host private Specs repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Build framework in universal binary without exposing source code&lt;/h3&gt;
+
+&lt;p&gt;I came across this well explained &lt;a href=&quot;https://eladnava.com/publish-a-universal-binary-ios-framework-in-swift-using-cocoapods/&quot;&gt;article&lt;/a&gt; of how to publish a universal binary iOS framework using Cocoapods.&lt;/p&gt;
+
+&lt;p&gt;Only difference from what we&amp;#39;re trying achieving compared to that article is that, the author publishes it publicly. But we want it in private. Thus we have no need to involve using &lt;code&gt;pod trunk ...&lt;/code&gt; command as we don&amp;#39;t publish to the main public &lt;code&gt;Specs&lt;/code&gt; repo but to our private one.&lt;/p&gt;
+
+&lt;h3&gt;Upload result framework to public server&lt;/h3&gt;
+
+&lt;p&gt;Upload such built frameworks to our public server. Ensure that it&amp;#39;s in universal binary form thus it can be used to run on device and simulator. Ensure that you didn&amp;#39;t include any source code with it. Normally, aim for &lt;code&gt;.zip&lt;/code&gt; file. The content of &lt;code&gt;.zip&lt;/code&gt; file mainly contains &lt;code&gt;.framework&lt;/code&gt; along with &lt;code&gt;README&lt;/code&gt; or any relavent files if you need. All of them are at the same level. It might be as follows.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;framework-result.zip
+               |_ myFW.framework
+               |_ README
+               |_ strip-frameworks.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;strip-frameworks.sh&lt;/code&gt; is usually needed at the end when users want to publish the result application to AppStore. It will help stripping un-needed architecture from frameworks being in use. You can see and make use of &lt;a href=&quot;https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh&quot;&gt;strip-frameworks.sh&lt;/a&gt; by Realm. Insert it insidee &lt;em&gt;Build Phases&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Properly create a &lt;code&gt;.podspec&lt;/code&gt; file to match the version of such framework. The most important thing is &lt;code&gt;source&lt;/code&gt; field instead of providing github URL, you provide the end-result of URL of &lt;code&gt;.zip&lt;/code&gt; for users to download.&lt;/p&gt;
+
+&lt;h2&gt;Model&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now it&amp;#39;s time for a big picture to see how everything gets involved.
+Please note that I observe the main &lt;code&gt;Specs&lt;/code&gt; repo&amp;#39;s file structure then compare with our private one, there is slightly difference. So I include it here too.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Main &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
+  |_ 0
+     |_ 0
+         |_ framework-A
+                   |_ 1.0.0
+                         |_ framework-A.podspec
+                   |_ 1.0.1
+                         |_ framework-A.podspec
+                   |_ 1.1.0
+                         |_ framework-A.podspec
+         |_ framework-B
+                   |_ 1.0.0
+                         |_ framework-B.podspec
+         |_ 1
+            |_ ...
+         |_ 2
+            |_ ...
+    |_ 1
+       |_ 0
+          |_ ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Our private &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
+   |_ framework-A
+       |_ 1.0.0
+           |_ framework-A.podspec
+       |_ 1.0.1
+           |_ framework-A.podspec
+       |_ 1.1.0
+           |_ framework-A.podspec
+   |_ framework-B
+       |_ 1.0.0
+           |_ framework-B.podspec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I cloned the project and inspected, the following is what I found.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Each directory holds up to 40 MB&lt;/li&gt;
+&lt;li&gt;There are 3 layers of numerical directory for each framework to reside in i.e. &lt;code&gt;Specs/0/0/0/framework-A&lt;/code&gt;, &lt;code&gt;Specs/0/1/0/framework-B&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Each layer of numerical directory consists of directory ranging from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;9&lt;/code&gt;, also &lt;code&gt;a&lt;/code&gt; to &lt;code&gt;f&lt;/code&gt; in total of 16 directories&lt;/li&gt;
+&lt;li&gt;(as above for what I&amp;#39;ve found) &lt;code&gt;Specs&lt;/code&gt; repo can hold up to 163.84 GB in total. Right now it&amp;#39;s at 583 MB (0.584 GB) or 0.003%. I suspect this part is to optimize the directory system, not to make each individual directory too large&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I came up with two possible models; Variant A, and B.&lt;/p&gt;
+
+&lt;h3&gt;Variant A&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantA.png&quot; alt=&quot;Model Variant A&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Annotations&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
+&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
+&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; Each circle is &lt;strong&gt;private&lt;/strong&gt; &lt;code&gt;Specs&lt;/code&gt; repo exposed to selected external party (client)&lt;br&gt;
+&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties spanning into multiple groups&lt;/p&gt;
+
+&lt;h4&gt;Requirements&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
+&lt;li&gt;Paid Github acccount to have ability to create private repositories ($7/month)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Feature&lt;/h4&gt;
+
+&lt;p&gt;It allows another layer to control which party (client) can see such &lt;code&gt;Specs&lt;/code&gt; repo.
+Imagine if we have 2 clients. Each client might use multiple of frameworks and are different from ones used by another client.&lt;br&gt;
+Thus we will have 2 private &lt;code&gt;Specs&lt;/code&gt; repo one for each client.&lt;/p&gt;
+
+&lt;p&gt;We need to allow users (github account) to have read access towards such &lt;code&gt;Specs&lt;/code&gt; repo. So when they pull down via configured &lt;code&gt;Podfile&lt;/code&gt;, it will be fine.&lt;/p&gt;
+
+&lt;h4&gt;Summary&lt;/h4&gt;
+
+&lt;h5&gt;Pros&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Additional layer to manage and control which party can have access to which frameworks via private &lt;code&gt;Specs&lt;/code&gt; repo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Cons&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to manage and allow access for users towards such &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
+&lt;li&gt;Might not be feasible for who which doesn&amp;#39;t want to pay monthly in order to use Github&amp;#39;s private repositories feature&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Variant B&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantB.png&quot; alt=&quot;Model Variant B&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Annotations&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
+&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
+&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; One single &lt;code&gt;Specs&lt;/code&gt; repo exposed to general public&lt;br&gt;
+&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties treated as a single public group&lt;/p&gt;
+
+&lt;h4&gt;Requirement&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Feature&lt;/h4&gt;
+
+&lt;p&gt;It has no control layer over which party or users should have access towards our framework.
+Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and manage (allow users access) to it.&lt;/p&gt;
+
+&lt;p&gt;One caveat is that if users inspect the content inside &lt;code&gt;Specs&lt;/code&gt; repo, they will have information for all frameworks we have, and might be able to know which client we work with. But it might be less likely for normal users as when they&amp;#39;re done with configuring &lt;code&gt;Podfile&lt;/code&gt;, usually they have no time or interest to study our &lt;code&gt;Specs&lt;/code&gt; repo. Even if they do so, they have to try by trial and error to use the framework as most likely we will deliver document to client privately too.&lt;/p&gt;
+
+&lt;h4&gt;Summary&lt;/h4&gt;
+
+&lt;h5&gt;Pros&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No additional effort to manage each private &lt;code&gt;Specs&lt;/code&gt; repository as there is none to manage.&lt;/li&gt;
+&lt;li&gt;No additional cost, normal Github account will do the work&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Cons&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Users might gain information about our all frameworks and where to download; and possible to know which client we&amp;#39;ve worked with.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Final words&lt;/h2&gt;
+
+&lt;p&gt;Now we get to know models to use in delivery frameworks to clients privately, and even has options to choose one that is more suitable to use. To go further than that, it&amp;#39;s possible to reduce &lt;a href=&quot;#steps&quot;&gt;steps&lt;/a&gt; needed especially 2, 3, and 4 which are building framework, uploading, and creating a proper &lt;code&gt;.podspec&lt;/code&gt; via automated script.&lt;/p&gt;
+
+&lt;p&gt;Then even more advanced, for build step, we can make it more robust using automated build system (CI). The overall combination should be pleasant and extremely automated.&lt;/p&gt;
+
+&lt;p&gt;I might consider writing about automated build, and how to combine it with models we&amp;#39;ve learned for next articles. For now, we have models and technical background included with steps to accomplish as a foundation to further utilize Cocoapod in delivery and automated flow.&lt;/p&gt;
+
+&lt;p&gt;Until next time...&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Mar 2017 00:03:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</guid>
+        
+        <category>cocoapods</category>
+        
+        <category>pod</category>
+        
+        <category>private</category>
+        
+        <category>framework</category>
+        
+        <category>ios</category>
+        
+        <category>model</category>
+        
+        
+        <category>blog</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Set up and Verify Applications and Terminal Commands to Work Reliably with Proxy on macOS and Linux</title>
+        <description>&lt;p&gt;If you live behind firewall i.e. &lt;a href=&quot;https://en.wikipedia.org/wiki/Great_Firewall&quot;&gt;GFW&lt;/a&gt; and interact with terminal commands a lot in day-to-day basis and of course surfing Internet, I believe you usually utilize proxy to carry on your request in Internet world.&lt;/p&gt;
+
+&lt;p&gt;Without a doubt, verifying that those applications espcially browser and commands behave as you set and expect it to be is crucial. Wasting hours in waiting for return from &lt;code&gt;npm install&lt;/code&gt; command, or even &lt;code&gt;git clone &amp;lt;project-url&amp;gt;&lt;/code&gt; for project with huge amount of files but not necessary in bigger size without knowing whether it&amp;#39;s going to succeed or not is not a good way to ruin your productive day. Leave alone seeing result from non-working proxy setup on browser, athough it&amp;#39;s immediate and a lot faster to troubleshoot but it is also applied.&lt;/p&gt;
+
+&lt;p&gt;Thus this time, I think it&amp;#39;s a good idea to sit down and make sure those applications and commands works reliably with proxy setup (by any mean).&lt;/p&gt;
+
+&lt;h2&gt;Proxy Setup&lt;/h2&gt;
+
+&lt;p&gt;Your proxy setup can be anything. It just needs to be a middle man between you and destination, and acts as a gatekeeper to forward your request to destination in which destination will not know that such request is coming from you but proxy itself.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re interested in &lt;strong&gt;HTTP/HTTPs&lt;/strong&gt;, and &lt;strong&gt;SOCKS5&lt;/strong&gt; proxy.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;re bunch of options to setup proxy. It can be Shadowsocks (which operates on HTTP, and SOCKS5 proxy), or just normal HTTP proxy (several out there such as &lt;a href=&quot;https://www.charlesproxy.com/&quot;&gt;Charles Proxy&lt;/a&gt;, &lt;a href=&quot;https://tinyproxy.github.io/&quot;&gt;TinyProxy&lt;/a&gt;, etc).&lt;/p&gt;
+
+&lt;p&gt;Solution presented in this writing aims for macOS, and Linux.&lt;/p&gt;
+
+&lt;p&gt;For my case, I&amp;#39;m on macOS &lt;code&gt;10.12.4&lt;/code&gt;, with Shadowsock proxy set up. This mean my local machine provides HTTP, and SOCKS5 proxy. So I have options to either set proxy to use HTTP, or SOCKS5.&lt;/p&gt;
+
+&lt;h2&gt;Set up to Use Proxy for UI-based applications&lt;/h2&gt;
+
+&lt;p&gt;Although not limited to browser, it is a prime example of this kind of application.&lt;br&gt;
+Let&amp;#39;s proceed with Chrome as it&amp;#39;s widely used, and is a top choice to debug and work with by developers. It should be very similar steps for other variant of browsers as well.&lt;/p&gt;
+
+&lt;p&gt;Press &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt; or enter &lt;code&gt;chrome://settings&lt;/code&gt; to open Settings.&lt;br&gt;
+Find &lt;code&gt;Network&lt;/code&gt; section, and click on &lt;code&gt;Change proxy settings...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/14/chrome-network-settings.png&quot; alt=&quot;Chrome Network Settings&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you will see a dialog window similar to below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/14/set-chrome-http-proxy.png&quot; alt=&quot;Set Chrome HTTP Proxy&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;as my proxy on local machine provides HTTP, and SOCKS5, then I set it via&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Proxy (HTTP)&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1087&lt;/code&gt;&lt;br&gt;
+Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;code&gt;1087&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Secure Web Proxy (HTTPS)&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1087&lt;/code&gt;&lt;br&gt;
+My proxy doesn&amp;#39;t provide HTTPS thus I set it to just normally use what it provides in HTTP. So this means it will forward HTTPS request to HTTP one.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Personally, I don&amp;#39;t think we really need HTTPS for local proxy stuff as it waste time and resource on doing handshake, encryption and decryption in which we don&amp;#39;t really need it if we know we are on the secure side. Of course proxy will handle secure request after that (if we browse or request to secure site).&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;SOCKS Proxy&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1086&lt;/code&gt;&lt;br&gt;
+Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;code&gt;1086&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We&amp;#39;re done.&lt;/p&gt;
+
+&lt;p&gt;We will see how we can verify whether it can operate as expect in &lt;a href=&quot;#verifying&quot;&gt;Verifying&lt;/a&gt; section later. Now if you can browse without 404 error, that means most likely it works as expect.&lt;/p&gt;
+
+&lt;p&gt;In additional, from my use case I didn&amp;#39;t have other UI-based applications that needs to be configured its network to be through proxy. So in case you have some other applications that need to work with proxy. Occasionally, that application should provide such configuration similar to what we&amp;#39;ve done above. Just look inside its preferences, or setting somewhere.&lt;/p&gt;
+
+&lt;h2&gt;Set up to Use Proxy for Terminal Commands&lt;/h2&gt;
+
+&lt;p&gt;This part might need slightly more effort. Some commands have their own way of configuring proxy setting. They might need to be set via either environment variables, or specific configuration file. Some commands might not work with SOCKS proxy but only HTTP proxy.&lt;/p&gt;
+
+&lt;p&gt;I will cover specifically for the following terminal commands&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;other misc commands&lt;/code&gt; - utilize system-wide setup of proxy setting via environment variables&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;git&lt;/h3&gt;
+
+&lt;p&gt;Set it globally via &lt;code&gt;git-config&lt;/code&gt; as follows&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Proxy&lt;/strong&gt;&lt;br&gt;
+&lt;code&gt;git config --global http.proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTPS Proxy&lt;/strong&gt;&lt;br&gt;
+&lt;code&gt;git config --global https.proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SOCKS5 Proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   git config --global http.proxy socks5://127.0.0.1:1086
+   git config --global https.proxy socks5://127.0.0.1:1086
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;or you can also configure it manually by editing &lt;code&gt;~/.gitconfig&lt;/code&gt; to add the following lines appendingly into a file&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https]
+     proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http://127.0.0.1:1087
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SOCKS proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https]
+     proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; socks5://127.0.0.1:1086
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;npm&lt;/h3&gt;
+
+&lt;p&gt;Set it via &lt;code&gt;npm config&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt; - &lt;code&gt;npm config set proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or you can manually configure &lt;code&gt;~/.npmrc&lt;/code&gt; file by adding the following line&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt; - &lt;code&gt;proxy=http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It &lt;a href=&quot;https://github.com/npm/npm/issues/6204#issuecomment-55836088&quot;&gt;doesn&amp;#39;t&lt;/a&gt; support SOCKS5.&lt;/p&gt;
+
+&lt;h3&gt;curl&lt;/h3&gt;
+
+&lt;p&gt;Set its proxy setting by creating (if not yet exist) &lt;code&gt;~/.curlrc&lt;/code&gt; file with the following content&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:1087&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SOCKS5 proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   socks5 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:1086&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Other misc commands&lt;/h3&gt;
+
+&lt;p&gt;For other commands, usually we can just set proxy globally for system-wide via environment variables by adding following lines into your &lt;code&gt;~/.bash_profile&lt;/code&gt; (but use &lt;code&gt;~/.bashrc&lt;/code&gt; on Linux).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;http_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:1087
+   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;https_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:1087
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SOCKS5 proxy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;http_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;socks5://127.0.0.1:1086
+   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;https_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;socks5://127.0.0.1:1086
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that execute &lt;code&gt;source ~/.bash_profile&lt;/code&gt; to source the setting and make sure those environment variables are taken into effect. I recommend to configure it with your &lt;code&gt;~/.bash_profile&lt;/code&gt; script as it will take effect even after reboot.&lt;/p&gt;
+
+&lt;p&gt;Beware that if you set it to SOCKS5 proxy, commands that doesn&amp;#39;t support SOCKS5 will shout out error. A great example is &lt;code&gt;ngrok&lt;/code&gt; which doesn&amp;#39;t support SOCKS5 but it will let you know.&lt;/p&gt;
+
+&lt;p&gt;So in general case, HTTP/HTTPS proxy might serve you better unless you&amp;#39;re willing to re-configure it back and forth.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;verifying&quot;&gt;&lt;/a&gt;Verifying&lt;/h2&gt;
+
+&lt;p&gt;Now it&amp;#39;s time to verify our proxy configuration no matter which way you had done to configure it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have an option to use UI-based application i.e. &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;WireShark&lt;/a&gt;. But I prefer commandline-based solution. Anyway, the same concept can be applied to use with WireShark too.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Preparation&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;re going to use &lt;code&gt;ngrep&lt;/code&gt; to capture packets for our &lt;strong&gt;local network interface&lt;/strong&gt; filtering for port we&amp;#39;re interested in knowing either &lt;code&gt;1087&lt;/code&gt; for HTTP/HTTPS, or &lt;code&gt;1086&lt;/code&gt; for SOCKS5.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;ngrep&lt;/code&gt; by executing &lt;code&gt;brew install ngrep&lt;/code&gt; (or &lt;code&gt;apt-get install apt-get&lt;/code&gt; on Linux).&lt;/li&gt;
+&lt;li&gt;Then check out the name of your local network interface as we will use its name as parameter to &lt;code&gt;ngrep&lt;/code&gt; to capture packets live.&lt;br&gt;
+Execute &lt;code&gt;ifconfig&lt;/code&gt;.&lt;br&gt;
+Result would be similar to as follows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ifconfig
+   lo0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8149&amp;lt;UP,LOOPBACK,RUNNING,PROMISC,MULTICAST&amp;gt; mtu 16384
+       &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1203&amp;lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&amp;gt;
+       inet 127.0.0.1 netmask 0xff000000
+       inet6 ::1 prefixlen 128
+       inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
+   gif0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8010&amp;lt;POINTOPOINT,MULTICAST&amp;gt; mtu 1280
+   stf0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&amp;lt;&amp;gt; mtu 1280
+   en1: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8863&amp;lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&amp;gt; mtu 1500
+       ether 20:c9:d0:d7:17:c5
+       inet6 fe80::888:7a63:946e:c358%en1 prefixlen 64 secured scopeid 0x4
+       inet 192.168.0.100 netmask 0xffffff00 broadcast 192.168.0.255
+       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
+       media: autoselect
+       status: active
+   en0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8863&amp;lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&amp;gt; mtu 1500
+       &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10b&amp;lt;RXCSUM,TXCSUM,VLAN_HWTAGGING,AV&amp;gt;
+       ether a8:20:66:2a:77:2f
+       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
+       media: autoselect &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       status: inactive
+   fw0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8822&amp;lt;BROADCAST,SMART,SIMPLEX,MULTICAST&amp;gt; mtu 4078
+       lladdr a8:20:66:ff:fe:7d:48:0a
+       media: autoselect &amp;lt;full-duplex&amp;gt;
+       status: inactive
+   ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From result, we know that our local network interface&amp;#39;s name is &lt;code&gt;lo0&lt;/code&gt; which you can see it has IP address of &lt;code&gt;127.0.0.1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Verify npm&lt;/h3&gt;
+
+&lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name already. Next we&amp;#39;re going to verify &lt;code&gt;npm install bfet&lt;/code&gt; command whether it actually went through our proxy as set to be on HTTP/HTTPS (port &lt;code&gt;1087&lt;/code&gt;) setting or not.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;sudo ngrep -q -d lo0 -W byline port 1087&lt;/code&gt;&lt;br&gt;
+There&amp;#39;re bunch of options used in this command. You can see this &lt;a href=&quot;https://linux.die.net/man/8/ngrep&quot;&gt;man&lt;/a&gt; page for explanation of each parameter used in above command. Basically, it will start to capture packets on &lt;code&gt;lo0&lt;/code&gt; network interface filtering for packets involving port &lt;code&gt;1087&lt;/code&gt; with other options affecting how much of information should printed out on console.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You can also remove &lt;code&gt;port 1087&lt;/code&gt; out thus more packets although might not be the one you&amp;#39;re interested will show on console but for the ease in digesting information here let&amp;#39;s go with port filtering.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ngrep -q -d en1 -W byline port 1087
+   Password:
+   interface: en1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;192.168.0.0/255.255.255.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+   filter: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ip or ip6&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; port 1087 &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Leave it running, and don&amp;#39;t worry if you see some logs coming out already.&lt;br&gt;
+   We will go back to see its result according to our execution of target command later.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open a new terminal window, then execute &lt;code&gt;npm install bfet&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Go back to see result from &lt;code&gt;ngrep&lt;/code&gt; as it&amp;#39;s running at the moment.&lt;br&gt;
+You should see something similar to following. Also you can hit &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;F&lt;/code&gt; to search for text in interest to see.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
+   CONNECT registry.npmjs.org:443 HTTP/1.1.
+   accept-encoding: gzip.
+   accept: application/json.
+   referer: install bfet.
+   user-agent: npm/4.1.2 node/v7.5.0 darwin x64.
+   host: registry.npmjs.org:443.
+   Connection: close.
+   .
+
+
+   T 127.0.0.1:1087 -&amp;gt; 127.0.0.1:63066 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
+   HTTP/1.1 200 Connection established.
+   .
+
+
+   T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
+   ....
+   ........?&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;..:s.....b....&amp;amp;.n.T..n.
+   &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.xi..n./.+.0.,...&lt;span class=&quot;s1&quot;&gt;'.g.(.k.$...
+   .........j.i.h.9.8.7.6.2...*.&amp;amp;.......=.5.#...........@.?.&amp;gt;.3.2.1.0.1.-.).%.......&amp;lt;./.....o.........registry.npmjs.org.........
+   .............................
+   .#..... ................................3t..
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s inspect packets we got above.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 [AP]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It uses HTTP &lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.9&quot;&gt;CONNECT method&lt;/a&gt; to initiate &lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP_tunnel&quot;&gt;HTTP tunneling&lt;/a&gt; by which the command (running on port &lt;code&gt;63066&lt;/code&gt;) asks local proxy server (port &lt;code&gt;1087&lt;/code&gt;) to forward such HTTPS request. The tunnel (thus CONNECT method) is especially created for requesting HTTPS website which is &lt;code&gt;registry.npmjs.org:443&lt;/code&gt; as seen in this case.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:1087 -&amp;gt; 127.0.0.1:63066 [AP]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Proxy sent acknowledge packet back indicating that it&amp;#39;s successfully created a HTTP tunnel. It&amp;#39;s ready to exchange data through proxy from now on.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 [AP]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;One of many packets sending back and forth during HTTP tunneling session. In this case, &lt;code&gt;npm&lt;/code&gt; command usually sends some request for a package at &lt;code&gt;registry.npmjs.org&lt;/code&gt;. It is encrypted due to SSL as it&amp;#39;s end-to-end communication. The dot (&lt;code&gt;.&lt;/code&gt;) we see is default character to show when such character is non-printable.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So you can see that the connection is well made with proxy. Basically verified that it works as expect.&lt;/p&gt;
+
+&lt;h3&gt;Verify curl&lt;/h3&gt;
+
+&lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name as previously tested. Next we&amp;#39;re going to verify &lt;code&gt;curl -i http://blog.wasin.io&lt;/code&gt; command whether it actually went through our proxy as set to be on SOCKS5 (port &lt;code&gt;1086&lt;/code&gt;) or not.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reason to use &lt;code&gt;http://blog.wasin.io&lt;/code&gt; is that it&amp;#39;s not HTTPS thus we&amp;#39;re going to see actual text result from request to such target website.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;sudo ngrep -q -d lo0 -W byline port 1086&lt;/code&gt;&lt;br&gt;
+You will see&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ngrep -q -d en1 -W byline port 1086
+   Password:
+   interface: en1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;192.168.0.0/255.255.255.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+   filter: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ip or ip6&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; port 1086 &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Open a new terminal window, then execute &lt;code&gt;curl -i http://blog.wasin.io&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Go back to see result from &lt;code&gt;ngrep&lt;/code&gt; as it&amp;#39;s running at the moment.&lt;br&gt;
+You should see something similar to following.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   T 127.0.0.1:52924 -&amp;gt; 127.0.0.1:1086 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
+   GET / HTTP/1.1.
+   Host: blog.wasin.io.
+   User-Agent: curl/7.50.3.
+   Accept: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.
+   .
+
+
+   T 127.0.0.1:1086 -&amp;gt; 127.0.0.1:52924 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
+   HTTP/1.1 200 OK.
+   Server: GitHub.com.
+   Content-Type: text/html; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8.
+   Last-Modified: Fri, 10 Mar 2017 19:23:24 GMT.
+   Access-Control-Allow-Origin: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.
+   Expires: Mon, 13 Mar 2017 19:33:23 GMT.
+   Cache-Control: max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;600.
+   X-GitHub-Request-Id: 3E76:06EE:41E22E9:53B6101:58C6F1AB.
+   Content-Length: 19899.
+   Accept-Ranges: bytes.
+   Date: Mon, 13 Mar 2017 20:42:39 GMT.
+   Via: 1.1 varnish.
+   Age: 380.
+   Connection: keep-alive.
+   X-Served-By: cache-hkg6825-HKG.
+   X-Cache: HIT.
+   X-Cache-Hits: 1.
+   X-Timer: S1489437759.092925,VS0,VE0.
+   Vary: Accept-Encoding.
+   X-Fastly-Request-ID: 60215ccfdc736e50178b0268f4fc9b3053c1e14d.
+   .
+   &amp;lt;!DOCTYPE html&amp;gt;
+   &amp;lt;html&amp;gt;
+   ... the less or HTML code ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You see that such command on port &lt;code&gt;52924&lt;/code&gt; created a request message in SOCKS5 message and sent it to local proxy server listening on port &lt;code&gt;1086&lt;/code&gt;. In return, proxy gets the actual response back including website&amp;#39;s source code in HTML.&lt;/p&gt;
+
+&lt;p&gt;So it works as expect.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We have learned how to properly configure proxy setting for UI-based applications and terminal commands. Also we knew a basic way to verify that our tools are working as expect via &lt;code&gt;ngrep&lt;/code&gt;. Combine these together to carry out Internet operation through proxy in network environment that needs it, and be able to troubleshoot the problem when we faced with a long waiting time in getting a result back from using application or commandlines.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Mar 2017 00:03:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html</guid>
+        
+        <category>command</category>
+        
+        <category>commands</category>
+        
+        <category>terminal</category>
+        
+        <category>proxy</category>
+        
+        <category>network</category>
+        
+        <category>linux</category>
+        
+        <category>macos</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>As Developers You Don't Need Normal Social Account Verified, But You Might Need This Instead</title>
+        <description>&lt;p&gt;No doubt getting verified on account is such a privilege status you can have on social network ecosystem.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/verified/social-account-verified.png&quot; alt=&quot;Levels&amp;#39;s verified account on twitter&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;It can give you a sense of self-worth, and attention. But yes, real world is not going to give you away freely such verified status without you doing nothing.&lt;br&gt;
+I know it&amp;#39;s a real hard work, you need to give something to the world, make impact, there&amp;#39;re lots of factors getting in the way for &lt;strong&gt;verified&lt;/strong&gt; status.&lt;/p&gt;
+
+&lt;p&gt;No matter what it is. It&amp;#39;s ok.&lt;/p&gt;
+
+&lt;p&gt;As developers, something you can do about it right now beside obsessing with such status is to get verified in every commit of code you wrote especially on Github!&lt;/p&gt;
+
+&lt;p&gt;You get that right. I mean something like this...&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/verified/commit-verified.png&quot; alt=&quot;verified on commit as shown on Github&quot;&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/verified/commit-verified2.png&quot; alt=&quot;verified on commit as shown on Github - 2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Having that means every commit you&amp;#39;ve pushed is actually from you. It gives a sense of self-worth in every commit right?&lt;/p&gt;
+
+&lt;p&gt;So let&amp;#39;s see how can we achieve that&lt;/p&gt;
+
+&lt;h2&gt;How To Get Verified On Every Commit on Github&lt;/h2&gt;
+
+&lt;p&gt;What I tested is on macOS. But it should work similar to other platform, or you might need to adapt a little bit.&lt;/p&gt;
+
+&lt;h3&gt;Generate a GPG key&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download gpg tool via &lt;code&gt;brew install gpg&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Generate key via &lt;code&gt;gpg --gen-key&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Then specify the key you want, in this case it&amp;#39;s default to &lt;code&gt;RSA and RSA&lt;/code&gt;, just press &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Enter key size. Go for maximum of &lt;code&gt;4096&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Enter the length of time until the key would be expired. Press &lt;code&gt;Enter&lt;/code&gt; to go for default selection indicating that there&amp;#39;s no expiration.&lt;/li&gt;
+&lt;li&gt;Enter a valid e-mail address that you signed up on Github.&lt;/li&gt;
+&lt;li&gt;Type a passphrase.&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;gpg --list-secret-keys --keyid-format LONG&lt;/code&gt; to list GPG keys.&lt;br&gt;
+Result you got is similar to below&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:verified haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --list-secret-keys --keyid-format LONG
+   /Users/haxpor/.gnupg/secring.gpg
+   --------------------------------
+   sec   4096R/BD496CEDB4686EF8 2017-02-10
+   uid                          Wasin Thonkaew &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Github GPG Key&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;lt;haxpor@gmail.com&amp;gt;
+   ssb   4096R/C818714CCD3AB514 2017-02-10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy GPG key ID. From result above, it&amp;#39;s &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;gpg --armor --export BD496CEDB4686EF8&lt;/code&gt;. But substitute your key id instead of using &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Copy the result text from such command. We will use it in next section.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Add GPG key to Github Account&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Browse to Github website.&lt;/li&gt;
+&lt;li&gt;On upper-right corner, click on your profile photo, then click &lt;code&gt;Settings&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;On the left side-bar, click on &lt;code&gt;SSH and GPG keys&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Paste the text you copied from earlier section.&lt;/li&gt;
+&lt;li&gt;Click on &lt;code&gt;Add GPG key&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Confirm the action by entering your Github password.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Set up Git to Sign All Commits&lt;/h3&gt;
+
+&lt;p&gt;Use key ID i.e. &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt; as you got from earlier section and specify in these commands.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;git config --global user.signingkey BD496CEDB4686EF8&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;git config --global commit.gpgsign true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Above will let git know that the default key id to use in every signing commit is &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;, and you will be signing every commit by default.&lt;/p&gt;
+
+&lt;h3&gt;(for safety) Configure to Make it Work&lt;/h3&gt;
+
+&lt;p&gt;These commands might not be needed but for safety, I recommend to do it anyway to make it works.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit &lt;code&gt;~/.gnupg/gpg.conf&lt;/code&gt;, and add following to the file.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   default-key BD496CEDB4686EF8
+   no-tty
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will set the default key id to use, and another is to make auto-signed commit work with GUI software. In short, just add them.
+* Execute &lt;code&gt;git config --global gpg.program $(which gpg)&lt;/code&gt;. This will set which gpg program to use with git.&lt;/p&gt;
+
+&lt;h3&gt;Set to Make It Not Ask Passphraase All The Time&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;gpg-agent&lt;/code&gt; and &lt;code&gt;pinentry-mac&lt;/code&gt; via &lt;code&gt;brew install gpg-agent pinentry-mac&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Uncomment &lt;code&gt;use-agent&lt;/code&gt; line in &lt;code&gt;~/.gnupg/gpg.conf&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add the following lines into &lt;code&gt;~/.gnupg/gpg-agent.conf&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   use-standard-socket
+   pinentry-program /usr/local/bin/pinentry-mac
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Link pinentry and agent together by adding the following to &lt;code&gt;~/.bash_profile&lt;/code&gt; (or your case might be &lt;code&gt;~/.profile&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; -f ~/.gnupg/.gpg-agent-info -a -n &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pgrep gpg-agent&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.gnupg/.gpg-agent-info
+     &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;GPG_AGENT_INFO
+     &lt;span class=&quot;nv&quot;&gt;GPG_TTY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;tty&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;GPG_TTY
+   &lt;span class=&quot;k&quot;&gt;else
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Now whenever you do &lt;code&gt;git commit&lt;/code&gt;, it will ask for passphrase for the &lt;strong&gt;first&lt;/strong&gt; time only, save it to keychain, then next time it will automatically enter that for you in every commit.&lt;/p&gt;
+
+&lt;p&gt;You will have &lt;code&gt;verified&lt;/code&gt; status tagged along with each commit on Github.&lt;br&gt;
+Now go and get verified developers!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 11 Feb 2017 19:06:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/02/11/as-developers-you-dont-need-normal-social-account-verified-but-you-might-need-this-instead.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/02/11/as-developers-you-dont-need-normal-social-account-verified-but-you-might-need-this-instead.html</guid>
+        
+        <category>github</category>
+        
+        <category>social</category>
+        
+        <category>developers</category>
+        
+        <category>verify</category>
+        
+        <category>verified</category>
+        
+        <category>account</category>
+        
+        <category>git</category>
+        
+        <category>gpg</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>When I Let My Girlfriend Interacts With My WeChat Bot</title>
+        <description>&lt;p&gt;Since the time I&amp;#39;ve moved to Shenzhen, I experimented with WeChat bot and its platform quite enough to have some times to enjoy its moment.&lt;/p&gt;
+
+&lt;p&gt;During development of my WeChat Bot codenamed FKit, I chanaged its functionality to only shout out &amp;quot;i Love u&amp;quot; as I want my girlfriend to interact with it no matter the input message.&lt;/p&gt;
+
+&lt;p&gt;Here is what I captured the conversation she talked with my bot. I captured it via &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;&amp;#39;s web interface.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You might wonder how can I decrypt the message as it should be done via https and WeChat platform&amp;#39;s encryption. I can as I disable encryption during the time of development. Surely for production, encryption would be back on.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/1.png&quot; alt=&quot;fkit convo 1&quot;&gt;&lt;br&gt;
+She began with &lt;code&gt;test&lt;/code&gt; first.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/2.png&quot; alt=&quot;fkit convo 2&quot;&gt;&lt;br&gt;
+Then she followed up by calling me &lt;code&gt;stupid frog&lt;/code&gt; !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/3.png&quot; alt=&quot;fkit convo 3&quot;&gt;&lt;br&gt;
+She sent a sticker but my WeChat bot doesn&amp;#39;t support receiving this kind of message yet, thus it showed out as (translated to English) &lt;code&gt;not support message&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/4.png&quot; alt=&quot;fkit convo 4&quot;&gt;&lt;br&gt;
+Same to previously message.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/5.png&quot; alt=&quot;fkit convo 5&quot;&gt;&lt;br&gt;
+Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s fun time 😂&lt;/p&gt;
+
+&lt;h2&gt;Wanna Try?&lt;/h2&gt;
+
+&lt;p&gt;You can try out to receive &amp;quot;i Love u&amp;quot; if you need some love right now by scanning on the following QR Code.&lt;/p&gt;
+
+&lt;p&gt;Also if you open this article on WeChat app, you can just hold down on QR Code image below, then you will see option &amp;quot;Extract QR code&amp;quot;. It will take you to my WeChat bot account. Easy!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fkit/qrcode-fkit-wechat-bot.jpg&quot; alt=&quot;fkit qrcode&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;FKit Development&lt;/h2&gt;
+
+&lt;p&gt;FKit is on-going development of one of my experimental project and I&amp;#39;ll push more features into it to basically serve my needs as a foreigner living in China. More update will be updated on new blog post.&lt;/p&gt;
+
+&lt;h2&gt;Gotcha&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WeChat platform uses XML-based &lt;a href=&quot;http://admin.wechat.com/wiki/index.php?title=Common_Messages&quot;&gt;message format&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 28 Jan 2017 20:18:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/01/28/when-i-let-my-girlfriend-interact-with-wechat-bot.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/28/when-i-let-my-girlfriend-interact-with-wechat-bot.html</guid>
+        
+        <category>wechat</category>
+        
+        <category>bot</category>
+        
+        <category>ngrok</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Scripting in Blender</title>
+        <description>&lt;p&gt;I started to use Blender for one of my work for client. There&amp;#39;re times when I need to modify, fix, re-create UV, map mesh to texture, etc by myself without waiting for artist to do that.&lt;/p&gt;
+
+&lt;p&gt;As for automation that we can achieve it in &lt;a href=&quot;https://wasin.io/blog/2017/01/15/hands-on-fastlane.html&quot;&gt;iOS workflow via Fastlane&lt;/a&gt; especially in automated testing/building, I&amp;#39;m slightly surprised to see that it has potential to be done in Blender as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-python-script.png&quot; alt=&quot;Scripting in Blender&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Above is the result I got from executing python script right inside Blender to automatically &lt;strong&gt;create a new cube, rename its name, and move its location&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Technically you can execute python script with Blender&amp;#39;s GUI but Blender still runs in the background. Anyway I don&amp;#39;t do it in this article.&lt;/p&gt;
+
+&lt;h2&gt;Let&amp;#39;s Get Started&lt;/h2&gt;
+
+&lt;p&gt;Firstly remove a cube as shown on &lt;em&gt;3D View&lt;/em&gt; window, then you  choose a screen layout by clicking on &lt;em&gt;Choose Screen Layout&lt;/em&gt; button then select &lt;em&gt;Scripting&lt;/em&gt; as seen below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-choose-screen-layout.png&quot; alt=&quot;Choose Screen Layout&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To have such UI element shows up, you need to select the panel as &lt;em&gt;Info&lt;/em&gt; first as seen below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-panel-type.png&quot; alt=&quot;Panel Type&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you will get layout ready to script in python.&lt;/p&gt;
+
+&lt;p&gt;Enter code I shared on &lt;a href=&quot;https://gist.github.com/haxpor/198f6993a62a21279519fcd0fbb36726&quot;&gt;gist&lt;/a&gt;, or copy the following code to editor.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bpy&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;strVector3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# create a new cube&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;primitive_cube_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# newly created cube will be automatically selected&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selected_objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# change name&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyLittleCube&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# change its location&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# done&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Done creating MyCube at position &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strVector3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; with name &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then name the file to &lt;code&gt;blender_cube_creation.py&lt;/code&gt;. Finally, click on &lt;em&gt;Run Script&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-name-the-file-run-script.png&quot; alt=&quot;Name and run script&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you will see that Blender will create a new cube, select it, rename into &lt;code&gt;&amp;quot;MyLittleCube&amp;quot;&lt;/code&gt;, and translate to &lt;code&gt;(0.0, 5.0, 0.0)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Tips&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you hold mouse over each Blender&amp;#39;s UI element for a while, it will show a tool tip of python function that you can use it in the script.&lt;/li&gt;
+&lt;li&gt;Play around with each function in &lt;em&gt;Python Console&lt;/em&gt; window at the bottom before combining them up in full script.&lt;/li&gt;
+&lt;li&gt;To know how to do something in code for certain actions we did directly on Blender GUI, just do some actions on Blender first, then look at &lt;em&gt;Info&lt;/em&gt; window (on the top), you will see something like this for history of python functions called. Then you know which functions to call in python code.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/blender/blender-info-window.png&quot;&gt;&lt;img src=&quot;/assets/images/blender/blender-info-window.png&quot; alt=&quot;Blender Info Window with History&quot;&gt;&lt;/a&gt;&lt;br&gt;
+   &lt;sub&gt;Click on image to enlarge&lt;/sub&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Jan 2017 09:45:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/01/22/scripting-in-blender.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/22/scripting-in-blender.html</guid>
+        
+        <category>blender</category>
+        
+        <category>scripting</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Hands-On Fastlane</title>
+        <description>&lt;p&gt;I see the pain from colleagues I&amp;#39;ve worked with at the company I&amp;#39;ve contracted. The pain comes from on-demand build as requested from clients or even internal team.&lt;/p&gt;
+
+&lt;p&gt;Each building process requires significant time that can damage and waste the productivity of the team. Instead of investing time to do repeatitive task which could be used elsewhere.&lt;/p&gt;
+
+&lt;p&gt;I heard about &lt;em&gt;Fastlane&lt;/em&gt; for quite some time. Unfortunately, for myself I didn&amp;#39;t have a reasonable chance to use it to fasten my workflow as most of the time I work with the codebase alone. Thus I did some research and tested the tool to see how can we benefit from it.&lt;/p&gt;
+
+&lt;h2&gt;Fastlane&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fastlane.tools/&quot;&gt;Fastlane&lt;/a&gt; is an automated tools comprising of multiple sub-tools to help in each area of Apple App Development Workflow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-logo.png&quot; alt=&quot;Fastlane logo&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;What we&amp;#39;re going to do is to create a simple 2 pages iOS application. Each page can switch back and forth to each other. There are simple text fields and buttons on those pages. We&amp;#39;re going to test the following areas as provided by the tool&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Register application and manage certificate on Apple Developer Website&lt;/li&gt;
+&lt;li&gt;Run Tests and UI Tests&lt;/li&gt;
+&lt;li&gt;Take screenshots&lt;/li&gt;
+&lt;li&gt;Submit application to beta testers on Testflight&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means we will need to set up our Xcode project properly to have working storyboard, have Tests &amp;amp; UI Tests code, and localize the application for 3 languages (English, French, and Simplified Chinese). By all means to test Fastlane workflow.&lt;/p&gt;
+
+&lt;p&gt;Our interested areas to test seems to cover most of what normal use cases in development workflow could be. Let&amp;#39;s get into it.&lt;/p&gt;
+
+&lt;h2&gt;Install Fastlane&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;m using macOS &lt;code&gt;10.12.3 Beta&lt;/code&gt; as a testing system, along with Xcode &lt;code&gt;8.2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now install Fastlane by executing &lt;code&gt;sudo gem install fastlane&lt;/code&gt;.
+As of this writing, version is &lt;code&gt;2.5.0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Check the installation result by executing &lt;code&gt;fastlane --version&lt;/code&gt;, you should be able to see something similar to this.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;fastlane installation at path:
+/usr/local/lib/ruby/gems/2.2.0/gems/fastlane-2.5.0/bin/fastlane
+-----------------------------
+fastlane 2.5.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Create a Testing iOS Project&lt;/h2&gt;
+
+&lt;p&gt;We need to create a testing iOS project first.&lt;/p&gt;
+
+&lt;p&gt;Now create a new iOS project with project type &amp;quot;Single View Application&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-create-project-1.png&quot; alt=&quot;create a new project with single view application type&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, enter &lt;em&gt;Product Name&lt;/em&gt;, and tick to enable &lt;em&gt;Include Unit Tests&lt;/em&gt; and &lt;em&gt;Include UI Tests&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-create-project-2.png&quot; alt=&quot;set new project options&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Set up your storyboard to be similar to the following. Only for 2nd &lt;code&gt;UIViewController&lt;/code&gt; in which you need to assign its class to &lt;code&gt;ViewController.swift&lt;/code&gt; as we will link a button click later.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ios-storyboard.png&quot; alt=&quot;storyboard setup&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;We need to link button of first &lt;code&gt;UIViewController&lt;/code&gt; to show second &lt;code&gt;UIViewController&lt;/code&gt; modally. This can be easily done by holding &lt;code&gt;Ctrl&lt;/code&gt; then clicking on the button, dragging it to second &lt;code&gt;UIViewController&lt;/code&gt; then finally releasing the mouse button. It will show a pop-up asking which way you&amp;#39;re going to present it. Select &amp;quot;Present Modally&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ios-storyboard-present-modally.png&quot; alt=&quot;storyboard-present-modally&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Linking a button on second &lt;code&gt;UIViewController&lt;/code&gt; needs a little bit of effort. You need to display Assistant Editor by hitting &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;Delete&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;Linking a button for its clicking action by holding down &lt;code&gt;Ctrl&lt;/code&gt; button then clicking on the button and draggraing it onto the empty space of &lt;code&gt;ViewController.swift&lt;/code&gt; file. The source code of &lt;code&gt;ViewController.swift&lt;/code&gt; should have the following&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Dispose of any resources that can be recreated.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClickBackButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dismiss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+            &lt;span class=&quot;kt&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;completed dismiss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With all these, we have basic UI elements that we need and each page can present another page; back and forth.&lt;/p&gt;
+
+&lt;h2&gt;Localize iOS Application&lt;/h2&gt;
+
+&lt;p&gt;Click on project name and add &lt;em&gt;Simplified Chinese&lt;/em&gt;, and &lt;em&gt;French&lt;/em&gt; for our additional localized language while &lt;em&gt;English&lt;/em&gt; is the main development language.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/project-setup-localization.png&quot; alt=&quot;project set up for localization&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now when you look at the &lt;em&gt;Project navigator&lt;/em&gt; panel on the left, and click to expand main storyboard file. You will see something like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/expanded-main-storyboard-file.png&quot; alt=&quot;expanded main storyboard file&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on each language one by one to edit its translated text for UI elements which are labels, and buttons that we have on our storyboard. Feel free to just use Google translator service or any service you have. But don&amp;#39;t just lazily put English text in it for all languages, we will see real result of this later after we run Fastlane.&lt;/p&gt;
+
+&lt;h2&gt;Add Tests &amp;amp; UI Tests&lt;/h2&gt;
+
+&lt;p&gt;Before we proceed to using Fastlane tool. We will create Tests and UI Tests first. This will be used as part of Fastlane Workflow.&lt;/p&gt;
+
+&lt;h3&gt;Tests&lt;/h3&gt;
+
+&lt;p&gt;For simplicity as we don&amp;#39;t really have meaningful things to test, we just assert for true. You should have code as follows in &lt;code&gt;FastlaneTestTests.swift&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTest&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;@testable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FastlaneTest&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FastlaneTestTests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTestCase&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Put setup code here. This method is called before the invocation of each test method in the class.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Put teardown code here. This method is called after the invocation of each test method in the class.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// This is an example of a functional test case.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Use XCTAssert and related functions to verify your tests produce the correct results.&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;UI Tests&lt;/h3&gt;
+
+&lt;p&gt;Not only for testing purpose but UI Tests is also the building block to automate taking screenshots as part of Fastlane workflow. Thus we will add real testing code here.&lt;/p&gt;
+
+&lt;p&gt;Inside &lt;code&gt;FastlaneTestUITests.swift&lt;/code&gt;, add the following functions for each UI test case.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testUsernameIsWasin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstnametextfieldTextField&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;firstNameTextField&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;typeText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;wasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;usernameWasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testLastnameIsThonkaew&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastnametextfieldTextField&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lastNameTextField&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;typeText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;thonkaew&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;thonkaew&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lastnameWasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testShowNewPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;backButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// backbutton should not exist&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;openButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;openButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;openButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// query back button again&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;backButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// check exists&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;newpage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can notice above that why we know which name should be used in referring to text field, and buttons. This is the benefit from setting the names of UI element in &lt;em&gt;Accessibility&lt;/em&gt; section of &lt;em&gt;Identify Inspector&lt;/em&gt; panel.&lt;/p&gt;
+
+&lt;p&gt;You set following names&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;firstNameTextField&lt;/code&gt; - to first text field of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lastNameTextField&lt;/code&gt; - to second text field of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;openButton&lt;/code&gt; - to open button of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;backButton&lt;/code&gt; - to back button of second &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also make sure that &lt;em&gt;Accessibility&lt;/em&gt; is ticked as Enabled.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/setting-names-in-accessibility.png&quot; alt=&quot;setting names in accessibility&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This is important as it will allow us to access UI element in UI test code by name.&lt;/p&gt;
+
+&lt;p&gt;In additional, testing code is self-explained to what we&amp;#39;re trying to achieve too. If you&amp;#39;re not sure what it does, take some times, and read the code above.&lt;/p&gt;
+
+&lt;h2&gt;Integrate Fastlane with XCode Project&lt;/h2&gt;
+
+&lt;p&gt;Now it&amp;#39;s a core part.&lt;/p&gt;
+
+&lt;p&gt;We are going to initialize Fastlane tool, edit the configuration file, and run it to automate our workflow.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Go to XCode project folder in command line via &lt;code&gt;cd ~/FastlaneTest&lt;/code&gt;. This assumes that I&amp;#39;ve created XCode project at &lt;code&gt;~/&lt;/code&gt; which is my user directory. Inside &lt;code&gt;FastlaneTest&lt;/code&gt; directory, you will see your &lt;code&gt;FastlaneTest.xcodeproj&lt;/code&gt; file.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Execute &lt;code&gt;fastlane init&lt;/code&gt; to initialize Fastlane.
+This will create a directory &lt;code&gt;fastlane&lt;/code&gt; at &lt;code&gt;~/FastlaneTest&lt;/code&gt; with necessary files Fastlane needs inside.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;FastFile&lt;/h3&gt;
+
+&lt;p&gt;Time to configure &lt;code&gt;FastFile&lt;/code&gt;.
+As of version &lt;code&gt;2.5.0&lt;/code&gt;, the initial configuration file covers most of the things we need already. We just need to modify and add something.&lt;/p&gt;
+
+&lt;p&gt;Add the following code inside &lt;code&gt;platform :ios do&lt;/code&gt; after 
+&lt;code&gt;before_all do ... end&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Upload app to iTunes connect&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itunes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;produce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'MyFastlaneTestApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'English'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app_version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0.1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'c26e587b3fb756491e3c15aa'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Take screenshots of the App&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;screenshots&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;snapshot&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can execute &lt;code&gt;openssl rand -hex 12&lt;/code&gt; to get randomized hexadecimal string to use as &lt;code&gt;sku&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;and modify &lt;code&gt;lane :beta&lt;/code&gt; to be as follows&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Submit a new Beta Build to Apple TestFlight&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;This will also make sure the profile is up to date&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;beta&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# match(type: &quot;appstore&quot;) # more information: https://codesigning.guide&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cert&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sigh&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;gym&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Build your app - more options available&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pilot&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# sh &quot;your_script.sh&quot;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# You can also use other beta testing services here (run `fastlane actions`)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fastlane consists of multiple lanes to be configured and used. Notice &lt;code&gt;lane :&amp;lt;name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;itunes&lt;/code&gt; - create a new application on iTunes connect for us before we will release a new build for beta users, or submit to App Store.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;screenshots&lt;/code&gt; - take screenshots of application while running. This will be carried out at the same time of UI Tests.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;beta&lt;/code&gt; will submit a new beta build to TestFlight but it will also check certification and provision profile first that they are up-to-date.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If need, you can grab my &lt;code&gt;FastFile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Snapfile&lt;/h3&gt;
+
+&lt;p&gt;In order to take snapshot (or taking screenshots) of application while running automatically, you need to configure &lt;code&gt;Snapfile&lt;/code&gt; but that file is not there inside &lt;code&gt;fastlane&lt;/code&gt; directory initially.&lt;/p&gt;
+
+&lt;p&gt;We need to initialize it first by executing &lt;code&gt;fastlane snapshot init&lt;/code&gt; at our XCode project directory (which is &lt;code&gt;~/FastlaneTest&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It will create &lt;code&gt;Snapfile&lt;/code&gt; for us, along with other setting up files. Result of executing such command, you will see&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;Successfully created SnapshotHelper.swift &lt;span class=&quot;s1&quot;&gt;'./fastlane/SnapshotHelper.swift'&lt;/span&gt;
+Successfully created new Snapfile at &lt;span class=&quot;s1&quot;&gt;'./fastlane/Snapfile'&lt;/span&gt;
+-------------------------------------------------------
+Open your Xcode project and make sure to &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;the following:
+1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add a new UI Test target to your project
+2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add the ./fastlane/SnapshotHelper.swift to your UI Test target
+   You can move the file anywhere you want
+3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Call &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;setupSnapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; when launching your app
+
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;app &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; XCUIApplication&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+  setupSnapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  app.launch&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;snapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0Launch&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; to wherever you want to create the screenshots
+
+More information on GitHub: https://github.com/fastlane/fastlane/tree/master/snapshot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You need to follow step 2, and 3 as shown on console above to properly hook things UI Tests with taking screenshots. Notice that we&amp;#39;ve already done step 1. We are going to do step 4 next.&lt;/p&gt;
+
+&lt;p&gt;Now modify the file to have the following code.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Uncomment the lines below you want to change by removing the # in the beginning&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# A list of devices you want to take the screenshots from&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 6&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 6 Plus&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;&quot;iPad Pro (12.9 inch)&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   &quot;iPad Pro (9.7 inch)&quot;,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   &quot;Apple TV 1080p&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;languages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;fr-FR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;zh-Hans&quot;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#[&quot;pt&quot;, &quot;pt_BR&quot;] # Portuguese with Brazilian locale&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# The name of the scheme which contains the UI Tests&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;scheme&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;FastlaneTestUITests&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Where should the resulting screenshots be stored?&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;output_directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./screenshots&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;clear_previous_screenshots&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# remove the '#' to clear all previously generated screenshots before creating new ones&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Choose which project/workspace to use&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;project&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./FastlaneTest.xcodeproj&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# workspace &quot;./Project.xcworkspace&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# launch_arguments([&quot;-favColor red&quot;])&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# For more information about all available options run&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# snapshot --help&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That means we will do UI Tests (thus taking screenshots) on 4 devices for 3 languages for scheme name &lt;code&gt;FastlaneTestUITests&lt;/code&gt;, and output result screenshots at &lt;code&gt;./screenshots&lt;/code&gt;. It operates on our &lt;code&gt;./FastlaneTest.xcodeproj&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If need, you can grab my &lt;code&gt;Snapfile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Run Fastlane&lt;/h2&gt;
+
+&lt;p&gt;We&amp;#39;re all ready now. Phew! It&amp;#39;s quite an effort.
+Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
+
+&lt;p&gt;We have following commands (lanes) for Fastlane to run.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane itunes&lt;/code&gt; - create application on iTunes Connect Website according to basic information we provide.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; - test application. It will prompt you with options to choose from whether you want to just test running application, run tests, or run ui tests.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastlane screenshot&lt;/code&gt; - take screenshots as well as running UI Tests at the same time. Screenshots will be writen into &lt;code&gt;screenshots&lt;/code&gt; directory inside XCode project directory.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastlane beta&lt;/code&gt; - submit an application to beta TestFlight. It will take care certificate and provisioning profile for us too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Results&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane itunes&lt;/code&gt; is good enough that it will wait until application data is created on iTunes Connect website&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-itunes-result.png&quot; alt=&quot;fastlane itunes waiting&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane screenshots&lt;/code&gt; will run UI Tests and take screenshots. Look inside &lt;code&gt;screenshots&lt;/code&gt; directory inside XCode project directory, you will see 3 directories for each language we&amp;#39;ve set. Result screenshots are there.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-screenshots.png&quot; alt=&quot;fastlane screenshots&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-screenshots-result.png&quot; alt=&quot;fastlane ui tests result&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;See its overall reporting of screenshots taken specifically at 3 particular times during flow of UI on iPhone5 (4-inch), iPhone6(4.7-inch), iPhone6Plus(5.5-inch), and iPad Pro(12.9-inch) each with 3 languages on latest iOS 10.2; total in 3x3x4=36 screenshots &lt;a href=&quot;/assets/htmls/fastlane-screenshots/screenshots.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane beta&lt;/code&gt; while uploading a build to TestFlight&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-beta-testing-upload.png&quot; alt=&quot;fastlane TestFlight uploading&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;and successfully uploaded application during beta testing stage&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-beta-testing-upload.png&quot; alt=&quot;fastlane application on TestFlight app&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; result&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ui-tests-result.png&quot; alt=&quot;fastlane test result&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; in action&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ui-tests.gif&quot; alt=&quot;fastlane test in action&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;What&amp;#39;s Next?&lt;/h2&gt;
+
+&lt;p&gt;We can put all those commands into a shell script file thus to be executed on build server as part of CI process. I believe this will let developers sit back and be more productive on making application, not to waste time on tasks that can be automated.&lt;/p&gt;
+
+&lt;p&gt;Thus next step is to review and see which existing tech stack the team currently has, then integrate &amp;amp; modify Fastlane to suit the need and use case.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Jan 2017 18:41:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/01/15/hands-on-fastlane.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/15/hands-on-fastlane.html</guid>
+        
+        <category>ios</category>
+        
+        <category>fastlane</category>
+        
+        <category>automation</category>
+        
+        <category>integration</category>
+        
+        <category>script</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>2016 Year In Review</title>
+        <description>&lt;p&gt;I&amp;#39;ve started writing for my year in review since 2014. You can read it in &lt;a href=&quot;https://medium.com/@haxpor/2014-year-in-review-8d90fced9918#.dh1jw5dbs&quot;&gt;2014&lt;/a&gt;, and &lt;a href=&quot;https://medium.com/@haxpor/2015-year-in-review-7f74b72161df#.e2wl20bu0&quot;&gt;2015&lt;/a&gt;. Anyway, you won&amp;#39;t find any more writing pieces from me on other writing platform i.e. Medium, it&amp;#39;s only this place from now on.&lt;/p&gt;
+
+&lt;h2&gt;What Went Well This Year&lt;/h2&gt;
+
+&lt;h3&gt;Balance Reality and Dream/Goals&lt;/h3&gt;
+
+&lt;p&gt;I went all-in with making mobile games for several years. It didn&amp;#39;t pan out that great in terms of financially independence. Thus I changed the approach and balanced accepting client&amp;#39;s work/contracting and doing my own IP thing. I released &lt;a href=&quot;https://wasinbot.wasin.io/&quot;&gt;WasinBot&lt;/a&gt;, and started Locpeed, and FKit. I will write more about those latter two things for future post.&lt;/p&gt;
+
+&lt;p&gt;I think the important things is you need to find the most healthy way you&amp;#39;re happy to go along. But try first for what you believe, then adapt and change course a little bit by little bit. Shaping direction gradually will let you see what works, or what doesn&amp;#39;t. It&amp;#39;s for long term and healthy balanced way. &lt;/p&gt;
+
+&lt;h3&gt;Write More&lt;/h3&gt;
+
+&lt;p&gt;I gave up on wordpress and editing post via web interface. After I experienced composing a new post in Jekyll hooked up with automatic build process every time there&amp;#39;s a new post pushed into master branch which set up via webhook on Github; all in Markdown language, I just love this approach more than former. At first, it started as an experiment whether I will be liking it or not. Not so long until I really love it.&lt;/p&gt;
+
+&lt;p&gt;Thus this means my website is auto-generated every time I push a new post into main branch. I wrote more than ever, and really enjoy going back to write more as I love its &lt;em&gt;workflow&lt;/em&gt; so much. So I think it&amp;#39;s about &lt;em&gt;aesthetic&lt;/em&gt;, not &lt;em&gt;convenience&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Decision Making&lt;/h3&gt;
+
+&lt;p&gt;Long ago I&amp;#39;m always defer the decision making to be later and later until I would get more information. But as I&amp;#39;m older, I know there&amp;#39;s not a chance for such information to be fulfilled. It&amp;#39;s just enough and coverage what you need to know, or else. I&amp;#39;m getting better at this. Either personal, or business. Faster in making decision. Better outcome / consequence as I stick to what I chose.&lt;/p&gt;
+
+&lt;h3&gt;Support Family&lt;/h3&gt;
+
+&lt;p&gt;Year before 2016, it&amp;#39;s my sister that almost contributes to supporting our family. I don&amp;#39;t really have money to contribute as my mobile game is not published yet. After I changed my approach, and decided to do something about it. I can contribute to my family for 7 months by now in this year. If something didn&amp;#39;t work out as expect, just gradually change its course, and work further on that. Outcome would likely change. You just adapt.&lt;/p&gt;
+
+&lt;h3&gt;Get Uncomfortable&lt;/h3&gt;
+
+&lt;p&gt;If it&amp;#39;s not a task given from the company I&amp;#39;m currently on contracting basis, I would be just touching the surface of web development for my own project. The good thing about doing such task to serve client is that you get to learn and know bunch of things at hand. I learned more about CSS, AngularJS/Angular 2, ionic1/ionic2, build tools out there, NPM, and the way web developers do thing. It&amp;#39;s so huge in this world but I just pick ones that suit my needs and not all-in jump into using new shiny libraries, it&amp;#39;s not necessary.&lt;/p&gt;
+
+&lt;p&gt;The point is I&amp;#39;ve tapped into the zone I&amp;#39;m not familar with. This gave me strength, and benefit back to my own IP projects.&lt;/p&gt;
+
+&lt;h3&gt;Contribte to Open Source Projects&lt;/h3&gt;
+
+&lt;p&gt;Number of contributions in this year&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/github/stats-2016.png&quot; alt=&quot;Number of github contributions&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I contributed to open source projects of others or myself in this year in terms of code, issues reporting, and document modification as follows (for notable ones)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/UPU&quot;&gt;UPU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ken39arg/cs-Dumper/issues/1&quot;&gt;cs-Dumper - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/aryaxt/OCMapper/issues/55&quot;&gt;OCMapper - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/aryaxt/OCMapper/issues/55&quot;&gt;ionic-cli - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic/issues/8926&quot;&gt;ionic - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic-app-scripts/issues/245&quot;&gt;ionic-app-scripts - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic-app-lib/pull/128&quot;&gt;ionic-app-lib - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lindell/JsBarcode/issues/114&quot;&gt;JsBarcode - issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/basejit&quot;&gt;basejit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;What Didn&amp;#39;t Go So Well This Year&lt;/h2&gt;
+
+&lt;h3&gt;Accept Too Many Clients&amp;#39; Works&lt;/h3&gt;
+
+&lt;p&gt;I accepted too many clients&amp;#39; works thus leave me no time to finish it.
+There&amp;#39;s a time when I need to cancel the project during the mid of development, and a time when I started initially but never continue and finish it.&lt;/p&gt;
+
+&lt;h2&gt;Check List Since Last Year&lt;/h2&gt;
+
+&lt;p&gt;What Improved&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Acquire Several Skills&lt;/li&gt;
+&lt;li&gt;Better Negotiation Skill&lt;/li&gt;
+&lt;li&gt;Do More Side Projects&lt;/li&gt;
+&lt;li&gt;Study More Doctrine&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What Didn&amp;#39;t Get Improved&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fast Implementation of Any Task&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;What Am I Working Towards?&lt;/h2&gt;
+
+&lt;h3&gt;Balance Number of Clients&amp;#39; Works&lt;/h3&gt;
+
+&lt;p&gt;I need to be more careful before accepting any new work. I need to finish the current projects at hands first before accepting new one. That means being aware of period for finishing project, or seeking for potential client then accepting a new work.&lt;/p&gt;
+
+&lt;h3&gt;Continue Maintaining Habit&lt;/h3&gt;
+
+&lt;p&gt;As usual, habit is the key. Continue doing task at the scheduled time in every day is good for me.&lt;/p&gt;
+
+&lt;h3&gt;Contribute More on Open Source Projects&lt;/h3&gt;
+
+&lt;p&gt;The major contribution in this year for me is &lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt; by migrating its Swift 2 code to 3, and included with step-by-step on how to build the project. This contribution really ignite my inner energy to contribute more to various open source projects. Having seen people could take benefit from such project is a blessing for me. Potatso is great as it&amp;#39;s an iOS client used to connect to Shadowsocks proxy mainly used when you access outside website from within China mainland. I expect myself to contribute to open source projects more.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;So that&amp;#39;s it for this year in review.
+All the best for you guys too, for a great start of 2017.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Jan 2017 02:56:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/01/02/2016-year-in-review.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/02/2016-year-in-review.html</guid>
+        
+        <category>review</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>How to Verify GPG Signature via Command-line</title>
+        <description>&lt;p&gt;A time came when before clicking to download a software to install on machine, the hint message might tell you &lt;a href=&quot;https://github.com/shadowsocksr/ShadowsocksX-NG/releases/tag/1.3.8-R8-build5&quot;&gt;&lt;em&gt;&amp;quot;After download you must check the GPG signature.&amp;quot;&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That might be a little bit of scary. But that&amp;#39;s a must if that certain kind of software you&amp;#39;re going to install is network-based and you will be using it almost all the time.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;#39;s see how can we verify such GPG signature.&lt;/p&gt;
+
+&lt;p&gt;In this case, we&amp;#39;re going to use &lt;code&gt;gpg&lt;/code&gt; application to do the work for us for an example to install ShadowsockX macOS client. Let&amp;#39;s go down to step by step.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install GPG via &lt;code&gt;brew install gpg&lt;/code&gt; on macOS.&lt;/li&gt;
+&lt;li&gt;If you want to verify such GPG signature from unknown source but you trust them, usually you need to import their public GPG key. Go to grab their &lt;a href=&quot;https://github.com/qinyuhang/Pubkey&quot;&gt;public key&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Save their public key into file and name it &lt;code&gt;key.sig&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;gpg --import key.sig&lt;/code&gt;. Assume that you are at the location of the file.&lt;/li&gt;
+&lt;li&gt;Now you&amp;#39;re ready to verify GPG signature. Download its GPG signature of the target file you want to download. It&amp;#39;s &lt;a href=&quot;https://github.com/shadowsocksr/ShadowsocksX-NG/releases/download/1.3.8-R8-build5/ShadowsocksX-NG-R8.dmg.sig&quot;&gt;here&lt;/a&gt;. Download it as &lt;code&gt;verify.sig&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;gpg --verify verify.sig ShadowsockX-NG-R8.dmg&lt;/code&gt;&lt;br&gt;
+Remember to start with signature file first, before the name of target file to verify.&lt;/li&gt;
+&lt;li&gt;That&amp;#39;s it. If verification goes well, you should see output similar to this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   gpg: Signature made Sat Dec 24 10:27:07 2016 CST using RSA key ID 73EB5E11
+   gpg: Good signature from &lt;span class=&quot;s2&quot;&gt;&quot;YuhangQin (Sign SSR-NG-R) &amp;lt;qinyuhangxiaoxiang@gmail.com&amp;gt;&quot;&lt;/span&gt;
+   gpg: WARNING: This key is not certified with a trusted signature!
+   gpg:          There is no indication that the signature belongs to the owner.
+   Primary key fingerprint: AAAA BBBB CCCC DDDD 00C6  3326 2A45 A972 73EB 5E11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Done.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 27 Dec 2016 19:19:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2016/12/27/how-to-verify-gpg-signature-via-command-line.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/27/how-to-verify-gpg-signature-via-command-line.html</guid>
+        
+        <category>ubuntu</category>
+        
+        <category>gpg</category>
+        
+        <category>signature</category>
+        
+        <category>command</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>How to Enable Fast TCP Open on Ubuntu</title>
+        <description>&lt;h2&gt;What TFO Solve&lt;/h2&gt;
+
+&lt;p&gt;I got suggestion to enable Fast TCP Open (TFO) from a guy named &lt;em&gt;Leonard Woo&lt;/em&gt; from &lt;a href=&quot;https://telegram.me/joinchat/BT0c4z49OGNZXwl9VsO0uQ&quot;&gt;Potatso Telegram User Group&lt;/a&gt; to possibly gain more speed on using Shadowsocks as I experienced a slowdown these couple of days.&lt;/p&gt;
+
+&lt;p&gt;TFO is one of &lt;a href=&quot;https://en.wikipedia.org/wiki/TCP_congestion_control&quot;&gt;congestion control algorithms&lt;/a&gt; of TCP connection out there. What TFO solves is about reducing RTT (round-trip-time) from handshaking that TCP connection normally needs. Citing from &lt;a href=&quot;https://www1.icsi.berkeley.edu/%7Ebarath/papers/tfo-conext11.pdf&quot;&gt;research paper&lt;/a&gt; which states that it can gain about 10% or in some cases up to 40%.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/result-tfo-research-paper.png&quot; alt=&quot;result of speed gain of TFO&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;How to Enable on Ubuntu&lt;/h2&gt;
+
+&lt;p&gt;You need to have linux kernel at least 3.7.&lt;br&gt;
+You can check via &lt;code&gt;uname -r&lt;/code&gt;, it will give the result similar to following.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;3.13.0-24-generic
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then follow the following steps to enable Fast TCP Open&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; and add the following line to its end of file&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   net.ipv4.tcp_fastopen &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Save a file.&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;sysctl -p&lt;/code&gt; to make it taken into effect.&lt;/li&gt;
+&lt;li&gt;Make it permanent even after rebooting system by adding the following line into &lt;code&gt;/etc/rc.local&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;3 &amp;gt; /proc/sys/net/ipv4/tcp_fastopen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;But What&amp;#39;s About Browser?&lt;/h2&gt;
+
+&lt;p&gt;At first I thought that too that you have to have browser that supports TFO. But I consulted &lt;em&gt;Leonard Woo&lt;/em&gt; and he said that it&amp;#39;s &lt;strong&gt;Single side&lt;/strong&gt;. That means only one side of the connection needs to enable TFO.&lt;/p&gt;
+
+&lt;p&gt;My understanding went through that you don&amp;#39;t need TFO-enabled browser, but you need server provider to enable it. But if service provider doesn&amp;#39;t enable TFO, your browser needs to have and enable it to gain benefit from what can give by TFO.&lt;/p&gt;
+
+&lt;p&gt;I checked on server side via 2 methods as stated in Monitoring Section in this &lt;a href=&quot;https://bradleyf.id.au/nix/shaving-your-rtt-wth-tfo/&quot;&gt;article&lt;/a&gt;. Result is TFOConnection is there, and no failure! Thus it confirms what he said.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;ip tcp_metrics&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/fo_cookie.png&quot; alt=&quot;fo_cookie&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;grep &amp;#39;^TcpExt:&amp;#39; /proc/net/netstat | cut -d &amp;#39; &amp;#39; -f 87-92  | column -t&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/tfo-fastopen-active.png&quot; alt=&quot;tfo metrics&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Both result above confirm that it&amp;#39;s a legit TFO connection.&lt;/p&gt;
+
+&lt;p&gt;I will be testing this set up for a couple days to see if I can gain such speed improvement (actually it&amp;#39;s pretty difficult to tell as Internet speed through proxy/vpn is not stable from within China). But anyway, above is the way to enable it.&lt;/p&gt;
+
+&lt;h2&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bxl.pm/8602.html&quot;&gt;Shadowsocks - TCP Fast Open&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 26 Dec 2016 11:35:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2016/12/26/how-to-enable-fast-tcp-open-on-ubuntu.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/26/how-to-enable-fast-tcp-open-on-ubuntu.html</guid>
+        
+        <category>ubuntu</category>
+        
+        <category>tfo</category>
+        
+        <category>tcp</category>
+        
+        <category>server</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>SSH Key-based Authentication on Ubuntu</title>
+        <description>&lt;h2&gt;What Catches Me On&lt;/h2&gt;
+
+&lt;p&gt;I still remember the very first time I log in to DigitalOcean server. I don&amp;#39;t have to enter password.
+At first, it feels something fishy going on behind the scene. I thought why they do something like this, the security is not on par.&lt;/p&gt;
+
+&lt;p&gt;That was because I don&amp;#39;t have much experience on key-based authentication just yet. But later I found out that actually that kind of set up is highly secured.&lt;/p&gt;
+
+&lt;p&gt;The concept is you map the client to target server via public-private key pair of RSA. This means only a particular client can connect to server.
+By doing this, we disable normal SSH login with password. This increases security at the same time.&lt;/p&gt;
+
+&lt;h2&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;On client system, execute &lt;code&gt;ssh-keygen -t rsa&lt;/code&gt; to generate key. The key will be located at &lt;code&gt;~/.ssh/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Copy public key from clien system to target server by &lt;code&gt;ssh-copy-id root@target-host.com&lt;/code&gt;; assume that &lt;code&gt;target-host.com&lt;/code&gt; is your server&amp;#39;s domain name. This command will copy public key to target server under specified username&amp;#39;s directory.&lt;/li&gt;
+&lt;li&gt;Now on client system, you can try log in via &lt;code&gt;ssh root@target-host.com&lt;/code&gt;. It will prompt for passphase (if you enter it during step 1.).&lt;/li&gt;
+&lt;li&gt;(optional) If you don&amp;#39;t want to enter passphase every time, you can use &lt;code&gt;keychain&lt;/code&gt; to solve the problem by following the steps as below.
+
+&lt;ul&gt;
+&lt;li&gt;Execute &lt;code&gt;sudo apt-get install keychain&lt;/code&gt; to install &lt;code&gt;keychain&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;keychain id_rsa&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Execute
+&lt;code&gt;shell
+. ~/.keychain/`uname -n`-sh
+&lt;/code&gt;&lt;br&gt;
+You shoul add the last two commands into &lt;code&gt;~/.bashrc&lt;/code&gt;. So that it will take effect every time you log in and even rebooting.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Resource&lt;/h2&gt;
+
+&lt;p&gt;I reference the steps above from the following links&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/SSH/OpenSSH/Keys&quot;&gt;SSH/OpenSSH/Keys on Ubuntu&lt;/a&gt; : contains the steps on how to set up key-based authentication on Ubuntu&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/QuickTips&quot;&gt;QuickTips - Tip#3 Keychain - Manage ssh keys&lt;/a&gt; : contains tip to manage ssh keys via keychain without having to enter passphase every time.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 21 Dec 2016 09:07:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2016/12/21/ssh-key-based-authentication-on-ubuntu.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/21/ssh-key-based-authentication-on-ubuntu.html</guid>
+        
+        <category>ubuntu</category>
+        
+        <category>ssh</category>
+        
+        <category>authentication</category>
+        
+        <category>key</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
   </channel>
 </rss>

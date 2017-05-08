@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+  <script type="text/javascript" src="/assets/app.js"></script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Set up and Verify Applications and Terminal Commands to Work Reliably with Proxy on macOS and Linux</title>
+    <meta name="description" content="I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
+">
+
+    <link rel="canonical" href="http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html">
+    <link rel="stylesheet" href="/css/vendor/weui.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="
+https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"></script>
+	<script type="text/javascript">mermaid.initialize({startOnLoad:true});</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <div class="wrapper">
+    <a class="site-title-white-bold" href=""/>Wasin</a><a class="site-title" href="/">'s Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon" id="hamburgerBtn" onClick="if (window.getComputedStyle(this).getPropertyValue('display') != 'none') { showMainPagePicker('http://dashboard.wasin.io'); }">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        <a class="page-link" href="http://dashboard.wasin.io">Back to Dashboard</a>
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Set up and Verify Applications and Terminal Commands to Work Reliably with Proxy on macOS and Linux</h1>
+    <p class="post-meta">Mar 14, 2017</p>
+  </header>
+
+  <article class="post-content">
+    <p>If you live behind firewall i.e. <a href="https://en.wikipedia.org/wiki/Great_Firewall">GFW</a> and interact with terminal commands a lot in day-to-day basis and of course surfing Internet, I believe you usually utilize proxy to carry on your request in Internet world.</p>
+
+<p>Without a doubt, verifying that those applications espcially browser and commands behave as you set and expect it to be is crucial. Wasting hours in waiting for return from <code>npm install</code> command, or even <code>git clone &lt;project-url&gt;</code> for project with huge amount of files but not necessary in bigger size without knowing whether it&#39;s going to succeed or not is not a good way to ruin your productive day. Leave alone seeing result from non-working proxy setup on browser, athough it&#39;s immediate and a lot faster to troubleshoot but it is also applied.</p>
+
+<p>Thus this time, I think it&#39;s a good idea to sit down and make sure those applications and commands works reliably with proxy setup (by any mean).</p>
+
+<h2>Proxy Setup</h2>
+
+<p>Your proxy setup can be anything. It just needs to be a middle man between you and destination, and acts as a gatekeeper to forward your request to destination in which destination will not know that such request is coming from you but proxy itself.</p>
+
+<p>We&#39;re interested in <strong>HTTP/HTTPs</strong>, and <strong>SOCKS5</strong> proxy.</p>
+
+<p>There&#39;re bunch of options to setup proxy. It can be Shadowsocks (which operates on HTTP, and SOCKS5 proxy), or just normal HTTP proxy (several out there such as <a href="https://www.charlesproxy.com/">Charles Proxy</a>, <a href="https://tinyproxy.github.io/">TinyProxy</a>, etc).</p>
+
+<p>Solution presented in this writing aims for macOS, and Linux.</p>
+
+<p>For my case, I&#39;m on macOS <code>10.12.4</code>, with Shadowsock proxy set up. This mean my local machine provides HTTP, and SOCKS5 proxy. So I have options to either set proxy to use HTTP, or SOCKS5.</p>
+
+<h2>Set up to Use Proxy for UI-based applications</h2>
+
+<p>Although not limited to browser, it is a prime example of this kind of application.<br>
+Let&#39;s proceed with Chrome as it&#39;s widely used, and is a top choice to debug and work with by developers. It should be very similar steps for other variant of browsers as well.</p>
+
+<p>Press <code>Cmd</code> + <code>,</code> or enter <code>chrome://settings</code> to open Settings.<br>
+Find <code>Network</code> section, and click on <code>Change proxy settings...</code></p>
+
+<p><img src="/assets/images/14/chrome-network-settings.png" alt="Chrome Network Settings"></p>
+
+<p>Then you will see a dialog window similar to below.</p>
+
+<p><img src="/assets/images/14/set-chrome-http-proxy.png" alt="Set Chrome HTTP Proxy"></p>
+
+<p>as my proxy on local machine provides HTTP, and SOCKS5, then I set it via</p>
+
+<ul>
+<li><p><strong>Web Proxy (HTTP)</strong> - <code>127.0.0.1</code> with port <code>1087</code><br>
+Check your port according to your proxy setup. In this case, it&#39;s <code>1087</code>.</p></li>
+<li><p><strong>Secure Web Proxy (HTTPS)</strong> - <code>127.0.0.1</code> with port <code>1087</code><br>
+My proxy doesn&#39;t provide HTTPS thus I set it to just normally use what it provides in HTTP. So this means it will forward HTTPS request to HTTP one.</p>
+
+<blockquote>
+<p>Personally, I don&#39;t think we really need HTTPS for local proxy stuff as it waste time and resource on doing handshake, encryption and decryption in which we don&#39;t really need it if we know we are on the secure side. Of course proxy will handle secure request after that (if we browse or request to secure site).</p>
+</blockquote></li>
+<li><p><strong>SOCKS Proxy</strong> - <code>127.0.0.1</code> with port <code>1086</code><br>
+Check your port according to your proxy setup. In this case, it&#39;s <code>1086</code>.</p></li>
+</ul>
+
+<p>We&#39;re done.</p>
+
+<p>We will see how we can verify whether it can operate as expect in <a href="#verifying">Verifying</a> section later. Now if you can browse without 404 error, that means most likely it works as expect.</p>
+
+<p>In additional, from my use case I didn&#39;t have other UI-based applications that needs to be configured its network to be through proxy. So in case you have some other applications that need to work with proxy. Occasionally, that application should provide such configuration similar to what we&#39;ve done above. Just look inside its preferences, or setting somewhere.</p>
+
+<h2>Set up to Use Proxy for Terminal Commands</h2>
+
+<p>This part might need slightly more effort. Some commands have their own way of configuring proxy setting. They might need to be set via either environment variables, or specific configuration file. Some commands might not work with SOCKS proxy but only HTTP proxy.</p>
+
+<p>I will cover specifically for the following terminal commands</p>
+
+<ul>
+<li><code>git</code></li>
+<li><code>npm</code></li>
+<li><code>curl</code></li>
+<li><code>other misc commands</code> - utilize system-wide setup of proxy setting via environment variables</li>
+</ul>
+
+<h3>git</h3>
+
+<p>Set it globally via <code>git-config</code> as follows</p>
+
+<ul>
+<li><strong>HTTP Proxy</strong><br>
+<code>git config --global http.proxy http://127.0.0.1:1087</code></li>
+<li><strong>HTTPS Proxy</strong><br>
+<code>git config --global https.proxy http://127.0.0.1:1087</code></li>
+<li><strong>SOCKS5 Proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   git config --global http.proxy socks5://127.0.0.1:1086
+   git config --global https.proxy socks5://127.0.0.1:1086
+</code></pre></div>
+<p>or you can also configure it manually by editing <code>~/.gitconfig</code> to add the following lines appendingly into a file</p>
+
+<ul>
+<li><strong>HTTP/HTTPS proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   <span class="o">[</span>http]
+   <span class="o">[</span>https]
+     proxy <span class="o">=</span> http://127.0.0.1:1087
+</code></pre></div>
+<ul>
+<li><strong>SOCKS proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   <span class="o">[</span>http]
+   <span class="o">[</span>https]
+     proxy <span class="o">=</span> socks5://127.0.0.1:1086
+</code></pre></div>
+<h3>npm</h3>
+
+<p>Set it via <code>npm config</code></p>
+
+<ul>
+<li><strong>HTTP/HTTPS proxy</strong> - <code>npm config set proxy http://127.0.0.1:1087</code></li>
+</ul>
+
+<p>or you can manually configure <code>~/.npmrc</code> file by adding the following line</p>
+
+<ul>
+<li><strong>HTTP/HTTPS proxy</strong> - <code>proxy=http://127.0.0.1:1087</code></li>
+</ul>
+
+<p>It <a href="https://github.com/npm/npm/issues/6204#issuecomment-55836088">doesn&#39;t</a> support SOCKS5.</p>
+
+<h3>curl</h3>
+
+<p>Set its proxy setting by creating (if not yet exist) <code>~/.curlrc</code> file with the following content</p>
+
+<ul>
+<li><strong>HTTP/HTTPS proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   proxy <span class="o">=</span> <span class="s2">"http://127.0.0.1:1087"</span>
+</code></pre></div>
+<ul>
+<li><strong>SOCKS5 proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   socks5 <span class="o">=</span> <span class="s2">"http://127.0.0.1:1086"</span>
+</code></pre></div>
+<h3>Other misc commands</h3>
+
+<p>For other commands, usually we can just set proxy globally for system-wide via environment variables by adding following lines into your <code>~/.bash_profile</code> (but use <code>~/.bashrc</code> on Linux).</p>
+
+<ul>
+<li><strong>HTTP/HTTPS proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   <span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:1087
+   <span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:1087
+</code></pre></div>
+<ul>
+<li><strong>SOCKS5 proxy</strong></li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   <span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span>socks5://127.0.0.1:1086
+   <span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span>socks5://127.0.0.1:1086
+</code></pre></div>
+<p>After that execute <code>source ~/.bash_profile</code> to source the setting and make sure those environment variables are taken into effect. I recommend to configure it with your <code>~/.bash_profile</code> script as it will take effect even after reboot.</p>
+
+<p>Beware that if you set it to SOCKS5 proxy, commands that doesn&#39;t support SOCKS5 will shout out error. A great example is <code>ngrok</code> which doesn&#39;t support SOCKS5 but it will let you know.</p>
+
+<p>So in general case, HTTP/HTTPS proxy might serve you better unless you&#39;re willing to re-configure it back and forth.</p>
+
+<h2><a id="verifying"></a>Verifying</h2>
+
+<p>Now it&#39;s time to verify our proxy configuration no matter which way you had done to configure it.</p>
+
+<blockquote>
+<p>You have an option to use UI-based application i.e. <a href="https://www.wireshark.org/">WireShark</a>. But I prefer commandline-based solution. Anyway, the same concept can be applied to use with WireShark too.</p>
+</blockquote>
+
+<h3>Preparation</h3>
+
+<p>We&#39;re going to use <code>ngrep</code> to capture packets for our <strong>local network interface</strong> filtering for port we&#39;re interested in knowing either <code>1087</code> for HTTP/HTTPS, or <code>1086</code> for SOCKS5.</p>
+
+<ul>
+<li>Install <code>ngrep</code> by executing <code>brew install ngrep</code> (or <code>apt-get install apt-get</code> on Linux).</li>
+<li>Then check out the name of your local network interface as we will use its name as parameter to <code>ngrep</code> to capture packets live.<br>
+Execute <code>ifconfig</code>.<br>
+Result would be similar to as follows.</li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   haxpors-mbp:~ haxpor<span class="nv">$ </span>ifconfig
+   lo0: <span class="nv">flags</span><span class="o">=</span>8149&lt;UP,LOOPBACK,RUNNING,PROMISC,MULTICAST&gt; mtu 16384
+       <span class="nv">options</span><span class="o">=</span>1203&lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&gt;
+       inet 127.0.0.1 netmask 0xff000000
+       inet6 ::1 prefixlen 128
+       inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+       nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+   gif0: <span class="nv">flags</span><span class="o">=</span>8010&lt;POINTOPOINT,MULTICAST&gt; mtu 1280
+   stf0: <span class="nv">flags</span><span class="o">=</span>0&lt;&gt; mtu 1280
+   en1: <span class="nv">flags</span><span class="o">=</span>8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+       ether 20:c9:d0:d7:17:c5
+       inet6 fe80::888:7a63:946e:c358%en1 prefixlen 64 secured scopeid 0x4
+       inet 192.168.0.100 netmask 0xffffff00 broadcast 192.168.0.255
+       nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+       media: autoselect
+       status: active
+   en0: <span class="nv">flags</span><span class="o">=</span>8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+       <span class="nv">options</span><span class="o">=</span>10b&lt;RXCSUM,TXCSUM,VLAN_HWTAGGING,AV&gt;
+       ether a8:20:66:2a:77:2f
+       nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+       media: autoselect <span class="o">(</span>none<span class="o">)</span>
+       status: inactive
+   fw0: <span class="nv">flags</span><span class="o">=</span>8822&lt;BROADCAST,SMART,SIMPLEX,MULTICAST&gt; mtu 4078
+       lladdr a8:20:66:ff:fe:7d:48:0a
+       media: autoselect &lt;full-duplex&gt;
+       status: inactive
+   ...
+</code></pre></div>
+<p>From result, we know that our local network interface&#39;s name is <code>lo0</code> which you can see it has IP address of <code>127.0.0.1</code>.</p>
+
+<h3>Verify npm</h3>
+
+<p>We had <code>ngrep</code> and local network interface name already. Next we&#39;re going to verify <code>npm install bfet</code> command whether it actually went through our proxy as set to be on HTTP/HTTPS (port <code>1087</code>) setting or not.</p>
+
+<ul>
+<li>Execute <code>sudo ngrep -q -d lo0 -W byline port 1087</code><br>
+There&#39;re bunch of options used in this command. You can see this <a href="https://linux.die.net/man/8/ngrep">man</a> page for explanation of each parameter used in above command. Basically, it will start to capture packets on <code>lo0</code> network interface filtering for packets involving port <code>1087</code> with other options affecting how much of information should printed out on console.<br></li>
+</ul>
+
+<blockquote>
+<p>You can also remove <code>port 1087</code> out thus more packets although might not be the one you&#39;re interested will show on console but for the ease in digesting information here let&#39;s go with port filtering.</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   haxpors-mbp:~ haxpor<span class="nv">$ </span>sudo ngrep -q -d en1 -W byline port 1087
+   Password:
+   interface: en1 <span class="o">(</span>192.168.0.0/255.255.255.0<span class="o">)</span>
+   filter: <span class="o">(</span>ip or ip6<span class="o">)</span> and <span class="o">(</span> port 1087 <span class="o">)</span>
+
+</code></pre></div>
+<p>Leave it running, and don&#39;t worry if you see some logs coming out already.<br>
+   We will go back to see its result according to our execution of target command later.</p>
+
+<ul>
+<li>Open a new terminal window, then execute <code>npm install bfet</code>.</li>
+<li>Go back to see result from <code>ngrep</code> as it&#39;s running at the moment.<br>
+You should see something similar to following. Also you can hit <code>Cmd</code> + <code>F</code> to search for text in interest to see.</li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   T 127.0.0.1:63066 -&gt; 127.0.0.1:1087 <span class="o">[</span>AP]
+   CONNECT registry.npmjs.org:443 HTTP/1.1.
+   accept-encoding: gzip.
+   accept: application/json.
+   referer: install bfet.
+   user-agent: npm/4.1.2 node/v7.5.0 darwin x64.
+   host: registry.npmjs.org:443.
+   Connection: close.
+   .
+
+
+   T 127.0.0.1:1087 -&gt; 127.0.0.1:63066 <span class="o">[</span>AP]
+   HTTP/1.1 200 Connection established.
+   .
+
+
+   T 127.0.0.1:63066 -&gt; 127.0.0.1:1087 <span class="o">[</span>AP]
+   ....
+   ........?<span class="sb">`</span>..:s.....b....&amp;.n.T..n.
+   <span class="o">]</span>.xi..n./.+.0.,...<span class="s1">'.g.(.k.$...
+   .........j.i.h.9.8.7.6.2...*.&amp;.......=.5.#...........@.?.&gt;.3.2.1.0.1.-.).%.......&lt;./.....o.........registry.npmjs.org.........
+   .............................
+   .#..... ................................3t..
+</span></code></pre></div>
+<p>Let&#39;s inspect packets we got above.</p>
+
+<ol>
+<li><p><code>T 127.0.0.1:63066 -&gt; 127.0.0.1:1087 [AP]</code></p>
+
+<p>It uses HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.9">CONNECT method</a> to initiate <a href="https://en.wikipedia.org/wiki/HTTP_tunnel">HTTP tunneling</a> by which the command (running on port <code>63066</code>) asks local proxy server (port <code>1087</code>) to forward such HTTPS request. The tunnel (thus CONNECT method) is especially created for requesting HTTPS website which is <code>registry.npmjs.org:443</code> as seen in this case.</p></li>
+<li><p><code>T 127.0.0.1:1087 -&gt; 127.0.0.1:63066 [AP]</code></p>
+
+<p>Proxy sent acknowledge packet back indicating that it&#39;s successfully created a HTTP tunnel. It&#39;s ready to exchange data through proxy from now on.</p></li>
+<li><p><code>T 127.0.0.1:63066 -&gt; 127.0.0.1:1087 [AP]</code></p>
+
+<p>One of many packets sending back and forth during HTTP tunneling session. In this case, <code>npm</code> command usually sends some request for a package at <code>registry.npmjs.org</code>. It is encrypted due to SSL as it&#39;s end-to-end communication. The dot (<code>.</code>) we see is default character to show when such character is non-printable.</p></li>
+</ol>
+
+<p>So you can see that the connection is well made with proxy. Basically verified that it works as expect.</p>
+
+<h3>Verify curl</h3>
+
+<p>We had <code>ngrep</code> and local network interface name as previously tested. Next we&#39;re going to verify <code>curl -i http://blog.wasin.io</code> command whether it actually went through our proxy as set to be on SOCKS5 (port <code>1086</code>) or not.</p>
+
+<blockquote>
+<p>Reason to use <code>http://blog.wasin.io</code> is that it&#39;s not HTTPS thus we&#39;re going to see actual text result from request to such target website.</p>
+</blockquote>
+
+<ul>
+<li>Execute <code>sudo ngrep -q -d lo0 -W byline port 1086</code><br>
+You will see</li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   haxpors-mbp:~ haxpor<span class="nv">$ </span>sudo ngrep -q -d en1 -W byline port 1086
+   Password:
+   interface: en1 <span class="o">(</span>192.168.0.0/255.255.255.0<span class="o">)</span>
+   filter: <span class="o">(</span>ip or ip6<span class="o">)</span> and <span class="o">(</span> port 1086 <span class="o">)</span>
+
+</code></pre></div>
+<ul>
+<li>Open a new terminal window, then execute <code>curl -i http://blog.wasin.io</code>.</li>
+<li>Go back to see result from <code>ngrep</code> as it&#39;s running at the moment.<br>
+You should see something similar to following.</li>
+</ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">   T 127.0.0.1:52924 -&gt; 127.0.0.1:1086 <span class="o">[</span>AP]
+   GET / HTTP/1.1.
+   Host: blog.wasin.io.
+   User-Agent: curl/7.50.3.
+   Accept: <span class="k">*</span>/<span class="k">*</span>.
+   .
+
+
+   T 127.0.0.1:1086 -&gt; 127.0.0.1:52924 <span class="o">[</span>AP]
+   HTTP/1.1 200 OK.
+   Server: GitHub.com.
+   Content-Type: text/html; <span class="nv">charset</span><span class="o">=</span>utf-8.
+   Last-Modified: Fri, 10 Mar 2017 19:23:24 GMT.
+   Access-Control-Allow-Origin: <span class="k">*</span>.
+   Expires: Mon, 13 Mar 2017 19:33:23 GMT.
+   Cache-Control: max-age<span class="o">=</span>600.
+   X-GitHub-Request-Id: 3E76:06EE:41E22E9:53B6101:58C6F1AB.
+   Content-Length: 19899.
+   Accept-Ranges: bytes.
+   Date: Mon, 13 Mar 2017 20:42:39 GMT.
+   Via: 1.1 varnish.
+   Age: 380.
+   Connection: keep-alive.
+   X-Served-By: cache-hkg6825-HKG.
+   X-Cache: HIT.
+   X-Cache-Hits: 1.
+   X-Timer: S1489437759.092925,VS0,VE0.
+   Vary: Accept-Encoding.
+   X-Fastly-Request-ID: 60215ccfdc736e50178b0268f4fc9b3053c1e14d.
+   .
+   &lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+   ... the less or HTML code ...
+</code></pre></div>
+<p>You see that such command on port <code>52924</code> created a request message in SOCKS5 message and sent it to local proxy server listening on port <code>1086</code>. In return, proxy gets the actual response back including website&#39;s source code in HTML.</p>
+
+<p>So it works as expect.</p>
+
+<h2>Conclusion</h2>
+
+<p>We have learned how to properly configure proxy setting for UI-based applications and terminal commands. Also we knew a basic way to verify that our tools are working as expect via <code>ngrep</code>. Combine these together to carry out Internet operation through proxy in network environment that needs it, and be able to troubleshoot the problem when we faced with a long waiting time in getting a result back from using application or commandlines.</p>
+
+  </article>
+
+  
+  	<span class="post-tags">Tags</span>:
+  	command, commands, linux, macos, network, proxy, terminal
+	
+</div>
+
+      </div>
+    </div>
+
+    <a href="/feed.xml" class="weui-btn weui-btn_primary" style="border-radius: 0px">subscribe via RSS</a>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Wasin's Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Wasin's Blog</li>
+          <li><a href="mailto:haxpor@gmail.com">haxpor@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/haxpor">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">haxpor</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/haxpor">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">haxpor</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://instagram.com/haxpor">
+              <span class="icon  icon--instagram">
+                <svg viewBox="0 0 512 512">
+                  <g>
+                    <path d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z"/>
+                    <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"/>
+                    <circle cx="351.5" cy="160.5" r="21.5"/>
+                  </g>
+                </svg>
+              </span>
+
+              <span class="username">haxpor</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+</html>
