@@ -7,15 +7,15 @@ layout: barebone
       <div class="weui-panel__bd">
         {% for post in site.posts %}
           {% if post.tags contains "monthlyreport" %}
-            <a href="{{ post.url | prepend: site.baseurl }}" class="weui-media-box weui-media-box_appmsg" style="background-color: yellow">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="weui-media-box weui-media-box_appmsg">
               <div class="weui-media-box__hd">
                 <img class="weui-media-box__thumb" src="{{ post.thumbnail | prepend: site.baseurl }}" alt="post thumbnail" />
               </div>
               <div class="weui-media-box__bd">
-                <h4 class="weui-media-box__title">{{ post.title }}</h4>
+                <h4 class="weui-media-box__title">{{ post.title }} <code class="monthlyreport-head">monthly report</code></h4>
                 <p class="weui-media-box__desc">{{ post.excerpt | strip_html }}</p>
                 <ul class="weui-media-box__info">
-                  <li class="weui-media-box__info__meta">{{ post.date | date: "%b %-d, %Y" }}</li>
+                  <li class="weui-media-box__info__meta">{{ post.date | date: "%b, %Y" }}</li>
                   <li class="weui-media-box__info__meta">
                     {{ post.tags | sort | join: ", " }}
                   </li>

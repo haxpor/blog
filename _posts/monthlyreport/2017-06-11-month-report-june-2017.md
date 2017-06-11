@@ -1,6 +1,6 @@
 ---
-layout: post
-title:  "Month Report June 2017"
+layout: monthlyreport
+title:  "Monthly Report - June 2017"
 date:   2017-06-11 23:13
 thumbnail: /assets/images/post-thumbnail/tcp-bbr.png
 categories: monthlyreport
