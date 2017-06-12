@@ -5,6 +5,7 @@ date:   2017-01-15 10:41:00
 thumbnail: /assets/images/post-thumbnail/fastlane-logo.png
 categories: blog
 tags: [ios, fastlane, automation, integration, script]
+comments: true
 ---
 
 I see the pain from colleagues I've worked with at the company I've contracted. The pain comes from on-demand build as requested from clients or even internal team.

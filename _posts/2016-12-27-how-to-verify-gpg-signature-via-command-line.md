@@ -5,6 +5,7 @@ date:   2016-12-27 11:19:00
 thumbnail: /assets/images/post-thumbnail/gpggnu.png
 categories: blog
 tags: [ubuntu, gpg, signature, command]
+comments: true
 ---
 
 A time came when before clicking to download a software to install on machine, the hint message might tell you [*"After download you must check the GPG signature."*](https://github.com/shadowsocksr/ShadowsocksX-NG/releases/tag/1.3.8-R8-build5)

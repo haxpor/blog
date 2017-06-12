@@ -5,6 +5,7 @@ date:   2016-11-26 21:56:00
 thumbnail: /assets/images/post-thumbnail/thailand-china-flags.jpg
 categories: blog
 tags: [china, thailand, tax]
+comments: true
 ---
 
 *Taxing* is the very first thing to consider when basing yourself in another country for long term.

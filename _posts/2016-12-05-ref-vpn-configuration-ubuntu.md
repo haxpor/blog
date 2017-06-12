@@ -5,6 +5,7 @@ date:   2016-12-05 13:26:00
 thumbnail: /assets/images/post-thumbnail/best-vpn.jpg
 categories: blog
 tags: [vpn, ipsec, l2tp, ubuntu]
+comments: true
 ---
 
 # VPN Server Configuration
