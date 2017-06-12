@@ -5,6 +5,7 @@ date:   2017-03-14 00:03
 thumbnail: /assets/images/post-thumbnail/proxy-icon.png
 categories: blog
 tags: [command, commands, terminal, proxy, network, linux, macos]
+comments: true
 ---
 
 If you live behind firewall i.e. [GFW](https://en.wikipedia.org/wiki/Great_Firewall) and interact with terminal commands a lot in day-to-day basis and of course surfing Internet, I believe you usually utilize proxy to carry on your request in Internet world.

@@ -6,6 +6,7 @@ thumbnail: /assets/images/post-thumbnail/ic_content_paste_black_24dp_2x.png
 categories: monthly-report
 tags: [monthly-report]
 permalink: /:categories/2017/05/report.html
+comments: true
 ---
 
 # First Thing First

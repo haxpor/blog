@@ -5,6 +5,7 @@ date:   2016-12-26 03:35:00
 thumbnail: /assets/images/post-thumbnail/TCP_IP_logo.png
 categories: blog
 tags: [ubuntu, tfo, tcp, server]
+comments: true
 ---
 
 ## What TFO Solve

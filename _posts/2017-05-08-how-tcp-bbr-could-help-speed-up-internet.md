@@ -5,6 +5,7 @@ date:   2017-05-08 19:54
 thumbnail: /assets/images/post-thumbnail/tcp-bbr.png
 categories: blog
 tags: [tcp, bbr, network, tcp-bbr]
+comments: true
 ---
 
 I've come back to stay in Shenzhen, China since exactly 2 weeks ago.

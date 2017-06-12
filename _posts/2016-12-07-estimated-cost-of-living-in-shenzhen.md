@@ -5,6 +5,7 @@ date:   2016-12-07 02:45:00
 thumbnail: /assets/images/post-thumbnail/china-flag.png
 categories: blog
 tags: [shenzhen, china, living, cost, cost of living]
+comments: true
 ---
 
 It's 9 days by now since I've arrived in Shenzhen, China on 28 November but started the first night there the next day as it was nearly mid-night to crash on a hotel.

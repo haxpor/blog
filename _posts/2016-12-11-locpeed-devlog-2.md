@@ -5,6 +5,7 @@ date:   2016-12-11 20:10:00
 thumbnail: /assets/images/post-thumbnail/speedtest-logo.jpg
 categories: blog
 tags: [locpeed, devlog]
+comments: true
 ---
 
 ## HTTP is the Way

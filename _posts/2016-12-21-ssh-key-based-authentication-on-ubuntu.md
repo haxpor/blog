@@ -5,6 +5,7 @@ date:   2016-12-21 01:07:00
 thumbnail: /assets/images/post-thumbnail/ssh-key.jpg
 categories: blog
 tags: [ubuntu, ssh, authentication, key]
+comments: true
 ---
 
 ## What Catches Me On

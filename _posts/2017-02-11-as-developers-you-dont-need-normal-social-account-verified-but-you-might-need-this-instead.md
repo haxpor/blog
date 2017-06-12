@@ -5,6 +5,7 @@ date:   2017-02-11 19:06
 thumbnail: /assets/images/verified/social-account-verified.png
 categories: blog
 tags: [github, social, developers, verify, verified, account, git, gpg]
+comments: true
 ---
 
 No doubt getting verified on account is such a privilege status you can have on social network ecosystem.

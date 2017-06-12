@@ -5,6 +5,7 @@ date:   2017-01-22 09:45
 thumbnail: /assets/images/blender/blender-choose-screen-layout.png
 categories: blog
 tags: [blender, scripting]
+comments: true
 ---
 
 I started to use Blender for one of my work for client. There're times when I need to modify, fix, re-create UV, map mesh to texture, etc by myself without waiting for artist to do that.

@@ -5,6 +5,7 @@ date:   2017-03-25 00:03
 thumbnail: /assets/images/post-thumbnail/cocoapods-icon.png
 categories: blog
 tags: [cocoapods, pod, private, framework, ios, model]
+comments: true
 ---
 
 Lately, I've been thinking about the way to deliver **private** iOS frameworks to users using [Cocoapods](https://cocoapods.org/).

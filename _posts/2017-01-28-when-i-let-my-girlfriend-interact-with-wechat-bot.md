@@ -5,6 +5,7 @@ date:   2017-01-28 20:18
 thumbnail: /assets/images/fkit/qrcode-fkit-wechat-bot.jpg
 categories: blog
 tags: [wechat, bot, ngrok]
+comments: true
 ---
 
 Since the time I've moved to Shenzhen, I experimented with WeChat bot and its platform quite enough to have some times to enjoy its moment.
