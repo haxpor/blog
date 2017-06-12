@@ -78,7 +78,7 @@ I'm happy that now I have 2 options to choose from which has equal in Internet s
 
 ## networking-china
 
-I first try to up the Internet speed is via [TCP-BBR](http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html). It works great.
+I first try to up the Internet speed via [TCP-BBR](http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html). It works great.
 
 Next try is [kcptun](https://github.com/xtaci/kcptun). Works great again. It works well with shadowsocks. You can watch youtube video very fast (in highest quality, 1080p) without waiting for buffering. If you want to configure your shadowsocks server with kcptun, the highest chance is mistakes in setting port, password, and ip. Follow along with this [article](https://nathaniel.blog/tutorials/shadowsocks/). It's the only one that is working for me out there.
 
