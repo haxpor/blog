@@ -64,7 +64,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>I heard about <em>Fastlane</em> for quite some time. Unfortunately, for myself I didn&#39;t have a reasonable chance to use it to fasten my workflow as most of the time I work with the codebase alone. Thus I did some research and tested the tool to see how can we benefit from it.</p>
 
-<h2>Fastlane</h2>
+<h2 id="fastlane">Fastlane</h2>
 
 <p><a href="http://fastlane.tools/">Fastlane</a> is an automated tools comprising of multiple sub-tools to help in each area of Apple App Development Workflow.</p>
 
@@ -83,7 +83,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>Our interested areas to test seems to cover most of what normal use cases in development workflow could be. Let&#39;s get into it.</p>
 
-<h2>Install Fastlane</h2>
+<h2 id="install-fastlane">Install Fastlane</h2>
 
 <p>I&#39;m using macOS <code>10.12.3 Beta</code> as a testing system, along with Xcode <code>8.2</code>.</p>
 
@@ -96,7 +96,7 @@ As of this writing, version is <code>2.5.0</code>.</p>
 -----------------------------
 fastlane 2.5.0
 </code></pre></div>
-<h2>Create a Testing iOS Project</h2>
+<h2 id="create-a-testing-ios-project">Create a Testing iOS Project</h2>
 
 <p>We need to create a testing iOS project first.</p>
 
@@ -142,7 +142,7 @@ fastlane 2.5.0
 </code></pre></div>
 <p>With all these, we have basic UI elements that we need and each page can present another page; back and forth.</p>
 
-<h2>Localize iOS Application</h2>
+<h2 id="localize-ios-application">Localize iOS Application</h2>
 
 <p>Click on project name and add <em>Simplified Chinese</em>, and <em>French</em> for our additional localized language while <em>English</em> is the main development language.</p>
 
@@ -154,11 +154,11 @@ fastlane 2.5.0
 
 <p>Click on each language one by one to edit its translated text for UI elements which are labels, and buttons that we have on our storyboard. Feel free to just use Google translator service or any service you have. But don&#39;t just lazily put English text in it for all languages, we will see real result of this later after we run Fastlane.</p>
 
-<h2>Add Tests &amp; UI Tests</h2>
+<h2 id="add-tests-ui-tests">Add Tests &amp; UI Tests</h2>
 
 <p>Before we proceed to using Fastlane tool. We will create Tests and UI Tests first. This will be used as part of Fastlane Workflow.</p>
 
-<h3>Tests</h3>
+<h3 id="tests">Tests</h3>
 
 <p>For simplicity as we don&#39;t really have meaningful things to test, we just assert for true. You should have code as follows in <code>FastlaneTestTests.swift</code> file.</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">XCTest</span>
@@ -184,7 +184,7 @@ fastlane 2.5.0
 
 <span class="p">}</span>
 </code></pre></div>
-<h3>UI Tests</h3>
+<h3 id="ui-tests">UI Tests</h3>
 
 <p>Not only for testing purpose but UI Tests is also the building block to automate taking screenshots as part of Fastlane workflow. Thus we will add real testing code here.</p>
 
@@ -248,7 +248,7 @@ fastlane 2.5.0
 
 <p>In additional, testing code is self-explained to what we&#39;re trying to achieve too. If you&#39;re not sure what it does, take some times, and read the code above.</p>
 
-<h2>Integrate Fastlane with XCode Project</h2>
+<h2 id="integrate-fastlane-with-xcode-project">Integrate Fastlane with XCode Project</h2>
 
 <p>Now it&#39;s a core part.</p>
 
@@ -260,7 +260,7 @@ fastlane 2.5.0
 This will create a directory <code>fastlane</code> at <code>~/FastlaneTest</code> with necessary files Fastlane needs inside.</p></li>
 </ul>
 
-<h3>FastFile</h3>
+<h3 id="fastfile">FastFile</h3>
 
 <p>Time to configure <code>FastFile</code>.
 As of version <code>2.5.0</code>, the initial configuration file covers most of the things we need already. We just need to modify and add something.</p>
@@ -312,7 +312,7 @@ As of version <code>2.5.0</code>, the initial configuration file covers most of 
 <p>If need, you can grab my <code>FastFile</code> <a href="https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9">here</a>.</p>
 </blockquote>
 
-<h3>Snapfile</h3>
+<h3 id="snapfile">Snapfile</h3>
 
 <p>In order to take snapshot (or taking screenshots) of application while running automatically, you need to configure <code>Snapfile</code> but that file is not there inside <code>fastlane</code> directory initially.</p>
 
@@ -383,7 +383,7 @@ More information on GitHub: https://github.com/fastlane/fastlane/tree/master/sna
 <p>If need, you can grab my <code>Snapfile</code> <a href="https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e">here</a>.</p>
 </blockquote>
 
-<h2>Run Fastlane</h2>
+<h2 id="run-fastlane">Run Fastlane</h2>
 
 <p>We&#39;re all ready now. Phew! It&#39;s quite an effort.
 Now we&#39;re going to run Fastlane.</p>
@@ -397,7 +397,7 @@ Now we&#39;re going to run Fastlane.</p>
 <li><code>fastlane beta</code> - submit an application to beta TestFlight. It will take care certificate and provisioning profile for us too.</li>
 </ul>
 
-<h2>Results</h2>
+<h2 id="results">Results</h2>
 
 <ul>
 <li><code>fastlane itunes</code> is good enough that it will wait until application data is created on iTunes Connect website<br></li>
@@ -437,7 +437,7 @@ Now we&#39;re going to run Fastlane.</p>
 
 <p><img src="/assets/images/fastlane/ui-tests.gif" alt="fastlane test in action"></p>
 
-<h2>What&#39;s Next?</h2>
+<h2 id="whats-next">What&#39;s Next?</h2>
 
 <p>We can put all those commands into a shell script file thus to be executed on build server as part of CI process. I believe this will let developers sit back and be more productive on making application, not to waste time on tasks that can be automated.</p>
 

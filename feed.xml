@@ -6,9 +6,189 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 May 2017 22:39:47 +0800</pubDate>
-    <lastBuildDate>Mon, 08 May 2017 22:39:47 +0800</lastBuildDate>
+    <pubDate>Mon, 12 Jun 2017 18:56:20 +0800</pubDate>
+    <lastBuildDate>Mon, 12 Jun 2017 18:56:20 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Monthly Report - May 2017</title>
+        <description>&lt;h1 id=&quot;first-thing-first&quot;&gt;First Thing First&lt;/h1&gt;
+
+&lt;p&gt;This is a first montly report after I stopped receiving freelance/contract works to focus on my own projects.&lt;/p&gt;
+
+&lt;p&gt;During the time I was doing contract works for tech startup in Bangkok remotely, I used to write a monthly report declaring hours spent for each different type of task I&amp;#39;ve involved. As I charge per hour, information conveyed in report will allow them where their money went, included interesting tidbit of information in both terms of technical and user&amp;#39;s perspective to allow upper level management paving a way for direction and strategy.&lt;/p&gt;
+
+&lt;p&gt;So yes, it&amp;#39;d be great idea to do the similar (not exactly the same) with my own stuff from now on; monthly.&lt;/p&gt;
+
+&lt;h1 id=&quot;monthly-report-post-notice&quot;&gt;Monthly Report Post Notice&lt;/h1&gt;
+
+&lt;p&gt;Before I dwell down to the niffy grifty of report, let&amp;#39;s first see the difference of &amp;#39;monthly report type of post&amp;#39; to normal posts.&lt;/p&gt;
+
+&lt;p&gt;For a new post that is monthly report, you will see the following tag in &lt;a href=&quot;http://blog.wasin.io&quot;&gt;http://blog.wasin.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/may-2017/monthly-report-tag.png&quot; alt=&quot;monthly report tag&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Whenever you click it, there&amp;#39;s also another tag at the title as follows.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/may-2017/monthly-report-tag2.png&quot; alt=&quot;monthly report tag&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;It should make it easily to spot which post is what. Now let&amp;#39;s move on.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I write May report very late, but in future I aim to write it down immediately at the beginning of new month.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/may-2017/piechart-may-2017.png&quot; alt=&quot;piechart&quot;&gt;&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;Hours&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;Percentage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;blockbunny&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;48.49&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;47.83%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;devops&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;7.38&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;7.28%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;networking-china&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;1.85&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;1.82%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;libgdx-misc&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;4.14&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;4.08%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;twitterbot&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;9.93&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;9.79%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gamedev-research&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;16.18&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;15.96%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gamearch-research&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;2.25&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;2.22%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tools-research&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;4.77&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;4.71%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pixelart-study&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;6.27&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;6.18%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;art-research&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;0.12&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;0.12%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;101.38&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;This month, I spent pretty much of the time learning &lt;a href=&quot;https://github.com/libgdx/libgdx&quot;&gt;libgdx&lt;/a&gt; which I chose it to be the main technology for game development in upcoming projects. I learn best at following tutorial, making changes and improvements. To make myself being familar with the tools at hands.&lt;/p&gt;
+
+&lt;p&gt;Multiple times, I try to base the project around Unity as I used it from time to time in supporting during contract work, and it&amp;#39;s stable with future-proof. But man... I tried. At least, 2 major times to sit down, use it, and convincing myself to &lt;strong&gt;happily&lt;/strong&gt; use it. Result is NO. I&amp;#39;m not quite happy developing game with this tool. So I go on with what I&amp;#39;m happy with although it might not increase productivity, or have super convenient tool-chain.&lt;/p&gt;
+
+&lt;p&gt;So here the summary for interesting tasks I&amp;#39;ve done in this month.&lt;/p&gt;
+
+&lt;h2 id=&quot;blockbunny&quot;&gt;blockbunny&lt;/h2&gt;
+
+&lt;p&gt;I open source this project &lt;a href=&quot;https://github.com/haxpor/blockbunny&quot;&gt;here&lt;/a&gt;. By early June, the project has been completed, and received a few traction of talking about it in libgdx, and kotlin community. I will fully post about the screenshots, gifs, and other things about the project at the end of next month. At which it&amp;#39;s the point in time that I should write about it, not now as I wrote this report very late.&lt;/p&gt;
+
+&lt;p&gt;blockbunny is a studying material for me to being familar with libgdx. It&amp;#39;s great, and I can code it with kotlin which is another programming language that I like a lot extremely similar and comparable to how flexible and consise language it can be to swift. Sadly, there&amp;#39;s no stable and production ready game engine/framework to use with swift.&lt;/p&gt;
+
+&lt;p&gt;Note that BlockBunny is originally from ForeignGuyMike, I followed along with idea, coded it in kotlin with changes + improvements.&lt;/p&gt;
+
+&lt;h2 id=&quot;devops&quot;&gt;devops&lt;/h2&gt;
+
+&lt;p&gt;Also as I live in China. Freedom in Internet has been comproised. This time I decided it&amp;#39;s time to have an equal in quality of proxy server in case the main one doesn&amp;#39;t work as expect. So I spent time upgrading shadowsocks server, &lt;a href=&quot;http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html&quot;&gt;upgrading linux kernel&lt;/a&gt; to make it support TCP-BBR for secondary proxy server, and misc.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m happy that now I have 2 options to choose from which has equal in Internet speed and quality. The main difference between the twos are distance. One in Singapore, and another in Hong Kong. You definitely know which one is closer to my location. Thus secondary is slightly slower.&lt;/p&gt;
+
+&lt;h2 id=&quot;networking-china&quot;&gt;networking-china&lt;/h2&gt;
+
+&lt;p&gt;I first try to up the Internet speed is via &lt;a href=&quot;http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html&quot;&gt;TCP-BBR&lt;/a&gt;. It works great.&lt;/p&gt;
+
+&lt;p&gt;Next try is &lt;a href=&quot;https://github.com/xtaci/kcptun&quot;&gt;kcptun&lt;/a&gt;. Works great again. It works well with shadowsocks. You can watch youtube video very fast (in highest quality, 1080p) without waiting for buffering. If you want to configure your shadowsocks server with kcptun, the highest chance is mistakes in setting port, password, and ip. Follow along with this &lt;a href=&quot;https://nathaniel.blog/tutorials/shadowsocks/&quot;&gt;article&lt;/a&gt;. It&amp;#39;s the only one that is working for me out there.&lt;/p&gt;
+
+&lt;h2 id=&quot;twitterbot&quot;&gt;twitterbot&lt;/h2&gt;
+
+&lt;p&gt;During the ideation phase to think about game idea for my game, I created a twitter bot to retweet my tweet as a purpose to archive it as future reference in one place. I understand that these days you have Pinterest, Pocket, or other service to help you out. But because I&amp;#39;m almost always on Twitter, I don&amp;#39;t want to waste time switching apps.&lt;/p&gt;
+
+&lt;p&gt;My &lt;a href=&quot;https://github.com/haxpor/twitterbot_refrt&quot;&gt;bot&lt;/a&gt; is based on NodeJS, it&amp;#39;s minimal right now. Only it does is to check the beginning string of each new tweet of my personal twitter account (&lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;@haxpor&lt;/a&gt;). If it matches &amp;quot;RT |&amp;quot;, then it will retweet it.&lt;/p&gt;
+
+&lt;p&gt;Yup, when I have time I go there to my bot (&lt;a href=&quot;https://twitter.com/haxpor_refrtbot&quot;&gt;@haxpor_refrtbot&lt;/a&gt;) to revisit the idea I found interesting.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;When I tweet with &amp;quot;RT |&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/may-2017/original-tweet.png&quot; alt=&quot;tweet original&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The bot will do this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/may-2017/bot-retweet.png&quot; alt=&quot;tweet original&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;It turns out for me you can have a bot up and running pretty fast. There&amp;#39;re bunch of options you can do reactively i.e. target account favorited a tweet / updating their bio, etc. This is why there&amp;#39;re so many of spam bots out there. In fact, most high profile people with verified tag often utilize bot in some way to interact with their fans.&lt;/p&gt;
+
+&lt;h2 id=&quot;pixelart-study&quot;&gt;pixelart-study&lt;/h2&gt;
+
+&lt;p&gt;Artist is another path I need to acquire its skill set to be able to feed my game projects with graphical assets. I planned to do it solo.
+The following is what I came up with in tileset study.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Tileset Study&lt;a href=&quot;https://twitter.com/hashtag/gimp?src=hash&quot;&gt;#gimp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/gamedev?src=hash&quot;&gt;#gamedev&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/indiedev?src=hash&quot;&gt;#indiedev&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/pixelart?src=hash&quot;&gt;#pixelart&lt;/a&gt; &lt;a href=&quot;https://t.co/i940QzXksF&quot;&gt;pic.twitter.com/i940QzXksF&lt;/a&gt;&lt;/p&gt;&amp;mdash; Wasin Thonkaew (@haxpor) &lt;a href=&quot;https://twitter.com/haxpor/status/868597281016041472&quot;&gt;May 27, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Gimp is my tool of choice.
+More time will be spent for artistic studying.&lt;/p&gt;
+
+&lt;h2 id=&quot;art-research&quot;&gt;art-research&lt;/h2&gt;
+
+&lt;p&gt;Dang, I came across the old topic of rotoscoping animation. This is quite old school that it answers why the game like Prince of Persia has natural movement like human. Rotoscoping in-short is a technique for animator to have benefit of line-reference from live video shot of action they want to animate.&lt;/p&gt;
+
+&lt;p&gt;By all means, watch this &lt;a href=&quot;https://www.youtube.com/watch?v=-jvXJs97bPo&quot;&gt;video&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;before-we-go&quot;&gt;Before We Go&lt;/h1&gt;
+
+&lt;p&gt;That&amp;#39;s it for this month report.&lt;br&gt;
+Keep an eye for this kind of post again when next month ends.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Jun 2017 23:13:00 +0800</pubDate>
+        <link>http://blog.wasin.io/monthly-report/2017/05/report.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/monthly-report/2017/05/report.html</guid>
+        
+        <category>monthly-report</category>
+        
+        
+        <category>monthly-report</category>
+        
+      </item>
     
       <item>
         <title>How TCP-BBR Could Help Speed Up Internet</title>
@@ -22,7 +202,7 @@
 &lt;p&gt;I connected through my Shadowsocks server. Long before it was always SSR. Now I&amp;#39;m fully using SS. It&amp;#39;s better strategy to have alternatives or back ups plan for your connection available.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1&gt;TCP-BBR&lt;/h1&gt;
+&lt;h1 id=&quot;tcp-bbr&quot;&gt;TCP-BBR&lt;/h1&gt;
 
 &lt;hr&gt;
 
@@ -32,7 +212,7 @@
 
 &lt;p&gt;Question found in &lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-org/issues/26#issuecomment-269487933&quot;&gt;comment&lt;/a&gt; that whether or not we need to enable it on both end of communication. Answer is no, so it&amp;#39;s great as I&amp;#39;m quite aware that macOS won&amp;#39;t likely to support and really need to catch up in pace. Take example of &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=543653&quot;&gt;Fast TCP Open&lt;/a&gt; feature for Chrome on macOS. It still doesn&amp;#39;t support!&lt;/p&gt;
 
-&lt;h1&gt;What Is It?&lt;/h1&gt;
+&lt;h1 id=&quot;what-is-it&quot;&gt;What Is It?&lt;/h1&gt;
 
 &lt;hr&gt;
 
@@ -50,7 +230,7 @@
 
 &lt;p&gt;The factor of improvement is magnificent. Although numbers stated above would be as high as ~2kx. From what I got as tested it&amp;#39;s roughly &lt;code&gt;~600x&lt;/code&gt; when pull content from upstream via Github clone command, or &lt;code&gt;~30x&lt;/code&gt; in downstream Internet speed in general. It&amp;#39;s way better than before.&lt;/p&gt;
 
-&lt;h1&gt;How to Enable It On Your Ubuntu 14.01 Server?&lt;/h1&gt;
+&lt;h1 id=&quot;how-to-enable-it-on-your-ubuntu-14-01-server&quot;&gt;How to Enable It On Your Ubuntu 14.01 Server?&lt;/h1&gt;
 
 &lt;hr&gt;
 
@@ -110,7 +290,7 @@ sysctl net.ipv4.tcp_congestion_control
 &lt;p&gt;you should see &lt;code&gt;tcp_bbr&lt;/code&gt; there in output.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;Result&lt;/h1&gt;
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;/h1&gt;
 
 &lt;hr&gt;
 
@@ -160,7 +340,7 @@ As it&amp;#39;s an addition to TCP protocol, it is compatible for all proxy appl
 
 &lt;p&gt;Let&amp;#39;s first understand the underlying system of Cocoapods, until we come to overall big picture of model to use it.&lt;/p&gt;
 
-&lt;h2&gt;Underlying&lt;/h2&gt;
+&lt;h2 id=&quot;underlying&quot;&gt;Underlying&lt;/h2&gt;
 
 &lt;hr&gt;
 
@@ -184,20 +364,20 @@ As it&amp;#39;s an addition to TCP protocol, it is compatible for all proxy appl
 &lt;li&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file and set its &lt;code&gt;source&lt;/code&gt; field to use URL as result from 3.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;Self-host Spec repo&lt;/h3&gt;
+&lt;h3 id=&quot;self-host-spec-repo&quot;&gt;Self-host Spec repo&lt;/h3&gt;
 
 &lt;p&gt;To gain the benefit of setting the permission of &lt;code&gt;Specs&lt;/code&gt; repo, you have only option which is to do self-host of it.
 Even you do self-host, you also have an option of setting access permission to be in public or private. In this case, we&amp;#39;re primarily interested in private access.&lt;/p&gt;
 
 &lt;p&gt;Cocoapods has official document on &lt;a href=&quot;https://guides.cocoapods.org/making/private-cocoapods.html&quot;&gt;how to host private Specs repo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3&gt;Build framework in universal binary without exposing source code&lt;/h3&gt;
+&lt;h3 id=&quot;build-framework-in-universal-binary-without-exposing-source-code&quot;&gt;Build framework in universal binary without exposing source code&lt;/h3&gt;
 
 &lt;p&gt;I came across this well explained &lt;a href=&quot;https://eladnava.com/publish-a-universal-binary-ios-framework-in-swift-using-cocoapods/&quot;&gt;article&lt;/a&gt; of how to publish a universal binary iOS framework using Cocoapods.&lt;/p&gt;
 
 &lt;p&gt;Only difference from what we&amp;#39;re trying achieving compared to that article is that, the author publishes it publicly. But we want it in private. Thus we have no need to involve using &lt;code&gt;pod trunk ...&lt;/code&gt; command as we don&amp;#39;t publish to the main public &lt;code&gt;Specs&lt;/code&gt; repo but to our private one.&lt;/p&gt;
 
-&lt;h3&gt;Upload result framework to public server&lt;/h3&gt;
+&lt;h3 id=&quot;upload-result-framework-to-public-server&quot;&gt;Upload result framework to public server&lt;/h3&gt;
 
 &lt;p&gt;Upload such built frameworks to our public server. Ensure that it&amp;#39;s in universal binary form thus it can be used to run on device and simulator. Ensure that you didn&amp;#39;t include any source code with it. Normally, aim for &lt;code&gt;.zip&lt;/code&gt; file. The content of &lt;code&gt;.zip&lt;/code&gt; file mainly contains &lt;code&gt;.framework&lt;/code&gt; along with &lt;code&gt;README&lt;/code&gt; or any relavent files if you need. All of them are at the same level. It might be as follows.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;framework-result.zip
@@ -209,11 +389,11 @@ Even you do self-host, you also have an option of setting access permission to b
 &lt;p&gt;&lt;code&gt;strip-frameworks.sh&lt;/code&gt; is usually needed at the end when users want to publish the result application to AppStore. It will help stripping un-needed architecture from frameworks being in use. You can see and make use of &lt;a href=&quot;https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh&quot;&gt;strip-frameworks.sh&lt;/a&gt; by Realm. Insert it insidee &lt;em&gt;Build Phases&lt;/em&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&quot;create-a-proper-podspec-file&quot;&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Properly create a &lt;code&gt;.podspec&lt;/code&gt; file to match the version of such framework. The most important thing is &lt;code&gt;source&lt;/code&gt; field instead of providing github URL, you provide the end-result of URL of &lt;code&gt;.zip&lt;/code&gt; for users to download.&lt;/p&gt;
 
-&lt;h2&gt;Model&lt;/h2&gt;
+&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
 
 &lt;hr&gt;
 
@@ -266,25 +446,25 @@ Please note that I observe the main &lt;code&gt;Specs&lt;/code&gt; repo&amp;#39;
 
 &lt;p&gt;I came up with two possible models; Variant A, and B.&lt;/p&gt;
 
-&lt;h3&gt;Variant A&lt;/h3&gt;
+&lt;h3 id=&quot;variant-a&quot;&gt;Variant A&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantA.png&quot; alt=&quot;Model Variant A&quot;&gt;&lt;/p&gt;
 
-&lt;h4&gt;Annotations&lt;/h4&gt;
+&lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
 &lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
 &lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; Each circle is &lt;strong&gt;private&lt;/strong&gt; &lt;code&gt;Specs&lt;/code&gt; repo exposed to selected external party (client)&lt;br&gt;
 &lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties spanning into multiple groups&lt;/p&gt;
 
-&lt;h4&gt;Requirements&lt;/h4&gt;
+&lt;h4 id=&quot;requirements&quot;&gt;Requirements&lt;/h4&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
 &lt;li&gt;Paid Github acccount to have ability to create private repositories ($7/month)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4&gt;Feature&lt;/h4&gt;
+&lt;h4 id=&quot;feature&quot;&gt;Feature&lt;/h4&gt;
 
 &lt;p&gt;It allows another layer to control which party (client) can see such &lt;code&gt;Specs&lt;/code&gt; repo.
 Imagine if we have 2 clients. Each client might use multiple of frameworks and are different from ones used by another client.&lt;br&gt;
@@ -292,61 +472,61 @@ Thus we will have 2 private &lt;code&gt;Specs&lt;/code&gt; repo one for each cli
 
 &lt;p&gt;We need to allow users (github account) to have read access towards such &lt;code&gt;Specs&lt;/code&gt; repo. So when they pull down via configured &lt;code&gt;Podfile&lt;/code&gt;, it will be fine.&lt;/p&gt;
 
-&lt;h4&gt;Summary&lt;/h4&gt;
+&lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
 
-&lt;h5&gt;Pros&lt;/h5&gt;
+&lt;h5 id=&quot;pros&quot;&gt;Pros&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Additional layer to manage and control which party can have access to which frameworks via private &lt;code&gt;Specs&lt;/code&gt; repo.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5&gt;Cons&lt;/h5&gt;
+&lt;h5 id=&quot;cons&quot;&gt;Cons&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Need to manage and allow access for users towards such &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
 &lt;li&gt;Might not be feasible for who which doesn&amp;#39;t want to pay monthly in order to use Github&amp;#39;s private repositories feature&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Variant B&lt;/h3&gt;
+&lt;h3 id=&quot;variant-b&quot;&gt;Variant B&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantB.png&quot; alt=&quot;Model Variant B&quot;&gt;&lt;/p&gt;
 
-&lt;h4&gt;Annotations&lt;/h4&gt;
+&lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
 &lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
 &lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; One single &lt;code&gt;Specs&lt;/code&gt; repo exposed to general public&lt;br&gt;
 &lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties treated as a single public group&lt;/p&gt;
 
-&lt;h4&gt;Requirement&lt;/h4&gt;
+&lt;h4 id=&quot;requirement&quot;&gt;Requirement&lt;/h4&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4&gt;Feature&lt;/h4&gt;
+&lt;h4 id=&quot;feature&quot;&gt;Feature&lt;/h4&gt;
 
 &lt;p&gt;It has no control layer over which party or users should have access towards our framework.
 Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and manage (allow users access) to it.&lt;/p&gt;
 
 &lt;p&gt;One caveat is that if users inspect the content inside &lt;code&gt;Specs&lt;/code&gt; repo, they will have information for all frameworks we have, and might be able to know which client we work with. But it might be less likely for normal users as when they&amp;#39;re done with configuring &lt;code&gt;Podfile&lt;/code&gt;, usually they have no time or interest to study our &lt;code&gt;Specs&lt;/code&gt; repo. Even if they do so, they have to try by trial and error to use the framework as most likely we will deliver document to client privately too.&lt;/p&gt;
 
-&lt;h4&gt;Summary&lt;/h4&gt;
+&lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
 
-&lt;h5&gt;Pros&lt;/h5&gt;
+&lt;h5 id=&quot;pros&quot;&gt;Pros&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;No additional effort to manage each private &lt;code&gt;Specs&lt;/code&gt; repository as there is none to manage.&lt;/li&gt;
 &lt;li&gt;No additional cost, normal Github account will do the work&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5&gt;Cons&lt;/h5&gt;
+&lt;h5 id=&quot;cons&quot;&gt;Cons&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Users might gain information about our all frameworks and where to download; and possible to know which client we&amp;#39;ve worked with.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Final words&lt;/h2&gt;
+&lt;h2 id=&quot;final-words&quot;&gt;Final words&lt;/h2&gt;
 
 &lt;p&gt;Now we get to know models to use in delivery frameworks to clients privately, and even has options to choose one that is more suitable to use. To go further than that, it&amp;#39;s possible to reduce &lt;a href=&quot;#steps&quot;&gt;steps&lt;/a&gt; needed especially 2, 3, and 4 which are building framework, uploading, and creating a proper &lt;code&gt;.podspec&lt;/code&gt; via automated script.&lt;/p&gt;
 
@@ -385,7 +565,7 @@ Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and 
 
 &lt;p&gt;Thus this time, I think it&amp;#39;s a good idea to sit down and make sure those applications and commands works reliably with proxy setup (by any mean).&lt;/p&gt;
 
-&lt;h2&gt;Proxy Setup&lt;/h2&gt;
+&lt;h2 id=&quot;proxy-setup&quot;&gt;Proxy Setup&lt;/h2&gt;
 
 &lt;p&gt;Your proxy setup can be anything. It just needs to be a middle man between you and destination, and acts as a gatekeeper to forward your request to destination in which destination will not know that such request is coming from you but proxy itself.&lt;/p&gt;
 
@@ -397,7 +577,7 @@ Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and 
 
 &lt;p&gt;For my case, I&amp;#39;m on macOS &lt;code&gt;10.12.4&lt;/code&gt;, with Shadowsock proxy set up. This mean my local machine provides HTTP, and SOCKS5 proxy. So I have options to either set proxy to use HTTP, or SOCKS5.&lt;/p&gt;
 
-&lt;h2&gt;Set up to Use Proxy for UI-based applications&lt;/h2&gt;
+&lt;h2 id=&quot;set-up-to-use-proxy-for-ui-based-applications&quot;&gt;Set up to Use Proxy for UI-based applications&lt;/h2&gt;
 
 &lt;p&gt;Although not limited to browser, it is a prime example of this kind of application.&lt;br&gt;
 Let&amp;#39;s proceed with Chrome as it&amp;#39;s widely used, and is a top choice to debug and work with by developers. It should be very similar steps for other variant of browsers as well.&lt;/p&gt;
@@ -432,7 +612,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 
 &lt;p&gt;In additional, from my use case I didn&amp;#39;t have other UI-based applications that needs to be configured its network to be through proxy. So in case you have some other applications that need to work with proxy. Occasionally, that application should provide such configuration similar to what we&amp;#39;ve done above. Just look inside its preferences, or setting somewhere.&lt;/p&gt;
 
-&lt;h2&gt;Set up to Use Proxy for Terminal Commands&lt;/h2&gt;
+&lt;h2 id=&quot;set-up-to-use-proxy-for-terminal-commands&quot;&gt;Set up to Use Proxy for Terminal Commands&lt;/h2&gt;
 
 &lt;p&gt;This part might need slightly more effort. Some commands have their own way of configuring proxy setting. They might need to be set via either environment variables, or specific configuration file. Some commands might not work with SOCKS proxy but only HTTP proxy.&lt;/p&gt;
 
@@ -445,7 +625,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 &lt;li&gt;&lt;code&gt;other misc commands&lt;/code&gt; - utilize system-wide setup of proxy setting via environment variables&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;git&lt;/h3&gt;
+&lt;h3 id=&quot;git&quot;&gt;git&lt;/h3&gt;
 
 &lt;p&gt;Set it globally via &lt;code&gt;git-config&lt;/code&gt; as follows&lt;/p&gt;
 
@@ -475,7 +655,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https]
      proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; socks5://127.0.0.1:1086
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;npm&lt;/h3&gt;
+&lt;h3 id=&quot;npm&quot;&gt;npm&lt;/h3&gt;
 
 &lt;p&gt;Set it via &lt;code&gt;npm config&lt;/code&gt;&lt;/p&gt;
 
@@ -491,7 +671,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 
 &lt;p&gt;It &lt;a href=&quot;https://github.com/npm/npm/issues/6204#issuecomment-55836088&quot;&gt;doesn&amp;#39;t&lt;/a&gt; support SOCKS5.&lt;/p&gt;
 
-&lt;h3&gt;curl&lt;/h3&gt;
+&lt;h3 id=&quot;curl&quot;&gt;curl&lt;/h3&gt;
 
 &lt;p&gt;Set its proxy setting by creating (if not yet exist) &lt;code&gt;~/.curlrc&lt;/code&gt; file with the following content&lt;/p&gt;
 
@@ -505,7 +685,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   socks5 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:1086&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Other misc commands&lt;/h3&gt;
+&lt;h3 id=&quot;other-misc-commands&quot;&gt;Other misc commands&lt;/h3&gt;
 
 &lt;p&gt;For other commands, usually we can just set proxy globally for system-wide via environment variables by adding following lines into your &lt;code&gt;~/.bash_profile&lt;/code&gt; (but use &lt;code&gt;~/.bashrc&lt;/code&gt; on Linux).&lt;/p&gt;
 
@@ -527,7 +707,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 
 &lt;p&gt;So in general case, HTTP/HTTPS proxy might serve you better unless you&amp;#39;re willing to re-configure it back and forth.&lt;/p&gt;
 
-&lt;h2&gt;&lt;a id=&quot;verifying&quot;&gt;&lt;/a&gt;Verifying&lt;/h2&gt;
+&lt;h2 id=&quot;verifying&quot;&gt;&lt;a id=&quot;verifying&quot;&gt;&lt;/a&gt;Verifying&lt;/h2&gt;
 
 &lt;p&gt;Now it&amp;#39;s time to verify our proxy configuration no matter which way you had done to configure it.&lt;/p&gt;
 
@@ -535,7 +715,7 @@ Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;co
 &lt;p&gt;You have an option to use UI-based application i.e. &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;WireShark&lt;/a&gt;. But I prefer commandline-based solution. Anyway, the same concept can be applied to use with WireShark too.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Preparation&lt;/h3&gt;
+&lt;h3 id=&quot;preparation&quot;&gt;Preparation&lt;/h3&gt;
 
 &lt;p&gt;We&amp;#39;re going to use &lt;code&gt;ngrep&lt;/code&gt; to capture packets for our &lt;strong&gt;local network interface&lt;/strong&gt; filtering for port we&amp;#39;re interested in knowing either &lt;code&gt;1087&lt;/code&gt; for HTTP/HTTPS, or &lt;code&gt;1086&lt;/code&gt; for SOCKS5.&lt;/p&gt;
 
@@ -575,7 +755,7 @@ Result would be similar to as follows.&lt;/li&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;From result, we know that our local network interface&amp;#39;s name is &lt;code&gt;lo0&lt;/code&gt; which you can see it has IP address of &lt;code&gt;127.0.0.1&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3&gt;Verify npm&lt;/h3&gt;
+&lt;h3 id=&quot;verify-npm&quot;&gt;Verify npm&lt;/h3&gt;
 
 &lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name already. Next we&amp;#39;re going to verify &lt;code&gt;npm install bfet&lt;/code&gt; command whether it actually went through our proxy as set to be on HTTP/HTTPS (port &lt;code&gt;1087&lt;/code&gt;) setting or not.&lt;/p&gt;
 
@@ -641,7 +821,7 @@ You should see something similar to following. Also you can hit &lt;code&gt;Cmd&
 
 &lt;p&gt;So you can see that the connection is well made with proxy. Basically verified that it works as expect.&lt;/p&gt;
 
-&lt;h3&gt;Verify curl&lt;/h3&gt;
+&lt;h3 id=&quot;verify-curl&quot;&gt;Verify curl&lt;/h3&gt;
 
 &lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name as previously tested. Next we&amp;#39;re going to verify &lt;code&gt;curl -i http://blog.wasin.io&lt;/code&gt; command whether it actually went through our proxy as set to be on SOCKS5 (port &lt;code&gt;1086&lt;/code&gt;) or not.&lt;/p&gt;
 
@@ -702,7 +882,7 @@ You should see something similar to following.&lt;/li&gt;
 
 &lt;p&gt;So it works as expect.&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;We have learned how to properly configure proxy setting for UI-based applications and terminal commands. Also we knew a basic way to verify that our tools are working as expect via &lt;code&gt;ngrep&lt;/code&gt;. Combine these together to carry out Internet operation through proxy in network environment that needs it, and be able to troubleshoot the problem when we faced with a long waiting time in getting a result back from using application or commandlines.&lt;/p&gt;
 </description>
@@ -752,11 +932,11 @@ I know it&amp;#39;s a real hard work, you need to give something to the world, m
 
 &lt;p&gt;So let&amp;#39;s see how can we achieve that&lt;/p&gt;
 
-&lt;h2&gt;How To Get Verified On Every Commit on Github&lt;/h2&gt;
+&lt;h2 id=&quot;how-to-get-verified-on-every-commit-on-github&quot;&gt;How To Get Verified On Every Commit on Github&lt;/h2&gt;
 
 &lt;p&gt;What I tested is on macOS. But it should work similar to other platform, or you might need to adapt a little bit.&lt;/p&gt;
 
-&lt;h3&gt;Generate a GPG key&lt;/h3&gt;
+&lt;h3 id=&quot;generate-a-gpg-key&quot;&gt;Generate a GPG key&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Download gpg tool via &lt;code&gt;brew install gpg&lt;/code&gt;.&lt;/li&gt;
@@ -782,7 +962,7 @@ Result you got is similar to below&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;Copy the result text from such command. We will use it in next section.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Add GPG key to Github Account&lt;/h3&gt;
+&lt;h3 id=&quot;add-gpg-key-to-github-account&quot;&gt;Add GPG key to Github Account&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Browse to Github website.&lt;/li&gt;
@@ -793,7 +973,7 @@ Result you got is similar to below&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;Confirm the action by entering your Github password.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Set up Git to Sign All Commits&lt;/h3&gt;
+&lt;h3 id=&quot;set-up-git-to-sign-all-commits&quot;&gt;Set up Git to Sign All Commits&lt;/h3&gt;
 
 &lt;p&gt;Use key ID i.e. &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt; as you got from earlier section and specify in these commands.&lt;/p&gt;
 
@@ -804,7 +984,7 @@ Result you got is similar to below&lt;br&gt;&lt;/li&gt;
 
 &lt;p&gt;Above will let git know that the default key id to use in every signing commit is &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;, and you will be signing every commit by default.&lt;/p&gt;
 
-&lt;h3&gt;(for safety) Configure to Make it Work&lt;/h3&gt;
+&lt;h3 id=&quot;for-safety-configure-to-make-it-work&quot;&gt;(for safety) Configure to Make it Work&lt;/h3&gt;
 
 &lt;p&gt;These commands might not be needed but for safety, I recommend to do it anyway to make it works.&lt;/p&gt;
 
@@ -817,7 +997,7 @@ Result you got is similar to below&lt;br&gt;&lt;/li&gt;
 &lt;p&gt;This will set the default key id to use, and another is to make auto-signed commit work with GUI software. In short, just add them.
 * Execute &lt;code&gt;git config --global gpg.program $(which gpg)&lt;/code&gt;. This will set which gpg program to use with git.&lt;/p&gt;
 
-&lt;h3&gt;Set to Make It Not Ask Passphraase All The Time&lt;/h3&gt;
+&lt;h3 id=&quot;set-to-make-it-not-ask-passphraase-all-the-time&quot;&gt;Set to Make It Not Ask Passphraase All The Time&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Install &lt;code&gt;gpg-agent&lt;/code&gt; and &lt;code&gt;pinentry-mac&lt;/code&gt; via &lt;code&gt;brew install gpg-agent pinentry-mac&lt;/code&gt;.&lt;/li&gt;
@@ -839,7 +1019,7 @@ Result you got is similar to below&lt;br&gt;&lt;/li&gt;
      &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Now whenever you do &lt;code&gt;git commit&lt;/code&gt;, it will ask for passphrase for the &lt;strong&gt;first&lt;/strong&gt; time only, save it to keychain, then next time it will automatically enter that for you in every commit.&lt;/p&gt;
 
@@ -900,7 +1080,7 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;That&amp;#39;s fun time 😂&lt;/p&gt;
 
-&lt;h2&gt;Wanna Try?&lt;/h2&gt;
+&lt;h2 id=&quot;wanna-try&quot;&gt;Wanna Try?&lt;/h2&gt;
 
 &lt;p&gt;You can try out to receive &amp;quot;i Love u&amp;quot; if you need some love right now by scanning on the following QR Code.&lt;/p&gt;
 
@@ -908,11 +1088,11 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/fkit/qrcode-fkit-wechat-bot.jpg&quot; alt=&quot;fkit qrcode&quot;&gt;&lt;/p&gt;
 
-&lt;h2&gt;FKit Development&lt;/h2&gt;
+&lt;h2 id=&quot;fkit-development&quot;&gt;FKit Development&lt;/h2&gt;
 
 &lt;p&gt;FKit is on-going development of one of my experimental project and I&amp;#39;ll push more features into it to basically serve my needs as a foreigner living in China. More update will be updated on new blog post.&lt;/p&gt;
 
-&lt;h2&gt;Gotcha&lt;/h2&gt;
+&lt;h2 id=&quot;gotcha&quot;&gt;Gotcha&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;WeChat platform uses XML-based &lt;a href=&quot;http://admin.wechat.com/wiki/index.php?title=Common_Messages&quot;&gt;message format&lt;/a&gt;.&lt;/li&gt;
@@ -945,7 +1125,7 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Technically you can execute python script with Blender&amp;#39;s GUI but Blender still runs in the background. Anyway I don&amp;#39;t do it in this article.&lt;/p&gt;
 
-&lt;h2&gt;Let&amp;#39;s Get Started&lt;/h2&gt;
+&lt;h2 id=&quot;lets-get-started&quot;&gt;Let&amp;#39;s Get Started&lt;/h2&gt;
 
 &lt;p&gt;Firstly remove a cube as shown on &lt;em&gt;3D View&lt;/em&gt; window, then you  choose a screen layout by clicking on &lt;em&gt;Choose Screen Layout&lt;/em&gt; button then select &lt;em&gt;Scripting&lt;/em&gt; as seen below.&lt;/p&gt;
 
@@ -983,7 +1163,7 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Then you will see that Blender will create a new cube, select it, rename into &lt;code&gt;&amp;quot;MyLittleCube&amp;quot;&lt;/code&gt;, and translate to &lt;code&gt;(0.0, 5.0, 0.0)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Tips&lt;/h2&gt;
+&lt;h2 id=&quot;tips&quot;&gt;Tips&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;If you hold mouse over each Blender&amp;#39;s UI element for a while, it will show a tool tip of python function that you can use it in the script.&lt;/li&gt;
@@ -1015,7 +1195,7 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;I heard about &lt;em&gt;Fastlane&lt;/em&gt; for quite some time. Unfortunately, for myself I didn&amp;#39;t have a reasonable chance to use it to fasten my workflow as most of the time I work with the codebase alone. Thus I did some research and tested the tool to see how can we benefit from it.&lt;/p&gt;
 
-&lt;h2&gt;Fastlane&lt;/h2&gt;
+&lt;h2 id=&quot;fastlane&quot;&gt;Fastlane&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://fastlane.tools/&quot;&gt;Fastlane&lt;/a&gt; is an automated tools comprising of multiple sub-tools to help in each area of Apple App Development Workflow.&lt;/p&gt;
 
@@ -1034,7 +1214,7 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Our interested areas to test seems to cover most of what normal use cases in development workflow could be. Let&amp;#39;s get into it.&lt;/p&gt;
 
-&lt;h2&gt;Install Fastlane&lt;/h2&gt;
+&lt;h2 id=&quot;install-fastlane&quot;&gt;Install Fastlane&lt;/h2&gt;
 
 &lt;p&gt;I&amp;#39;m using macOS &lt;code&gt;10.12.3 Beta&lt;/code&gt; as a testing system, along with Xcode &lt;code&gt;8.2&lt;/code&gt;.&lt;/p&gt;
 
@@ -1047,7 +1227,7 @@ As of this writing, version is &lt;code&gt;2.5.0&lt;/code&gt;.&lt;/p&gt;
 -----------------------------
 fastlane 2.5.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Create a Testing iOS Project&lt;/h2&gt;
+&lt;h2 id=&quot;create-a-testing-ios-project&quot;&gt;Create a Testing iOS Project&lt;/h2&gt;
 
 &lt;p&gt;We need to create a testing iOS project first.&lt;/p&gt;
 
@@ -1093,7 +1273,7 @@ fastlane 2.5.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With all these, we have basic UI elements that we need and each page can present another page; back and forth.&lt;/p&gt;
 
-&lt;h2&gt;Localize iOS Application&lt;/h2&gt;
+&lt;h2 id=&quot;localize-ios-application&quot;&gt;Localize iOS Application&lt;/h2&gt;
 
 &lt;p&gt;Click on project name and add &lt;em&gt;Simplified Chinese&lt;/em&gt;, and &lt;em&gt;French&lt;/em&gt; for our additional localized language while &lt;em&gt;English&lt;/em&gt; is the main development language.&lt;/p&gt;
 
@@ -1105,11 +1285,11 @@ fastlane 2.5.0
 
 &lt;p&gt;Click on each language one by one to edit its translated text for UI elements which are labels, and buttons that we have on our storyboard. Feel free to just use Google translator service or any service you have. But don&amp;#39;t just lazily put English text in it for all languages, we will see real result of this later after we run Fastlane.&lt;/p&gt;
 
-&lt;h2&gt;Add Tests &amp;amp; UI Tests&lt;/h2&gt;
+&lt;h2 id=&quot;add-tests-ui-tests&quot;&gt;Add Tests &amp;amp; UI Tests&lt;/h2&gt;
 
 &lt;p&gt;Before we proceed to using Fastlane tool. We will create Tests and UI Tests first. This will be used as part of Fastlane Workflow.&lt;/p&gt;
 
-&lt;h3&gt;Tests&lt;/h3&gt;
+&lt;h3 id=&quot;tests&quot;&gt;Tests&lt;/h3&gt;
 
 &lt;p&gt;For simplicity as we don&amp;#39;t really have meaningful things to test, we just assert for true. You should have code as follows in &lt;code&gt;FastlaneTestTests.swift&lt;/code&gt; file.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTest&lt;/span&gt;
@@ -1135,7 +1315,7 @@ fastlane 2.5.0
 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;UI Tests&lt;/h3&gt;
+&lt;h3 id=&quot;ui-tests&quot;&gt;UI Tests&lt;/h3&gt;
 
 &lt;p&gt;Not only for testing purpose but UI Tests is also the building block to automate taking screenshots as part of Fastlane workflow. Thus we will add real testing code here.&lt;/p&gt;
 
@@ -1199,7 +1379,7 @@ fastlane 2.5.0
 
 &lt;p&gt;In additional, testing code is self-explained to what we&amp;#39;re trying to achieve too. If you&amp;#39;re not sure what it does, take some times, and read the code above.&lt;/p&gt;
 
-&lt;h2&gt;Integrate Fastlane with XCode Project&lt;/h2&gt;
+&lt;h2 id=&quot;integrate-fastlane-with-xcode-project&quot;&gt;Integrate Fastlane with XCode Project&lt;/h2&gt;
 
 &lt;p&gt;Now it&amp;#39;s a core part.&lt;/p&gt;
 
@@ -1211,7 +1391,7 @@ fastlane 2.5.0
 This will create a directory &lt;code&gt;fastlane&lt;/code&gt; at &lt;code&gt;~/FastlaneTest&lt;/code&gt; with necessary files Fastlane needs inside.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;FastFile&lt;/h3&gt;
+&lt;h3 id=&quot;fastfile&quot;&gt;FastFile&lt;/h3&gt;
 
 &lt;p&gt;Time to configure &lt;code&gt;FastFile&lt;/code&gt;.
 As of version &lt;code&gt;2.5.0&lt;/code&gt;, the initial configuration file covers most of the things we need already. We just need to modify and add something.&lt;/p&gt;
@@ -1263,7 +1443,7 @@ As of version &lt;code&gt;2.5.0&lt;/code&gt;, the initial configuration file cov
 &lt;p&gt;If need, you can grab my &lt;code&gt;FastFile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Snapfile&lt;/h3&gt;
+&lt;h3 id=&quot;snapfile&quot;&gt;Snapfile&lt;/h3&gt;
 
 &lt;p&gt;In order to take snapshot (or taking screenshots) of application while running automatically, you need to configure &lt;code&gt;Snapfile&lt;/code&gt; but that file is not there inside &lt;code&gt;fastlane&lt;/code&gt; directory initially.&lt;/p&gt;
 
@@ -1334,7 +1514,7 @@ More information on GitHub: https://github.com/fastlane/fastlane/tree/master/sna
 &lt;p&gt;If need, you can grab my &lt;code&gt;Snapfile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2&gt;Run Fastlane&lt;/h2&gt;
+&lt;h2 id=&quot;run-fastlane&quot;&gt;Run Fastlane&lt;/h2&gt;
 
 &lt;p&gt;We&amp;#39;re all ready now. Phew! It&amp;#39;s quite an effort.
 Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
@@ -1348,7 +1528,7 @@ Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;fastlane beta&lt;/code&gt; - submit an application to beta TestFlight. It will take care certificate and provisioning profile for us too.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Results&lt;/h2&gt;
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;fastlane itunes&lt;/code&gt; is good enough that it will wait until application data is created on iTunes Connect website&lt;br&gt;&lt;/li&gt;
@@ -1388,7 +1568,7 @@ Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ui-tests.gif&quot; alt=&quot;fastlane test in action&quot;&gt;&lt;/p&gt;
 
-&lt;h2&gt;What&amp;#39;s Next?&lt;/h2&gt;
+&lt;h2 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next?&lt;/h2&gt;
 
 &lt;p&gt;We can put all those commands into a shell script file thus to be executed on build server as part of CI process. I believe this will let developers sit back and be more productive on making application, not to waste time on tasks that can be automated.&lt;/p&gt;
 
@@ -1417,35 +1597,35 @@ Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
         <title>2016 Year In Review</title>
         <description>&lt;p&gt;I&amp;#39;ve started writing for my year in review since 2014. You can read it in &lt;a href=&quot;https://medium.com/@haxpor/2014-year-in-review-8d90fced9918#.dh1jw5dbs&quot;&gt;2014&lt;/a&gt;, and &lt;a href=&quot;https://medium.com/@haxpor/2015-year-in-review-7f74b72161df#.e2wl20bu0&quot;&gt;2015&lt;/a&gt;. Anyway, you won&amp;#39;t find any more writing pieces from me on other writing platform i.e. Medium, it&amp;#39;s only this place from now on.&lt;/p&gt;
 
-&lt;h2&gt;What Went Well This Year&lt;/h2&gt;
+&lt;h2 id=&quot;what-went-well-this-year&quot;&gt;What Went Well This Year&lt;/h2&gt;
 
-&lt;h3&gt;Balance Reality and Dream/Goals&lt;/h3&gt;
+&lt;h3 id=&quot;balance-reality-and-dream-goals&quot;&gt;Balance Reality and Dream/Goals&lt;/h3&gt;
 
 &lt;p&gt;I went all-in with making mobile games for several years. It didn&amp;#39;t pan out that great in terms of financially independence. Thus I changed the approach and balanced accepting client&amp;#39;s work/contracting and doing my own IP thing. I released &lt;a href=&quot;https://wasinbot.wasin.io/&quot;&gt;WasinBot&lt;/a&gt;, and started Locpeed, and FKit. I will write more about those latter two things for future post.&lt;/p&gt;
 
 &lt;p&gt;I think the important things is you need to find the most healthy way you&amp;#39;re happy to go along. But try first for what you believe, then adapt and change course a little bit by little bit. Shaping direction gradually will let you see what works, or what doesn&amp;#39;t. It&amp;#39;s for long term and healthy balanced way. &lt;/p&gt;
 
-&lt;h3&gt;Write More&lt;/h3&gt;
+&lt;h3 id=&quot;write-more&quot;&gt;Write More&lt;/h3&gt;
 
 &lt;p&gt;I gave up on wordpress and editing post via web interface. After I experienced composing a new post in Jekyll hooked up with automatic build process every time there&amp;#39;s a new post pushed into master branch which set up via webhook on Github; all in Markdown language, I just love this approach more than former. At first, it started as an experiment whether I will be liking it or not. Not so long until I really love it.&lt;/p&gt;
 
 &lt;p&gt;Thus this means my website is auto-generated every time I push a new post into main branch. I wrote more than ever, and really enjoy going back to write more as I love its &lt;em&gt;workflow&lt;/em&gt; so much. So I think it&amp;#39;s about &lt;em&gt;aesthetic&lt;/em&gt;, not &lt;em&gt;convenience&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h3&gt;Decision Making&lt;/h3&gt;
+&lt;h3 id=&quot;decision-making&quot;&gt;Decision Making&lt;/h3&gt;
 
 &lt;p&gt;Long ago I&amp;#39;m always defer the decision making to be later and later until I would get more information. But as I&amp;#39;m older, I know there&amp;#39;s not a chance for such information to be fulfilled. It&amp;#39;s just enough and coverage what you need to know, or else. I&amp;#39;m getting better at this. Either personal, or business. Faster in making decision. Better outcome / consequence as I stick to what I chose.&lt;/p&gt;
 
-&lt;h3&gt;Support Family&lt;/h3&gt;
+&lt;h3 id=&quot;support-family&quot;&gt;Support Family&lt;/h3&gt;
 
 &lt;p&gt;Year before 2016, it&amp;#39;s my sister that almost contributes to supporting our family. I don&amp;#39;t really have money to contribute as my mobile game is not published yet. After I changed my approach, and decided to do something about it. I can contribute to my family for 7 months by now in this year. If something didn&amp;#39;t work out as expect, just gradually change its course, and work further on that. Outcome would likely change. You just adapt.&lt;/p&gt;
 
-&lt;h3&gt;Get Uncomfortable&lt;/h3&gt;
+&lt;h3 id=&quot;get-uncomfortable&quot;&gt;Get Uncomfortable&lt;/h3&gt;
 
 &lt;p&gt;If it&amp;#39;s not a task given from the company I&amp;#39;m currently on contracting basis, I would be just touching the surface of web development for my own project. The good thing about doing such task to serve client is that you get to learn and know bunch of things at hand. I learned more about CSS, AngularJS/Angular 2, ionic1/ionic2, build tools out there, NPM, and the way web developers do thing. It&amp;#39;s so huge in this world but I just pick ones that suit my needs and not all-in jump into using new shiny libraries, it&amp;#39;s not necessary.&lt;/p&gt;
 
 &lt;p&gt;The point is I&amp;#39;ve tapped into the zone I&amp;#39;m not familar with. This gave me strength, and benefit back to my own IP projects.&lt;/p&gt;
 
-&lt;h3&gt;Contribte to Open Source Projects&lt;/h3&gt;
+&lt;h3 id=&quot;contribte-to-open-source-projects&quot;&gt;Contribte to Open Source Projects&lt;/h3&gt;
 
 &lt;p&gt;Number of contributions in this year&lt;/p&gt;
 
@@ -1466,14 +1646,14 @@ Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/basejit&quot;&gt;basejit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;What Didn&amp;#39;t Go So Well This Year&lt;/h2&gt;
+&lt;h2 id=&quot;what-didnt-go-so-well-this-year&quot;&gt;What Didn&amp;#39;t Go So Well This Year&lt;/h2&gt;
 
-&lt;h3&gt;Accept Too Many Clients&amp;#39; Works&lt;/h3&gt;
+&lt;h3 id=&quot;accept-too-many-clients-works&quot;&gt;Accept Too Many Clients&amp;#39; Works&lt;/h3&gt;
 
 &lt;p&gt;I accepted too many clients&amp;#39; works thus leave me no time to finish it.
 There&amp;#39;s a time when I need to cancel the project during the mid of development, and a time when I started initially but never continue and finish it.&lt;/p&gt;
 
-&lt;h2&gt;Check List Since Last Year&lt;/h2&gt;
+&lt;h2 id=&quot;check-list-since-last-year&quot;&gt;Check List Since Last Year&lt;/h2&gt;
 
 &lt;p&gt;What Improved&lt;/p&gt;
 
@@ -1490,17 +1670,17 @@ There&amp;#39;s a time when I need to cancel the project during the mid of devel
 &lt;li&gt;Fast Implementation of Any Task&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;What Am I Working Towards?&lt;/h2&gt;
+&lt;h2 id=&quot;what-am-i-working-towards&quot;&gt;What Am I Working Towards?&lt;/h2&gt;
 
-&lt;h3&gt;Balance Number of Clients&amp;#39; Works&lt;/h3&gt;
+&lt;h3 id=&quot;balance-number-of-clients-works&quot;&gt;Balance Number of Clients&amp;#39; Works&lt;/h3&gt;
 
 &lt;p&gt;I need to be more careful before accepting any new work. I need to finish the current projects at hands first before accepting new one. That means being aware of period for finishing project, or seeking for potential client then accepting a new work.&lt;/p&gt;
 
-&lt;h3&gt;Continue Maintaining Habit&lt;/h3&gt;
+&lt;h3 id=&quot;continue-maintaining-habit&quot;&gt;Continue Maintaining Habit&lt;/h3&gt;
 
 &lt;p&gt;As usual, habit is the key. Continue doing task at the scheduled time in every day is good for me.&lt;/p&gt;
 
-&lt;h3&gt;Contribute More on Open Source Projects&lt;/h3&gt;
+&lt;h3 id=&quot;contribute-more-on-open-source-projects&quot;&gt;Contribute More on Open Source Projects&lt;/h3&gt;
 
 &lt;p&gt;The major contribution in this year for me is &lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt; by migrating its Swift 2 code to 3, and included with step-by-step on how to build the project. This contribution really ignite my inner energy to contribute more to various open source projects. Having seen people could take benefit from such project is a blessing for me. Potatso is great as it&amp;#39;s an iOS client used to connect to Shadowsocks proxy mainly used when you access outside website from within China mainland. I expect myself to contribute to open source projects more.&lt;/p&gt;
 
@@ -1561,83 +1741,6 @@ Remember to start with signature file first, before the name of target file to v
         <category>signature</category>
         
         <category>command</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>How to Enable Fast TCP Open on Ubuntu</title>
-        <description>&lt;h2&gt;What TFO Solve&lt;/h2&gt;
-
-&lt;p&gt;I got suggestion to enable Fast TCP Open (TFO) from a guy named &lt;em&gt;Leonard Woo&lt;/em&gt; from &lt;a href=&quot;https://telegram.me/joinchat/BT0c4z49OGNZXwl9VsO0uQ&quot;&gt;Potatso Telegram User Group&lt;/a&gt; to possibly gain more speed on using Shadowsocks as I experienced a slowdown these couple of days.&lt;/p&gt;
-
-&lt;p&gt;TFO is one of &lt;a href=&quot;https://en.wikipedia.org/wiki/TCP_congestion_control&quot;&gt;congestion control algorithms&lt;/a&gt; of TCP connection out there. What TFO solves is about reducing RTT (round-trip-time) from handshaking that TCP connection normally needs. Citing from &lt;a href=&quot;https://www1.icsi.berkeley.edu/%7Ebarath/papers/tfo-conext11.pdf&quot;&gt;research paper&lt;/a&gt; which states that it can gain about 10% or in some cases up to 40%.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/result-tfo-research-paper.png&quot; alt=&quot;result of speed gain of TFO&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;How to Enable on Ubuntu&lt;/h2&gt;
-
-&lt;p&gt;You need to have linux kernel at least 3.7.&lt;br&gt;
-You can check via &lt;code&gt;uname -r&lt;/code&gt;, it will give the result similar to following.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;3.13.0-24-generic
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then follow the following steps to enable Fast TCP Open&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Edit &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; and add the following line to its end of file&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   net.ipv4.tcp_fastopen &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Save a file.&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;sysctl -p&lt;/code&gt; to make it taken into effect.&lt;/li&gt;
-&lt;li&gt;Make it permanent even after rebooting system by adding the following line into &lt;code&gt;/etc/rc.local&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;3 &amp;gt; /proc/sys/net/ipv4/tcp_fastopen
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;But What&amp;#39;s About Browser?&lt;/h2&gt;
-
-&lt;p&gt;At first I thought that too that you have to have browser that supports TFO. But I consulted &lt;em&gt;Leonard Woo&lt;/em&gt; and he said that it&amp;#39;s &lt;strong&gt;Single side&lt;/strong&gt;. That means only one side of the connection needs to enable TFO.&lt;/p&gt;
-
-&lt;p&gt;My understanding went through that you don&amp;#39;t need TFO-enabled browser, but you need server provider to enable it. But if service provider doesn&amp;#39;t enable TFO, your browser needs to have and enable it to gain benefit from what can give by TFO.&lt;/p&gt;
-
-&lt;p&gt;I checked on server side via 2 methods as stated in Monitoring Section in this &lt;a href=&quot;https://bradleyf.id.au/nix/shaving-your-rtt-wth-tfo/&quot;&gt;article&lt;/a&gt;. Result is TFOConnection is there, and no failure! Thus it confirms what he said.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Execute &lt;code&gt;ip tcp_metrics&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/fo_cookie.png&quot; alt=&quot;fo_cookie&quot;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Execute &lt;code&gt;grep &amp;#39;^TcpExt:&amp;#39; /proc/net/netstat | cut -d &amp;#39; &amp;#39; -f 87-92  | column -t&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/TFO/tfo-fastopen-active.png&quot; alt=&quot;tfo metrics&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Both result above confirm that it&amp;#39;s a legit TFO connection.&lt;/p&gt;
-
-&lt;p&gt;I will be testing this set up for a couple days to see if I can gain such speed improvement (actually it&amp;#39;s pretty difficult to tell as Internet speed through proxy/vpn is not stable from within China). But anyway, above is the way to enable it.&lt;/p&gt;
-
-&lt;h2&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bxl.pm/8602.html&quot;&gt;Shadowsocks - TCP Fast Open&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 26 Dec 2016 11:35:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2016/12/26/how-to-enable-fast-tcp-open-on-ubuntu.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/26/how-to-enable-fast-tcp-open-on-ubuntu.html</guid>
-        
-        <category>ubuntu</category>
-        
-        <category>tfo</category>
-        
-        <category>tcp</category>
-        
-        <category>server</category>
         
         
         <category>blog</category>

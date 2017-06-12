@@ -64,7 +64,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>Thus this time, I think it&#39;s a good idea to sit down and make sure those applications and commands works reliably with proxy setup (by any mean).</p>
 
-<h2>Proxy Setup</h2>
+<h2 id="proxy-setup">Proxy Setup</h2>
 
 <p>Your proxy setup can be anything. It just needs to be a middle man between you and destination, and acts as a gatekeeper to forward your request to destination in which destination will not know that such request is coming from you but proxy itself.</p>
 
@@ -76,7 +76,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>For my case, I&#39;m on macOS <code>10.12.4</code>, with Shadowsock proxy set up. This mean my local machine provides HTTP, and SOCKS5 proxy. So I have options to either set proxy to use HTTP, or SOCKS5.</p>
 
-<h2>Set up to Use Proxy for UI-based applications</h2>
+<h2 id="set-up-to-use-proxy-for-ui-based-applications">Set up to Use Proxy for UI-based applications</h2>
 
 <p>Although not limited to browser, it is a prime example of this kind of application.<br>
 Let&#39;s proceed with Chrome as it&#39;s widely used, and is a top choice to debug and work with by developers. It should be very similar steps for other variant of browsers as well.</p>
@@ -111,7 +111,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 
 <p>In additional, from my use case I didn&#39;t have other UI-based applications that needs to be configured its network to be through proxy. So in case you have some other applications that need to work with proxy. Occasionally, that application should provide such configuration similar to what we&#39;ve done above. Just look inside its preferences, or setting somewhere.</p>
 
-<h2>Set up to Use Proxy for Terminal Commands</h2>
+<h2 id="set-up-to-use-proxy-for-terminal-commands">Set up to Use Proxy for Terminal Commands</h2>
 
 <p>This part might need slightly more effort. Some commands have their own way of configuring proxy setting. They might need to be set via either environment variables, or specific configuration file. Some commands might not work with SOCKS proxy but only HTTP proxy.</p>
 
@@ -124,7 +124,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 <li><code>other misc commands</code> - utilize system-wide setup of proxy setting via environment variables</li>
 </ul>
 
-<h3>git</h3>
+<h3 id="git">git</h3>
 
 <p>Set it globally via <code>git-config</code> as follows</p>
 
@@ -154,7 +154,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
    <span class="o">[</span>https]
      proxy <span class="o">=</span> socks5://127.0.0.1:1086
 </code></pre></div>
-<h3>npm</h3>
+<h3 id="npm">npm</h3>
 
 <p>Set it via <code>npm config</code></p>
 
@@ -170,7 +170,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 
 <p>It <a href="https://github.com/npm/npm/issues/6204#issuecomment-55836088">doesn&#39;t</a> support SOCKS5.</p>
 
-<h3>curl</h3>
+<h3 id="curl">curl</h3>
 
 <p>Set its proxy setting by creating (if not yet exist) <code>~/.curlrc</code> file with the following content</p>
 
@@ -184,7 +184,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 </ul>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell">   socks5 <span class="o">=</span> <span class="s2">"http://127.0.0.1:1086"</span>
 </code></pre></div>
-<h3>Other misc commands</h3>
+<h3 id="other-misc-commands">Other misc commands</h3>
 
 <p>For other commands, usually we can just set proxy globally for system-wide via environment variables by adding following lines into your <code>~/.bash_profile</code> (but use <code>~/.bashrc</code> on Linux).</p>
 
@@ -206,7 +206,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 
 <p>So in general case, HTTP/HTTPS proxy might serve you better unless you&#39;re willing to re-configure it back and forth.</p>
 
-<h2><a id="verifying"></a>Verifying</h2>
+<h2 id="verifying"><a id="verifying"></a>Verifying</h2>
 
 <p>Now it&#39;s time to verify our proxy configuration no matter which way you had done to configure it.</p>
 
@@ -214,7 +214,7 @@ Check your port according to your proxy setup. In this case, it&#39;s <code>1086
 <p>You have an option to use UI-based application i.e. <a href="https://www.wireshark.org/">WireShark</a>. But I prefer commandline-based solution. Anyway, the same concept can be applied to use with WireShark too.</p>
 </blockquote>
 
-<h3>Preparation</h3>
+<h3 id="preparation">Preparation</h3>
 
 <p>We&#39;re going to use <code>ngrep</code> to capture packets for our <strong>local network interface</strong> filtering for port we&#39;re interested in knowing either <code>1087</code> for HTTP/HTTPS, or <code>1086</code> for SOCKS5.</p>
 
@@ -254,7 +254,7 @@ Result would be similar to as follows.</li>
 </code></pre></div>
 <p>From result, we know that our local network interface&#39;s name is <code>lo0</code> which you can see it has IP address of <code>127.0.0.1</code>.</p>
 
-<h3>Verify npm</h3>
+<h3 id="verify-npm">Verify npm</h3>
 
 <p>We had <code>ngrep</code> and local network interface name already. Next we&#39;re going to verify <code>npm install bfet</code> command whether it actually went through our proxy as set to be on HTTP/HTTPS (port <code>1087</code>) setting or not.</p>
 
@@ -320,7 +320,7 @@ You should see something similar to following. Also you can hit <code>Cmd</code>
 
 <p>So you can see that the connection is well made with proxy. Basically verified that it works as expect.</p>
 
-<h3>Verify curl</h3>
+<h3 id="verify-curl">Verify curl</h3>
 
 <p>We had <code>ngrep</code> and local network interface name as previously tested. Next we&#39;re going to verify <code>curl -i http://blog.wasin.io</code> command whether it actually went through our proxy as set to be on SOCKS5 (port <code>1086</code>) or not.</p>
 
@@ -381,7 +381,7 @@ You should see something similar to following.</li>
 
 <p>So it works as expect.</p>
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>We have learned how to properly configure proxy setting for UI-based applications and terminal commands. Also we knew a basic way to verify that our tools are working as expect via <code>ngrep</code>. Combine these together to carry out Internet operation through proxy in network environment that needs it, and be able to troubleshoot the problem when we faced with a long waiting time in getting a result back from using application or commandlines.</p>
 

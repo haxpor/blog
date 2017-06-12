@@ -58,12 +58,12 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
   </header>
 
   <article class="post-content">
-    <h1>VPN Server Configuration</h1>
+    <h1 id="vpn-server-configuration">VPN Server Configuration</h1>
 
 <p>Gathering of links and reference along the configuration.
 In short just follow this <a href="https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_with_Ubuntu_14.04.html">tutorial</a> step by step, with optional for you to write those cofigurable commands as seen in <em>Firewall and sysctl</em> section into shell script for convenience.</p>
 
-<h2>Links</h2>
+<h2 id="links">Links</h2>
 
 <ul>
 <li>Original <a href="https://www.reddit.com/r/linux/comments/2s34zw/need_help_with_setting_up_vpn_server/">reddit post</a> about VPN set up discussion</li>
@@ -76,7 +76,7 @@ Also see original <a href="https://help.ubuntu.com/community/L2TPServer">post</a
 <li>Mac OS X user benefits from using native vpn client see <a href="http://help.it.ox.ac.uk/network/vpn/macosx-native/index">here</a>.</li>
 </ul>
 
-<h2>Original States of <code>accept_redirects</code></h2>
+<h2 id="original-states-of-accept_redirects">Original States of <code>accept_redirects</code></h2>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">root@mail:~/Conf/vpn# </span><span class="k">for </span>vpn <span class="k">in</span> /proc/sys/net/ipv4/conf/<span class="k">*</span>; <span class="k">do </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$vpn</span><span class="s2"> -&gt; "</span> <span class="sb">`</span>cat <span class="nv">$vpn</span>/accept_redirects<span class="sb">`</span>; <span class="k">done</span>
 /proc/sys/net/ipv4/conf/all -&gt;  0
 /proc/sys/net/ipv4/conf/default -&gt;  0
@@ -84,7 +84,7 @@ Also see original <a href="https://help.ubuntu.com/community/L2TPServer">post</a
 /proc/sys/net/ipv4/conf/eth1 -&gt;  0
 /proc/sys/net/ipv4/conf/lo -&gt;  1
 </code></pre></div>
-<h2>Original States of <code>send_redirects</code></h2>
+<h2 id="original-states-of-send_redirects">Original States of <code>send_redirects</code></h2>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">root@mail:~/Conf/vpn# </span><span class="k">for </span>vpn <span class="k">in</span> /proc/sys/net/ipv4/conf/<span class="k">*</span>; <span class="k">do </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$vpn</span><span class="s2"> -&gt; "</span> <span class="sb">`</span>cat <span class="nv">$vpn</span>/send_redirects<span class="sb">`</span>; <span class="k">done</span>
 /proc/sys/net/ipv4/conf/all -&gt;  1
 /proc/sys/net/ipv4/conf/default -&gt;  1

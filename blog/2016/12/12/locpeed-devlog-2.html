@@ -58,14 +58,14 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
   </header>
 
   <article class="post-content">
-    <h2>HTTP is the Way</h2>
+    <h2 id="http-is-the-way">HTTP is the Way</h2>
 
 <p>After trying to solve the problem of HTTPs or mixed content, I found out a root cause.<br>
 Baidu&#39;s Map API itself doesn&#39;t serve on HTTPs. If try to access <a href="https://maps.baidu.com">https://maps.baidu.com</a>, you will have non-working site and cannot use its features at all. Thus I suspect it&#39;s the API itself. Only HTTP is to go now.</p>
 
 <p>With this, I reconfigured my server to allow HTTP (I know it&#39;s not safe) for <strong>certain</strong> sub-domain to host this project.</p>
 
-<h2>Adding Map Marker Data</h2>
+<h2 id="adding-map-marker-data">Adding Map Marker Data</h2>
 
 <p>I also found a way to add map-marker data to load them into Map API too.<br>
 At first, it seems like mysteriuos usage of <code>geotableId</code> as seen in following code.</p>
@@ -87,7 +87,7 @@ You can get into such section by clicking on highlighting blue color on the left
 
 <p><img src="/assets/images/locpeed/result-from-data-creation.png" alt="Result from data creation"></p>
 
-<h2>Dynamic Adding Map Marker Data</h2>
+<h2 id="dynamic-adding-map-marker-data">Dynamic Adding Map Marker Data</h2>
 
 <p>The intention is not for administrator to manually add data after users submitted information through our service.<br>
 We have to do it dynamically via programming.</p>
@@ -96,7 +96,7 @@ We have to do it dynamically via programming.</p>
 
 <p>I don&#39;t add it to the project just yet. But knowing it&#39;s possible slightly calms me down at this stage.</p>
 
-<h2>Upated Project Direction</h2>
+<h2 id="upated-project-direction">Upated Project Direction</h2>
 
 <p>At first, users have to test WiFi speed separately via <a href="http://www.speedtest.net/">http://www.speedtest.net/</a>, then copy its URL to submit to our service, finally our service will store that data into database and render the location on map.</p>
 
@@ -105,7 +105,7 @@ We have to do it dynamically via programming.</p>
 <p>With that, it&#39;s highly towards making an app via hybrid solution. To make it available on website also is another thing.<br>
 At this stage, I will focus on making website version works (without relying on framework), then will work on mobile app (not decide which framework I will use)</p>
 
-<h2>Finding Connected WiFi SSID</h2>
+<h2 id="finding-connected-wifi-ssid">Finding Connected WiFi SSID</h2>
 
 <p>I went through the project more and thought that I cannot basically show the location with Downloading/Uploading speed without connected <em>Wifi SSID</em> or the name of connected WiFi. Users want to know which one they want to connect to get that reported speed.</p>
 

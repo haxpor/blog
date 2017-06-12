@@ -66,7 +66,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>Let&#39;s first understand the underlying system of Cocoapods, until we come to overall big picture of model to use it.</p>
 
-<h2>Underlying</h2>
+<h2 id="underlying">Underlying</h2>
 
 <hr>
 
@@ -90,20 +90,20 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 <li>Create a proper <code>.podspec</code> file and set its <code>source</code> field to use URL as result from 3.</li>
 </ol>
 
-<h3>Self-host Spec repo</h3>
+<h3 id="self-host-spec-repo">Self-host Spec repo</h3>
 
 <p>To gain the benefit of setting the permission of <code>Specs</code> repo, you have only option which is to do self-host of it.
 Even you do self-host, you also have an option of setting access permission to be in public or private. In this case, we&#39;re primarily interested in private access.</p>
 
 <p>Cocoapods has official document on <a href="https://guides.cocoapods.org/making/private-cocoapods.html">how to host private Specs repo</a>.</p>
 
-<h3>Build framework in universal binary without exposing source code</h3>
+<h3 id="build-framework-in-universal-binary-without-exposing-source-code">Build framework in universal binary without exposing source code</h3>
 
 <p>I came across this well explained <a href="https://eladnava.com/publish-a-universal-binary-ios-framework-in-swift-using-cocoapods/">article</a> of how to publish a universal binary iOS framework using Cocoapods.</p>
 
 <p>Only difference from what we&#39;re trying achieving compared to that article is that, the author publishes it publicly. But we want it in private. Thus we have no need to involve using <code>pod trunk ...</code> command as we don&#39;t publish to the main public <code>Specs</code> repo but to our private one.</p>
 
-<h3>Upload result framework to public server</h3>
+<h3 id="upload-result-framework-to-public-server">Upload result framework to public server</h3>
 
 <p>Upload such built frameworks to our public server. Ensure that it&#39;s in universal binary form thus it can be used to run on device and simulator. Ensure that you didn&#39;t include any source code with it. Normally, aim for <code>.zip</code> file. The content of <code>.zip</code> file mainly contains <code>.framework</code> along with <code>README</code> or any relavent files if you need. All of them are at the same level. It might be as follows.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">framework-result.zip
@@ -115,11 +115,11 @@ Even you do self-host, you also have an option of setting access permission to b
 <p><code>strip-frameworks.sh</code> is usually needed at the end when users want to publish the result application to AppStore. It will help stripping un-needed architecture from frameworks being in use. You can see and make use of <a href="https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh">strip-frameworks.sh</a> by Realm. Insert it insidee <em>Build Phases</em>.</p>
 </blockquote>
 
-<h3>Create a proper <code>.podspec</code> file</h3>
+<h3 id="create-a-proper-podspec-file">Create a proper <code>.podspec</code> file</h3>
 
 <p>Properly create a <code>.podspec</code> file to match the version of such framework. The most important thing is <code>source</code> field instead of providing github URL, you provide the end-result of URL of <code>.zip</code> for users to download.</p>
 
-<h2>Model</h2>
+<h2 id="model">Model</h2>
 
 <hr>
 
@@ -172,25 +172,25 @@ Please note that I observe the main <code>Specs</code> repo&#39;s file structure
 
 <p>I came up with two possible models; Variant A, and B.</p>
 
-<h3>Variant A</h3>
+<h3 id="variant-a">Variant A</h3>
 
 <p><img src="/assets/images/cocoapods/VariantA.png" alt="Model Variant A"></p>
 
-<h4>Annotations</h4>
+<h4 id="annotations">Annotations</h4>
 
 <p><strong>1</strong> ---&gt; Ownership (included just to show authentic owenership)<br>
 <strong>2</strong> ---&gt; Public server to host built (.zip) frameworks<br>
 <strong>3</strong> ---&gt; Each circle is <strong>private</strong> <code>Specs</code> repo exposed to selected external party (client)<br>
 <strong>4</strong> ---&gt; Multiple of client parties spanning into multiple groups</p>
 
-<h4>Requirements</h4>
+<h4 id="requirements">Requirements</h4>
 
 <ol>
 <li>Public server to host built (.zip) frameworks.</li>
 <li>Paid Github acccount to have ability to create private repositories ($7/month)</li>
 </ol>
 
-<h4>Feature</h4>
+<h4 id="feature">Feature</h4>
 
 <p>It allows another layer to control which party (client) can see such <code>Specs</code> repo.
 Imagine if we have 2 clients. Each client might use multiple of frameworks and are different from ones used by another client.<br>
@@ -198,61 +198,61 @@ Thus we will have 2 private <code>Specs</code> repo one for each client.</p>
 
 <p>We need to allow users (github account) to have read access towards such <code>Specs</code> repo. So when they pull down via configured <code>Podfile</code>, it will be fine.</p>
 
-<h4>Summary</h4>
+<h4 id="summary">Summary</h4>
 
-<h5>Pros</h5>
+<h5 id="pros">Pros</h5>
 
 <ul>
 <li>Additional layer to manage and control which party can have access to which frameworks via private <code>Specs</code> repo.</li>
 </ul>
 
-<h5>Cons</h5>
+<h5 id="cons">Cons</h5>
 
 <ul>
 <li>Need to manage and allow access for users towards such <code>Specs</code> repo</li>
 <li>Might not be feasible for who which doesn&#39;t want to pay monthly in order to use Github&#39;s private repositories feature</li>
 </ul>
 
-<h3>Variant B</h3>
+<h3 id="variant-b">Variant B</h3>
 
 <p><img src="/assets/images/cocoapods/VariantB.png" alt="Model Variant B"></p>
 
-<h4>Annotations</h4>
+<h4 id="annotations">Annotations</h4>
 
 <p><strong>1</strong> ---&gt; Ownership (included just to show authentic owenership)<br>
 <strong>2</strong> ---&gt; Public server to host built (.zip) frameworks<br>
 <strong>3</strong> ---&gt; One single <code>Specs</code> repo exposed to general public<br>
 <strong>4</strong> ---&gt; Multiple of client parties treated as a single public group</p>
 
-<h4>Requirement</h4>
+<h4 id="requirement">Requirement</h4>
 
 <ol>
 <li>Public server to host built (.zip) frameworks.</li>
 </ol>
 
-<h4>Feature</h4>
+<h4 id="feature">Feature</h4>
 
 <p>It has no control layer over which party or users should have access towards our framework.
 Thus there is no need to create private <code>Specs</code> repo and manage (allow users access) to it.</p>
 
 <p>One caveat is that if users inspect the content inside <code>Specs</code> repo, they will have information for all frameworks we have, and might be able to know which client we work with. But it might be less likely for normal users as when they&#39;re done with configuring <code>Podfile</code>, usually they have no time or interest to study our <code>Specs</code> repo. Even if they do so, they have to try by trial and error to use the framework as most likely we will deliver document to client privately too.</p>
 
-<h4>Summary</h4>
+<h4 id="summary">Summary</h4>
 
-<h5>Pros</h5>
+<h5 id="pros">Pros</h5>
 
 <ul>
 <li>No additional effort to manage each private <code>Specs</code> repository as there is none to manage.</li>
 <li>No additional cost, normal Github account will do the work</li>
 </ul>
 
-<h5>Cons</h5>
+<h5 id="cons">Cons</h5>
 
 <ul>
 <li>Users might gain information about our all frameworks and where to download; and possible to know which client we&#39;ve worked with.</li>
 </ul>
 
-<h2>Final words</h2>
+<h2 id="final-words">Final words</h2>
 
 <p>Now we get to know models to use in delivery frameworks to clients privately, and even has options to choose one that is more suitable to use. To go further than that, it&#39;s possible to reduce <a href="#steps">steps</a> needed especially 2, 3, and 4 which are building framework, uploading, and creating a proper <code>.podspec</code> via automated script.</p>
 

@@ -58,7 +58,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
   </header>
 
   <article class="post-content">
-    <h2>What Catches Me On</h2>
+    <h2 id="what-catches-me-on">What Catches Me On</h2>
 
 <p>I still remember the very first time I log in to DigitalOcean server. I don&#39;t have to enter password.
 At first, it feels something fishy going on behind the scene. I thought why they do something like this, the security is not on par.</p>
@@ -68,7 +68,7 @@ At first, it feels something fishy going on behind the scene. I thought why they
 <p>The concept is you map the client to target server via public-private key pair of RSA. This means only a particular client can connect to server.
 By doing this, we disable normal SSH login with password. This increases security at the same time.</p>
 
-<h2>Steps</h2>
+<h2 id="steps">Steps</h2>
 
 <ol>
 <li>On client system, execute <code>ssh-keygen -t rsa</code> to generate key. The key will be located at <code>~/.ssh/</code>.</li>
@@ -87,7 +87,7 @@ You shoul add the last two commands into <code>~/.bashrc</code>. So that it will
 </ul></li>
 </ol>
 
-<h2>Resource</h2>
+<h2 id="resource">Resource</h2>
 
 <p>I reference the steps above from the following links</p>
 

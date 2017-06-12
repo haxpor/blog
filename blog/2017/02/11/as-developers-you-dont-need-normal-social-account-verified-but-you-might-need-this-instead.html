@@ -79,11 +79,11 @@ I know it&#39;s a real hard work, you need to give something to the world, make 
 
 <p>So let&#39;s see how can we achieve that</p>
 
-<h2>How To Get Verified On Every Commit on Github</h2>
+<h2 id="how-to-get-verified-on-every-commit-on-github">How To Get Verified On Every Commit on Github</h2>
 
 <p>What I tested is on macOS. But it should work similar to other platform, or you might need to adapt a little bit.</p>
 
-<h3>Generate a GPG key</h3>
+<h3 id="generate-a-gpg-key">Generate a GPG key</h3>
 
 <ul>
 <li>Download gpg tool via <code>brew install gpg</code>.</li>
@@ -109,7 +109,7 @@ Result you got is similar to below<br></li>
 <li>Copy the result text from such command. We will use it in next section.</li>
 </ul>
 
-<h3>Add GPG key to Github Account</h3>
+<h3 id="add-gpg-key-to-github-account">Add GPG key to Github Account</h3>
 
 <ul>
 <li>Browse to Github website.</li>
@@ -120,7 +120,7 @@ Result you got is similar to below<br></li>
 <li>Confirm the action by entering your Github password.</li>
 </ul>
 
-<h3>Set up Git to Sign All Commits</h3>
+<h3 id="set-up-git-to-sign-all-commits">Set up Git to Sign All Commits</h3>
 
 <p>Use key ID i.e. <code>BD496CEDB4686EF8</code> as you got from earlier section and specify in these commands.</p>
 
@@ -131,7 +131,7 @@ Result you got is similar to below<br></li>
 
 <p>Above will let git know that the default key id to use in every signing commit is <code>BD496CEDB4686EF8</code>, and you will be signing every commit by default.</p>
 
-<h3>(for safety) Configure to Make it Work</h3>
+<h3 id="for-safety-configure-to-make-it-work">(for safety) Configure to Make it Work</h3>
 
 <p>These commands might not be needed but for safety, I recommend to do it anyway to make it works.</p>
 
@@ -144,7 +144,7 @@ Result you got is similar to below<br></li>
 <p>This will set the default key id to use, and another is to make auto-signed commit work with GUI software. In short, just add them.
 * Execute <code>git config --global gpg.program $(which gpg)</code>. This will set which gpg program to use with git.</p>
 
-<h3>Set to Make It Not Ask Passphraase All The Time</h3>
+<h3 id="set-to-make-it-not-ask-passphraase-all-the-time">Set to Make It Not Ask Passphraase All The Time</h3>
 
 <ul>
 <li>Install <code>gpg-agent</code> and <code>pinentry-mac</code> via <code>brew install gpg-agent pinentry-mac</code>.</li>
@@ -166,7 +166,7 @@ Result you got is similar to below<br></li>
      </span><span class="nb">eval</span> <span class="k">$(</span>gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info<span class="k">)</span>
    <span class="k">fi</span>
 </code></pre></div>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>Now whenever you do <code>git commit</code>, it will ask for passphrase for the <strong>first</strong> time only, save it to keychain, then next time it will automatically enter that for you in every commit.</p>
 

@@ -58,7 +58,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
   </header>
 
   <article class="post-content">
-    <h2>What TFO Solve</h2>
+    <h2 id="what-tfo-solve">What TFO Solve</h2>
 
 <p>I got suggestion to enable Fast TCP Open (TFO) from a guy named <em>Leonard Woo</em> from <a href="https://telegram.me/joinchat/BT0c4z49OGNZXwl9VsO0uQ">Potatso Telegram User Group</a> to possibly gain more speed on using Shadowsocks as I experienced a slowdown these couple of days.</p>
 
@@ -66,7 +66,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p><img src="/assets/images/TFO/result-tfo-research-paper.png" alt="result of speed gain of TFO"></p>
 
-<h2>How to Enable on Ubuntu</h2>
+<h2 id="how-to-enable-on-ubuntu">How to Enable on Ubuntu</h2>
 
 <p>You need to have linux kernel at least 3.7.<br>
 You can check via <code>uname -r</code>, it will give the result similar to following.</p>
@@ -86,7 +86,7 @@ You can check via <code>uname -r</code>, it will give the result similar to foll
 </ul>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell">   <span class="nb">echo </span>3 &gt; /proc/sys/net/ipv4/tcp_fastopen
 </code></pre></div>
-<h2>But What&#39;s About Browser?</h2>
+<h2 id="but-whats-about-browser">But What&#39;s About Browser?</h2>
 
 <p>At first I thought that too that you have to have browser that supports TFO. But I consulted <em>Leonard Woo</em> and he said that it&#39;s <strong>Single side</strong>. That means only one side of the connection needs to enable TFO.</p>
 
@@ -110,7 +110,7 @@ You can check via <code>uname -r</code>, it will give the result similar to foll
 
 <p>I will be testing this set up for a couple days to see if I can gain such speed improvement (actually it&#39;s pretty difficult to tell as Internet speed through proxy/vpn is not stable from within China). But anyway, above is the way to enable it.</p>
 
-<h2>Reference</h2>
+<h2 id="reference">Reference</h2>
 
 <ul>
 <li><a href="https://www.bxl.pm/8602.html">Shadowsocks - TCP Fast Open</a></li>
