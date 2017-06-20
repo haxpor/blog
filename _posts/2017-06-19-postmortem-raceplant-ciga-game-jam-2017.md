@@ -8,3 +8,4 @@ tags: [game, indiegame, indie, gamejam, ciga, cigagamejam, raceplant, tree, solo
 comments: true
 ---
 
+CIGA Game Jam 2017 during 17-18 June 2017 is the first major game jam in China.
