@@ -5,7 +5,7 @@ date:   2017-06-19 22:46
 thumbnail: /assets/images/post-thumbnail/raceplant-thumbnail.png
 categories: blog
 tags: [game, indiegame, indie, gamejam, ciga, cigagamejam, raceplant, tree, solo]
-comments: false
+comments: true
 ---
 
 [CIGA Game Jam 2017](https://mp.weixin.qq.com/s?__biz=MzIwMjc3NjAyMA==&mid=2247483713&idx=1&sn=6c7794a55c2d6143932750f8b72cc690&chksm=96d8cdfaa1af44ecef8ec43d449d370eb84a351fd697071f49288b9718771531d6880a8dba18&mpshare=1&scene=1&srcid=0620BtwRjY43YtlxXL8yXNOp&key=dd608d91fd702d64460b55d328895106f469470062151b36abe421d3206855bd1fded14c1cfa0d8185e5ace39a268b9ac0bbd5a99c13b4905f08a705263ac23a857c7280af3425527ef217c071ec1e6d&ascene=0&uin=NDI1Njc0NDc4&devicetype=iMac+MacBookPro9%2C2+OSX+OSX+10.13+build(17A264c)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=wQEH5dThsNTUA4Nl99aTwOKHjwIbL2ZJabEIetOVrkl4fhI6jDnOAYKknfy2AG4y) during 17-18 June 2017 is the first major game jam I participated in China.
