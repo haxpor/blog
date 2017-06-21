@@ -6,9 +6,451 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 12 Jun 2017 23:24:48 +0800</pubDate>
-    <lastBuildDate>Mon, 12 Jun 2017 23:24:48 +0800</lastBuildDate>
+    <pubDate>Wed, 21 Jun 2017 23:04:07 +0800</pubDate>
+    <lastBuildDate>Wed, 21 Jun 2017 23:04:07 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Postmortem of Race Plant, CIGA Game Jam 2017</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzIwMjc3NjAyMA==&amp;mid=2247483713&amp;idx=1&amp;sn=6c7794a55c2d6143932750f8b72cc690&amp;chksm=96d8cdfaa1af44ecef8ec43d449d370eb84a351fd697071f49288b9718771531d6880a8dba18&amp;mpshare=1&amp;scene=1&amp;srcid=0620BtwRjY43YtlxXL8yXNOp&amp;key=dd608d91fd702d64460b55d328895106f469470062151b36abe421d3206855bd1fded14c1cfa0d8185e5ace39a268b9ac0bbd5a99c13b4905f08a705263ac23a857c7280af3425527ef217c071ec1e6d&amp;ascene=0&amp;uin=NDI1Njc0NDc4&amp;devicetype=iMac+MacBookPro9%2C2+OSX+OSX+10.13+build(17A264c)&amp;version=12020810&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=wQEH5dThsNTUA4Nl99aTwOKHjwIbL2ZJabEIetOVrkl4fhI6jDnOAYKknfy2AG4y&quot;&gt;CIGA Game Jam 2017&lt;/a&gt; during 17-18 June 2017 is the first major game jam I participated in China.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/ciga-logo.png&quot; alt=&quot;CIGA logo main&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;That is being said to create a game within 48 hours. The theme announced at the event taking place at Huaqiaodong Dream Space, a cafe shop with space for hosting a small or medium size event.&lt;/p&gt;
+
+&lt;p&gt;Organizers posted the theme for participants to think about via image.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/theme.jpg&quot; alt=&quot;Theme&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Image courtesy of &lt;a href=&quot;http://game.people.com.cn/n1/2017/0619/c40130-29347357.html?from=timeline&amp;isappinstalled=0&quot;&gt;people.com&lt;/a&gt;&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;So in this post, I will go through my development process. How I organized and split the chunk of time to do each task, and be able to come up with a game that has essential features I aimed for from start.&lt;/p&gt;
+
+&lt;p&gt;But before we go through all of those detail, the following is what the game looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/raceplant-ciga2017/screenshot.jpg&quot;&gt;&lt;img src=&quot;/assets/images/raceplant-ciga2017/screenshot.jpg&quot; alt=&quot;raceplant screenshot&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;center&gt;&lt;br/&gt;
+&lt;em&gt;Click on image for full resolution&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3W4gL9X_Zks&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Watch til the match ends, you will know the reason of all actions in the game.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;schedule-the-time&quot;&gt;Schedule the Time&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I knew myself I will face a hard time trying to implement certain feature if it requires some effort, or spend time too much on certain thing without bound, thus I need to mark the silo of time from beginning.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/schedule-time.png&quot; alt=&quot;schedule time&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;From above, I categorize only main tasks into&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;Alloted Time (hours)&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;Schedule&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;Percentage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ideation&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;2.3&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;17 June, 18:00 - 20:00&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Development&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;36.8&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;17 June, 20:00 - 18 June, 10:00&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;80%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polish (Sfx, Music, Bugs fix)&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;4.6&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;18 June, 10:00 - 13:30&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;10%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Misc&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;2.3&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;18 June, 13:30 - 16:00&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;46.0&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;17 June, 18:00 - 18 June, 16:00&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Notice that it&amp;#39;s not entirely 48 hours, as that 2 hours was spent as presentation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;During the entire time, I try to stick to the plan as best as I can to minimize the risk of not enough time that usually happens at the end of overall development cycle; yup, to not miss any particular stuff i.e. sfx, important bug fix of the game.&lt;/p&gt;
+
+&lt;h1 id=&quot;coming-up-with-idea&quot;&gt;Coming up with Idea&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Look at the theme image, I ever tried to rotate the image to see it from different angle. What it came up to me is the &lt;em&gt;&amp;quot;root&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So the idea develops into &lt;em&gt;&amp;quot;planting&amp;quot;&lt;/em&gt;, &lt;em&gt;&amp;quot;maintenance&amp;quot;&lt;/em&gt;, and &lt;em&gt;&amp;quot;collecting&amp;quot;&lt;/em&gt;. So why not creating a game that allows two players to compete each other. That involves planting tree, taking care of them by watering, and collecting their benefits (fruit, and seeds). With these, we can repeat the whole process until match&amp;#39;s timeout. Who gets more fruits wins!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Actually both players win as we help to plant tree for the better.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/initial-design.jpg&quot; alt=&quot;initial design&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Initial rough sketch that shows the idea about tree&amp;#39;s planting, and maintenance. Further with divided areas for each player to compete in taking (latter is discarded in iteration).&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/initial-design2.jpg&quot; alt=&quot;initial design&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Initial rough sketch that shows available areas for taking for advantages.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;The big picture of idea is there, but during having done with iteration of each feature implementation, I found out that few features are rather difficult and has  enough time to develop, or too much involved with graphical assets. So I cut a few ideas out.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;removed_idea&quot;&gt;&lt;/a&gt;Ideas I removed out during iteration of development&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Attacking opponent with a bow&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This requires a cursor locking system to be implemented. Use another analog stick to aim, and player&amp;#39;s animation needs to be in synced. This &lt;a href=&quot;https://twitter.com/blankthevidya/status/868423578949234689&quot;&gt;idea&lt;/a&gt; or see below I saved as reference inspired me to implement this feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;New floaty eye enemies and bow mechanics &lt;a href=&quot;https://twitter.com/hashtag/screenshotsaturday?src=hash&quot;&gt;#screenshotsaturday&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/gamedev?src=hash&quot;&gt;#gamedev&lt;/a&gt; &lt;a href=&quot;https://t.co/kjfW7Bsqpp&quot;&gt;pic.twitter.com/kjfW7Bsqpp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Fervir (@blankthevidya) &lt;a href=&quot;https://twitter.com/blankthevidya/status/868423578949234689&quot;&gt;May 27, 2017&lt;/a&gt;&lt;/blockquote&gt;&lt;/center&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Anyway I found this might be too much for the game, thus it&amp;#39;s better to remove it. Then while play-testing latter version of the game, by chance I found that attacking can be interchanged with &lt;em&gt;stealing&lt;/em&gt; mechanics. As player can pick up bucket, seed, and fruit, and also can place them down on the ground if they want. Thus player can throw it to another player to suddenly make opponent carry that stuff (if such player has empty hand). This is to annoy, and introduce time delay to focus on collecting fruits which are the main score of the game.&lt;/p&gt;
+
+&lt;p&gt;Anyway, from public play-testing by other developers in the event, some suggested that it&amp;#39;d be good to be able to attack another player in some ways. They want to do it in the game.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Large area of water tiles&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Water tileset is one of variety in tileset I initially aimed for to have from the beginning of design. During mid phase of development, I found out that it would take more time to have a realistic look of water tileset after play-testing it. So I changed this to have only a single tile to represent water allowing player to fill water into a bucket.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&quot;https://twitter.com/amzeratul/status/874971284395970560&quot;&gt;idea&lt;/a&gt; or you can see below, and also shallow water you see above inspired me and thus I saved them as reference to pursue this vision although cut them out and changed to single tile at the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Make sure to check out our post on how the campaign editor of Wargroove will work! &lt;a href=&quot;https://t.co/EdaRN3M2qv&quot;&gt;&lt;a href=&quot;https://t.co/EdaRN3M2qv&quot;&gt;https://t.co/EdaRN3M2qv&lt;/a&gt;&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/indiedev?src=hash&quot;&gt;#indiedev&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/gamedev?src=hash&quot;&gt;#gamedev&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/pixelart?src=hash&quot;&gt;#pixelart&lt;/a&gt; &lt;a href=&quot;https://t.co/ao4S4uZEBz&quot;&gt;pic.twitter.com/ao4S4uZEBz&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rodrigo Monteiro (@amzeratul) &lt;a href=&quot;https://twitter.com/amzeratul/status/874971284395970560&quot;&gt;June 14, 2017&lt;/a&gt;&lt;/blockquote&gt;&lt;/center&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Factory to Generate Seeds &amp;amp; Fruits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.myabandonware.com/game/z-2uk&quot;&gt;Z&lt;/a&gt; is old DOS game that comes to my mind. That game has entire map divided into areas. Each area might have a factory to produce something useful for player to use it as advantage to compete with oppononent.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://www.myabandonware.com/media/screenshots/z/z-2uk/z_10.gif&quot; alt=&quot;Z screenshot factory&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Latter in the development cycle, it requires careful judement on balancing, and art creation. Thus I cut it out, and let the tree which players grow to produce such seeds and fruits for endless score until match&amp;#39;s time is up.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;development&quot;&gt;Development&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;The tools I use are as follows&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://libgdx.badlogicgames.com/&quot;&gt;libgdx&lt;/a&gt; with &lt;a href=&quot;https://kotlinlang.org/&quot;&gt;kotlin&lt;/a&gt; as programming language&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.android.com/studio/index.html&quot;&gt;Android Studio 2.3.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.aseprite.org/&quot;&gt;Aseprite&lt;/a&gt; - for pixel art and animation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mapeditor.org/&quot;&gt;tiled&lt;/a&gt; - for tile-based map editor&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.bfxr.net/&quot;&gt;Bfxr&lt;/a&gt; - for sound effect (background music, and some of sfx I downloaded them from Internet)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;As you can see, I prefer to use only open source tools.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Requirement to Run the Game&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java Runtime at least version 1.6+&lt;/li&gt;
+&lt;li&gt;Xbox360 controllers for two players (due to the game doesn&amp;#39;t offer button mapping as configuration so if you use different brand of controller, button might be changed. But all in all, you can use other controller but keep in mind it&amp;#39;s not tested).&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;red&quot; style=&quot;font-weight: bold&quot;&gt;-&lt;/font&gt; Keyboard to control player is not support yet.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following is a working desk I&amp;#39;ve occupied to work on the game. It&amp;#39;s nearly perfect suitable for standing desk.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/working-table.png&quot; alt=&quot;working table&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Near perfect suitable for standing desk. First ~24 hours, I&amp;#39;ve standed and worked on the game.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Right after ideation, I quickly started the development process in which I knew deep down in my mind that I&amp;#39;m not a fast coder who can implement something very quickly compared to others as I have noticed this from past experience.&lt;/p&gt;
+
+&lt;p&gt;So I stick to the plan, and start coding early. I noticed that I&amp;#39;ve started coding way earlier than most other participants. While I&amp;#39;m coding, other teams still discussing about the idea; even the next day in the morning, discussion was still going strong but that time I went through already down in development.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not saying working as a team is wrong. But just my taste and this particular of time that I prefer working alone.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Don&amp;#39;t get me wrong, I work with others as a team before, many times. Either student, game jam, or commercial projects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thing is working in a team, time will be spent in politics which is cost in communication of discussion. You cannot go fast in short term. But if things settle down, things will be faster in long term. Compare that to single or solo developer, you can go in any direction you want, I mean right away. No discussion or approvement, short term is very good, but long term beware of burning out due to you need time to sleep. That gap of time &amp;quot;a team&amp;quot; can still operate.&lt;/p&gt;
+
+&lt;p&gt;This game jam is a challenge for me to produce art resource by myself. I&amp;#39;m not artist by nature, thus artistic vision is not yet there. So in order to fasten the process, I did much of the research and tried to find lots of artistic reference out there before deciding especially which color palletes and style to go before drawing.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/dev-player.jpg&quot; alt=&quot;drawing player&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Initial player sprite&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Mostly for animation for certain action, I aim for 3-4 frames no more than that.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/dev-tileset-stockpile.jpg&quot; alt=&quot;tileset&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Stockpile tileset&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/dev-coding.jpg&quot; alt=&quot;coding&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Player 1 is carrying fruit while Player 2 is idle. Trees are grew into final state.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/dev-bucket.jpg&quot; alt=&quot;bucket sheet&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Bucket sheet&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/dev-player-sheet-sheet-annotated.png&quot; alt=&quot;bucket sheet&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Player sheet&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I counted my hours spent and below is what I found&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;38 hours of development&lt;/li&gt;
+&lt;li&gt;6 hours of sleep&lt;/li&gt;
+&lt;li&gt;2 hours of relaxing i.e. watching random Youtube videos, chill, etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first ~24 hours is non-stop working. I&amp;#39;ve stayed overnight at the cafe then get back home in the evening of next day to sleep and relax before continue the work at home overnight until coming back at the venue for presentation.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s no strict rule that you need to be at the venue all the time.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-went-right-wrong&quot;&gt;What Went Right &amp;amp; Wrong&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;things-went-right&quot;&gt;Things Went Right&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cut out Time-consuming Features During Iteration&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;#removed_idea&quot;&gt;ideas that were removed during iteration&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Focus on Pixel Art Style&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, I&amp;#39;m not an arist by nature thus by focusing on pixel art style which is the possible way that I can achieve with my ability.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Start Actual Coding as Early as Possible (according to scheduled time)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So with this I have more time to breathe and fix important bugs especially z-order sorting, tile&amp;#39;s line bleeding, and camera bounding.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;things-went-wrong&quot;&gt;Things Went Wrong&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Not Immediately Start with Actual Game Session in 5 Minutes Presentation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;That said, 5 minutes is too short. I instead started with introduction talking in which that time should be well spent else where. The game is more suitable to be presented right away with live demo. Also for solo developer that has worked long hour, speak less to minize risk of doing something wrong and just show the end product is better. So my presentation is not good. This is an important lesson learned.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;gifs-in-action&quot;&gt;Gifs in Action&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Giving Thing to Opponent&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Player can give a stuff which can be bucket, seed, or fruit to other player.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/xzJ5hZc.gif&quot; alt=&quot;gif - give thing to opponent&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Giving thing to opponent&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Growth of Tree&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Tree has 3 step to grow. Only the final step in which it can generate seed and fruit.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/PkYArMl.gif&quot; alt=&quot;gif - tree grow to step 2&quot;&gt;
+&lt;img src=&quot;http://i.imgur.com/jeayq4f.gif&quot; alt=&quot;gif - tree grow to step 3&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;&lt;b&gt;Left&lt;/b&gt;: Tree grows into step 2&lt;/em&gt;&lt;br/&gt;
+&lt;em&gt;&lt;b&gt;Right&lt;/b&gt;: Tree grows into step 3&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Generation of Fruit and Seed&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Fruit will be treated as a score whenever player takes it back to stockpile tiles. Seed can be used to further grow another tree as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/WlWMbIA.gif&quot; alt=&quot;gif - generation of fruit and seed&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Fruit and seed generated from a tree&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Collect the Fruit for Score!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Fruit is a main target for player to collect for score.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/B7c8J2G.gif&quot; alt=&quot;gif - collect fruit for score&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Collect a fruit back to stockpile for a score&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Fill Water in a Bucket&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bucket can be either empty or full. In order to water the tree, player needs to fill a bucket first. Find a nearby water tile to fill it.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/6EfdAfb.gif&quot; alt=&quot;gif - fill water in a bucket&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Fill a bucket with water from a nearby water tile&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Watering the Plant&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Take bucket with water filled to water the tree to accelerate its growth.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/Tu3Uggv.gif&quot; alt=&quot;gif - watering the plant&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Water a tree to accelerate its grow&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Z-Order Sorting&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is one of major thing I&amp;#39;m fortunate enough to have time to fix it. It can go horribly wrong if this thing didn&amp;#39;t get fixed before showing the game to public.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw object with bigger value of y first. Do this every frame.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/oFEOLwy.gif&quot; alt=&quot;gif - z-order sorting&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Z-order sorting&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;aftermaths&quot;&gt;Aftermaths&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I feel satisfied with producitivity and result I can produce at the end. All essential features I aim for from beginning get implemented, and it&amp;#39;s a good feeling that when you play the game with another player, it&amp;#39;s fun.&lt;/p&gt;
+
+&lt;p&gt;The game got covered as seen in Chinese media &lt;a href=&quot;http://www.vgtime.com/topic/651845.jhtml?preview=true&amp;from=timeline&amp;isappinstalled=0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Although the game didn&amp;#39;t manage to be in top 3 popular vote, but that&amp;#39;s totally fine as it&amp;#39;s not my objective. Other fellow developers seem to be very interested and had fun when they play the game. That&amp;#39;s a mission accomplished.&lt;/p&gt;
+
+&lt;p&gt;Great thing is to see people smile and laugh while playing your game.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/public-play.jpg&quot; alt=&quot;public play&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Thanks to Kim from 手游龙虎豹 gaming media in China for photo&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/audience.jpg&quot; alt=&quot;audience&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Didn&amp;#39;t remember the source, please contact me if you took it.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/raceplant-ciga2017/wasin-presenting.jpg&quot; alt=&quot;presenting&quot;&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;em&gt;Thanks to KoooN from DJI for taking this photo.&lt;/em&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;At last, I open sourced the project too if you&amp;#39;re interested to know more (note the license of the project).&lt;br&gt;
+Head to &lt;a href=&quot;https://github.com/haxpor/raceplant&quot;&gt;raceplant&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Happy making game folks!&lt;/p&gt;
+
+&lt;p&gt;...
+...&lt;/p&gt;
+
+&lt;h1 id=&quot;many-thanks&quot;&gt;Many Thanks&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phobe&lt;/strong&gt; - for organizing and facilitate presentation as I need to play the game at the same time of presenting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kim&lt;/strong&gt; - help translation rules and announcement from stage from the start, also misc stuff&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;KoooN&lt;/strong&gt; - introduce me to Phobe and this event, and also professional photo. Without you, I might not have a chance to create this game.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fellow developers&lt;/strong&gt; - for very friendly, warm welcome, and support throughout the time of event even after. You guys make game development scene here very warm welcoming! Also not to mention about all advice, and suggestion. Thanks for communicate with me!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Xiuyi&lt;/strong&gt; - thanks for coming by hn, take photo, do social sharing to spread the word, help me communicate in Chinese and demo the game in front of other developers. I&amp;#39;m a single handed thus this helps a lot.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 19 Jun 2017 22:46:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/06/19/postmortem-raceplant-ciga-game-jam-2017.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/06/19/postmortem-raceplant-ciga-game-jam-2017.html</guid>
+        
+        <category>game</category>
+        
+        <category>indiegame</category>
+        
+        <category>indie</category>
+        
+        <category>gamejam</category>
+        
+        <category>ciga</category>
+        
+        <category>cigagamejam</category>
+        
+        <category>raceplant</category>
+        
+        <category>tree</category>
+        
+        <category>solo</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Monthly Report - May 2017</title>
@@ -1694,53 +2136,6 @@ All the best for you guys too, for a great start of 2017.&lt;/p&gt;
         <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/02/2016-year-in-review.html</guid>
         
         <category>review</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>How to Verify GPG Signature via Command-line</title>
-        <description>&lt;p&gt;A time came when before clicking to download a software to install on machine, the hint message might tell you &lt;a href=&quot;https://github.com/shadowsocksr/ShadowsocksX-NG/releases/tag/1.3.8-R8-build5&quot;&gt;&lt;em&gt;&amp;quot;After download you must check the GPG signature.&amp;quot;&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;That might be a little bit of scary. But that&amp;#39;s a must if that certain kind of software you&amp;#39;re going to install is network-based and you will be using it almost all the time.&lt;/p&gt;
-
-&lt;p&gt;So let&amp;#39;s see how can we verify such GPG signature.&lt;/p&gt;
-
-&lt;p&gt;In this case, we&amp;#39;re going to use &lt;code&gt;gpg&lt;/code&gt; application to do the work for us for an example to install ShadowsockX macOS client. Let&amp;#39;s go down to step by step.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install GPG via &lt;code&gt;brew install gpg&lt;/code&gt; on macOS.&lt;/li&gt;
-&lt;li&gt;If you want to verify such GPG signature from unknown source but you trust them, usually you need to import their public GPG key. Go to grab their &lt;a href=&quot;https://github.com/qinyuhang/Pubkey&quot;&gt;public key&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Save their public key into file and name it &lt;code&gt;key.sig&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;gpg --import key.sig&lt;/code&gt;. Assume that you are at the location of the file.&lt;/li&gt;
-&lt;li&gt;Now you&amp;#39;re ready to verify GPG signature. Download its GPG signature of the target file you want to download. It&amp;#39;s &lt;a href=&quot;https://github.com/shadowsocksr/ShadowsocksX-NG/releases/download/1.3.8-R8-build5/ShadowsocksX-NG-R8.dmg.sig&quot;&gt;here&lt;/a&gt;. Download it as &lt;code&gt;verify.sig&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;gpg --verify verify.sig ShadowsockX-NG-R8.dmg&lt;/code&gt;&lt;br&gt;
-Remember to start with signature file first, before the name of target file to verify.&lt;/li&gt;
-&lt;li&gt;That&amp;#39;s it. If verification goes well, you should see output similar to this&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   gpg: Signature made Sat Dec 24 10:27:07 2016 CST using RSA key ID 73EB5E11
-   gpg: Good signature from &lt;span class=&quot;s2&quot;&gt;&quot;YuhangQin (Sign SSR-NG-R) &amp;lt;qinyuhangxiaoxiang@gmail.com&amp;gt;&quot;&lt;/span&gt;
-   gpg: WARNING: This key is not certified with a trusted signature!
-   gpg:          There is no indication that the signature belongs to the owner.
-   Primary key fingerprint: AAAA BBBB CCCC DDDD 00C6  3326 2A45 A972 73EB 5E11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Done.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 27 Dec 2016 19:19:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2016/12/27/how-to-verify-gpg-signature-via-command-line.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2016/12/27/how-to-verify-gpg-signature-via-command-line.html</guid>
-        
-        <category>ubuntu</category>
-        
-        <category>gpg</category>
-        
-        <category>signature</category>
-        
-        <category>command</category>
         
         
         <category>blog</category>
