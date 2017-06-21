@@ -352,6 +352,8 @@ _Thanks to KoooN from DJI for taking this photo._
 At last, I open sourced the project too if you're interested to know more (note the license of the project).  
 Head to [raceplant](https://github.com/haxpor/raceplant).
 
+All in all, feel free to let me know what you think about the game below in comment section.
+
 Happy making game folks!
 
 ...
