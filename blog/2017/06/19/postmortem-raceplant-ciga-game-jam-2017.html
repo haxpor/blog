@@ -406,6 +406,8 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>This is one of major thing I&#39;m fortunate enough to have time to fix it. It can go horribly wrong if this thing didn&#39;t get fixed before showing the game to public.</p>
 
+<p>As not every object has the same size as tile dimension, take for example a tree which has very long height compared to player&#39;s dimension. If not sort in drawing order properly, then player might be drew in front of the tree at the situation that player should be drew behind. It&#39;s good that the game fixed this.</p>
+
 <blockquote>
 <p>It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw object with bigger value of y first. Do this every frame.</p>
 </blockquote>
@@ -453,6 +455,8 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>At last, I open sourced the project too if you&#39;re interested to know more (note the license of the project).<br>
 Head to <a href="https://github.com/haxpor/raceplant">raceplant</a>.</p>
+
+<p>All in all, feel free to let me know what you think about the game below in comment section.</p>
 
 <p>Happy making game folks!</p>
 

@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 21 Jun 2017 23:04:07 +0800</pubDate>
-    <lastBuildDate>Wed, 21 Jun 2017 23:04:07 +0800</lastBuildDate>
+    <pubDate>Wed, 21 Jun 2017 23:20:09 +0800</pubDate>
+    <lastBuildDate>Wed, 21 Jun 2017 23:20:09 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -360,6 +360,8 @@
 
 &lt;p&gt;This is one of major thing I&amp;#39;m fortunate enough to have time to fix it. It can go horribly wrong if this thing didn&amp;#39;t get fixed before showing the game to public.&lt;/p&gt;
 
+&lt;p&gt;As not every object has the same size as tile dimension, take for example a tree which has very long height compared to player&amp;#39;s dimension. If not sort in drawing order properly, then player might be drew in front of the tree at the situation that player should be drew behind. It&amp;#39;s good that the game fixed this.&lt;/p&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw object with bigger value of y first. Do this every frame.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -407,6 +409,8 @@
 
 &lt;p&gt;At last, I open sourced the project too if you&amp;#39;re interested to know more (note the license of the project).&lt;br&gt;
 Head to &lt;a href=&quot;https://github.com/haxpor/raceplant&quot;&gt;raceplant&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All in all, feel free to let me know what you think about the game below in comment section.&lt;/p&gt;
 
 &lt;p&gt;Happy making game folks!&lt;/p&gt;
 
