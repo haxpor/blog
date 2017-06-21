@@ -308,6 +308,8 @@ ___
 
 	This is one of major thing I'm fortunate enough to have time to fix it. It can go horribly wrong if this thing didn't get fixed before showing the game to public.
 
+	As not every object has the same size as tile dimension, take for example a tree which has very long height compared to player's dimension. If not sort in drawing order properly, then player might be drew in front of the tree at the situation that player should be drew behind. It's good that the game fixed this.
+
 	> It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw object with bigger value of y first. Do this every frame.
 
 	<center>
