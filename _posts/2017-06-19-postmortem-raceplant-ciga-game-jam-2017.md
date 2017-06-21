@@ -16,7 +16,7 @@ comments: false
 
 That is being said to create a game within 48 hours. The theme announced at the event taking place at Huaqiaodong Dream Space, a cafe shop with space for hosting a small or medium size event.
 
-They posted the theme for participants to think about via image.
+Organizers posted the theme for participants to think about via image.
 
 <center>
 ![Theme](/assets/images/raceplant-ciga2017/theme.jpg)
@@ -25,9 +25,9 @@ They posted the theme for participants to think about via image.
 _Image courtesy of [people.com](http://game.people.com.cn/n1/2017/0619/c40130-29347357.html?from=timeline&isappinstalled=0)_
 </center>
 
-So in this post, I will go through my development process. How I organize and split the chunk of time to do each task, and be able to come up with a game that has essential features that I aimed for from start.
+So in this post, I will go through my development process. How I organized and split the chunk of time to do each task, and be able to come up with a game that has essential features I aimed for from start.
 
-But before we go through all of those detail, the following is what I got from the game.
+But before we go through all of those detail, the following is what the game looks like.
 
 <center>
 [![raceplant screenshot](/assets/images/raceplant-ciga2017/screenshot.jpg)](/assets/images/raceplant-ciga2017/screenshot.jpg)
@@ -36,9 +36,17 @@ But before we go through all of those detail, the following is what I got from t
 _Click on image for full resolution_
 </center>
 
-# Schedule the Time
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3W4gL9X_Zks" frameborder="0" allowfullscreen></iframe>
+</center>
+<center>
+_Watch til the match ends, you will know the reason of all actions in the game._
+</center>
 
-I knew myself I will face a hard time trying to implement certain feature if it needs much of the effort, or spending time too much on certain thing without bound, thus I mark the silo of time from beginning.
+# Schedule the Time
+___
+
+I knew myself I will face a hard time trying to implement certain feature if it requires some effort, or spend time too much on certain thing without bound, thus I need to mark the silo of time from beginning.
 
 <center>
 ![schedule time](/assets/images/raceplant-ciga2017/schedule-time.png)
@@ -52,17 +60,18 @@ From above, I categorize only main tasks into
 | Development | 36.8 | 17 June, 20:00 - 18 June, 10:00 | 80% |
 | Polish (Sfx, Music, Bugs fix) | 4.6 | 18 June, 10:00 - 13:30 | 10% |
 | Misc | 2.3 | 18 June, 13:30 - 16:00 | 5% |
-| __Total__ | 46 | 17 June, 18:00 - 18 June, 16:00 | 100% |
+| __Total__ | 46.0 | 17 June, 18:00 - 18 June, 16:00 | 100% |
 
 > Notice that it's not entirely 48 hours, as that 2 hours was spent as presentation.
 
 During the entire time, I try to stick to the plan as best as I can to minimize the risk of not enough time that usually happens at the end of overall development cycle; yup, to not miss any particular stuff i.e. sfx, important bug fix of the game.
 
 # Coming up with Idea
+___
 
-Look at the theme image, I ever tried to rotate the image see it from different angle. What it came up to me is the "root".
+Look at the theme image, I ever tried to rotate the image to see it from different angle. What it came up to me is the _"root"_.
 
-So the idea develops into "planting", "maintenance", and "collecting". So why not creating a game that allow two players to compete together reaching for higher score in planting tree, take care trees by watering then then collect its benefits (fruit, and seeds) to repeat the cycle. Who gets more fruits wins!
+So the idea develops into _"planting"_, _"maintenance"_, and _"collecting"_. So why not creating a game that allows two players to compete each other. That involves planting tree, taking care of them by watering, and collecting their benefits (fruit, and seeds). With these, we can repeat the whole process until match's timeout. Who gets more fruits wins!
 
 > Actually both players win as we help to plant tree for the better.
 
@@ -70,49 +79,57 @@ So the idea develops into "planting", "maintenance", and "collecting". So why no
 ![initial design](/assets/images/raceplant-ciga2017/initial-design.jpg)
 </center>
 <center>
-Initial rough sketch that shows the idea about tree's planting, and maintenance. Further with divided areas for each player to compete in taking.
+_Initial rough sketch that shows the idea about tree's planting, and maintenance. Further with divided areas for each player to compete in taking (latter is discarded in iteration)._
 </center>
 
-The big picture of idea is there, but during having done with iteration of each feature of prototyping, I found out that this or that feature is rather difficult and not enough time to develop, or too much involved with graphical assets. So I cut a few ideas out.
+<center>
+![initial design](/assets/images/raceplant-ciga2017/initial-design2.jpg)
+</center>
+<center>
+_Initial rough sketch that shows available areas for taking for advantages._
+</center>
 
-<a id="removed_idea"></a>Ideas I remove out during iteration of development
+The big picture of idea is there, but during having done with iteration of each feature implementation, I found out that few features are rather difficult and has  enough time to develop, or too much involved with graphical assets. So I cut a few ideas out.
+
+<a id="removed_idea"></a>Ideas I removed out during iteration of development
 
 * __Attacking opponent with a bow__
 
-    This requires a cursor locking system to be implemented. Use analog stick to aim, and player's animation needs to be in synced. This [idea](https://twitter.com/blankthevidya/status/868423578949234689) or see below I saved as reference inspired me to implement this feature in the game.
+    This requires a cursor locking system to be implemented. Use another analog stick to aim, and player's animation needs to be in synced. This [idea](https://twitter.com/blankthevidya/status/868423578949234689) or see below I saved as reference inspired me to implement this feature.
 
     <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New floaty eye enemies and bow mechanics <a href="https://twitter.com/hashtag/screenshotsaturday?src=hash">#screenshotsaturday</a> <a href="https://twitter.com/hashtag/gamedev?src=hash">#gamedev</a> <a href="https://t.co/kjfW7Bsqpp">pic.twitter.com/kjfW7Bsqpp</a></p>&mdash; Fervir (@blankthevidya) <a href="https://twitter.com/blankthevidya/status/868423578949234689">May 27, 2017</a></blockquote></center>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    I found this might be too much for this game, thus it's better to remove this part out. Then while play testing nearly complete game, by chance I found that attacking can be interchanged with _stealing_ mechanics of the game. As player can pick up bucket, seeds, and fruit, and also can place them down on the ground if they want. Thus player can throw it to another player to suddenly make opponent carry that stuff (if such player has empty hand). This is to annoy, and introduce time delay to focus on collecting fruits which are the main score of the game.
+    Anyway I found this might be too much for the game, thus it's better to remove it. Then while play-testing latter version of the game, by chance I found that attacking can be interchanged with _stealing_ mechanics. As player can pick up bucket, seed, and fruit, and also can place them down on the ground if they want. Thus player can throw it to another player to suddenly make opponent carry that stuff (if such player has empty hand). This is to annoy, and introduce time delay to focus on collecting fruits which are the main score of the game.
 
-    Anyway, from public play testing by other developers in the event, some suggested that it'd be good to be able to attack another player in some ways.
+    Anyway, from public play-testing by other developers in the event, some suggested that it'd be good to be able to attack another player in some ways. They want to do it in the game.
 
 * __Large area of water tiles__
 
-    Water tileset is one of variety in tileset I initially aimed at first to have in the game. Later phase of development, I found out that it would take more time to have a realistic look of water tileset after play testing it. So I changed this to have only a single tile to represent water allowing player to fill water into a bucket.
+    Water tileset is one of variety in tileset I initially aimed for to have from the beginning of design. During mid phase of development, I found out that it would take more time to have a realistic look of water tileset after play-testing it. So I changed this to have only a single tile to represent water allowing player to fill water into a bucket.
 
-    This [idea](https://twitter.com/amzeratul/status/874971284395970560) or you can see below, and also shallow water you see above inspired me and I saved them as reference to pursue this vision although cut them out and changed to single tile at the end.
+    This [idea](https://twitter.com/amzeratul/status/874971284395970560) or you can see below, and also shallow water you see above inspired me and thus I saved them as reference to pursue this vision although cut them out and changed to single tile at the end.
 
     <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Make sure to check out our post on how the campaign editor of Wargroove will work! <a href="https://t.co/EdaRN3M2qv">https://t.co/EdaRN3M2qv</a> <a href="https://twitter.com/hashtag/indiedev?src=hash">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash">#gamedev</a> <a href="https://twitter.com/hashtag/pixelart?src=hash">#pixelart</a> <a href="https://t.co/ao4S4uZEBz">pic.twitter.com/ao4S4uZEBz</a></p>&mdash; Rodrigo Monteiro (@amzeratul) <a href="https://twitter.com/amzeratul/status/874971284395970560">June 14, 2017</a></blockquote></center>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* __Factories to Generate Seeds & Fruits__
+* __Factory to Generate Seeds & Fruits__
 
-	[Z](http://www.myabandonware.com/game/z-2uk) is old DOS game that comes to my mind. You can see the entire map divided into areas. Each area might have a factory to produce something useful for player to use it to compete with oppononent.
+	[Z](http://www.myabandonware.com/game/z-2uk) is old DOS game that comes to my mind. That game has entire map divided into areas. Each area might have a factory to produce something useful for player to use it as advantage to compete with oppononent.
 
 	<center>
 	![Z screenshot factory](http://www.myabandonware.com/media/screenshots/z/z-2uk/z_10.gif)
 	</center>
 
-	Latter in the development cycle, it requires careful judement on design and requires more effort and time. Thus I cut it out, and let the tree players grew to produce such seeds and fruits for endless score until match time is up.
+	Latter in the development cycle, it requires careful judement on balancing, and art creation. Thus I cut it out, and let the tree which players grow to produce such seeds and fruits for endless score until match's time is up.
 
 # Development
+___
 
-The tools I use is
+The tools I use are as follows
 
 * [libgdx](https://libgdx.badlogicgames.com/) with [kotlin](https://kotlinlang.org/) as programming language
-* Android Studio 2.3.3
+* [Android Studio 2.3.3](https://developer.android.com/studio/index.html)
 * [Aseprite](https://www.aseprite.org/) - for pixel art and animation
 * [tiled](http://www.mapeditor.org/) - for tile-based map editor
 * [Bfxr](http://www.bfxr.net/) - for sound effect (background music, and some of sfx I downloaded them from Internet)
@@ -122,7 +139,8 @@ The tools I use is
 Requirement to Run the Game
 
 * Java Runtime at least version 1.6+
-* Xbox360 controllers for two players (due to the game doesn't offer button mapping as configuration so if you use different brand of controller, button might be changed. But all in all, you can use other controller but keep in mind it's not tested)
+* Xbox360 controllers for two players (due to the game doesn't offer button mapping as configuration so if you use different brand of controller, button might be changed. But all in all, you can use other controller but keep in mind it's not tested).
+* <font color="red" style="font-weight: bold">-</font> Keyboard to control player is not support yet.
 
 The following is a working desk I've occupied to work on the game. It's nearly perfect suitable for standing desk.
 
@@ -130,22 +148,26 @@ The following is a working desk I've occupied to work on the game. It's nearly p
 ![working table](/assets/images/raceplant-ciga2017/working-table.png)
 </center>
 <center>
-_Near perfect suitable for standing desk. First ~33 hours, I've standed and worked on the game._
+_Near perfect suitable for standing desk. First ~24 hours, I've standed and worked on the game._
 </center>
 
 Right after ideation, I quickly started the development process in which I knew deep down in my mind that I'm not a fast coder who can implement something very quickly compared to others as I have noticed this from past experience.
 
-This time I noticed that I've started coding way earlier than most other participants. While I'm coding, other teams still discussing about the idea; even the next day in the morning, discussion was still going strong but that time I went through already down in development.
+So I stick to the plan, and start coding early. I noticed that I've started coding way earlier than most other participants. While I'm coding, other teams still discussing about the idea; even the next day in the morning, discussion was still going strong but that time I went through already down in development.
 
-Thing is this working in a team, time will be spent in politics which is cost in communication of discussion. You cannot go fast in short term. But if things settle down, things will be faster in long term. Compare that to single or solo developer, you can go in any direction you want, I mean right away. No discussion or approvement, short term is very good, but long term beware of burning out due to you need time to sleep. That gap of time "a team" can still operate.
+I'm not saying working as a team is wrong. But just my taste and this particular of time that I prefer working alone.
 
-This game jam is a challenge for me to produce art resource by myself. I'm not artist by nature, thus artistic vision is not yet there. So in order to fasten the process, I did research and tried to find lots of artistic reference out there before deciding which color palletes and style to go before drawing.
+> Don't get me wrong, I work with others as a team before, many times. Either student, game jam, or commercial projects.
+
+Thing is working in a team, time will be spent in politics which is cost in communication of discussion. You cannot go fast in short term. But if things settle down, things will be faster in long term. Compare that to single or solo developer, you can go in any direction you want, I mean right away. No discussion or approvement, short term is very good, but long term beware of burning out due to you need time to sleep. That gap of time "a team" can still operate.
+
+This game jam is a challenge for me to produce art resource by myself. I'm not artist by nature, thus artistic vision is not yet there. So in order to fasten the process, I did much of the research and tried to find lots of artistic reference out there before deciding especially which color palletes and style to go before drawing.
 
 <center>
 ![drawing player](/assets/images/raceplant-ciga2017/dev-player.jpg)
 </center>
 <center>
-_Initial player animation_
+_Initial player sprite_
 </center>
 
 Mostly for animation for certain action, I aim for 3-4 frames no more than that.
@@ -178,31 +200,43 @@ _Bucket sheet_
 _Player sheet_
 </center>
 
-# What Went Right or Wrong
+I counted my hours spent and below is what I found
+
+* 38 hours of development
+* 6 hours of sleep
+* 2 hours of relaxing i.e. watching random Youtube videos, chill, etc
+
+The first ~24 hours is non-stop working. I've stayed overnight at the cafe then get back home in the evening of next day to sleep and relax before continue the work at home overnight until coming back at the venue for presentation.
+
+There's no strict rule that you need to be at the venue all the time.
+
+# What Went Right & Wrong
+___
 
 ## Things Went Right
 
-1. __Cut out time-consuming features during iteration__
+1. __Cut out Time-consuming Features During Iteration__
 
 	See [ideas that were removed during iteration](#removed_idea).
 
-2. __Focus on pixel art style__
+2. __Focus on Pixel Art Style__
 
-	Yes, I'm not an arist by nature thus focus on pixel art style which is the art I'm possible to achieve is much better.
+	Yes, I'm not an arist by nature thus by focusing on pixel art style which is the possible way that I can achieve with my ability.
 
-3. __Start actual coding as early as possible (according to scheduled time)__
+3. __Start Actual Coding as Early as Possible (according to scheduled time)__
 
 	So with this I have more time to breathe and fix important bugs especially z-order sorting, tile's line bleeding, and camera bounding.
 
 ## Things Went Wrong
 
-1. __Not immediately start with actual game session in 5 minutes presentation__
+1. __Not Immediately Start with Actual Game Session in 5 Minutes Presentation__
 
-	That said, 5 minutes is too short. I instead started with introduction talking in which that time should be well spent else where. The game is more suitable to be presented right away with game play. Also for solo developer that has worked long hour, speak less to minize risk of doing something wrong and just show the end product is better. This is a lesson learned for me this time.
+	That said, 5 minutes is too short. I instead started with introduction talking in which that time should be well spent else where. The game is more suitable to be presented right away with live demo. Also for solo developer that has worked long hour, speak less to minize risk of doing something wrong and just show the end product is better. So my presentation is not good. This is an important lesson learned.
 
 # Gifs in Action
+___
 
-* __Give Thing to Opponent__
+* __Giving Thing to Opponent__
 
 	Player can give a stuff which can be bucket, seed, or fruit to other player.
 
@@ -210,12 +244,12 @@ _Player sheet_
 	![gif - give thing to opponent](http://i.imgur.com/xzJ5hZc.gif)
 	</center>
 	<center>
-	_Give thing to opponent_
+	_Giving thing to opponent_
 	</center>
 
 * __Growth of Tree__
 
-	Tree has 3 step to grow.
+	Tree has 3 step to grow. Only the final step in which it can generate seed and fruit.
 
 	<center>
 	![gif - tree grow to step 2](http://i.imgur.com/PkYArMl.gif)
@@ -228,7 +262,7 @@ _Player sheet_
 
 * __Generation of Fruit and Seed__
 
-	Fruit will be treated as a score whenever player takes it back to stockpile. Seed can be used to further grow another tree.
+	Fruit will be treated as a score whenever player takes it back to stockpile tiles. Seed can be used to further grow another tree as well.
 
 	<center>
 	![gif - generation of fruit and seed](http://i.imgur.com/WlWMbIA.gif)
@@ -274,7 +308,7 @@ _Player sheet_
 
 	This is one of major thing I'm fortunate enough to have time to fix it. It can go horribly wrong if this thing didn't get fixed before showing the game to public.
 
-	> It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw more value of y first. Do this every frame.
+	> It turns out that the fix is easy. Use the height of object, then subtract it with desire size of object i.e. player. Use y position as z position in 2D game, then sort all object according to that value, draw object with bigger value of y first. Do this every frame.
 
 	<center>
 	![gif - z-order sorting](http://i.imgur.com/oFEOLwy.gif)
@@ -289,9 +323,9 @@ I feel satisfied with producitivity and result I can produce at the end. All ess
 
 The game got covered as seen in Chinese media [here](http://www.vgtime.com/topic/651845.jhtml?preview=true&from=timeline&isappinstalled=0).
 
-Although the game didn't manage to be in top 3 popular vote, but that's totally fine as it's not my objective.
+Although the game didn't manage to be in top 3 popular vote, but that's totally fine as it's not my objective. Other fellow developers seem to be very interested and had fun when they play the game. That's a mission accomplished.
 
-Great things is to see people smile and laugh while playing your game.
+Great thing is to see people smile and laugh while playing your game.
 
 <center>
 ![public play](/assets/images/raceplant-ciga2017/public-play.jpg)
@@ -314,7 +348,7 @@ _Didn't remember the source, please contact me if you took it._
 _Thanks to KoooN from DJI for taking this photo._
 </center>
 
-At last, I open sourced the project too if you're interested to know more.
+At last, I open sourced the project too if you're interested to know more (note the license of the project).  
 Head to [raceplant](https://github.com/haxpor/raceplant).
 
 Happy making game folks!
