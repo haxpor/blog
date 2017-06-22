@@ -367,7 +367,7 @@ Happy making game folks!
 ___
 
 * __Phoebe__ - for organizing and facilitate presentation as I need to play the game at the same time of presenting
-* __Kim__ - help translation rules and announcement from stage from the start, also misc stuff
+* __Kim__ - help translate rules and announcement from stage from the start, also misc stuff
 * __KoooN__ - introduce me to Phobe and this event, and also professional photo. Without you, I might not have a chance to create this game.
 * __Fellow developers__ - for very friendly, warm welcome, and support throughout the time of event even after. You guys make game development scene here very warm welcoming! Also not to mention about all advice, and suggestion. Thanks for communicate with me!
 * __Xiuyi__ - thanks for coming by hn, take photo, do social sharing to spread the word, help me communicate in Chinese and demo the game in front of other developers. I'm a single handed thus this helps a lot.
