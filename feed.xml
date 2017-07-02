@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 02 Jul 2017 19:58:44 +0800</pubDate>
-    <lastBuildDate>Sun, 02 Jul 2017 19:58:44 +0800</lastBuildDate>
+    <pubDate>Sun, 02 Jul 2017 20:04:48 +0800</pubDate>
+    <lastBuildDate>Sun, 02 Jul 2017 20:04:48 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -16,8 +16,8 @@
 
 &lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/big-picture-hours-spent.png&quot; alt=&quot;big picture hours spent&quot;&gt;
-&lt;img src=&quot;/assets/images/monthly-report/june-2017/projects-hours-spent.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/big-picture-hours-spent.png&quot; alt=&quot;big picture hours spent&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/projects-hours-spent.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 
