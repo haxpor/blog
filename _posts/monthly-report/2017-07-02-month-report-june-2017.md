@@ -14,8 +14,8 @@ Here comes a report for June with new categorized charts for better understandin
 
 # Total hours spent
 
-![big picture hours spent](/assets/images/monthly-report/june-2017/big-picture-hours-spent.png)
-![projects hours spent](/assets/images/monthly-report/june-2017/projects-hours-spent.png)
+<center>![big picture hours spent](/assets/images/monthly-report/june-2017/big-picture-hours-spent.png)</center>
+<center>![projects hours spent](/assets/images/monthly-report/june-2017/projects-hours-spent.png)</center>
 
 # Summary
 ---
