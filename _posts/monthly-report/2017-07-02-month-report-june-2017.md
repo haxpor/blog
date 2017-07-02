@@ -76,10 +76,10 @@ Yup, you can see what changed and improved on link above. Feel free to do anythi
 
 Main notable change is smooth and flexible drag-touch to select and deselect tiles.
 
-<center>![OMO gif 1](http://i.imgur.com/SFOCSd8.gif)</center>
-<cetner>_Saved high scores has been added to the project_</cetner>
+<center>![OMO gif 1](http://i.imgur.com/9lj8Wo4.gif)</center>
+<center>_Saved high scores has been added to the project_</center>
 
-<center>![OMO gif 2](http://i.imgur.com/tNGjvtV.gif)</center>
+<center>![OMO gif 2](http://i.imgur.com/6BKekag.gif)</center>
 <center>_Smooth and flexible drag-touch to select and deselect tiles_</center>
 
 It's technically done, just left with music and sfx in which I decided to learn how to make chiptune music first before call it complete.
