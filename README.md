@@ -1,6 +1,6 @@
 # blog
 
-Visit my blog at [https://wasin.io](https://wasin.io).
+Visit my blog at [http://blog.wasin.io](http://blog.wasin.io).
 The content is updated reflecting the changes of this repository.
 
 # Development

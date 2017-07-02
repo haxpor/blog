@@ -50,7 +50,7 @@ If you didn't check it out yet, I open sourced it on [Github](https://github.com
 
 ## CIGA Game Jam 2017 - Race Plant
 
-I participated in CIGA Game Jam 2017 with other fellows Chinese game developers here in Shenzhen as well. It's the first time of game dev activity here in China I participated.
+I participated in CIGA Game Jam 2017 with other fellows Chinese game developers here in Shenzhen as well. It's the first time of game jam activity here in China I participated.
 
 ![Race Plant](http://i.imgur.com/BM4e4UB.png)
 
