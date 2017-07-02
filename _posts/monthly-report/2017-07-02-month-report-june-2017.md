@@ -10,6 +10,8 @@ comments: true
 og_image: /assets/images/monthly-report/june-2017/projects-hours-spent.png
 ---
 
+Here comes a report for June with new categorized charts for better understanding hours I've invested in. This month packs with activities and couple of released projects.
+
 # Total hours spent
 
 ![big picture hours spent](/assets/images/monthly-report/june-2017/big-picture-hours-spent.png)
