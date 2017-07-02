@@ -7,6 +7,7 @@ categories: monthly-report
 tags: [monthly-report]
 permalink: /:categories/2017/06/report.html
 comments: true
+og_image: /assets/images/monthly-report/june-2017/projects-hours-spent.png
 ---
 
 # Total hours spent
