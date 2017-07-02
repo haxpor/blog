@@ -6,9 +6,152 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 22 Jun 2017 11:26:20 +0800</pubDate>
-    <lastBuildDate>Thu, 22 Jun 2017 11:26:20 +0800</lastBuildDate>
+    <pubDate>Sun, 02 Jul 2017 09:54:29 +0800</pubDate>
+    <lastBuildDate>Sun, 02 Jul 2017 09:54:29 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Monthly Report - June 2017</title>
+        <description>&lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/big-picture-hours-spent.png&quot; alt=&quot;big picture hours spent&quot;&gt;
+&lt;img src=&quot;/assets/images/monthly-report/june-2017/projects-hours-spent.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This month packs with quite activities and releasing of a couple of projects. There are lots of tasks I can categorize. This makes me shift the way creating hours-spent chart in this report. You will see &lt;em&gt;Big picture&lt;/em&gt;, and &lt;em&gt;Projects&lt;/em&gt; charts.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Big picture&lt;/em&gt; mainly contains the following things&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;programming - all about technical implementation in code&lt;/li&gt;
+&lt;li&gt;visual - all about drawing, coloring, making logos, and anything that involve artistic stuff&lt;/li&gt;
+&lt;li&gt;music&lt;/li&gt;
+&lt;li&gt;research&lt;/li&gt;
+&lt;li&gt;writing - mainly about when I write a new blog post&lt;/li&gt;
+&lt;li&gt;misc - other stuff that cannot be categorized above&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Above list is mandatory, and somewhat fixed that I tend not to change in the future. I got inspiration to base off categorizing like that from &lt;a href=&quot;https://twitter.com/neauoire&quot;&gt;Devine&lt;/a&gt;. Classify each task like what I did previously is easier when there&amp;#39;re not too many tasks, but when there&amp;#39;s many, I really have a hard time and it requires me too much time to think about it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Projects&lt;/em&gt; will now better categorized into one bigger project/task, and not spread for too many, it should be easier to grasp. It will be better over time.&lt;/p&gt;
+
+&lt;h2 id=&quot;block-bunny&quot;&gt;Block Bunny&lt;/h2&gt;
+
+&lt;p&gt;Previous &lt;a href=&quot;http://blog.wasin.io/monthly-report/2017/05/report.html&quot;&gt;May report&lt;/a&gt; did mention about &lt;a href=&quot;https://github.com/haxpor/blockbunny&quot;&gt;blockbunny&lt;/a&gt; project. I released it in early of June.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/05P8lh8.gif&quot; alt=&quot;Blockbunny in action 1&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/k98jwnl.gif&quot; alt=&quot;Blockbunny in action 2&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/tJYqnam.gif&quot; alt=&quot;Blockbunny with controller&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;If you didn&amp;#39;t check it out yet, I open sourced it on &lt;a href=&quot;https://github.com/haxpor/blockbunny&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ciga-game-jam-2017-race-plant&quot;&gt;CIGA Game Jam 2017 - Race Plant&lt;/h2&gt;
+
+&lt;p&gt;I participated in CIGA Game Jam 2017 with other fellows Chinese game developers here in Shenzhen as well. It&amp;#39;s the first time of game dev activity here in China I participated.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/BM4e4UB.png&quot; alt=&quot;Race Plant&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I made Race Plant solo in 48 hours. The process involves me to quickly fasten the process in learning how to make pixel art. It helped a lot! To be honest, this is the first major time I really make art myself. I&amp;#39;m quite satisfied with the result I got.&lt;/p&gt;
+
+&lt;p&gt;The strategy I approached is to find reference both in color pallete, and end result you want to achieve from Twitter, or Internet. Then at first try to make your own as good as that reference. But if it&amp;#39;s not it&amp;#39;s ok because you got a good reference point to quickly start off.&lt;/p&gt;
+
+&lt;p&gt;This process makes me diss GIMP and completely do pixel art in Aseprite from now on. It&amp;#39;s great software, and you should check it out.&lt;/p&gt;
+
+&lt;p&gt;Also I published Race Plant on &lt;a href=&quot;https://haxpor.itch.io/race-plant&quot;&gt;itch.io&lt;/a&gt; with pay as you want model. I open sourced the project with respective license with limit in some ways on &lt;a href=&quot;https://github.com/haxpor/raceplant&quot;&gt;Github&lt;/a&gt; too with donation model in compensate that you might learn something from the project.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3W4gL9X_Zks&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;At last, check its &lt;a href=&quot;http://blog.wasin.io/blog/2017/06/19/postmortem-raceplant-ciga-game-jam-2017.html&quot;&gt;postmortem&lt;/a&gt; post out if you didn&amp;#39;t.&lt;/p&gt;
+
+&lt;h2 id=&quot;omo&quot;&gt;OMO&lt;/h2&gt;
+
+&lt;p&gt;OMO is a puzzle game originally by ForeignGuyMike in which it&amp;#39;s a great learning resource thus I went through on top to make changes and add improvements. You can check the project out on &lt;a href=&quot;https://github.com/haxpor/omo&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ohh but not just changes and improvement, I noted key notes regarding to libgdx and kotlin that the project makes use too. Check it out on the link above.&lt;/p&gt;
+
+&lt;p&gt;Yup, you can see what changed and improved on link above. Feel free to do anything with the project, but be aware that ForeignGuyMike already published this original idea on Google Play thus you just cannot copy the code and reskin or slightly modify then publish. Do the real work, adapt, change to not make it completely rip-off, then you will have a chance to publish.&lt;/p&gt;
+
+&lt;p&gt;Main notable change is smooth and flexible drag-touch to select and deselect tiles.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/SFOCSd8.gif&quot; alt=&quot;OMO gif 1&quot;&gt;&lt;/center&gt;
+&lt;cetner&gt;&lt;em&gt;Saved high scores has been added to the project&lt;/em&gt;&lt;/cetner&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/tNGjvtV.gif&quot; alt=&quot;OMO gif 2&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Smooth and flexible drag-touch to select and deselect tiles&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s technically done, just left with music and sfx in which I decided to learn how to make chiptune music first before call it complete.&lt;/p&gt;
+
+&lt;h2 id=&quot;server&quot;&gt;Server&lt;/h2&gt;
+
+&lt;p&gt;I did take some times to create a notifier which is based on NodeJS to send alert message to slack group whenever certain process died on server. I&amp;#39;m tired to know it long after HTTP process died, and I cannot access my website. Thus this notifier will bombard the message until you see and fix the problem :P&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Bot game on point. Prepare to set up alerter when certain critical process crashed silently, then alert me. What if  alerter crashes 2?👨🏽‍💻 &lt;a href=&quot;https://t.co/6eymFeBLLl&quot;&gt;pic.twitter.com/6eymFeBLLl&lt;/a&gt;&lt;/p&gt;&amp;mdash; Wasin Thonkaew (@haxpor) &lt;a href=&quot;https://twitter.com/haxpor/status/873454744718659584&quot;&gt;June 10, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the series of screen captures of what it looks like&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/notifier-slack-1.jpg&quot; width=&quot;60%&quot; alt=&quot;server notifier slack 1&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Notifications sent to your mobile phone&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/notifier-slack-2.jpg&quot; width=&quot;60%&quot; alt=&quot;server notifier slack 2&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Alert messages received on slack channel&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/notifier-slack-3.jpg&quot; alt=&quot;server notifier slack 3&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Same to above but with modified message format&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/june-2017/notifier-slack-4.jpg&quot; alt=&quot;server notifier slack 4&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Logs as shown while running no server&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;All in all, just check it out on &lt;a href=&quot;https://github.com/haxpor/sg-server-notifier&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;techcrunch-shenzhen-2017&quot;&gt;Techcrunch Shenzhen 2017&lt;/h2&gt;
+
+&lt;p&gt;I attended &lt;a href=&quot;http://tc.technode.com/2017/en/main-stage/?from=timeline&amp;isappinstalled=0#1495077026084-21a4b319-af3b&quot;&gt;Techcrunch Shenzhen 2017 event&lt;/a&gt; and captured what &lt;a href=&quot;https://twitter.com/edithyeung&quot;&gt;Edith Yeung&lt;/a&gt; said during panel along the line of difference of doing business between Eastern and Western that the former tends to quickly form partnership, and collaborate but latter tend to check the legitimate &amp;amp; background for another party before forming a thing. That&amp;#39;s exactly what I&amp;#39;ve felt personally too even though not only in highly business sense.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/fxIHVaFl.jpg&quot; alt=&quot;Techcrunch badge&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;This leads me to think about game dev ecosystem here in China especially Shenzhen (I think it applies to all area in China). Chinese game development ecosystem is very friendly and supportive. Everyone would like to help each other out. I think this trait is very natural in Chinese way of doing business as well. People here tend to collaborate, eager to seek to find partnership and my sense tells me that it&amp;#39;d be easy to close the deal if both side agrees.&lt;/p&gt;
+
+&lt;p&gt;I suggest you to sign up or attend events hosted by &lt;a href=&quot;https://hax.co/&quot;&gt;HAX&lt;/a&gt; too in you&amp;#39;re into hardware stuff and especially if you base in Shenzhen. They will get freebies like free tickets to event i.e. Techcrunch, funding your hardware-based startup, meetups, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;visa-work-permit-and-residential-permit&quot;&gt;VISA, Work Permit, and Residential Permit&lt;/h2&gt;
+
+&lt;p&gt;Pheww! Early of June, I&amp;#39;ve done all of these and acquired all of them. Quite a long haul process spanning into 5-6 months included the time from registering a business license, going back to my own country (Thailand) to get all legal required documents, prepare all documents, commute to government places to handle stuff with help from agency etc. I don&amp;#39;t think I will have time to pay attention to all the detail, so it&amp;#39;s better to have agency takes care of stuff and you just do your best to help them from your side. If you want help regarding these, I can refer you to my trust agency to take care these stuff for you, just message me on &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But that&amp;#39;s not all yet.....???&lt;/p&gt;
+
+&lt;p&gt;As of now, I&amp;#39;m in the process of waiting for bank confirmation to complete the process of acquiring company bank account. It&amp;#39;s almost there I think after waiting for a month, that&amp;#39;s a usual time for waiting anyway. So all process to get company license, VISA, work permit, residential permit, and bank account might take ~6 months to complete. If you plan the time carefully, it might be shorter too.&lt;/p&gt;
+
+&lt;h2 id=&quot;chiptune-music&quot;&gt;Chiptune Music&lt;/h2&gt;
+
+&lt;p&gt;Ohh, I love this part. As stated from OMO, I decided to firstly learn how to make chiptune music first before calling a day for that project.
+I&amp;#39;m in the process of doing that right now, and so far so good.&lt;/p&gt;
+
+&lt;p&gt;Right now I&amp;#39;m mainly using &lt;a href=&quot;http://milkytracker.titandemo.org/&quot;&gt;MiklyTracker&lt;/a&gt;. I will update on this skill development later in next month.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;That&amp;#39;s it for this month report.&lt;/p&gt;
+
+&lt;p&gt;If you have a chance to check out any project above, feel free to let me know what you think. Or if you have any suggestion, I love discussion and receive feedback, hit them up via comment section down below.&lt;/p&gt;
+
+&lt;p&gt;Happy creating fellows!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jul 2017 05:36:00 +0800</pubDate>
+        <link>http://blog.wasin.io/monthly-report/2017/06/report.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/monthly-report/2017/06/report.html</guid>
+        
+        <category>monthly-report</category>
+        
+        
+        <category>monthly-report</category>
+        
+      </item>
     
       <item>
         <title>Postmortem of Race Plant, CIGA Game Jam 2017</title>
@@ -2035,113 +2178,6 @@ Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
         <category>integration</category>
         
         <category>script</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>2016 Year In Review</title>
-        <description>&lt;p&gt;I&amp;#39;ve started writing for my year in review since 2014. You can read it in &lt;a href=&quot;https://medium.com/@haxpor/2014-year-in-review-8d90fced9918#.dh1jw5dbs&quot;&gt;2014&lt;/a&gt;, and &lt;a href=&quot;https://medium.com/@haxpor/2015-year-in-review-7f74b72161df#.e2wl20bu0&quot;&gt;2015&lt;/a&gt;. Anyway, you won&amp;#39;t find any more writing pieces from me on other writing platform i.e. Medium, it&amp;#39;s only this place from now on.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-went-well-this-year&quot;&gt;What Went Well This Year&lt;/h2&gt;
-
-&lt;h3 id=&quot;balance-reality-and-dream-goals&quot;&gt;Balance Reality and Dream/Goals&lt;/h3&gt;
-
-&lt;p&gt;I went all-in with making mobile games for several years. It didn&amp;#39;t pan out that great in terms of financially independence. Thus I changed the approach and balanced accepting client&amp;#39;s work/contracting and doing my own IP thing. I released &lt;a href=&quot;https://wasinbot.wasin.io/&quot;&gt;WasinBot&lt;/a&gt;, and started Locpeed, and FKit. I will write more about those latter two things for future post.&lt;/p&gt;
-
-&lt;p&gt;I think the important things is you need to find the most healthy way you&amp;#39;re happy to go along. But try first for what you believe, then adapt and change course a little bit by little bit. Shaping direction gradually will let you see what works, or what doesn&amp;#39;t. It&amp;#39;s for long term and healthy balanced way. &lt;/p&gt;
-
-&lt;h3 id=&quot;write-more&quot;&gt;Write More&lt;/h3&gt;
-
-&lt;p&gt;I gave up on wordpress and editing post via web interface. After I experienced composing a new post in Jekyll hooked up with automatic build process every time there&amp;#39;s a new post pushed into master branch which set up via webhook on Github; all in Markdown language, I just love this approach more than former. At first, it started as an experiment whether I will be liking it or not. Not so long until I really love it.&lt;/p&gt;
-
-&lt;p&gt;Thus this means my website is auto-generated every time I push a new post into main branch. I wrote more than ever, and really enjoy going back to write more as I love its &lt;em&gt;workflow&lt;/em&gt; so much. So I think it&amp;#39;s about &lt;em&gt;aesthetic&lt;/em&gt;, not &lt;em&gt;convenience&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;decision-making&quot;&gt;Decision Making&lt;/h3&gt;
-
-&lt;p&gt;Long ago I&amp;#39;m always defer the decision making to be later and later until I would get more information. But as I&amp;#39;m older, I know there&amp;#39;s not a chance for such information to be fulfilled. It&amp;#39;s just enough and coverage what you need to know, or else. I&amp;#39;m getting better at this. Either personal, or business. Faster in making decision. Better outcome / consequence as I stick to what I chose.&lt;/p&gt;
-
-&lt;h3 id=&quot;support-family&quot;&gt;Support Family&lt;/h3&gt;
-
-&lt;p&gt;Year before 2016, it&amp;#39;s my sister that almost contributes to supporting our family. I don&amp;#39;t really have money to contribute as my mobile game is not published yet. After I changed my approach, and decided to do something about it. I can contribute to my family for 7 months by now in this year. If something didn&amp;#39;t work out as expect, just gradually change its course, and work further on that. Outcome would likely change. You just adapt.&lt;/p&gt;
-
-&lt;h3 id=&quot;get-uncomfortable&quot;&gt;Get Uncomfortable&lt;/h3&gt;
-
-&lt;p&gt;If it&amp;#39;s not a task given from the company I&amp;#39;m currently on contracting basis, I would be just touching the surface of web development for my own project. The good thing about doing such task to serve client is that you get to learn and know bunch of things at hand. I learned more about CSS, AngularJS/Angular 2, ionic1/ionic2, build tools out there, NPM, and the way web developers do thing. It&amp;#39;s so huge in this world but I just pick ones that suit my needs and not all-in jump into using new shiny libraries, it&amp;#39;s not necessary.&lt;/p&gt;
-
-&lt;p&gt;The point is I&amp;#39;ve tapped into the zone I&amp;#39;m not familar with. This gave me strength, and benefit back to my own IP projects.&lt;/p&gt;
-
-&lt;h3 id=&quot;contribte-to-open-source-projects&quot;&gt;Contribte to Open Source Projects&lt;/h3&gt;
-
-&lt;p&gt;Number of contributions in this year&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/github/stats-2016.png&quot; alt=&quot;Number of github contributions&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;I contributed to open source projects of others or myself in this year in terms of code, issues reporting, and document modification as follows (for notable ones)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/UPU&quot;&gt;UPU&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ken39arg/cs-Dumper/issues/1&quot;&gt;cs-Dumper - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/aryaxt/OCMapper/issues/55&quot;&gt;OCMapper - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/aryaxt/OCMapper/issues/55&quot;&gt;ionic-cli - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic/issues/8926&quot;&gt;ionic - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic-app-scripts/issues/245&quot;&gt;ionic-app-scripts - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/driftyco/ionic-app-lib/pull/128&quot;&gt;ionic-app-lib - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/lindell/JsBarcode/issues/114&quot;&gt;JsBarcode - issue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/basejit&quot;&gt;basejit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-didnt-go-so-well-this-year&quot;&gt;What Didn&amp;#39;t Go So Well This Year&lt;/h2&gt;
-
-&lt;h3 id=&quot;accept-too-many-clients-works&quot;&gt;Accept Too Many Clients&amp;#39; Works&lt;/h3&gt;
-
-&lt;p&gt;I accepted too many clients&amp;#39; works thus leave me no time to finish it.
-There&amp;#39;s a time when I need to cancel the project during the mid of development, and a time when I started initially but never continue and finish it.&lt;/p&gt;
-
-&lt;h2 id=&quot;check-list-since-last-year&quot;&gt;Check List Since Last Year&lt;/h2&gt;
-
-&lt;p&gt;What Improved&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Acquire Several Skills&lt;/li&gt;
-&lt;li&gt;Better Negotiation Skill&lt;/li&gt;
-&lt;li&gt;Do More Side Projects&lt;/li&gt;
-&lt;li&gt;Study More Doctrine&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What Didn&amp;#39;t Get Improved&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fast Implementation of Any Task&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-am-i-working-towards&quot;&gt;What Am I Working Towards?&lt;/h2&gt;
-
-&lt;h3 id=&quot;balance-number-of-clients-works&quot;&gt;Balance Number of Clients&amp;#39; Works&lt;/h3&gt;
-
-&lt;p&gt;I need to be more careful before accepting any new work. I need to finish the current projects at hands first before accepting new one. That means being aware of period for finishing project, or seeking for potential client then accepting a new work.&lt;/p&gt;
-
-&lt;h3 id=&quot;continue-maintaining-habit&quot;&gt;Continue Maintaining Habit&lt;/h3&gt;
-
-&lt;p&gt;As usual, habit is the key. Continue doing task at the scheduled time in every day is good for me.&lt;/p&gt;
-
-&lt;h3 id=&quot;contribute-more-on-open-source-projects&quot;&gt;Contribute More on Open Source Projects&lt;/h3&gt;
-
-&lt;p&gt;The major contribution in this year for me is &lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt; by migrating its Swift 2 code to 3, and included with step-by-step on how to build the project. This contribution really ignite my inner energy to contribute more to various open source projects. Having seen people could take benefit from such project is a blessing for me. Potatso is great as it&amp;#39;s an iOS client used to connect to Shadowsocks proxy mainly used when you access outside website from within China mainland. I expect myself to contribute to open source projects more.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;So that&amp;#39;s it for this year in review.
-All the best for you guys too, for a great start of 2017.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Jan 2017 02:56:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/01/02/2016-year-in-review.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/02/2016-year-in-review.html</guid>
-        
-        <category>review</category>
         
         
         <category>blog</category>
