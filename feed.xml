@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 02 Jul 2017 20:04:48 +0800</pubDate>
-    <lastBuildDate>Sun, 02 Jul 2017 20:04:48 +0800</lastBuildDate>
+    <pubDate>Mon, 03 Jul 2017 05:39:23 +0800</pubDate>
+    <lastBuildDate>Mon, 03 Jul 2017 05:39:23 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -80,10 +80,10 @@
 
 &lt;p&gt;Main notable change is smooth and flexible drag-touch to select and deselect tiles.&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/SFOCSd8.gif&quot; alt=&quot;OMO gif 1&quot;&gt;&lt;/center&gt;
-&lt;cetner&gt;&lt;em&gt;Saved high scores has been added to the project&lt;/em&gt;&lt;/cetner&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/9lj8Wo4.gif&quot; alt=&quot;OMO gif 1&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;em&gt;Saved high scores has been added to the project&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/tNGjvtV.gif&quot; alt=&quot;OMO gif 2&quot;&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/6BKekag.gif&quot; alt=&quot;OMO gif 2&quot;&gt;&lt;/center&gt;
 &lt;center&gt;&lt;em&gt;Smooth and flexible drag-touch to select and deselect tiles&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;It&amp;#39;s technically done, just left with music and sfx in which I decided to learn how to make chiptune music first before call it complete.&lt;/p&gt;
