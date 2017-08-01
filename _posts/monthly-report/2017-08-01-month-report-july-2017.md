@@ -12,7 +12,7 @@ og_image: /assets/images/monthly-report/june-2017/projects-hours-spent.png
 
 Here comes July report.
 
-I changed to present projects hour spent in bar chart instead of pie chart as before for this report (and might continue for next one). It's clearer to present in this way if there are lots of projects to show.
+I slightly changed to present projects-hour spent in bar chart instead of pie chart as before for this report (and likely to continue for next one). It's clearer to present in this way if there are lots of projects to show.
 
 # Total hours spent
 
@@ -24,14 +24,14 @@ I changed to present projects hour spent in bar chart instead of pie chart as be
 
 Most of the time in this month has been spent on _asteroids_ project both in terms of research and programming. I've done releasing open source version of it, but continued to adding features I want for commercial one in which hopefully soon that I can release to the wild.
 
-Also spent a few hours to contribute for [libgdx](https://github.com/libgdx/libgdx), and [Potatso](https://github.com/haxpor/potatso). More story to tell for the latter one. Also open source [aseprite-macos-buildsh](https://github.com/haxpor/aseprite-macos-buildsh) which is an automated tool to help building [aseprite](https://www.aseprite.org/) on macOS.
+Also spent a few hours to contribute for [libgdx](https://github.com/libgdx/libgdx), and [Potatso](https://github.com/haxpor/potatso). More story to tell for the latter one. Also I open source [aseprite-macos-buildsh](https://github.com/haxpor/aseprite-macos-buildsh) which is an automated tool to help building [aseprite](https://www.aseprite.org/) on macOS.
 
 Also few hours spent on fixing and configuring my servers to be ready for deploying company website ([https://abzi.co](https://abzi.co)), but you will see only "Underconstruction" for now.
 
 ## asteroids
 ___
 
-It is initially a port project from ForeignGuyMike, then I added bunch of new improvements, and support over control support seamlessly for PC and mobile platform, better error and resource management handling, and fully Kotlin language ported.
+It is initially a port project from ForeignGuyMike, then I added bunch of new improvements, and support over control scheme seamlessly for PC and mobile platform, better error and resource management handling, and featured ful Kotlin language switched with more utilization of lambda functions.
 
 You can take a look at the project [here](https://github.com/haxpor/asteroids).
 
@@ -48,7 +48,7 @@ You can take a look at the project [here](https://github.com/haxpor/asteroids).
 
 After porting effort is complete, I want to monetize it.
 
-> Thus I diverge from it and in the progress of adding multiplayer mode (could I call it PvP mode?). This is a turning point for streaks I've done on github. Since then, I switched to use [gitlab](https://gitlab.com/) for private repository. As much as I want to keep being on Github ecosystem, but private repository needs you to pay premium for $7/month. So it's no go for me.
+> Thus I diverge from it and in the progress of adding multiplayer mode (could I call it PvP?). This is a turning point for streaks I've done on github. Since then, I switched to use [gitlab](https://gitlab.com/) for private repository. As much as I want to keep being on Github ecosystem, but private repository needs you to pay premium for $7/month. So it's no go for me during this time.
 
 Back to the game. Major feature I'm building right now is multiplayer mode.  
 Allowing player to play with each other in the death match is definitely cool. So I try. Below is the result I got so far.
@@ -63,7 +63,7 @@ Behind that hours accumulated done in research for networking model and approach
 * Resource consumption needed on server should be as minimum as much as possible (thus peer-to-peer via relay server on UDP protocol is an answer)
 * Up for the game in real-time pace (TCP is no no, only option is UDP)
 
-Server is implemented in NodeJS with no extra libraries in used, the same goes for client in pure Java code as of now. The result you see in the gifs above is smooth and good due to the fact that client sends only commands to server, server will relay them to another player. This goes for 2 ways for both players. Sending commands update to server is at 30 times per second (or 30 packets per second). Client simulates the game smoothly at 60 fps.
+Server is implemented in NodeJS with no extra libraries in used, the same goes for client in pure Java code as of now. The result you see in the gifs above is smooth and good due to the fact that client sends only commands to server, server will relay them to another player. This goes for 2 ways for both players. Sending command-updates to server is at 30 times per second (or 30 packets per second). Client simulates the game smoothly at 60 fps.
 
 It uses minimal bandwidth in which the game like Starcraft, and Supreme Commander also use this technique<sub>[Ref](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/)</sub>. Anyway, i'm not done yet as what I need more is 
 
@@ -73,16 +73,20 @@ It uses minimal bandwidth in which the game like Starcraft, and Supreme Commande
 
 * Ensure deterministic
 
-	As client simulates the game on their own, each input sent from another side needs to produce the same result on both end even the game would be played on PC, Android or iOS. As research, this problem related to Floating-point calculation error, thus to solve that we need [Floating-point Determinism](https://gafferongames.com/post/floating_point_determinism/).
+	As client simulates the game on their own, each input sent from another side needs to produce the same result on both end even no matter which platform the game is played on. As research, this problem related to Floating-point calculation error, thus to solve that we need [Floating-point Determinism](https://gafferongames.com/post/floating_point_determinism/).
 
-As a side note, [Raknet](https://github.com/facebookarchive/RakNet) has such features of reliability and ordered of UDP message and it's open source (although 3 years with no updates). And for Java implementation, I discovered [jRakNet](https://github.com/JRakNet/JRakNet) which might be worth to take a look.
+	I expect that I cannot control the same set of compiler, OS, and deterministic nature of every library I used, thus I saw that I definitely need to try making floating-point calculation to produce same result with no error even tiny on all platforms the game runs on. This means in Java term either using `BigDecimal` or using technique of fixed-point calcultion to round it to decimal part.
 
-If you're interested in networking in games, I recommend to read all articles written by Glenn Fiedler listed [here](https://gafferongames.com), but better to start with this [article](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/). For this time being, I will be continued working to finish this mode, and release soon after that.
+As a side note, [Raknet](https://github.com/facebookarchive/RakNet) has such features of reliability and ordered of UDP message as per requirement and it's open source (although 3 years with no updates). And for Java implementation, I discovered [jRakNet](https://github.com/JRakNet/JRakNet) which might be worth to take a look.
+
+If you're interested in networking in games, I recommend to read all articles written by Glenn Fiedler listed [here](https://gafferongames.com), but better to start with this [article](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/).
+
+For the time being, I will push effort and try solutions I've found.
 
 ## OMO
 ___
 
-Early this month, I also released OMO as you can see its gifs in action from previous [report](http://blog.wasin.io/monthly-report/2017/06/report.html). I added background music from knowledge gained from learning milkytracker.
+Early this month, I also released OMO as you can see its gifs in action from previous [report](http://blog.wasin.io/monthly-report/2017/06/report.html). I added background music with knowledge gained from learning milkytracker.
 
 <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=3650161744/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://haxpor.bandcamp.com/track/8-bit-concerto">8-bit Concerto by haxpor</a></iframe>
 
@@ -93,22 +97,22 @@ If you didn't check out OMO yet, I open source it [here](https://github.com/haxp
 ## aseprite-macos-buildsh
 ___
 
-I use aseprite, and really feel in love with it. When there's a new features introduced in new build version, it would take some times for you to manually build it yourself. Thus I create an automated build just in case you need to build it to get those new features ready; on-demand.
+I use aseprite, and really feel in love with it. When there's a new features introduced in new build version, it would take some times for you to manually build it yourself. Thus I create an automated build tool just in case you need to build it to get those new features ready; on-demand.
 
 It will help you with everything from fetching source code til packaging into an app bundle ready to be double click and use.
 
-It's tested and aimed to be used on macOS, but I guess you can modify it to cover your platform as need by have to look at its official [build manual](https://github.com/aseprite/aseprite/blob/master/INSTALL.md).
+It's tested and aimed to be used on macOS, but I guess you can modify it to cover your platform as need by taking a look at its official [build manual](https://github.com/aseprite/aseprite/blob/master/INSTALL.md).
 
 You can check this project out on [Github](https://github.com/haxpor/aseprite-macos-buildsh).
 
 ## Opensource Contribution
 ___
 
-I contributed to libgdx to make it fully 100% Kotlin + fixed a bug of building on iOS-MOE. This [PR](https://github.com/libgdx/libgdx/pull/4812) unfortunately didn't get merged yet as of this writing.
+I contributed to libgdx to make it fully 100% Kotlin + fixed a bug of building on iOS-MOE. It's this [PR](https://github.com/libgdx/libgdx/pull/4812) but unfortunately didn't get merged yet as of this writing.
 
-Also for [Potatso](https://github.com/haxpor/potatso) in which I started porting to Swift3 around 8 months ago, now passed 200 stars and 200 forks, and still counting. Also during this time, due to Chinese government intensely engages in regulating of un-approved VPN services or software. I saw this [tweet](https://github.com/haxpor/potatso) from original developer of the project. Apple asked him to take the app down. Not only that, but major VPN service providers like Express also affected. I understand that Apple has to obey law in each country the app would be sold. But it seems like it only happens against China. It's getting serious and [by February 2018](https://techcrunch.com/2017/07/10/china-vpn-ban/), government plans to completely block and take down all of VPN service.
+Also for [Potatso](https://github.com/haxpor/potatso) in which I've started porting to Swift3 around 8 months ago, now passed 200 stars and 200 forks, and still counting. Also during this time, due to Chinese government intensely engages in regulating of un-approved VPN services or software, I experienced a spike of people giving star, and forking. I saw this [tweet](https://github.com/haxpor/potatso) from original developer of the project. Apple asked him to take the app down. Not only that, but major VPN service providers like Express also affected. I understand that Apple has to obey law in each country the app would be sold. But it seems like it only happens against China as major news reported. It's getting serious and [by February 2018](https://techcrunch.com/2017/07/10/china-vpn-ban/), government plans to completely block and take down all of VPN service.
 
-Anyway, late in this month, I got this from someone who uses Potatso.
+Anyway ..., late in this month, I got this from someone who uses Potatso.
 
 <center>
 ![donation potatso](/assets/images/monthly-report/july-2017/donation-potatso.jpg)
@@ -132,7 +136,7 @@ Its IDE is powerful enough that it makes me feel the old day of using Visual Stu
 
 ![code hint](/assets/images/monthly-report/july-2017/ide-code-intellisense.png)
 
-The preview feature is powerful as you click the button on IDE, scan QR code to preview it on your mobile phone right away. That version will stay there in Mini Program section on WeChat application in case you need to take a look again. So time needed in testing in real device is minimal, and still in WeChat ecosystem.
+The preview feature is powerful as you click the button on IDE, scan QR code to preview it on your mobile phone right away. That debug version will stay there in Mini Program section on WeChat application in case you need to take a look again. So time needed in testing in real device is minimal, and still in WeChat ecosystem.
 
 ## company-serv, and personal-serv
 ___
