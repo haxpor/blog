@@ -7,7 +7,7 @@ categories: monthly-report
 tags: [monthly-report]
 permalink: /:categories/2017/07/report.html
 comments: true
-og_image: /assets/images/monthly-report/june-2017/projects-hours-spent.png
+og_image: /assets/images/monthly-report/july-2017/projects-hours-spent.png
 ---
 
 Here comes July report.
