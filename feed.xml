@@ -6,9 +6,193 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 03 Jul 2017 05:39:23 +0800</pubDate>
-    <lastBuildDate>Mon, 03 Jul 2017 05:39:23 +0800</lastBuildDate>
+    <pubDate>Tue, 01 Aug 2017 18:55:53 +0800</pubDate>
+    <lastBuildDate>Tue, 01 Aug 2017 18:55:53 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Monthly Report - July 2017</title>
+        <description>&lt;p&gt;Here comes July report.&lt;/p&gt;
+
+&lt;p&gt;I slightly changed to present projects-hour spent in bar chart instead of pie chart as before for this report (and likely to continue for next one). It&amp;#39;s clearer to present in this way if there are lots of projects to show.&lt;/p&gt;
+
+&lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/july-2017/big-picture-hours-spent.png&quot; alt=&quot;big picture hours spent&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;/assets/images/monthly-report/july-2017/projects-hours-spent.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Most of the time in this month has been spent on &lt;em&gt;asteroids&lt;/em&gt; project both in terms of research and programming. I&amp;#39;ve done releasing open source version of it, but continued to adding features I want for commercial one in which hopefully soon that I can release to the wild.&lt;/p&gt;
+
+&lt;p&gt;Also spent a few hours to contribute for &lt;a href=&quot;https://github.com/libgdx/libgdx&quot;&gt;libgdx&lt;/a&gt;, and &lt;a href=&quot;https://github.com/haxpor/potatso&quot;&gt;Potatso&lt;/a&gt;. More story to tell for the latter one. Also I open source &lt;a href=&quot;https://github.com/haxpor/aseprite-macos-buildsh&quot;&gt;aseprite-macos-buildsh&lt;/a&gt; which is an automated tool to help building &lt;a href=&quot;https://www.aseprite.org/&quot;&gt;aseprite&lt;/a&gt; on macOS.&lt;/p&gt;
+
+&lt;p&gt;Also few hours spent on fixing and configuring my servers to be ready for deploying company website (&lt;a href=&quot;https://abzi.co&quot;&gt;https://abzi.co&lt;/a&gt;), but you will see only &amp;quot;Underconstruction&amp;quot; for now.&lt;/p&gt;
+
+&lt;h2 id=&quot;asteroids&quot;&gt;asteroids&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;It is initially a port project from ForeignGuyMike, then I added bunch of new improvements, and support over control scheme seamlessly for PC and mobile platform, better error and resource management handling, and featured ful Kotlin language switched with more utilization of lambda functions.&lt;/p&gt;
+
+&lt;p&gt;You can take a look at the project &lt;a href=&quot;https://github.com/haxpor/asteroids&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;mobile-control-support-via-touchpad&quot;&gt;Mobile control support via Touchpad&lt;/h3&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;https://media.giphy.com/media/54r3o7nmXqhXi/giphy.gif&quot; alt=&quot;iOS gameplay gif&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;controller-support-for-desktop&quot;&gt;Controller support for Desktop&lt;/h3&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;http://i.imgur.com/O2sSXq1.gif&quot; alt=&quot;controller support&quot;&gt;
+&lt;img src=&quot;http://i.imgur.com/of6n3Cx.gif&quot; alt=&quot;high score controller interaction&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;After porting effort is complete, I want to monetize it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Thus I diverge from it and in the progress of adding multiplayer mode (could I call it PvP?). This is a turning point for streaks I&amp;#39;ve done on github. Since then, I switched to use &lt;a href=&quot;https://gitlab.com/&quot;&gt;gitlab&lt;/a&gt; for private repository. As much as I want to keep being on Github ecosystem, but private repository needs you to pay premium for $7/month. So it&amp;#39;s no go for me during this time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Back to the game. Major feature I&amp;#39;m building right now is multiplayer mode.&lt;br&gt;
+Allowing player to play with each other in the death match is definitely cool. So I try. Below is the result I got so far.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;https://media.giphy.com/media/z1eKUFwVf7IC4/giphy.gif&quot; alt=&quot;asteroids multiplayer&quot;&gt;
+&lt;img src=&quot;https://media.giphy.com/media/9zgvQCHfBzc76/giphy.gif&quot; alt=&quot;asteroids server log&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Behind that hours accumulated done in research for networking model and approach I should be doing with the following aims&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Resource consumption needed on server should be as minimum as much as possible (thus peer-to-peer via relay server on UDP protocol is an answer)&lt;/li&gt;
+&lt;li&gt;Up for the game in real-time pace (TCP is no no, only option is UDP)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Server is implemented in NodeJS with no extra libraries in used, the same goes for client in pure Java code as of now. The result you see in the gifs above is smooth and good due to the fact that client sends only commands to server, server will relay them to another player. This goes for 2 ways for both players. Sending command-updates to server is at 30 times per second (or 30 packets per second). Client simulates the game smoothly at 60 fps.&lt;/p&gt;
+
+&lt;p&gt;It uses minimal bandwidth in which the game like Starcraft, and Supreme Commander also use this technique&lt;sub&gt;&lt;a href=&quot;https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/&quot;&gt;Ref&lt;/a&gt;&lt;/sub&gt;. Anyway, i&amp;#39;m not done yet as what I need more is &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Reliable + Ordered UDP messaging&lt;/p&gt;
+
+&lt;p&gt;TCP offers this capability, but using TCP is no option due to lagging in time wait when packet dropped, it needs to wait double of the RTT (Round-trip-time) or 2*RTT. Input packets sent are critical that it needs to make sure it makes its way to another client. Sometimes UDP packets also arrive out of order. Implement such feature to ensure reliability and orderness on top of UDP protocol is a way to go and I found it very hard to implement, although there&amp;#39;s a great &lt;a href=&quot;https://gafferongames.com/post/reliable_ordered_messages/&quot;&gt;resource outlining what to do in concept&lt;/a&gt;, or &lt;a href=&quot;https://github.com/networkprotocol/reliable.io&quot;&gt;code to look at&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ensure deterministic&lt;/p&gt;
+
+&lt;p&gt;As client simulates the game on their own, each input sent from another side needs to produce the same result on both end even no matter which platform the game is played on. As research, this problem related to Floating-point calculation error, thus to solve that we need &lt;a href=&quot;https://gafferongames.com/post/floating_point_determinism/&quot;&gt;Floating-point Determinism&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I expect that I cannot control the same set of compiler, OS, and deterministic nature of every library I used, thus I saw that I definitely need to try making floating-point calculation to produce same result with no error even tiny on all platforms the game runs on. This means in Java term either using &lt;code&gt;BigDecimal&lt;/code&gt; or using technique of fixed-point calcultion to round it to decimal part.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a side note, &lt;a href=&quot;https://github.com/facebookarchive/RakNet&quot;&gt;Raknet&lt;/a&gt; has such features of reliability and ordered of UDP message as per requirement and it&amp;#39;s open source (although 3 years with no updates). And for Java implementation, I discovered &lt;a href=&quot;https://github.com/JRakNet/JRakNet&quot;&gt;jRakNet&lt;/a&gt; which might be worth to take a look.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re interested in networking in games, I recommend to read all articles written by Glenn Fiedler listed &lt;a href=&quot;https://gafferongames.com&quot;&gt;here&lt;/a&gt;, but better to start with this &lt;a href=&quot;https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For the time being, I will push effort and try solutions I&amp;#39;ve found.&lt;/p&gt;
+
+&lt;h2 id=&quot;omo&quot;&gt;OMO&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Early this month, I also released OMO as you can see its gifs in action from previous &lt;a href=&quot;http://blog.wasin.io/monthly-report/2017/06/report.html&quot;&gt;report&lt;/a&gt;. I added background music with knowledge gained from learning milkytracker.&lt;/p&gt;
+
+&lt;iframe style=&quot;border: 0; width: 100%; height: 42px;&quot; src=&quot;https://bandcamp.com/EmbeddedPlayer/track=3650161744/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/&quot; seamless&gt;&lt;a href=&quot;http://haxpor.bandcamp.com/track/8-bit-concerto&quot;&gt;8-bit Concerto by haxpor&lt;/a&gt;&lt;/iframe&gt;
+
+&lt;p&gt;It&amp;#39;s short but sweet.&lt;/p&gt;
+
+&lt;p&gt;If you didn&amp;#39;t check out OMO yet, I open source it &lt;a href=&quot;https://github.com/haxpor/omo&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;aseprite-macos-buildsh&quot;&gt;aseprite-macos-buildsh&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I use aseprite, and really feel in love with it. When there&amp;#39;s a new features introduced in new build version, it would take some times for you to manually build it yourself. Thus I create an automated build tool just in case you need to build it to get those new features ready; on-demand.&lt;/p&gt;
+
+&lt;p&gt;It will help you with everything from fetching source code til packaging into an app bundle ready to be double click and use.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s tested and aimed to be used on macOS, but I guess you can modify it to cover your platform as need by taking a look at its official &lt;a href=&quot;https://github.com/aseprite/aseprite/blob/master/INSTALL.md&quot;&gt;build manual&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can check this project out on &lt;a href=&quot;https://github.com/haxpor/aseprite-macos-buildsh&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;opensource-contribution&quot;&gt;Opensource Contribution&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I contributed to libgdx to make it fully 100% Kotlin + fixed a bug of building on iOS-MOE. It&amp;#39;s this &lt;a href=&quot;https://github.com/libgdx/libgdx/pull/4812&quot;&gt;PR&lt;/a&gt; but unfortunately didn&amp;#39;t get merged yet as of this writing.&lt;/p&gt;
+
+&lt;p&gt;Also for &lt;a href=&quot;https://github.com/haxpor/potatso&quot;&gt;Potatso&lt;/a&gt; in which I&amp;#39;ve started porting to Swift3 around 8 months ago, now passed 200 stars and 200 forks, and still counting. Also during this time, due to Chinese government intensely engages in regulating of un-approved VPN services or software, I experienced a spike of people giving star, and forking. I saw this &lt;a href=&quot;https://github.com/haxpor/potatso&quot;&gt;tweet&lt;/a&gt; from original developer of the project. Apple asked him to take the app down. Not only that, but major VPN service providers like Express also affected. I understand that Apple has to obey law in each country the app would be sold. But it seems like it only happens against China as major news reported. It&amp;#39;s getting serious and &lt;a href=&quot;https://techcrunch.com/2017/07/10/china-vpn-ban/&quot;&gt;by February 2018&lt;/a&gt;, government plans to completely block and take down all of VPN service.&lt;/p&gt;
+
+&lt;p&gt;Anyway ..., late in this month, I got this from someone who uses Potatso.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/july-2017/donation-potatso.jpg&quot; alt=&quot;donation potatso&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s right. It&amp;#39;s 2 RMB donation from someone benefits from using Potatso. Thank you to you again!&lt;br&gt;
+Safe to say it&amp;#39;s the first Chinese Yuan money I made here after switched to fully focus on my own projects. Hooraayyy!&lt;/p&gt;
+
+&lt;h2 id=&quot;wechat-mini-program&quot;&gt;WeChat Mini-Program&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I played around with it with objective to test its API. I didn&amp;#39;t spent much time yet as I decided to focus on asteroids project first.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/july-2017/wechat-miniprogram.png&quot; alt=&quot;debugging wechat miniprogram&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As far as I can tell from testing, you cannot use jQuery. For other stuff to convert, transpile your code, you have to route and set it up yourself. Also, API is in Chinese, be prepare to always use Google Translator Chrome Plugin for full page translation.&lt;/p&gt;
+
+&lt;p&gt;QR Scanning ecosystem also applies here from setting up process through development process. Account owner permits linked developer account either for logging in, configuring something regarding to the app, etc via QR Scanning. I recommend to check this &lt;a href=&quot;https://medium.com/@yelin.qiu/a-complete-manual-on-wechat-mini-program-development-8fd28a85ee0d&quot;&gt;article&lt;/a&gt; out too.&lt;/p&gt;
+
+&lt;p&gt;Its IDE is powerful enough that it makes me feel the old day of using Visual Studio. Its intellisense is fast in popping up to show you code hint. Result shows and can be refresh right away after code changed. Pretty much as it relies on Chrome Debugging Tool for developer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/july-2017/ide-code-intellisense.png&quot; alt=&quot;code hint&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The preview feature is powerful as you click the button on IDE, scan QR code to preview it on your mobile phone right away. That debug version will stay there in Mini Program section on WeChat application in case you need to take a look again. So time needed in testing in real device is minimal, and still in WeChat ecosystem.&lt;/p&gt;
+
+&lt;h2 id=&quot;company-serv-and-personal-serv&quot;&gt;company-serv, and personal-serv&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I switched to use nginx for my company server now. It feels much more cleaner, and shorter to edit config file. I try to avoid relying on any western service out there as much as possible. This is with objective to be able to serve users within mainland without a worry that the site will be partial, or even worse blocked and they cannot access. I went far to configure DNS server served within the same instance. Configured namecheap.com to point directly to such server. But it&amp;#39;s pretty hard to quickly force update your domain towards root server (from what I did), it takes too long. So I ended up using it as a backup and use one of another of my server to have those DNS records (via service provider&amp;#39;s convenient web interface) then point it to that server instead.&lt;/p&gt;
+
+&lt;p&gt;Again surely I have an option to just use Alibaba cloud or VPS solution, but its pricing scheme seems to be expensive after a year later. And the way to work with such solution, I&amp;#39;m totally not familar and it&amp;#39;s un-tapped way for me for now. I might be wrong but yeah I want to try pushing out a first service out there which served on company server which is in Hong Kong first, then see further from there.&lt;/p&gt;
+
+&lt;p&gt;A tip I found about configuring &lt;a href=&quot;https://certbot.eff.org/&quot;&gt;certbot&lt;/a&gt; to automatically renew certificates on Ubuntu sever is via using webroot, properly use parameters of &lt;code&gt;certbot&lt;/code&gt;, and correctly setup crontab.&lt;/p&gt;
+
+&lt;p&gt;First execute this command to obtain and let system (let&amp;#39;s encrypt) knows what domain/sub-domain you have so that it will operate on that later in consecutive times&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;certbot certonly --webroot --webroot-path=/var/www/your-path/html -d yourdomain.com -d sub.yourdomain.com -d sub2.yourdomain.com --webroot-path=/var/www/your-path2/html -d sub3.yourdomain.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Use &lt;code&gt;--webroot-path&lt;/code&gt; to update certificate for webserver without restart the instance of it. The first three domains/sub-domain will be served at &lt;code&gt;/var/www/your-path/html&lt;/code&gt;. The last one will be served at &lt;code&gt;/var/www/your-path2/html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then you should have this line in your crontab (freely modify how frequently it should update).&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;15 3 * * * /usr/bin/certbot renew --quiet --renew-hook &quot;/usr/sbin/service nginx reload&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Consult &lt;a href=&quot;http://man7.org/linux/man-pages/man5/crontab.5.html&quot;&gt;man page&lt;/a&gt; for parameters.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;That&amp;#39;s it for this month report. I hope you enjoy my sharing for everything possible things I touched in the past month!&lt;/p&gt;
+
+&lt;p&gt;If you have a chance to check out any project above, feel free to let me know what you think. I love feedback, and discussion, hit them up via comment section down below.&lt;/p&gt;
+
+&lt;p&gt;Now, let me go right back to continue &lt;em&gt;asteroids&lt;/em&gt; project.&lt;/p&gt;
+
+&lt;p&gt;Happy creating folks!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Aug 2017 02:16:00 +0800</pubDate>
+        <link>http://blog.wasin.io/monthly-report/2017/07/report.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/monthly-report/2017/07/report.html</guid>
+        
+        <category>monthly-report</category>
+        
+        
+        <category>monthly-report</category>
+        
+      </item>
     
       <item>
         <title>Monthly Report - June 2017</title>
@@ -1774,412 +1958,6 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
         <category>blender</category>
         
         <category>scripting</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Hands-On Fastlane</title>
-        <description>&lt;p&gt;I see the pain from colleagues I&amp;#39;ve worked with at the company I&amp;#39;ve contracted. The pain comes from on-demand build as requested from clients or even internal team.&lt;/p&gt;
-
-&lt;p&gt;Each building process requires significant time that can damage and waste the productivity of the team. Instead of investing time to do repeatitive task which could be used elsewhere.&lt;/p&gt;
-
-&lt;p&gt;I heard about &lt;em&gt;Fastlane&lt;/em&gt; for quite some time. Unfortunately, for myself I didn&amp;#39;t have a reasonable chance to use it to fasten my workflow as most of the time I work with the codebase alone. Thus I did some research and tested the tool to see how can we benefit from it.&lt;/p&gt;
-
-&lt;h2 id=&quot;fastlane&quot;&gt;Fastlane&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://fastlane.tools/&quot;&gt;Fastlane&lt;/a&gt; is an automated tools comprising of multiple sub-tools to help in each area of Apple App Development Workflow.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-logo.png&quot; alt=&quot;Fastlane logo&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;What we&amp;#39;re going to do is to create a simple 2 pages iOS application. Each page can switch back and forth to each other. There are simple text fields and buttons on those pages. We&amp;#39;re going to test the following areas as provided by the tool&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Register application and manage certificate on Apple Developer Website&lt;/li&gt;
-&lt;li&gt;Run Tests and UI Tests&lt;/li&gt;
-&lt;li&gt;Take screenshots&lt;/li&gt;
-&lt;li&gt;Submit application to beta testers on Testflight&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This means we will need to set up our Xcode project properly to have working storyboard, have Tests &amp;amp; UI Tests code, and localize the application for 3 languages (English, French, and Simplified Chinese). By all means to test Fastlane workflow.&lt;/p&gt;
-
-&lt;p&gt;Our interested areas to test seems to cover most of what normal use cases in development workflow could be. Let&amp;#39;s get into it.&lt;/p&gt;
-
-&lt;h2 id=&quot;install-fastlane&quot;&gt;Install Fastlane&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;m using macOS &lt;code&gt;10.12.3 Beta&lt;/code&gt; as a testing system, along with Xcode &lt;code&gt;8.2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now install Fastlane by executing &lt;code&gt;sudo gem install fastlane&lt;/code&gt;.
-As of this writing, version is &lt;code&gt;2.5.0&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Check the installation result by executing &lt;code&gt;fastlane --version&lt;/code&gt;, you should be able to see something similar to this.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;fastlane installation at path:
-/usr/local/lib/ruby/gems/2.2.0/gems/fastlane-2.5.0/bin/fastlane
------------------------------
-fastlane 2.5.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;create-a-testing-ios-project&quot;&gt;Create a Testing iOS Project&lt;/h2&gt;
-
-&lt;p&gt;We need to create a testing iOS project first.&lt;/p&gt;
-
-&lt;p&gt;Now create a new iOS project with project type &amp;quot;Single View Application&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-create-project-1.png&quot; alt=&quot;create a new project with single view application type&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, enter &lt;em&gt;Product Name&lt;/em&gt;, and tick to enable &lt;em&gt;Include Unit Tests&lt;/em&gt; and &lt;em&gt;Include UI Tests&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-create-project-2.png&quot; alt=&quot;set new project options&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Set up your storyboard to be similar to the following. Only for 2nd &lt;code&gt;UIViewController&lt;/code&gt; in which you need to assign its class to &lt;code&gt;ViewController.swift&lt;/code&gt; as we will link a button click later.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ios-storyboard.png&quot; alt=&quot;storyboard setup&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;We need to link button of first &lt;code&gt;UIViewController&lt;/code&gt; to show second &lt;code&gt;UIViewController&lt;/code&gt; modally. This can be easily done by holding &lt;code&gt;Ctrl&lt;/code&gt; then clicking on the button, dragging it to second &lt;code&gt;UIViewController&lt;/code&gt; then finally releasing the mouse button. It will show a pop-up asking which way you&amp;#39;re going to present it. Select &amp;quot;Present Modally&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ios-storyboard-present-modally.png&quot; alt=&quot;storyboard-present-modally&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Linking a button on second &lt;code&gt;UIViewController&lt;/code&gt; needs a little bit of effort. You need to display Assistant Editor by hitting &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;Delete&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;Linking a button for its clicking action by holding down &lt;code&gt;Ctrl&lt;/code&gt; button then clicking on the button and draggraing it onto the empty space of &lt;code&gt;ViewController.swift&lt;/code&gt; file. The source code of &lt;code&gt;ViewController.swift&lt;/code&gt; should have the following&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Dispose of any resources that can be recreated.&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClickBackButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dismiss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
-            &lt;span class=&quot;kt&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;completed dismiss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;With all these, we have basic UI elements that we need and each page can present another page; back and forth.&lt;/p&gt;
-
-&lt;h2 id=&quot;localize-ios-application&quot;&gt;Localize iOS Application&lt;/h2&gt;
-
-&lt;p&gt;Click on project name and add &lt;em&gt;Simplified Chinese&lt;/em&gt;, and &lt;em&gt;French&lt;/em&gt; for our additional localized language while &lt;em&gt;English&lt;/em&gt; is the main development language.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/project-setup-localization.png&quot; alt=&quot;project set up for localization&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Now when you look at the &lt;em&gt;Project navigator&lt;/em&gt; panel on the left, and click to expand main storyboard file. You will see something like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/expanded-main-storyboard-file.png&quot; alt=&quot;expanded main storyboard file&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Click on each language one by one to edit its translated text for UI elements which are labels, and buttons that we have on our storyboard. Feel free to just use Google translator service or any service you have. But don&amp;#39;t just lazily put English text in it for all languages, we will see real result of this later after we run Fastlane.&lt;/p&gt;
-
-&lt;h2 id=&quot;add-tests-ui-tests&quot;&gt;Add Tests &amp;amp; UI Tests&lt;/h2&gt;
-
-&lt;p&gt;Before we proceed to using Fastlane tool. We will create Tests and UI Tests first. This will be used as part of Fastlane Workflow.&lt;/p&gt;
-
-&lt;h3 id=&quot;tests&quot;&gt;Tests&lt;/h3&gt;
-
-&lt;p&gt;For simplicity as we don&amp;#39;t really have meaningful things to test, we just assert for true. You should have code as follows in &lt;code&gt;FastlaneTestTests.swift&lt;/code&gt; file.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTest&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;@testable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FastlaneTest&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FastlaneTestTests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTestCase&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Put setup code here. This method is called before the invocation of each test method in the class.&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Put teardown code here. This method is called after the invocation of each test method in the class.&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// This is an example of a functional test case.&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Use XCTAssert and related functions to verify your tests produce the correct results.&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;ui-tests&quot;&gt;UI Tests&lt;/h3&gt;
-
-&lt;p&gt;Not only for testing purpose but UI Tests is also the building block to automate taking screenshots as part of Fastlane workflow. Thus we will add real testing code here.&lt;/p&gt;
-
-&lt;p&gt;Inside &lt;code&gt;FastlaneTestUITests.swift&lt;/code&gt;, add the following functions for each UI test case.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testUsernameIsWasin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstnametextfieldTextField&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;firstNameTextField&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;typeText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;wasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;usernameWasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testLastnameIsThonkaew&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastnametextfieldTextField&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lastNameTextField&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;typeText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;thonkaew&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastnametextfieldTextField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;thonkaew&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lastnameWasin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testShowNewPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;backButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// backbutton should not exist&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;openButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;openButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;openButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// query back button again&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;backButton&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// check exists&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;XCTAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// take a snapshot&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;newpage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You can notice above that why we know which name should be used in referring to text field, and buttons. This is the benefit from setting the names of UI element in &lt;em&gt;Accessibility&lt;/em&gt; section of &lt;em&gt;Identify Inspector&lt;/em&gt; panel.&lt;/p&gt;
-
-&lt;p&gt;You set following names&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;firstNameTextField&lt;/code&gt; - to first text field of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lastNameTextField&lt;/code&gt; - to second text field of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;openButton&lt;/code&gt; - to open button of first &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;backButton&lt;/code&gt; - to back button of second &lt;code&gt;UIViewController&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also make sure that &lt;em&gt;Accessibility&lt;/em&gt; is ticked as Enabled.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/setting-names-in-accessibility.png&quot; alt=&quot;setting names in accessibility&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;This is important as it will allow us to access UI element in UI test code by name.&lt;/p&gt;
-
-&lt;p&gt;In additional, testing code is self-explained to what we&amp;#39;re trying to achieve too. If you&amp;#39;re not sure what it does, take some times, and read the code above.&lt;/p&gt;
-
-&lt;h2 id=&quot;integrate-fastlane-with-xcode-project&quot;&gt;Integrate Fastlane with XCode Project&lt;/h2&gt;
-
-&lt;p&gt;Now it&amp;#39;s a core part.&lt;/p&gt;
-
-&lt;p&gt;We are going to initialize Fastlane tool, edit the configuration file, and run it to automate our workflow.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Go to XCode project folder in command line via &lt;code&gt;cd ~/FastlaneTest&lt;/code&gt;. This assumes that I&amp;#39;ve created XCode project at &lt;code&gt;~/&lt;/code&gt; which is my user directory. Inside &lt;code&gt;FastlaneTest&lt;/code&gt; directory, you will see your &lt;code&gt;FastlaneTest.xcodeproj&lt;/code&gt; file.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Execute &lt;code&gt;fastlane init&lt;/code&gt; to initialize Fastlane.
-This will create a directory &lt;code&gt;fastlane&lt;/code&gt; at &lt;code&gt;~/FastlaneTest&lt;/code&gt; with necessary files Fastlane needs inside.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fastfile&quot;&gt;FastFile&lt;/h3&gt;
-
-&lt;p&gt;Time to configure &lt;code&gt;FastFile&lt;/code&gt;.
-As of version &lt;code&gt;2.5.0&lt;/code&gt;, the initial configuration file covers most of the things we need already. We just need to modify and add something.&lt;/p&gt;
-
-&lt;p&gt;Add the following code inside &lt;code&gt;platform :ios do&lt;/code&gt; after 
-&lt;code&gt;before_all do ... end&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Upload app to iTunes connect&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itunes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;produce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'MyFastlaneTestApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'English'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;app_version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0.1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'c26e587b3fb756491e3c15aa'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Take screenshots of the App&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;screenshots&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;snapshot&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You can execute &lt;code&gt;openssl rand -hex 12&lt;/code&gt; to get randomized hexadecimal string to use as &lt;code&gt;sku&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;and modify &lt;code&gt;lane :beta&lt;/code&gt; to be as follows&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Submit a new Beta Build to Apple TestFlight&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;This will also make sure the profile is up to date&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;lane&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;beta&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# match(type: &quot;appstore&quot;) # more information: https://codesigning.guide&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cert&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;sigh&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;gym&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Build your app - more options available&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;pilot&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# sh &quot;your_script.sh&quot;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# You can also use other beta testing services here (run `fastlane actions`)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fastlane consists of multiple lanes to be configured and used. Notice &lt;code&gt;lane :&amp;lt;name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;itunes&lt;/code&gt; - create a new application on iTunes connect for us before we will release a new build for beta users, or submit to App Store.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;screenshots&lt;/code&gt; - take screenshots of application while running. This will be carried out at the same time of UI Tests.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;beta&lt;/code&gt; will submit a new beta build to TestFlight but it will also check certification and provision profile first that they are up-to-date.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;If need, you can grab my &lt;code&gt;FastFile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;snapfile&quot;&gt;Snapfile&lt;/h3&gt;
-
-&lt;p&gt;In order to take snapshot (or taking screenshots) of application while running automatically, you need to configure &lt;code&gt;Snapfile&lt;/code&gt; but that file is not there inside &lt;code&gt;fastlane&lt;/code&gt; directory initially.&lt;/p&gt;
-
-&lt;p&gt;We need to initialize it first by executing &lt;code&gt;fastlane snapshot init&lt;/code&gt; at our XCode project directory (which is &lt;code&gt;~/FastlaneTest&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It will create &lt;code&gt;Snapfile&lt;/code&gt; for us, along with other setting up files. Result of executing such command, you will see&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;Successfully created SnapshotHelper.swift &lt;span class=&quot;s1&quot;&gt;'./fastlane/SnapshotHelper.swift'&lt;/span&gt;
-Successfully created new Snapfile at &lt;span class=&quot;s1&quot;&gt;'./fastlane/Snapfile'&lt;/span&gt;
--------------------------------------------------------
-Open your Xcode project and make sure to &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;the following:
-1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add a new UI Test target to your project
-2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add the ./fastlane/SnapshotHelper.swift to your UI Test target
-   You can move the file anywhere you want
-3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Call &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;setupSnapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; when launching your app
-
-  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;app &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; XCUIApplication&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-  setupSnapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  app.launch&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Add &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;snapshot&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0Launch&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; to wherever you want to create the screenshots
-
-More information on GitHub: https://github.com/fastlane/fastlane/tree/master/snapshot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You need to follow step 2, and 3 as shown on console above to properly hook things UI Tests with taking screenshots. Notice that we&amp;#39;ve already done step 1. We are going to do step 4 next.&lt;/p&gt;
-
-&lt;p&gt;Now modify the file to have the following code.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Uncomment the lines below you want to change by removing the # in the beginning&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# A list of devices you want to take the screenshots from&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 6&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 6 Plus&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;iPhone 5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;iPad Pro (12.9 inch)&quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   &quot;iPad Pro (9.7 inch)&quot;,&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   &quot;Apple TV 1080p&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;languages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;fr-FR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;zh-Hans&quot;&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#[&quot;pt&quot;, &quot;pt_BR&quot;] # Portuguese with Brazilian locale&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# The name of the scheme which contains the UI Tests&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;scheme&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;FastlaneTestUITests&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Where should the resulting screenshots be stored?&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;output_directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./screenshots&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;clear_previous_screenshots&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# remove the '#' to clear all previously generated screenshots before creating new ones&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Choose which project/workspace to use&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;project&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./FastlaneTest.xcodeproj&quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# workspace &quot;./Project.xcworkspace&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# launch_arguments([&quot;-favColor red&quot;])&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# For more information about all available options run&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# snapshot --help&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That means we will do UI Tests (thus taking screenshots) on 4 devices for 3 languages for scheme name &lt;code&gt;FastlaneTestUITests&lt;/code&gt;, and output result screenshots at &lt;code&gt;./screenshots&lt;/code&gt;. It operates on our &lt;code&gt;./FastlaneTest.xcodeproj&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;If need, you can grab my &lt;code&gt;Snapfile&lt;/code&gt; &lt;a href=&quot;https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;run-fastlane&quot;&gt;Run Fastlane&lt;/h2&gt;
-
-&lt;p&gt;We&amp;#39;re all ready now. Phew! It&amp;#39;s quite an effort.
-Now we&amp;#39;re going to run Fastlane.&lt;/p&gt;
-
-&lt;p&gt;We have following commands (lanes) for Fastlane to run.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane itunes&lt;/code&gt; - create application on iTunes Connect Website according to basic information we provide.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; - test application. It will prompt you with options to choose from whether you want to just test running application, run tests, or run ui tests.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fastlane screenshot&lt;/code&gt; - take screenshots as well as running UI Tests at the same time. Screenshots will be writen into &lt;code&gt;screenshots&lt;/code&gt; directory inside XCode project directory.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fastlane beta&lt;/code&gt; - submit an application to beta TestFlight. It will take care certificate and provisioning profile for us too.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane itunes&lt;/code&gt; is good enough that it will wait until application data is created on iTunes Connect website&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-itunes-result.png&quot; alt=&quot;fastlane itunes waiting&quot;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane screenshots&lt;/code&gt; will run UI Tests and take screenshots. Look inside &lt;code&gt;screenshots&lt;/code&gt; directory inside XCode project directory, you will see 3 directories for each language we&amp;#39;ve set. Result screenshots are there.&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-screenshots.png&quot; alt=&quot;fastlane screenshots&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-screenshots-result.png&quot; alt=&quot;fastlane ui tests result&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;See its overall reporting of screenshots taken specifically at 3 particular times during flow of UI on iPhone5 (4-inch), iPhone6(4.7-inch), iPhone6Plus(5.5-inch), and iPad Pro(12.9-inch) each with 3 languages on latest iOS 10.2; total in 3x3x4=36 screenshots &lt;a href=&quot;/assets/htmls/fastlane-screenshots/screenshots.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane beta&lt;/code&gt; while uploading a build to TestFlight&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-beta-testing-upload.png&quot; alt=&quot;fastlane TestFlight uploading&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;and successfully uploaded application during beta testing stage&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/fastlane-beta-testing-upload.png&quot; alt=&quot;fastlane application on TestFlight app&quot;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; result&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ui-tests-result.png&quot; alt=&quot;fastlane test result&quot;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fastlane test&lt;/code&gt; in action&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fastlane/ui-tests.gif&quot; alt=&quot;fastlane test in action&quot;&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next?&lt;/h2&gt;
-
-&lt;p&gt;We can put all those commands into a shell script file thus to be executed on build server as part of CI process. I believe this will let developers sit back and be more productive on making application, not to waste time on tasks that can be automated.&lt;/p&gt;
-
-&lt;p&gt;Thus next step is to review and see which existing tech stack the team currently has, then integrate &amp;amp; modify Fastlane to suit the need and use case.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 15 Jan 2017 18:41:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/01/15/hands-on-fastlane.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/15/hands-on-fastlane.html</guid>
-        
-        <category>ios</category>
-        
-        <category>fastlane</category>
-        
-        <category>automation</category>
-        
-        <category>integration</category>
-        
-        <category>script</category>
         
         
         <category>blog</category>
