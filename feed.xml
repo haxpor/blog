@@ -6,9 +6,83 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Aug 2017 18:55:53 +0800</pubDate>
-    <lastBuildDate>Tue, 01 Aug 2017 18:55:53 +0800</lastBuildDate>
+    <pubDate>Wed, 16 Aug 2017 10:56:32 +0800</pubDate>
+    <lastBuildDate>Wed, 16 Aug 2017 10:56:32 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Use Proxychains to Dynamically Link Your Proxy Setup</title>
+        <description>&lt;p&gt;Recently I migrated my server to be within mainland. Immediately since then I faced with another complicated situation of making an Internet request to outside world.&lt;/p&gt;
+
+&lt;p&gt;Normally if your server is outside of China mainland, you don&amp;#39;t have to worry about making an Internet request on behalf of the server to certain sites that are blocked by Chinese government. No. It&amp;#39;s not even the case to worry because you&amp;#39;re outside of mainland. But now if you moved inside, the need to get information from within and outside will lead to more complicated situation.&lt;/p&gt;
+
+&lt;p&gt;Imagine a project needs to pull down node packages via &lt;code&gt;npm install&lt;/code&gt; and you make a request from mainland. Your request would be blocked. In order to successfully do it, you have to configure &lt;code&gt;/.npmrc&lt;/code&gt; to include proxy server, or use &lt;code&gt;npm config set proxy http://yourproxy.com:1234&lt;/code&gt; and &lt;code&gt;npm config set https-proxy http://yourproxy.com:1234&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s still fine as almost all of the time, you will make npm request through a proxy. So globally set that things up is ok.&lt;/p&gt;
+
+&lt;p&gt;But now imagine the case of making a &lt;code&gt;curl&lt;/code&gt; request. You can configure proxy setup via &lt;code&gt;~/.curlrc&lt;/code&gt; then you will be fine.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I also wrote about how to configure &lt;code&gt;~./npmrc&lt;/code&gt; and &lt;code&gt;~./curlrc&lt;/code&gt; &lt;a href=&quot;http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But do you need to go through proxy all the time? I don&amp;#39;t think so. You don&amp;#39;t want to waste more time in waiting for such response in un-optimized request path as you know you will be fine although making a &lt;strong&gt;direct&lt;/strong&gt; request. So setting proxy setup through those configuration file is a no go.&lt;/p&gt;
+
+&lt;h1 id=&quot;whats-the-better-option&quot;&gt;What&amp;#39;s The Better Option?&lt;/h1&gt;
+
+&lt;p&gt;I discover &lt;a href=&quot;https://github.com/rofl0r/proxychains-ng&quot;&gt;proxychains&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What it can do is to dynamically forward through your request to target proxy server as you configured in its config file; usually at &lt;code&gt;/etc/proxychains.conf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You just need to add &lt;code&gt;socks5      127.0.0.1 1234&lt;/code&gt; at the end of the file; but substitute for your proxy ip address and port there.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;proxychains will forward TCP connection through SOCKS4, SOCKS5, or HTTP proxy. This perfectly works with Shadowsocks proxy as well.&lt;/p&gt;
+
+&lt;p&gt;I found an interesting case that for a few applications, it is required to use with only HTTP protocol only; not SOCKS. Thus using proxychains to forward that request to your local SOCKS5 proxy (i.e. Shadowsocks) works and solves this issue immediately.&lt;/p&gt;
+
+&lt;p&gt;Also proxychains solves the problem of a need to have a global configuration that affect entire system either via ...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.bashrc&lt;/code&gt; for &lt;code&gt;HTTP_PROXY=...&lt;/code&gt; and &lt;code&gt;HTTPS_PROXY=...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Applications&amp;#39; configuration file i.e. &lt;code&gt;~/.npmrc&lt;/code&gt;, &lt;code&gt;~/.curlrc&lt;/code&gt;, etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;because whenever you need to go through proxy, you don&amp;#39;t have to set up any proxy configuration. You just execute it like this (assume you make a request from within mainland)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;proxychains4 curl -L https://google.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The following is a result you get&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;proxychains] config file found: /etc/proxychains.conf
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;proxychains] preloading /usr/lib/libproxychains4.so
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;proxychains] DLL init: proxychains-ng 4.12-git-1-gbb3df1e
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;proxychains] Strict chain  ...  127.0.0.1:1234  ...  google.com:443  ...  OK
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;proxychains] Strict chain  ...  127.0.0.1:1234  ...  www.google.com.sg:443  ...  OK
+&amp;lt;!doctype html&amp;gt;&amp;lt;html &lt;span class=&quot;nv&quot;&gt;itemscope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itemtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://schema.org/WebPage&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;zh-HK&quot;&lt;/span&gt;&amp;gt;&amp;lt;hea
+...
+&amp;lt;omitted html content &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;brevity here&amp;gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Above result, I modified the port and google URL as to not reveal proxy information I use. But it works.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;So in conclusion proxychains makes it cleanly to make a request without a need to configure system&amp;#39;s proxy setup that will affect the entire system or entire operation of such application. It allows you to go through the proxy as configured in &lt;code&gt;/etc/proxychains.conf&lt;/code&gt; on-demand only when need via a simple command &lt;code&gt;proxychains4 &amp;lt;command&amp;gt; [parameter]&lt;/code&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Aug 2017 10:11:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup.html</guid>
+        
+        <category>network</category>
+        
+        <category>proxy</category>
+        
+        <category>proxychain</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Monthly Report - July 2017</title>
@@ -1884,80 +1958,6 @@ Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
         <category>bot</category>
         
         <category>ngrok</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Scripting in Blender</title>
-        <description>&lt;p&gt;I started to use Blender for one of my work for client. There&amp;#39;re times when I need to modify, fix, re-create UV, map mesh to texture, etc by myself without waiting for artist to do that.&lt;/p&gt;
-
-&lt;p&gt;As for automation that we can achieve it in &lt;a href=&quot;https://wasin.io/blog/2017/01/15/hands-on-fastlane.html&quot;&gt;iOS workflow via Fastlane&lt;/a&gt; especially in automated testing/building, I&amp;#39;m slightly surprised to see that it has potential to be done in Blender as well.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-python-script.png&quot; alt=&quot;Scripting in Blender&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Above is the result I got from executing python script right inside Blender to automatically &lt;strong&gt;create a new cube, rename its name, and move its location&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Technically you can execute python script with Blender&amp;#39;s GUI but Blender still runs in the background. Anyway I don&amp;#39;t do it in this article.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-get-started&quot;&gt;Let&amp;#39;s Get Started&lt;/h2&gt;
-
-&lt;p&gt;Firstly remove a cube as shown on &lt;em&gt;3D View&lt;/em&gt; window, then you  choose a screen layout by clicking on &lt;em&gt;Choose Screen Layout&lt;/em&gt; button then select &lt;em&gt;Scripting&lt;/em&gt; as seen below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-choose-screen-layout.png&quot; alt=&quot;Choose Screen Layout&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;To have such UI element shows up, you need to select the panel as &lt;em&gt;Info&lt;/em&gt; first as seen below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-panel-type.png&quot; alt=&quot;Panel Type&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you will get layout ready to script in python.&lt;/p&gt;
-
-&lt;p&gt;Enter code I shared on &lt;a href=&quot;https://gist.github.com/haxpor/198f6993a62a21279519fcd0fbb36726&quot;&gt;gist&lt;/a&gt;, or copy the following code to editor.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bpy&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;strVector3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# create a new cube&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;primitive_cube_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# newly created cube will be automatically selected&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selected_objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# change name&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyLittleCube&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# change its location&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# done&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Done creating MyCube at position &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strVector3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; with name &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then name the file to &lt;code&gt;blender_cube_creation.py&lt;/code&gt;. Finally, click on &lt;em&gt;Run Script&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blender/blender-name-the-file-run-script.png&quot; alt=&quot;Name and run script&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Then you will see that Blender will create a new cube, select it, rename into &lt;code&gt;&amp;quot;MyLittleCube&amp;quot;&lt;/code&gt;, and translate to &lt;code&gt;(0.0, 5.0, 0.0)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;tips&quot;&gt;Tips&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If you hold mouse over each Blender&amp;#39;s UI element for a while, it will show a tool tip of python function that you can use it in the script.&lt;/li&gt;
-&lt;li&gt;Play around with each function in &lt;em&gt;Python Console&lt;/em&gt; window at the bottom before combining them up in full script.&lt;/li&gt;
-&lt;li&gt;To know how to do something in code for certain actions we did directly on Blender GUI, just do some actions on Blender first, then look at &lt;em&gt;Info&lt;/em&gt; window (on the top), you will see something like this for history of python functions called. Then you know which functions to call in python code.&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/images/blender/blender-info-window.png&quot;&gt;&lt;img src=&quot;/assets/images/blender/blender-info-window.png&quot; alt=&quot;Blender Info Window with History&quot;&gt;&lt;/a&gt;&lt;br&gt;
-   &lt;sub&gt;Click on image to enlarge&lt;/sub&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 Jan 2017 09:45:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/01/22/scripting-in-blender.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/22/scripting-in-blender.html</guid>
-        
-        <category>blender</category>
-        
-        <category>scripting</category>
         
         
         <category>blog</category>

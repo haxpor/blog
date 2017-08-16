@@ -10,31 +10,46 @@
 
     <meta content="Wasin's Blog" property="og:site_name">
 
-    <title>Montly Report Listing</title>
+    <title>Use Proxychains to Dynamically Link Your Proxy Setup</title>
     <meta name="description" content="I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
 ">
     
-        <meta content="Montly Report Listing" property="og:title">
+        <meta content="Use Proxychains to Dynamically Link Your Proxy Setup" property="og:title">
     
 
     
         <meta content="article" property="og:type">
     
     
-        <meta content="I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
+        <meta content="Recently I migrated my server to be within mainland. Immediately since then I faced with another complicated situation of making an Internet request to outside world.
 " property="og:description">
     
     
-        <meta content="http://blog.wasin.io/monthly-report/" property="og:url">
+        <meta content="http://blog.wasin.io/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup.html" property="og:url">
     
+    
+        <meta content="2017-08-16T10:11:00+08:00" property="article:published_time">
+        <meta content="http://blog.wasin.io" property="article:author">
     
     
         <meta content="http://blog.wasin.io/assets/images/haxpor_avatar.jpg" property="og:image">
     
     
+        
+        <meta content="blog" property="article:section">
+        
+    
+    
+        
+        <meta content="network" property="article:tag">
+        
+        <meta content="proxy" property="article:tag">
+        
+        <meta content="proxychain" property="article:tag">
+        
     
 
-    <link rel="canonical" href="http://blog.wasin.io/monthly-report/">
+    <link rel="canonical" href="http://blog.wasin.io/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup.html">
     <link rel="stylesheet" href="/css/vendor/weui.min.css">
     <link rel="stylesheet" href="/css/main.css">
 
@@ -70,108 +85,106 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 </header>
 
 
-      <div class="weui-panel weui-panel_access">
-    <div class="weui-panel__hd">Archive monthly report</div>
-      <div class="weui-panel__bd">
-        
-          
-        
-          
-            <a href="/monthly-report/2017/07/report.html" class="weui-media-box weui-media-box_appmsg">
-              <div class="weui-media-box__hd">
-                <img class="weui-media-box__thumb" src="/assets/images/post-thumbnail/ic_content_paste_black_24dp_2x.png" alt="post thumbnail" />
-              </div>
-              <div class="weui-media-box__bd">
-                <h4 class="weui-media-box__title">Monthly Report - July 2017</h4>
-                <p class="weui-media-box__desc">Here comes July report.
-</p>
-                <ul class="weui-media-box__info">
-                  <li class="weui-media-box__info__meta">Aug, 2017</li>
-                  <li class="weui-media-box__info__meta">
-                    monthly-report
-                  </li>
-                </ul>
-              </div>
-            </a>
-          
-        
-          
-            <a href="/monthly-report/2017/06/report.html" class="weui-media-box weui-media-box_appmsg">
-              <div class="weui-media-box__hd">
-                <img class="weui-media-box__thumb" src="/assets/images/post-thumbnail/ic_content_paste_black_24dp_2x.png" alt="post thumbnail" />
-              </div>
-              <div class="weui-media-box__bd">
-                <h4 class="weui-media-box__title">Monthly Report - June 2017</h4>
-                <p class="weui-media-box__desc">Here comes a report for June with new categorized charts for better understanding hours I&#39;ve invested in. This month packs with activities and couple of released projects.
-</p>
-                <ul class="weui-media-box__info">
-                  <li class="weui-media-box__info__meta">Jul, 2017</li>
-                  <li class="weui-media-box__info__meta">
-                    monthly-report
-                  </li>
-                </ul>
-              </div>
-            </a>
-          
-        
-          
-        
-          
-            <a href="/monthly-report/2017/05/report.html" class="weui-media-box weui-media-box_appmsg">
-              <div class="weui-media-box__hd">
-                <img class="weui-media-box__thumb" src="/assets/images/post-thumbnail/ic_content_paste_black_24dp_2x.png" alt="post thumbnail" />
-              </div>
-              <div class="weui-media-box__bd">
-                <h4 class="weui-media-box__title">Monthly Report - May 2017</h4>
-                <p class="weui-media-box__desc">First Thing First
-</p>
-                <ul class="weui-media-box__info">
-                  <li class="weui-media-box__info__meta">Jun, 2017</li>
-                  <li class="weui-media-box__info__meta">
-                    monthly-report
-                  </li>
-                </ul>
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Use Proxychains to Dynamically Link Your Proxy Setup</h1>
+    <p class="post-meta">Aug 16, 2017</p>
+  </header>
+
+  <article class="post-content">
+    <p>Recently I migrated my server to be within mainland. Immediately since then I faced with another complicated situation of making an Internet request to outside world.</p>
+
+<p>Normally if your server is outside of China mainland, you don&#39;t have to worry about making an Internet request on behalf of the server to certain sites that are blocked by Chinese government. No. It&#39;s not even the case to worry because you&#39;re outside of mainland. But now if you moved inside, the need to get information from within and outside will lead to more complicated situation.</p>
+
+<p>Imagine a project needs to pull down node packages via <code>npm install</code> and you make a request from mainland. Your request would be blocked. In order to successfully do it, you have to configure <code>/.npmrc</code> to include proxy server, or use <code>npm config set proxy http://yourproxy.com:1234</code> and <code>npm config set https-proxy http://yourproxy.com:1234</code>.</p>
+
+<p>That&#39;s still fine as almost all of the time, you will make npm request through a proxy. So globally set that things up is ok.</p>
+
+<p>But now imagine the case of making a <code>curl</code> request. You can configure proxy setup via <code>~/.curlrc</code> then you will be fine.</p>
+
+<blockquote>
+<p>I also wrote about how to configure <code>~./npmrc</code> and <code>~./curlrc</code> <a href="http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html">here</a>.</p>
+</blockquote>
+
+<p>But do you need to go through proxy all the time? I don&#39;t think so. You don&#39;t want to waste more time in waiting for such response in un-optimized request path as you know you will be fine although making a <strong>direct</strong> request. So setting proxy setup through those configuration file is a no go.</p>
+
+<h1 id="whats-the-better-option">What&#39;s The Better Option?</h1>
+
+<p>I discover <a href="https://github.com/rofl0r/proxychains-ng">proxychains</a>.</p>
+
+<p>What it can do is to dynamically forward through your request to target proxy server as you configured in its config file; usually at <code>/etc/proxychains.conf</code>.</p>
+
+<blockquote>
+<p>You just need to add <code>socks5      127.0.0.1 1234</code> at the end of the file; but substitute for your proxy ip address and port there.</p>
+</blockquote>
+
+<p>proxychains will forward TCP connection through SOCKS4, SOCKS5, or HTTP proxy. This perfectly works with Shadowsocks proxy as well.</p>
+
+<p>I found an interesting case that for a few applications, it is required to use with only HTTP protocol only; not SOCKS. Thus using proxychains to forward that request to your local SOCKS5 proxy (i.e. Shadowsocks) works and solves this issue immediately.</p>
+
+<p>Also proxychains solves the problem of a need to have a global configuration that affect entire system either via ...</p>
+
+<ul>
+<li><code>~/.bash_profile</code> or <code>~/.bashrc</code> for <code>HTTP_PROXY=...</code> and <code>HTTPS_PROXY=...</code></li>
+<li>Applications&#39; configuration file i.e. <code>~/.npmrc</code>, <code>~/.curlrc</code>, etc</li>
+</ul>
+
+<p>because whenever you need to go through proxy, you don&#39;t have to set up any proxy configuration. You just execute it like this (assume you make a request from within mainland)</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">proxychains4 curl -L https://google.com
+</code></pre></div>
+<p>The following is a result you get</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="o">[</span>proxychains] config file found: /etc/proxychains.conf
+<span class="o">[</span>proxychains] preloading /usr/lib/libproxychains4.so
+<span class="o">[</span>proxychains] DLL init: proxychains-ng 4.12-git-1-gbb3df1e
+<span class="o">[</span>proxychains] Strict chain  ...  127.0.0.1:1234  ...  google.com:443  ...  OK
+<span class="o">[</span>proxychains] Strict chain  ...  127.0.0.1:1234  ...  www.google.com.sg:443  ...  OK
+&lt;!doctype html&gt;&lt;html <span class="nv">itemscope</span><span class="o">=</span><span class="s2">""</span> <span class="nv">itemtype</span><span class="o">=</span><span class="s2">"http://schema.org/WebPage"</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"zh-HK"</span>&gt;&lt;hea
+...
+&lt;omitted html content <span class="k">for </span>brevity here&gt;
+...
+</code></pre></div>
+<p>Above result, I modified the port and google URL as to not reveal proxy information I use. But it works.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>So in conclusion proxychains makes it cleanly to make a request without a need to configure system&#39;s proxy setup that will affect the entire system or entire operation of such application. It allows you to go through the proxy as configured in <code>/etc/proxychains.conf</code> on-demand only when need via a simple command <code>proxychains4 &lt;command&gt; [parameter]</code>.</p>
+
+  </article>
+
+  
+  	<span class="post-tags">Tags</span>:
+  	network, proxy, proxychain
+	
+
+  
+<div id="disqus_thread" style="margin-top: 30px;"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+this.page.url = "http://blog.wasin.io/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/blog/2017/08/16/use-proxychains-to-dynamically-link-your-proxy-setup"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://wasin-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
       </div>
-  </div>
+    </div>
 
-  <a href="/feed.xml" class="weui-btn weui-btn_primary" style="border-radius: 0px">subscribe via RSS</a>
-
+    <a href="/feed.xml" class="weui-btn weui-btn_primary" style="border-radius: 0px">subscribe via RSS</a>
 
     <footer class="site-footer">
 
