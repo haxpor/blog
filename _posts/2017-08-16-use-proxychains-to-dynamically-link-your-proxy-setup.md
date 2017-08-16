@@ -6,6 +6,7 @@ thumbnail: /assets/images/post-thumbnail/proxy.png
 categories: blog
 tags: [network, proxy, proxychain]
 comments: true
+og_image: /assets/images/post-thumbnail/proxy.png
 ---
 
 Recently I migrated my server to be within mainland. Immediately since then I faced with another complicated situation of making an Internet request to outside world.
