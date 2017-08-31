@@ -6,9 +6,322 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 16 Aug 2017 11:00:44 +0800</pubDate>
-    <lastBuildDate>Wed, 16 Aug 2017 11:00:44 +0800</lastBuildDate>
+    <pubDate>Thu, 31 Aug 2017 23:50:51 +0800</pubDate>
+    <lastBuildDate>Thu, 31 Aug 2017 23:50:51 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Operate Company Banking in China - Base on China Merchants Bank</title>
+        <description>&lt;p&gt;Running a small company by a few people, in my case 2, me and my girlfriend, you have to wear many hats in one person.&lt;/p&gt;
+
+&lt;p&gt;If you have large budget to hire specialist, or someone to take care of it, it&amp;#39;s good. But if it&amp;#39;s in budget-plan, minimize cost, no plan to scale (it&amp;#39;s &lt;a href=&quot;https://dev.to/sehurlburt/were-stephanie-hurlburt-and-rich-geldreich-ask-us-anything/comments/kka&quot;&gt;fine&lt;/a&gt;), with an optimistic learn-them-(almost)-all mindset, this article might be beneficial to you.&lt;/p&gt;
+
+&lt;p&gt;I base the example on CMB (China Merchants Bank). It should be familar approach in steps and things they handed to you. So if you&amp;#39;re using other banks, I hope you can adapt what I present you here to your case. In this article, I will be focusing on these two topics.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Tools/Cards Chinese bank gave it to you after we got company bank account and what we can do with them&lt;/li&gt;
+&lt;li&gt;How to transfer money between company bank account &amp;amp; personal account&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The slight problem is that I&amp;#39;m based on macOS, the tools handed to us is based on Windows. So I&amp;#39;m going to show how to tackle this problem as well.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-tools-cards-chinese-bank-handed-to-you&quot;&gt;What Tools/Cards Chinese Bank Handed to You&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;So here let&amp;#39;s see what are the things Chinese Bank gave to you.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-payment-scrambler&quot;&gt;1. Payment Scrambler&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img alt=&quot;payment scrambler device&quot; src=&quot;/assets/images/operate-bank-in-china/tools_cards/banking-company-device.jpg&quot; width=&quot;50%&quot;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t use it yet as it&amp;#39;s more suitable for mid-to-big company to approve payment to employees. Alternative is we can use cheque as a payment, but that means you have to buy cheque papers at the bank. I consulted them once, it&amp;#39;s pretty hard for small company to buy it. Anyway I list this device here too as a reference for all things the bank gave to you.&lt;/p&gt;
+
+&lt;p&gt;Apart from that, you better consult Chinese people especially bank staff to help you set up. This device comes with a detail Chinese manual, but better to set up it properly, ask for help.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-bank-cards&quot;&gt;2. Bank cards&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img alt=&quot;company bank cards&quot; src=&quot;/assets/images/operate-bank-in-china/tools_cards/banking-company-cards.jpg&quot;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two cards.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Deposit Card&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Mainly you can deposit money to your company bank account directly via ATM machine, or inquire about current balance.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;C+ for bank statement&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is mainly used to print your company bank statement directly from available machine; mostly situated near major bank branch. You can select period of time for statements to be print. The following is the example of it. One transaction for one paper. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/tools_cards/banking-company-statement.jpg&quot; alt=&quot;company bank statement&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Both cards have the same password as set during registration/application at the bank.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-ukeys&quot;&gt;3. UKeys&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img alt=&quot;ukeys&quot; src=&quot;/assets/images/operate-bank-in-china/tools_cards/banking-company-ukeys.jpg&quot; width=&quot;50%&quot;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;UKeys are short for USB-Keys. It&amp;#39;s like another layer of security that bank provided to you. When you authenticate yourself with UBank software, you will need to plug this device beforehand as the software itself will read and check information from it to allow you to successfully authenticate thus log in. There are two UKeys. One for initiator to initiate action i.e. transfering money, etc. Another for approval/rejection action on behalf of someone with higher authority to decide. We will talk more about it in latter part of this article.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-transfer-money-from-company-bank-account-to-personal-account&quot;&gt;How to Transfer Money From Company Bank Account to Personal Account&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now we will get into real action.&lt;/p&gt;
+
+&lt;p&gt;What I will be showing you is the real transaction that happened. I red out those sensitive information but you will get the sense of what it is. Thing to note here is that as my company type is limited partnership, so the company asset is actually ours. It&amp;#39;s not separate entity like in corporate or LLC sense. So transfering money back and forth between your own company and your personal account can be done directly. I wonder there would be a few more steps for limited company as you need to declare asset in/out because company is separate entity.&lt;/p&gt;
+
+&lt;p&gt;I consulted our company&amp;#39;s accounting firm to double check my understanding.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img alt=&quot;confirmed practice transfer money for partnership company&quot; src=&quot;/assets/images/operate-bank-in-china/finan-practice-confirmed.jpg&quot; width=&quot;60%&quot;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All in all, consult your accountant to be 100% sure about financial practice in your country.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;get-virtualbox-and-windows-copy-iso&quot;&gt;Get VirtualBox and Windows Copy (.iso)&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re on macOS. You have to run Windows on virtual machine like &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;VirtualBox&lt;/a&gt; which is free to use and open source (thus clearly, not affiliated).&lt;/p&gt;
+
+&lt;p&gt;Bare minimum, old version of Windows with minimum RAM and disk space is good enough to go. No need to be fancy.
+I use Windows XP Professional 32-bit with a setup that has 512MB RAM, 3GB of disk space. My macOS is mid 2013 with 8 GB RAM. After installation, and applications, you will have almost 1 GB left. So it&amp;#39;s very bare minimum of what you need :)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I tried with &lt;a href=&quot;http://winebottler.kronenberg.org/&quot;&gt;winebottler&lt;/a&gt; and it didn&amp;#39;t work. I can start the application though with unrecognized Chinese character (if you need, English is fine though). But I realize later that it&amp;#39;s due to UKey isn&amp;#39;t recognized by my macOS. There&amp;#39;s even no USB listed from execution of command &lt;code&gt;diskutil list&lt;/code&gt;. So no luck there. You have to run on Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Then you should have a copy of Windows .iso ready as you need to hook it up with VirtualBox to install the OS.&lt;/p&gt;
+
+&lt;p&gt;I leave the part of setting up VirtualBox to you as it&amp;#39;s not the main part for this article.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-ubank-software-and-ukey-driver&quot;&gt;Install UBank Software and UKey driver&lt;/h2&gt;
+
+&lt;p&gt;On Windows. Follow the step below.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;a href=&quot;http://www.cmbchina.com&quot;&gt;http://www.cmbchina.com&lt;/a&gt; and click on the links as shown&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/app-setup/finan-ubank-1.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/finan-ubank-1.png&quot; alt=&quot;cmbchina website - click 1&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/app-setup/finan-ubank-2.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/finan-ubank-2.png&quot; alt=&quot;cmbchina website - click 2&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now scroll down to download driver, and UBank software as marked by circles as shown below&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/finan-ubank-3.png&quot; alt=&quot;cmbchina website - click 3&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I include the links here just for pure reference. &lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.cmbchina.com/webpages/corporate/cardreaders.htm&quot;&gt;Driver&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://szdl.cmbchina.com/download/FB/FirmBank-9.3.0.15192.exe&quot;&gt;UBank 9.3.0.15192(2017.8.2)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;But it&amp;#39;s much better for you to follow along as there might be newer version of software available especially UBank. It&amp;#39;s updated on average twice a month.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install UKey driver&lt;/p&gt;
+
+&lt;p&gt;Scroll down the page to the following section.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/ukey-driver-setup.png&quot; alt=&quot;ukey driver&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on &lt;a href=&quot;http://szdl.cmbchina.com/download/33-2000-XP-2003.zip&quot;&gt;2000 / XP / 2003&lt;/a&gt; or &lt;a href=&quot;http://szdl.cmbchina.com/download/33-VISTA.zip&quot;&gt;VISTA&lt;/a&gt; to dowload.
+Again please don&amp;#39;t be mad at me to not give you a link right away. Better to follow along the steps, scroll to target section and hit link on screen as link might be changed in the future, or newer version is available. Link I give to you is for pure reference.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Unzip and Copy all files to &lt;code&gt;C:/windows/system32/drivers/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/app-setup/ukey-driver-setup-2.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/ukey-driver-setup-2.png&quot; alt=&quot;unzip and install ukey driver&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install UBank software&lt;/p&gt;
+
+&lt;p&gt;Follow along on screen. It&amp;#39;s straight forward. Also don&amp;#39;t worry about the error dialog shown at first, it makes no harm.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Testing Running UBank&lt;/p&gt;
+
+&lt;p&gt;Plug in one of UKeys you have to your machine, it can be any of them for now as we just want to test.&lt;br&gt;
+If you run Windows on VirtualBox, this means you just plugged in UKey into your host machine. You need to let VirtualBox knows that you have plugged in such thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/activate-usb.png&quot; alt=&quot;activate usb on windows via virtualbox&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, just click on usb-like-icon then click on &lt;code&gt;ExcelSecu USB Key [0100]&lt;/code&gt;. The name might be slightly different. But in any case, you can easily differentiate it from others.&lt;/p&gt;
+
+&lt;p&gt;Now with UKey plugged in. Open UBank software.&lt;br&gt;
+If all this set up is successful, when UBank launches, its UI will freeze a short amount of time (this means it&amp;#39;s reading from UKey) then it will &lt;strong&gt;populate&lt;/strong&gt; username into the field automatically for you. This part is important. If you didn&amp;#39;t see populated username on your username text field input, it has highly chance that it didn&amp;#39;t work.&lt;/p&gt;
+
+&lt;p&gt;Again, to double check whether it&amp;#39;s all ok or not. Just try to log in.&lt;br&gt;
+You need to click on &lt;code&gt;Switch to: login with digital...&lt;/code&gt; if current screen isn&amp;#39;t the same as image below, then enter the same password you&amp;#39;ve set during the time of registration &amp;amp; setup at the bank for your company bank account. You should be able to successfully log in.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/app-setup/digital-certificate-login.png&quot; alt=&quot;login ubank&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;If not, try to consult your bank representative who handles your case. Check the password.&lt;br&gt;
+But by all means, when you open UBank with prior UKey plugged in, it should populate username text for you &amp;lt;-- this is the major indicator whether it&amp;#39;s &lt;font color=&quot;green&quot;&gt;success&lt;/font&gt; or &lt;font color=&quot;red&quot;&gt;fail&lt;/font&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;transfer-money&quot;&gt;Transfer Money&lt;/h2&gt;
+
+&lt;p&gt;You&amp;#39;ve checked that things work fine up until now. So you&amp;#39;re ready to login as initiator (per se; financial manager) to request money transfer as will be approved or rejected by (per se) general manager of the company later.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s clear by now that why the bank gave you 2 UKeys. One for whoever needs to initiate the transaction, and another for whom to review and decide the fate of that transaction.&lt;/p&gt;
+
+&lt;p&gt;At the back of UKey, you can see long number. You use this number to uniquely identify which one is for whom in your company.&lt;/p&gt;
+
+&lt;p&gt;Now we will act as initiator who will request money transfer. Assume that you already logged in.
+You should see the following screen right after that.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/initiator/ubank-interface-1.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/initiator/bank-interface-1.png&quot; alt=&quot;home screen ubank&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;Then click on the following section as marked by circle&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-2.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-2.png&quot; alt=&quot;initiator transfer money ubank&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;Actually you can do either single payment, or batch payment. In this case, we go with single payment. Then you will see&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-3.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-3.png&quot; alt=&quot;ubank single payment&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;You will be asked to enter target bank account number, name of beneficiary, province, city, and which bank. Also with &lt;em&gt;Settling mode&lt;/em&gt; which can be either &lt;em&gt;normal&lt;/em&gt; or &lt;em&gt;fast&lt;/em&gt;, and &lt;em&gt;Purpose&lt;/em&gt; in which you can write your own. I used &lt;em&gt;normal&lt;/em&gt; and because the target bank is in the same city, so it&amp;#39;s fast within 5 minutes, we got SMS notification back.&lt;/p&gt;
+
+&lt;p&gt;Also your financial manager, usually the first person mapping with first UKey will get SMS notification about the current activity of the company bank account. If the money is outbound, then SMS will be sent to you indicating -xxx RMB is deducted from company bank account. Something like that.&lt;/p&gt;
+
+&lt;p&gt;When all required information is entered, the request is sent, and it&amp;#39;s done for initiating person at the moment.&lt;/p&gt;
+
+&lt;p&gt;In addition, you can inquire about the current transaction that is waiting to be approved via &lt;em&gt;Payment Settlement-&amp;gt;Payment-Settlement-&amp;gt;Inquire&lt;/em&gt;, you will see the screen similar to below.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-3-waiting.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/initiator/ubank-operate-3-waiting.png&quot; alt=&quot;ubank single payment - done&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;approval&quot;&gt;Approval&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s shift to another personnel to approve such transaction made by initiator.&lt;/p&gt;
+
+&lt;p&gt;We do the same. Unplug any UKey if there&amp;#39;s any first, then plug another one. Launch UBank again if not yet, then log in.&lt;/p&gt;
+
+&lt;p&gt;Go to &lt;em&gt;Approve&lt;/em&gt; section as marked by circle in the following image.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/approval/ubank-operate-4-toapprove.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/approval/ubank-operate-4-toapprove.png&quot; alt=&quot;ubank transfer to be approved&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You will notice that UI is different from the first person (initiator). There&amp;#39;s no payment section to make any financial request. Only approve or enquiry for whole picture in general. But this person holds decision-making ability.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will see the following screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/approval/ubank-operate-4-approve.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/approval/ubank-operate-4-approve.png&quot; alt=&quot;ubank transfer to be approved&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;You can review information before clicking on &lt;em&gt;Agree&lt;/em&gt; to approve it.&lt;br&gt;
+Result dialog will be shown.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/approval/ubank-approve.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/approval/ubank-approve.png&quot; alt=&quot;ubank transfer approved&quot;&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;With a plus that you can print it if you need to, if you set up PDF via printer you would be able to save it as PDF file as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/approval/printing-result.png&quot;&gt;&lt;img src=&quot;/assets/images/operate-bank-in-china/approval/printing-result.png&quot; alt=&quot;printing result&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the full loop starting from initiator requesting money transfer, til approval process is complete.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-transfer-money-from-personal-bank-account-to-company-bank-account&quot;&gt;How to Transfer Money From Personal Bank Account to Company Bank Account&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This is deadly simple. Not to mention that you can just widthdraw money from your personal bank account, then take it to nearby ATM and use company debit card to deposit such money to your company account.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately I only see the ability to directly enter target bank account number to transfer money to on Alipay only, not yet on WeChat.&lt;br&gt;
+So on Alipay, go to &lt;em&gt;Home-&amp;gt;Transfer&lt;/em&gt; then you will see the following screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/personal-transfer/personal-transfer-alipay-1.png&quot;&gt;&lt;img alt=&quot;personal transfer&quot; src=&quot;/assets/images/operate-bank-in-china/personal-transfer/personal-transfer-alipay-1.png&quot; width=&quot;40%&quot;/&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &lt;em&gt;To Bank Card&lt;/em&gt; then you will have option to enter bank account number.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/operate-bank-in-china/personal-transfer/personal-transfer-alipay-2.png&quot;&gt;&lt;img alt=&quot;personal transfer&quot; src=&quot;/assets/images/operate-bank-in-china/personal-transfer/personal-transfer-alipay-2.png&quot; width=&quot;40%&quot;/&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cant-we-have-the-same-flexibility-in-receiving-paying-money-on-company-account-as-personal-account&quot;&gt;Can&amp;#39;t We Have the Same Flexibility in Receiving/Paying Money on Company Account as Personal Account?&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;The answer is yes.&lt;/p&gt;
+
+&lt;p&gt;But it comes to some qualification.&lt;/p&gt;
+
+&lt;p&gt;Apply for it&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WeChat - &lt;a href=&quot;https://pay.weixin.qq.com/index.php/public/wechatpay/home&quot;&gt;WeChat Pay+ Official Account&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Alipay - &lt;a href=&quot;https://global.alipay.com/&quot;&gt;Alipay for Business&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I need to tell you beforehand that I didn&amp;#39;t have such account for company yet. I tried once with Alipay, and their qualification is super high. You have to have very high capital and have the right type of business (mostly retail) to be able to apply. I didn&amp;#39;t try for WeChat yet.&lt;/p&gt;
+
+&lt;p&gt;But it&amp;#39;d be ok for my case as I can freely transfer in/out of money through company/personal account. It&amp;#39;s all me and my partner&amp;#39; asset. So I don&amp;#39;t have immediate urgency to re-apply and get this. But if you have a storefront, selling physical stuff i.e. outlets, fanchises or 7-eleven-like, your urgency is high and a must need. Imagine having just QRCode on either on your side allowing customers to scan to pay, or having it on client side then you scan to complete the purchase, that&amp;#39;s flexible. There&amp;#39;re several options for such payment integration as seen on &lt;a href=&quot;https://pay.weixin.qq.com/wechatpay_guide/help_docs.shtml&quot;&gt;WeChat Pay Documents&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So consult WeChat, Alipay, or accountant to double check on things you need to know further.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I&amp;#39;m slightly surprise to know that a leading major bank didn&amp;#39;t decide to go all-in to online approach to do financial transaction on your company behalf. But I now well realize that with this, it increases much more security. It introduces a few more hops to go through, not just one but two as you can see from UKey-steps to initiate and approve.&lt;/p&gt;
+
+&lt;p&gt;At the same time, it allows high flexibility of payment for company on mobile and storefronts but with a reasonable price of high requirements.&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoy content I present to you in this article as much as I enjoy writing it.&lt;/p&gt;
+
+&lt;p&gt;If you have any thought you want to discuss, or any suggestion, feel free to comment down below.&lt;br&gt;
+Until next time.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Aug 2017 01:48:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html</guid>
+        
+        <category>banking</category>
+        
+        <category>china</category>
+        
+        <category>company</category>
+        
+        <category>finance</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Use Proxychains to Dynamically Link Your Proxy Setup</title>
@@ -1896,68 +2209,6 @@ Now go and get verified developers!&lt;/p&gt;
         <category>git</category>
         
         <category>gpg</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>When I Let My Girlfriend Interacts With My WeChat Bot</title>
-        <description>&lt;p&gt;Since the time I&amp;#39;ve moved to Shenzhen, I experimented with WeChat bot and its platform quite enough to have some times to enjoy its moment.&lt;/p&gt;
-
-&lt;p&gt;During development of my WeChat Bot codenamed FKit, I chanaged its functionality to only shout out &amp;quot;i Love u&amp;quot; as I want my girlfriend to interact with it no matter the input message.&lt;/p&gt;
-
-&lt;p&gt;Here is what I captured the conversation she talked with my bot. I captured it via &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;&amp;#39;s web interface.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You might wonder how can I decrypt the message as it should be done via https and WeChat platform&amp;#39;s encryption. I can as I disable encryption during the time of development. Surely for production, encryption would be back on.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/1.png&quot; alt=&quot;fkit convo 1&quot;&gt;&lt;br&gt;
-She began with &lt;code&gt;test&lt;/code&gt; first.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/2.png&quot; alt=&quot;fkit convo 2&quot;&gt;&lt;br&gt;
-Then she followed up by calling me &lt;code&gt;stupid frog&lt;/code&gt; !&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/3.png&quot; alt=&quot;fkit convo 3&quot;&gt;&lt;br&gt;
-She sent a sticker but my WeChat bot doesn&amp;#39;t support receiving this kind of message yet, thus it showed out as (translated to English) &lt;code&gt;not support message&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/4.png&quot; alt=&quot;fkit convo 4&quot;&gt;&lt;br&gt;
-Same to previously message.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit-convo/5.png&quot; alt=&quot;fkit convo 5&quot;&gt;&lt;br&gt;
-Then she ended the conversation with &lt;code&gt;okie&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;That&amp;#39;s fun time 😂&lt;/p&gt;
-
-&lt;h2 id=&quot;wanna-try&quot;&gt;Wanna Try?&lt;/h2&gt;
-
-&lt;p&gt;You can try out to receive &amp;quot;i Love u&amp;quot; if you need some love right now by scanning on the following QR Code.&lt;/p&gt;
-
-&lt;p&gt;Also if you open this article on WeChat app, you can just hold down on QR Code image below, then you will see option &amp;quot;Extract QR code&amp;quot;. It will take you to my WeChat bot account. Easy!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/fkit/qrcode-fkit-wechat-bot.jpg&quot; alt=&quot;fkit qrcode&quot;&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;fkit-development&quot;&gt;FKit Development&lt;/h2&gt;
-
-&lt;p&gt;FKit is on-going development of one of my experimental project and I&amp;#39;ll push more features into it to basically serve my needs as a foreigner living in China. More update will be updated on new blog post.&lt;/p&gt;
-
-&lt;h2 id=&quot;gotcha&quot;&gt;Gotcha&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;WeChat platform uses XML-based &lt;a href=&quot;http://admin.wechat.com/wiki/index.php?title=Common_Messages&quot;&gt;message format&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 28 Jan 2017 20:18:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/01/28/when-i-let-my-girlfriend-interact-with-wechat-bot.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/01/28/when-i-let-my-girlfriend-interact-with-wechat-bot.html</guid>
-        
-        <category>wechat</category>
-        
-        <category>bot</category>
-        
-        <category>ngrok</category>
         
         
         <category>blog</category>
