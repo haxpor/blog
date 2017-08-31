@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Operate Company Banking in China - Base on CMB"
+title:  "Operate Company Banking in China - Base on China Merchants Bank"
 date:   2017-08-31 01:48
 thumbnail: /assets/images/post-thumbnail/yuan-chinese-banking-finance.jpg
 categories: blog
@@ -265,6 +265,7 @@ The answer is yes.
 But it comes to some qualification.
 
 Apply for it
+
 * WeChat - [WeChat Pay+ Official Account](https://pay.weixin.qq.com/index.php/public/wechatpay/home), [WeChat Pay Documents](https://pay.weixin.qq.com/wechatpay_guide/help_docs.shtml)
 * Alipay - [Alipay for Business](https://global.alipay.com/)
 
