@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 03 Sep 2017 16:15:37 +0800</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2017 16:15:37 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2017 16:48:52 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2017 16:48:52 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -32,9 +32,9 @@
 
 &lt;p&gt;This month I ceased further development of multiplayer mode of asteroids (but released its single player mode for free with no ads on &lt;a href=&quot;https://play.google.com/store/apps/details?id=io.wasin.asteroids&amp;hl=en&quot;&gt;Google Play&lt;/a&gt;, it&amp;#39;s also &lt;a href=&quot;https://github.com/haxpor/asteroids&quot;&gt;open source&lt;/a&gt;), in order to pay full focus to WeChat&amp;#39;s mini-program app I&amp;#39;m developing under code name &lt;em&gt;heatap&lt;/em&gt;. You can see more detail for both things at its corresponding section.&lt;/p&gt;
 
-&lt;p&gt;When I dig the rabbit hole into mini-program development. There are more administrative tasks like applying for operating license i.e. ICP, and WeChat&amp;#39;s micro payment. It requires on-going attention for application to be complete. I have to coordinate and tell my partner to prepare for governemnt/auditor phone call along the step of vertification, and documents preparation and submission. It&amp;#39;s new unwalked-before path for me thus time spent on these non-productive tasks accumulated to almost 25% for this month alone.&lt;/p&gt;
+&lt;p&gt;When I dig the rabbit hole into mini-program development. There are more administrative tasks like applying for operating license i.e. ICP, and WeChat&amp;#39;s micro payment. It requires on-going attention for application to be complete. I have to coordinate and tell my partner to prepare for government/auditor phone call along the step of vertification, and documents preparation and submission. It&amp;#39;s new unwalked-before path for me thus time spent on these non-productive tasks accumulated to almost 25% for this month alone.&lt;/p&gt;
 
-&lt;p&gt;Look at it in a good way. I finally nailed down &lt;a href=&quot;http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html&quot;&gt;company&amp;#39;s basic banking operation&lt;/a&gt;. For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via QRCode from customers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.&lt;/p&gt;
+&lt;p&gt;Look at it in a good way. I finally nailed down &lt;a href=&quot;http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html&quot;&gt;company&amp;#39;s basic banking operation&lt;/a&gt;. For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via API call, QRCode from customers, and other options that WeChat offers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.&lt;/p&gt;
 
 &lt;p&gt;Administrative tasks occupy large chunk of time in this month, and they are not just &lt;em&gt;misc&lt;/em&gt; stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&amp;#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server confiration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.&lt;/p&gt;
 
