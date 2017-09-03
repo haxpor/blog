@@ -34,7 +34,7 @@ When I dig the rabbit hole into mini-program development. There are more adminis
 
 Look at it in a good way. I finally nailed down [company's basic banking operation](http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html). For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via API call, QRCode from customers, and other options that WeChat offers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.
 
-Administrative tasks occupy large chunk of time in this month, and they are not just _misc_ stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I've done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server confiration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.
+Administrative tasks occupy large chunk of time in this month, and they are not just _misc_ stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I've done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server configuration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.
 
 In short, I also pivoted my business strategy and plan to cover lesser fields allowing me to be able to manage and retain my technical skill towards technology/programming language I use to develop them without spread too many focus on different directions. This means I will pay less attention to certain things. Read on for detail.
 
@@ -73,9 +73,9 @@ Also, I improved two main charts of *Total hours spent* at the top of this repor
 # heatap
 ---
 
-As I decided to cease development of multiplayer mode of asteroid to pay full focus on mini-program app which is *heatap*, I've found interesting things and I'd like to share.
+As I decided to cease development of multiplayer mode of asteroids to pay full focus on mini-program app which is *heatap*, I've found interesting things and I'd like to share.
 
-During 48 hours prototyping, I keep thinking about map and location. Having seen [Hoodmaps](https://hoodmaps.com) by Pieter Levels as well, I can say it play the huge influencial part of it. I want to make it available and operatable under WeChat's mini-program which has limited features/integration (under JSCore, cannot use `window`, `document`, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is **not** done yet, and I continue complete the existing features, and might add something else along the way.
+During 48 hours prototyping, I keep thinking about map and location. Having seen [Hoodmaps](https://hoodmaps.com) by Pieter Levels as well, I can say it plays the huge influencial part of it. I want to make it available and operatable under WeChat's mini-program which has limited features/integration (under JSCore, cannot use `window`, `document`, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is **not** done yet, and I continue to complete the existing features, also might add something else along the way.
 
 > Concept is Paint & Pin or PP (I might use *PP* as the project name when launch). That said you Paint to mark certain area, and Pin to mark specific location with interesting comment.
 
@@ -138,14 +138,16 @@ Getting WeChat micro payment feature enabled for your mini-program app, you need
 
 After you got those twos done, then you're able to begin another process to actually apply. In short, micro payment requires ICP license number (after approval) to be filled in application form and firstly verified by audit team even before you actually apply for it.
 
-The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use [Qcloud](https://www.qcloud.com/) (not affiliated) which is Tencent's Cloud service that provided tight integration support for your mini-program app.
+The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use [QCloud](https://www.qcloud.com/) (not affiliated) which is Tencent's Cloud service that provided tight integration support for your mini-program app.
 
 I didn't go on with former option, but if you decided to go with latter option then ...  
 You have to do the following to acquire ICP license
 
 1. Fill information online and submit
+
 	This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent's Audit team in Beijing.
 2. Take a photo with Tencent's backdrop
+
 	You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.
 3. Tencent submit your information to Government
 4. Wait for approval (government might call you)
@@ -159,6 +161,8 @@ You have to do the following to acquire ICP license
 
 <sub>One of latter step is to wait for Chinese government to review and approve your ICP license application</sub>
 </center>
+
+When you log in into QCloud dashboard, be sure to check out [beian](https://console.qcloud.com/beian) which will take you to the beginning of application process for ICP license. You will need that link, it's not that super easy to find if you didn't know Chinese.
 
 I'm still waiting for this, it's getting close to 20 days I have to wait. I hope things are ok.
 
