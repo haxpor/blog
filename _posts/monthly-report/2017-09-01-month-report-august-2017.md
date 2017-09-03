@@ -138,8 +138,9 @@ Getting WeChat micro payment feature enabled for your mini-program app, you need
 
 After you got those twos done, then you're able to begin another process to actually apply. In short, micro payment requires ICP license number (after approval) to be filled in application form and firstly verified by audit team even before you actually apply for it.
 
-The step to get ICP license requires effort and on-going attention. You can choose to do it manually, or just hop in and just use [Qcloud](https://www.qcloud.com/) (not affiliated) which is Tencent's Cloud service that provided tight integration support for your mini-program app.
+The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use [Qcloud](https://www.qcloud.com/) (not affiliated) which is Tencent's Cloud service that provided tight integration support for your mini-program app.
 
+I didn't go on with former option, but if you decided to go with latter option then ...  
 You have to do the following to acquire ICP license
 
 1. Fill information online and submit
