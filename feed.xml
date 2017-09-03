@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 03 Sep 2017 17:02:03 +0800</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2017 17:02:03 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2017 17:50:15 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2017 17:50:15 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -81,7 +81,7 @@
 
 &lt;p&gt;As I decided to cease development of multiplayer mode of asteroids to pay full focus on mini-program app which is &lt;em&gt;heatap&lt;/em&gt;, I&amp;#39;ve found interesting things and I&amp;#39;d like to share.&lt;/p&gt;
 
-&lt;p&gt;During 48 hours prototyping, I keep thinking about map and location. Having seen &lt;a href=&quot;https://hoodmaps.com&quot;&gt;Hoodmaps&lt;/a&gt; by Pieter Levels as well, I can say it plays the huge influencial part of it. I want to make it available and operatable under WeChat&amp;#39;s mini-program which has limited features/integration (under JSCore, cannot use &lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt;, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is &lt;strong&gt;not&lt;/strong&gt; done yet, and I continue to complete the existing features, also might add something else along the way.&lt;/p&gt;
+&lt;p&gt;During 48 hours prototyping, I keep thinking about map and location. Having seen &lt;a href=&quot;https://hoodmaps.com&quot;&gt;Hoodmaps&lt;/a&gt; by Pieter Levels as well, I can say it plays the huge influencial part of it. I want to make it available and operatable under WeChat&amp;#39;s mini-program which has limited features/integration (under JSCore, cannot use &lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt;, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is &lt;strong&gt;not&lt;/strong&gt; done yet, and I continue to complete the existing features, also might add something else along the way. I got MVP (Minimum viable product) within 48 hours, but also continued after the 1st week til the end of the month which included 3 times of iterative of UI, implementation for both front-end and backend, refinement, bug fixes, thinking/discussing with my Chinese partner about additional features &amp;amp; how to monetize in the future. That covers timespan for roughly 3 weeks to get to the current point.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Concept is Paint &amp;amp; Pin or PP (I might use &lt;em&gt;PP&lt;/em&gt; as the project name when launch). That said you Paint to mark certain area, and Pin to mark specific location with interesting comment.&lt;/p&gt;
