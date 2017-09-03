@@ -116,7 +116,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>Look at it in a good way. I finally nailed down <a href="http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html">company&#39;s basic banking operation</a>. For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via API call, QRCode from customers, and other options that WeChat offers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.</p>
 
-<p>Administrative tasks occupy large chunk of time in this month, and they are not just <em>misc</em> stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server confiration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.</p>
+<p>Administrative tasks occupy large chunk of time in this month, and they are not just <em>misc</em> stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server configuration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.</p>
 
 <p>In short, I also pivoted my business strategy and plan to cover lesser fields allowing me to be able to manage and retain my technical skill towards technology/programming language I use to develop them without spread too many focus on different directions. This means I will pay less attention to certain things. Read on for detail.</p>
 
@@ -159,9 +159,9 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <hr>
 
-<p>As I decided to cease development of multiplayer mode of asteroid to pay full focus on mini-program app which is <em>heatap</em>, I&#39;ve found interesting things and I&#39;d like to share.</p>
+<p>As I decided to cease development of multiplayer mode of asteroids to pay full focus on mini-program app which is <em>heatap</em>, I&#39;ve found interesting things and I&#39;d like to share.</p>
 
-<p>During 48 hours prototyping, I keep thinking about map and location. Having seen <a href="https://hoodmaps.com">Hoodmaps</a> by Pieter Levels as well, I can say it play the huge influencial part of it. I want to make it available and operatable under WeChat&#39;s mini-program which has limited features/integration (under JSCore, cannot use <code>window</code>, <code>document</code>, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is <strong>not</strong> done yet, and I continue complete the existing features, and might add something else along the way.</p>
+<p>During 48 hours prototyping, I keep thinking about map and location. Having seen <a href="https://hoodmaps.com">Hoodmaps</a> by Pieter Levels as well, I can say it plays the huge influencial part of it. I want to make it available and operatable under WeChat&#39;s mini-program which has limited features/integration (under JSCore, cannot use <code>window</code>, <code>document</code>, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is <strong>not</strong> done yet, and I continue to complete the existing features, also might add something else along the way.</p>
 
 <blockquote>
 <p>Concept is Paint &amp; Pin or PP (I might use <em>PP</em> as the project name when launch). That said you Paint to mark certain area, and Pin to mark specific location with interesting comment.</p>
@@ -233,18 +233,20 @@ https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
 <p>After you got those twos done, then you&#39;re able to begin another process to actually apply. In short, micro payment requires ICP license number (after approval) to be filled in application form and firstly verified by audit team even before you actually apply for it.</p>
 
-<p>The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use <a href="https://www.qcloud.com/">Qcloud</a> (not affiliated) which is Tencent&#39;s Cloud service that provided tight integration support for your mini-program app.</p>
+<p>The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use <a href="https://www.qcloud.com/">QCloud</a> (not affiliated) which is Tencent&#39;s Cloud service that provided tight integration support for your mini-program app.</p>
 
 <p>I didn&#39;t go on with former option, but if you decided to go with latter option then ...<br>
 You have to do the following to acquire ICP license</p>
 
 <ol>
-<li>Fill information online and submit
-This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent&#39;s Audit team in Beijing.</li>
-<li>Take a photo with Tencent&#39;s backdrop
-You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.</li>
-<li>Tencent submit your information to Government</li>
-<li>Wait for approval (government might call you)</li>
+<li><p>Fill information online and submit</p>
+
+<p>This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent&#39;s Audit team in Beijing.</p></li>
+<li><p>Take a photo with Tencent&#39;s backdrop</p>
+
+<p>You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.</p></li>
+<li><p>Tencent submit your information to Government</p></li>
+<li><p>Wait for approval (government might call you)</p></li>
 </ol>
 
 <p><center>
@@ -256,6 +258,8 @@ You can choose to let Tencent send you a backdrop (China only), or go to near ph
 
 <p><sub>One of latter step is to wait for Chinese government to review and approve your ICP license application</sub>
 </center></p>
+
+<p>When you log in into QCloud dashboard, be sure to check out <a href="https://console.qcloud.com/beian">beian</a> which will take you to the beginning of application process for ICP license. You will need that link, it&#39;s not that super easy to find if you didn&#39;t know Chinese.</p>
 
 <p>I&#39;m still waiting for this, it&#39;s getting close to 20 days I have to wait. I hope things are ok.</p>
 

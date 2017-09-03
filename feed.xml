@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 03 Sep 2017 16:48:52 +0800</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2017 16:48:52 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2017 17:02:03 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2017 17:02:03 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -36,7 +36,7 @@
 
 &lt;p&gt;Look at it in a good way. I finally nailed down &lt;a href=&quot;http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html&quot;&gt;company&amp;#39;s basic banking operation&lt;/a&gt;. For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via API call, QRCode from customers, and other options that WeChat offers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.&lt;/p&gt;
 
-&lt;p&gt;Administrative tasks occupy large chunk of time in this month, and they are not just &lt;em&gt;misc&lt;/em&gt; stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&amp;#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server confiration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.&lt;/p&gt;
+&lt;p&gt;Administrative tasks occupy large chunk of time in this month, and they are not just &lt;em&gt;misc&lt;/em&gt; stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&amp;#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server configuration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.&lt;/p&gt;
 
 &lt;p&gt;In short, I also pivoted my business strategy and plan to cover lesser fields allowing me to be able to manage and retain my technical skill towards technology/programming language I use to develop them without spread too many focus on different directions. This means I will pay less attention to certain things. Read on for detail.&lt;/p&gt;
 
@@ -79,9 +79,9 @@
 
 &lt;hr&gt;
 
-&lt;p&gt;As I decided to cease development of multiplayer mode of asteroid to pay full focus on mini-program app which is &lt;em&gt;heatap&lt;/em&gt;, I&amp;#39;ve found interesting things and I&amp;#39;d like to share.&lt;/p&gt;
+&lt;p&gt;As I decided to cease development of multiplayer mode of asteroids to pay full focus on mini-program app which is &lt;em&gt;heatap&lt;/em&gt;, I&amp;#39;ve found interesting things and I&amp;#39;d like to share.&lt;/p&gt;
 
-&lt;p&gt;During 48 hours prototyping, I keep thinking about map and location. Having seen &lt;a href=&quot;https://hoodmaps.com&quot;&gt;Hoodmaps&lt;/a&gt; by Pieter Levels as well, I can say it play the huge influencial part of it. I want to make it available and operatable under WeChat&amp;#39;s mini-program which has limited features/integration (under JSCore, cannot use &lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt;, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is &lt;strong&gt;not&lt;/strong&gt; done yet, and I continue complete the existing features, and might add something else along the way.&lt;/p&gt;
+&lt;p&gt;During 48 hours prototyping, I keep thinking about map and location. Having seen &lt;a href=&quot;https://hoodmaps.com&quot;&gt;Hoodmaps&lt;/a&gt; by Pieter Levels as well, I can say it plays the huge influencial part of it. I want to make it available and operatable under WeChat&amp;#39;s mini-program which has limited features/integration (under JSCore, cannot use &lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt;, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is &lt;strong&gt;not&lt;/strong&gt; done yet, and I continue to complete the existing features, also might add something else along the way.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Concept is Paint &amp;amp; Pin or PP (I might use &lt;em&gt;PP&lt;/em&gt; as the project name when launch). That said you Paint to mark certain area, and Pin to mark specific location with interesting comment.&lt;/p&gt;
@@ -153,18 +153,20 @@
 
 &lt;p&gt;After you got those twos done, then you&amp;#39;re able to begin another process to actually apply. In short, micro payment requires ICP license number (after approval) to be filled in application form and firstly verified by audit team even before you actually apply for it.&lt;/p&gt;
 
-&lt;p&gt;The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use &lt;a href=&quot;https://www.qcloud.com/&quot;&gt;Qcloud&lt;/a&gt; (not affiliated) which is Tencent&amp;#39;s Cloud service that provided tight integration support for your mini-program app.&lt;/p&gt;
+&lt;p&gt;The step to get ICP license requires effort and on-going attention. You can choose to do it manually (more time in research, and going through constant changing requirement from government, and you better need to know Chinese or get some helps), or just hop in and use &lt;a href=&quot;https://www.qcloud.com/&quot;&gt;QCloud&lt;/a&gt; (not affiliated) which is Tencent&amp;#39;s Cloud service that provided tight integration support for your mini-program app.&lt;/p&gt;
 
 &lt;p&gt;I didn&amp;#39;t go on with former option, but if you decided to go with latter option then ...&lt;br&gt;
 You have to do the following to acquire ICP license&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Fill information online and submit
-This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent&amp;#39;s Audit team in Beijing.&lt;/li&gt;
-&lt;li&gt;Take a photo with Tencent&amp;#39;s backdrop
-You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.&lt;/li&gt;
-&lt;li&gt;Tencent submit your information to Government&lt;/li&gt;
-&lt;li&gt;Wait for approval (government might call you)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fill information online and submit&lt;/p&gt;
+
+&lt;p&gt;This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent&amp;#39;s Audit team in Beijing.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Take a photo with Tencent&amp;#39;s backdrop&lt;/p&gt;
+
+&lt;p&gt;You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Tencent submit your information to Government&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Wait for approval (government might call you)&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;center&gt;
@@ -176,6 +178,8 @@ You can choose to let Tencent send you a backdrop (China only), or go to near ph
 
 &lt;p&gt;&lt;sub&gt;One of latter step is to wait for Chinese government to review and approve your ICP license application&lt;/sub&gt;
 &lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;When you log in into QCloud dashboard, be sure to check out &lt;a href=&quot;https://console.qcloud.com/beian&quot;&gt;beian&lt;/a&gt; which will take you to the beginning of application process for ICP license. You will need that link, it&amp;#39;s not that super easy to find if you didn&amp;#39;t know Chinese.&lt;/p&gt;
 
 &lt;p&gt;I&amp;#39;m still waiting for this, it&amp;#39;s getting close to 20 days I have to wait. I hope things are ok.&lt;/p&gt;
 
