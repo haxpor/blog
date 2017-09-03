@@ -6,9 +6,273 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 31 Aug 2017 23:50:51 +0800</pubDate>
-    <lastBuildDate>Thu, 31 Aug 2017 23:50:51 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2017 16:04:12 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2017 16:04:12 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Monthly Report - August 2017</title>
+        <description>&lt;p&gt;Here comes August report.&lt;/p&gt;
+
+&lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/monthly-report/august-2017/big-picture-hours-Aug-2017.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/august-2017/big-picture-hours-Aug-2017.png&quot; alt=&quot;big picture hours spent&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/monthly-report/august-2017/project-hours-spent-Aug-2017.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/august-2017/project-hours-spent-Aug-2017.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This month I ceased further development of multiplayer mode of asteroids (but released its single player mode for free with no ads on &lt;a href=&quot;https://play.google.com/store/apps/details?id=io.wasin.asteroids&amp;hl=en&quot;&gt;Google Play&lt;/a&gt;, it&amp;#39;s also &lt;a href=&quot;https://github.com/haxpor/asteroids&quot;&gt;open source&lt;/a&gt;), in order to pay full focus to WeChat&amp;#39;s mini-program app I&amp;#39;m developing under code name &lt;em&gt;heatap&lt;/em&gt;. You can see more detail for both things at its corresponding section.&lt;/p&gt;
+
+&lt;p&gt;When I dig the rabbit hole into mini-program development. There are more administrative tasks like applying for operating license i.e. ICP, and WeChat&amp;#39;s micro payment. It requires on-going attention for application to be complete. I have to coordinate and tell my partner to prepare for governemnt/auditor phone call along the step of vertification, and documents preparation and submission. It&amp;#39;s new unwalked-before path for me thus time spent on these non-productive tasks accumulated to almost 25% for this month alone.&lt;/p&gt;
+
+&lt;p&gt;Look at it in a good way. I finally nailed down &lt;a href=&quot;http://blog.wasin.io/blog/2017/08/31/operate-company-banking-in-china-base-on-china-merchants-bank.html&quot;&gt;company&amp;#39;s basic banking operation&lt;/a&gt;. For example, one of verification process as part of WeChat micro payment feature to be activated (ability to receive payment via QRCode from customers) requires you to do wire transfer of small random amount of money to Tencent. It seems to be simple, but there always be processes, steps, tools and procedures to get it right especially in China.&lt;/p&gt;
+
+&lt;p&gt;Administrative tasks occupy large chunk of time in this month, and they are not just &lt;em&gt;misc&lt;/em&gt; stuff as I categorized it like in previous months anymore. So I take this chance to improve how I categorize type of tasks I&amp;#39;ve done, and how I track my time on Google Sheet. More detail in its corresponding section below. Administrative tasks now includes both server confiration and maintenance, and also tasks related to project in non-productive way i.e. managing product in non-coding way, legal/license, documents, etc.&lt;/p&gt;
+
+&lt;p&gt;In short, I also pivoted my business strategy and plan to cover lesser fields allowing me to be able to manage and retain my technical skill towards technology/programming language I use to develop them without spread too many focus on different directions. This means I will pay less attention to certain things. Read on for detail.&lt;/p&gt;
+
+&lt;h1 id=&quot;adapted-and-improved-hour-tracking&quot;&gt;Adapted and Improved Hour Tracking&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now I have in total of 7 categories to categorize each individual tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/tracking-hours-impoved.jpg&quot; alt=&quot;tracking hour category&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I can expand it via dropdown list on Google Sheet.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/tracking-hours-improved-2.png&quot; alt=&quot;tracking hour expanned cateogry dropdown&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I do this to limit my tendency to add more category unncessary (freewill). So having a limited options to choose from, and being locked down on that is better.&lt;/p&gt;
+
+&lt;p&gt;Each category has its own fixed color in my Google sheet now as well too.  &lt;/p&gt;
+
+&lt;p&gt;You can do this by right click on particular cell, then click &lt;em&gt;Data validation...&lt;/em&gt; then enter information similar to what I have below.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/setting-dropdown-list-items.png&quot; alt=&quot;setting drop-down list items&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;One major caveat for now is that I cannot figure a way to do this for entire column by effecting only odd row. Thus I have to copy paste the result that we did above to every other rows as well. This is reasonably ok as I do it once per month to categorize and mark each task with specific project. But in my mind, it could be better.&lt;/p&gt;
+
+&lt;p&gt;Also, I improved two main charts of &lt;em&gt;Total hours spent&lt;/em&gt; at the top of this report. Changes are as follows&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Project hours spent bar-chart is sorted in descendent order for most hours-spent project down to least one, along with hours-spent percentage for that month&lt;/li&gt;
+&lt;li&gt;Big picture hours spent is no more in 3D style as it might block some texts to show up on section of pie chart itself&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;heatap&quot;&gt;heatap&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;As I decided to cease development of multiplayer mode of asteroid to pay full focus on mini-program app which is &lt;em&gt;heatap&lt;/em&gt;, I&amp;#39;ve found interesting things and I&amp;#39;d like to share.&lt;/p&gt;
+
+&lt;p&gt;During 48 hours prototyping, I keep thinking about map and location. Having seen &lt;a href=&quot;https://hoodmaps.com&quot;&gt;Hoodmaps&lt;/a&gt; by Pieter Levels as well, I can say it play the huge influencial part of it. I want to make it available and operatable under WeChat&amp;#39;s mini-program which has limited features/integration (under JSCore, cannot use &lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt;, etc object for example) by focusing on Chinese territory without dependent on external Western services; usually blocked by Chinese Great Firewall (GFW). The project is &lt;strong&gt;not&lt;/strong&gt; done yet, and I continue complete the existing features, and might add something else along the way.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Concept is Paint &amp;amp; Pin or PP (I might use &lt;em&gt;PP&lt;/em&gt; as the project name when launch). That said you Paint to mark certain area, and Pin to mark specific location with interesting comment.&lt;/p&gt;
+
+&lt;p&gt;Chinese people often call &lt;em&gt;P&lt;/em&gt; when they refer to Photoshop&lt;sub&gt;&lt;span style=&quot;font-size:10px&quot;&gt;TM&lt;/span&gt;&lt;/sub&gt; i.e. You &lt;em&gt;P&lt;/em&gt; him in this photo? That&amp;#39;s why I want to play around with this word-playing to align with the culture a bit :P&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;#39;s see below.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;https://i.imgur.com/FnfOrl3.gif&quot; alt=&quot;heatap general interaction&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/AdxzZKB.gif&quot; alt=&quot;heatap pin mode&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;https://i.imgur.com/JpRzmzx.gif&quot; alt=&quot;heatap zoom in/out&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/kGC1ViY.gif&quot; alt=&quot;heatap paint mode&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;From left to right, top to bottom.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;General interaction&lt;/li&gt;
+&lt;li&gt;Pin mode&lt;/li&gt;
+&lt;li&gt;Zoom in/out + Panning&lt;/li&gt;
+&lt;li&gt;Paint mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here a clear screenshot&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/monthly-report/august-2017/heatap-screenshot.jpg&quot;&gt;&lt;img alt=&quot;heatap screenshot&quot; src=&quot;/assets/images/monthly-report/august-2017/heatap-screenshot.jpg&quot; width=&quot;50%&quot;/&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Image is resized. Click for full resolution.&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Don&amp;#39;t mind English UI for now as I&amp;#39;ve planned to localize it to Chinese with the help from my partner.  &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Tencent deviates away from native ecosystem. One good example is WeChat has to remove its &lt;a href=&quot;http://www.scmp.com/tech/china-tech/article/2089216/tencent-disables-tipping-function-iphone-version-wechat&quot;&gt;tipping feature&lt;/a&gt; from its iOS app. Android is not affected.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Tencent tries to push web apps into its ecosystem; WeChat platform. I see this as opportunity to quickly tap into Chinese market. Its mini-program is the prime flagship at the moment. It&amp;#39;s getting improvement, more API support, better IDE, and lucrasive of traffic as seen from growth of &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzAxNzYxMzc0OA==&amp;mid=2650664972&amp;idx=1&amp;sn=24809772be2e566b3103b77e84bc60e3&amp;chksm=83eb86d7b49c0fc179bba0e8fd19924d50fc24ab79e4d7c143d4ceca448995aec75f5992e7fa&amp;mpshare=1&amp;scene=1&amp;srcid=0424M1QT1gWxcpEPep1bJRfr&amp;pass_ticket=KEmzbgqBxC8w8r%2Fps%2FWm4jYMNr3EA%2Fd16BVKiT1cbvDN27Ah4fUrO8k%2FiaVDzo%2BJ#rd&quot;&gt;WeChat platform&lt;/a&gt; and report of 40% of traffic for Mobike coming from its mini-program alone (I got this from attending &lt;a href=&quot;http://tc.technode.com/2017/en/&quot;&gt;Techcrunch Shenzhen 2017&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;WeChat mini-program is now 9 months old. I ever remember that I was following this platform closely. I still think that I didn&amp;#39;t act fast enough. The platform is quite old, still with future potential. The best time to tap into platform is in the past, the second best time is now.&lt;/p&gt;
+
+&lt;p&gt;Not to mention that I see web technology or web development is the fatest way to actually push product onto market and get feedback to iterate. With the resource I have in my hands right now, this is more manageable direction and quicker way to pursue. More detail about pivoted strategy and plan in &lt;em&gt;strategy&lt;/em&gt; section.&lt;/p&gt;
+
+&lt;h1 id=&quot;heatap-admins&quot;&gt;heatap-admins&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Not just the development for the project itself. Administrative tasks are quite time-consuming to handle, and required on-going attention.&lt;/p&gt;
+
+&lt;p&gt;Administrative tasks for heatap span into both server configuration, and mainly license aquiring. Along the way of development, I know more requirement I need to overcome. If you want to receive payment from customers, you need Wechat micro payment. If your app communicates with your server, your domain name needs to get approved by Chinese government; &lt;a href=&quot;http://www.miibeian.gov.cn/state/outPortal/loginPortal.action;jsessionid=gAhGTSICeUvLuqoMhYAkxWZlU3jPLDcnHLaGQ3a8Co_WNdsYXdID!1509578804&quot;&gt;the Provincial government branch of the Ministry of Industry and Information Technology&lt;/a&gt;; which means you have to get ICP license.&lt;/p&gt;
+
+&lt;p&gt;Getting WeChat micro payment feature enabled for your mini-program app, you need&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ICP license (wait for no more than 20 working days)&lt;/li&gt;
+&lt;li&gt;Approval from audit team (firm outsourced by Tencent) with 300 RMB fee / time (fast, within 1 working day and can be in same day)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/icp-example-1.png&quot; alt=&quot;icp license example 1&quot;&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/icp-example-2.png&quot; alt=&quot;icp license example 2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;Every ICP-approved website need to accompany such ICP number at the bottom of the page.&lt;/sub&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;After you got those twos done, then you&amp;#39;re able to begin another process to actually apply. In short, micro payment requires ICP license number (after approval) to be filled in application form and firstly verified by audit team even before you actually apply for it.&lt;/p&gt;
+
+&lt;p&gt;The step to get ICP license requires effort and on-going attention. You can choose to do it manually, or just hop in and just use &lt;a href=&quot;https://www.qcloud.com/&quot;&gt;Qcloud&lt;/a&gt; (not affiliated) which is Tencent&amp;#39;s Cloud service that provided tight integration support for your mini-program app.&lt;/p&gt;
+
+&lt;p&gt;You have to do the following to acquire ICP license&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Fill information online and submit
+This includes normal filling online information, and also printing out legal document then stamp seal with your company stamp in number of copies to be sent to Tencent&amp;#39;s Audit team in Beijing.&lt;/li&gt;
+&lt;li&gt;Take a photo with Tencent&amp;#39;s backdrop
+You can choose to let Tencent send you a backdrop (China only), or go to near photo-copy shop that will carry out the task and submit information for you.&lt;/li&gt;
+&lt;li&gt;Tencent submit your information to Government&lt;/li&gt;
+&lt;li&gt;Wait for approval (government might call you)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/beian-1.png&quot; alt=&quot;icp steps&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;4 steps in general to acquire ICP license&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/august-2017/beian-2.png&quot; alt=&quot;icp steps waiting less than 20 days&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;One of latter step is to wait for Chinese government to review and approve your ICP license application&lt;/sub&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m still waiting for this, it&amp;#39;s getting close to 20 days I have to wait. I hope things are ok.&lt;/p&gt;
+
+&lt;p&gt;Also we definitely need to host our server in China mainland (not even Hong Kong) to have much lower ping, and dodge the possibility of effect from GFW that might have towards server&amp;#39;s Internet request.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;https://twitter.com/haxpor/status/896533134698659840&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/august-2017/migrate-server-ping.png&quot; alt=&quot;server ping china mainland vs hongkong&quot;&gt;&lt;/a&gt;
+&lt;div&gt;&lt;sub&gt;Click on image to go to the tweet&lt;/sub&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I tested it. You have just that ~8ms ping. You will get &amp;gt;100ms if hosted in Hong Kong although Shenzhen is pretty much close to it. I suggest to migrate your host to be within China mainland. No matter you use domestic cloud or VPS service (in which you will need to do research and find your solution if not &lt;a href=&quot;https://www.alibabacloud.com/&quot;&gt;Aliyun&lt;/a&gt; or &lt;a href=&quot;https://www.qcloud.com/&quot;&gt;QCloud&lt;/a&gt;). This will shift your mindset for good to not rely on Western API services which are likely to be blocked (and not stable for DNS request) although however you can get away for Internet requests that really need to go outside mainland by using VPN (recommend &lt;a href=&quot;http://shadowsocks.org/&quot;&gt;Shadowsock&lt;/a&gt;) on your server.&lt;/p&gt;
+
+&lt;p&gt;Serving Chinese users. Don&amp;#39;t expect most of them to use VPN to connect to websites especially in this case we serve users under WeChat app. Users want to access content on WeChat fast. VPN slows it down; especially photo contents.&lt;/p&gt;
+
+&lt;p&gt;All in all, finger crossed for my ICP license approval.&lt;/p&gt;
+
+&lt;h1 id=&quot;strategy&quot;&gt;strategy&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I pivoted and changed my prioritized focus after realizing that I should in the latter of the month. Maintaining knowledge of too many technology and programming languages spread myself too thin, and I really felt it affects my ability to go deep in certain area. I felt that I cannot do the task with &lt;strong&gt;extremely&lt;/strong&gt; high confidence, I stuck in mid-to-not-end range in additional to going back and forth between un-focused technology to build too various diffent products (which are games, Internet service and apps) on too many platforms (in un-focused way). Too much, and I have enough.&lt;/p&gt;
+
+&lt;p&gt;So the following is technology and programming language I will be paying focus to and will be basing off almost entire time starting in September.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web tech focusing on WeChat&amp;#39;s mini-program&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Use Javascript, NodeJS, CSS. Cover both backend, and front-end. Not to mention tools/applications that operated or run on server side such as piwik, MySQL, redis, sqlite, and much more or any related tools to get the job done. I plan to improve my skill on front-end which is skill i&amp;#39;m not good at.&lt;/p&gt;
+
+&lt;p&gt;Although the product built with normal web tech can be expanded to reach users on website. Just not now. Focus will be on mini-program.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Games on Android market&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is all based on Kotlin + libgdx. You can check out my previous projects built with it at &lt;a href=&quot;https://github.com/haxpor/blockbunny&quot;&gt;blockbunny&lt;/a&gt;, &lt;a href=&quot;https://github.com/haxpor/omo&quot;&gt;omo&lt;/a&gt;, &lt;a href=&quot;https://github.com/haxpor/asteroids&quot;&gt;asteroids&lt;/a&gt;, and &lt;a href=&quot;https://github.com/haxpor/raceplant&quot;&gt;raceplant&lt;/a&gt;. With combination of them, it&amp;#39;s all possible for Desktop, iOS, and Android platform with one code-based via Kotlin. However Chinese ecosystem in smartphone market share (&lt;a href=&quot;https://www.chinainternetwatch.com/20511/smartphone-q1-2017/&quot;&gt;1&lt;/a&gt;, &lt;a href=&quot;http://www.businessinsider.com/apple-and-samsung-are-losing-market-share-in-china-2017-8&quot;&gt;2&lt;/a&gt;, &lt;a href=&quot;https://9to5mac.com/2017/05/23/iphone-market-share-gartner-q1-2017/&quot;&gt;3&lt;/a&gt;), close-knit of Kotlin to Android platform, and my interest to also explore world of open development on Android more (apart from previous experience with iOS) thus this is the way I strongly believe is the proper move to go for long term for China market.&lt;/p&gt;
+
+&lt;p&gt;What&amp;#39;s about Apps? Apps have least priority for now. It will be for learning purpose, or experiment with the market.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Apart from that, here is my commitment to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;https://twitter.com/haxpor/status/902204751411953665&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/august-2017/android-focus.png&quot; alt=&quot;android commitment&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;Click on image to go to the tweet&lt;/sub&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;When something has more attention, something else will has less. So I pay much less attention, or not pay attention to the following&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iOS&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3D type of game&lt;/p&gt;
+
+&lt;p&gt;If pursue, you need to do 3D art. Doing so will spread me too thin. So I limit scope to only 2D type of game at the moment.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Music&lt;/p&gt;
+
+&lt;p&gt;No time left to develop this skill during this long period of time as I ever reported back in &lt;a href=&quot;http://blog.wasin.io/monthly-report/2017/06/report.html&quot;&gt;June&lt;/a&gt; that I started to learn how to make Chiptune Music via milkytracker, and released &lt;a href=&quot;https://haxpor.bandcamp.com/track/8-bit-concerto&quot;&gt;a very short track&lt;/a&gt; for &lt;a href=&quot;https://github.com/haxpor/omo&quot;&gt;OMO&lt;/a&gt; back in &lt;a href=&quot;http://blog.wasin.io/monthly-report/2017/07/report.html&quot;&gt;July report&lt;/a&gt;. If I need one for my games, I will collaborate as I have someone in mind already.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So the question is how can I balance and retain the knowledge of both web tech, and Games. Read more about it at &lt;em&gt;libgdx-SO&lt;/em&gt; section. &lt;/p&gt;
+
+&lt;h1 id=&quot;libgdx-so&quot;&gt;libgdx-SO&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;During these times, I really focus on developing mini-program thus heavily utilize web tech. I retain knowledge of libgdx, and kotlin via answering questions popping up on Stackoverflow. My primary goal is not to gain reputation point on that website, but just for myself. Reputation point is like an energy or satisfying moment for reward.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/so-development-reputation.png&quot; alt=&quot;so reputation development&quot;&gt;
+&lt;img src=&quot;/assets/images/monthly-report/august-2017/current-so-reputation.png&quot; alt=&quot;so reputation current score&quot;&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly, my current reputation is not that high. I&amp;#39;m not in for reps :)&lt;/p&gt;
+
+&lt;p&gt;Every early morning, I go there on SO then only check &lt;a href=&quot;https://stackoverflow.com/questions/tagged/libgdx&quot;&gt;libgdx&lt;/a&gt; tagged question. Actually, I subscribed to its newsletter to send me daily digest every day. It will send only new questions to you at around 6.00 AM (local time) via e-mail. So at least in 1-2 hours (I try to be better to answer within 1 hour) but depend on how hard of troubleshooting of that question is.&lt;/p&gt;
+
+&lt;p&gt;Answering someone else&amp;#39;s question will open you to a new set of problem domain, or stuff you never want to do before. With willingness to help, you&amp;#39;ve to explore those APIs and come with solutions to solve such problem. Gradually know more about your toolchain; expand ability to solve your own problems in the future.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;That&amp;#39;s it for this month report. I hope you enjoy my sharing for everything possible things I&amp;#39;ve touched and worked on so far.&lt;/p&gt;
+
+&lt;p&gt;If you have a chance to check out any project above, feel free to let me know what you think. I love feedback, and discussion, hit them up via comment section down below. Or if you don&amp;#39;t see comment section, hit me up on twitter &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;@haxpor&lt;/a&gt; or email haxpor {at} gmail {dot} com&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You can let me know via e-mail if you want to test &lt;em&gt;heatap&lt;/em&gt; out before I finally launch it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 02:16:00 +0800</pubDate>
+        <link>http://blog.wasin.io/monthly-report/2017/08/report.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/monthly-report/2017/08/report.html</guid>
+        
+        <category>monthly-report</category>
+        
+        
+        <category>monthly-report</category>
+        
+      </item>
     
       <item>
         <title>Operate Company Banking in China - Base on China Merchants Bank</title>
@@ -2067,148 +2331,6 @@ You should see something similar to following.&lt;/li&gt;
         <category>linux</category>
         
         <category>macos</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>As Developers You Don't Need Normal Social Account Verified, But You Might Need This Instead</title>
-        <description>&lt;p&gt;No doubt getting verified on account is such a privilege status you can have on social network ecosystem.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/verified/social-account-verified.png&quot; alt=&quot;Levels&amp;#39;s verified account on twitter&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;It can give you a sense of self-worth, and attention. But yes, real world is not going to give you away freely such verified status without you doing nothing.&lt;br&gt;
-I know it&amp;#39;s a real hard work, you need to give something to the world, make impact, there&amp;#39;re lots of factors getting in the way for &lt;strong&gt;verified&lt;/strong&gt; status.&lt;/p&gt;
-
-&lt;p&gt;No matter what it is. It&amp;#39;s ok.&lt;/p&gt;
-
-&lt;p&gt;As developers, something you can do about it right now beside obsessing with such status is to get verified in every commit of code you wrote especially on Github!&lt;/p&gt;
-
-&lt;p&gt;You get that right. I mean something like this...&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/verified/commit-verified.png&quot; alt=&quot;verified on commit as shown on Github&quot;&gt;  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/verified/commit-verified2.png&quot; alt=&quot;verified on commit as shown on Github - 2&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Having that means every commit you&amp;#39;ve pushed is actually from you. It gives a sense of self-worth in every commit right?&lt;/p&gt;
-
-&lt;p&gt;So let&amp;#39;s see how can we achieve that&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-get-verified-on-every-commit-on-github&quot;&gt;How To Get Verified On Every Commit on Github&lt;/h2&gt;
-
-&lt;p&gt;What I tested is on macOS. But it should work similar to other platform, or you might need to adapt a little bit.&lt;/p&gt;
-
-&lt;h3 id=&quot;generate-a-gpg-key&quot;&gt;Generate a GPG key&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download gpg tool via &lt;code&gt;brew install gpg&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Generate key via &lt;code&gt;gpg --gen-key&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Then specify the key you want, in this case it&amp;#39;s default to &lt;code&gt;RSA and RSA&lt;/code&gt;, just press &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Enter key size. Go for maximum of &lt;code&gt;4096&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Enter the length of time until the key would be expired. Press &lt;code&gt;Enter&lt;/code&gt; to go for default selection indicating that there&amp;#39;s no expiration.&lt;/li&gt;
-&lt;li&gt;Enter a valid e-mail address that you signed up on Github.&lt;/li&gt;
-&lt;li&gt;Type a passphrase.&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;gpg --list-secret-keys --keyid-format LONG&lt;/code&gt; to list GPG keys.&lt;br&gt;
-Result you got is similar to below&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:verified haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --list-secret-keys --keyid-format LONG
-   /Users/haxpor/.gnupg/secring.gpg
-   --------------------------------
-   sec   4096R/BD496CEDB4686EF8 2017-02-10
-   uid                          Wasin Thonkaew &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Github GPG Key&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;lt;haxpor@gmail.com&amp;gt;
-   ssb   4096R/C818714CCD3AB514 2017-02-10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Copy GPG key ID. From result above, it&amp;#39;s &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;gpg --armor --export BD496CEDB4686EF8&lt;/code&gt;. But substitute your key id instead of using &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Copy the result text from such command. We will use it in next section.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;add-gpg-key-to-github-account&quot;&gt;Add GPG key to Github Account&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Browse to Github website.&lt;/li&gt;
-&lt;li&gt;On upper-right corner, click on your profile photo, then click &lt;code&gt;Settings&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;On the left side-bar, click on &lt;code&gt;SSH and GPG keys&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Paste the text you copied from earlier section.&lt;/li&gt;
-&lt;li&gt;Click on &lt;code&gt;Add GPG key&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Confirm the action by entering your Github password.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;set-up-git-to-sign-all-commits&quot;&gt;Set up Git to Sign All Commits&lt;/h3&gt;
-
-&lt;p&gt;Use key ID i.e. &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt; as you got from earlier section and specify in these commands.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Execute &lt;code&gt;git config --global user.signingkey BD496CEDB4686EF8&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;git config --global commit.gpgsign true&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Above will let git know that the default key id to use in every signing commit is &lt;code&gt;BD496CEDB4686EF8&lt;/code&gt;, and you will be signing every commit by default.&lt;/p&gt;
-
-&lt;h3 id=&quot;for-safety-configure-to-make-it-work&quot;&gt;(for safety) Configure to Make it Work&lt;/h3&gt;
-
-&lt;p&gt;These commands might not be needed but for safety, I recommend to do it anyway to make it works.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Edit &lt;code&gt;~/.gnupg/gpg.conf&lt;/code&gt;, and add following to the file.&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   default-key BD496CEDB4686EF8
-   no-tty
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This will set the default key id to use, and another is to make auto-signed commit work with GUI software. In short, just add them.
-* Execute &lt;code&gt;git config --global gpg.program $(which gpg)&lt;/code&gt;. This will set which gpg program to use with git.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-to-make-it-not-ask-passphraase-all-the-time&quot;&gt;Set to Make It Not Ask Passphraase All The Time&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install &lt;code&gt;gpg-agent&lt;/code&gt; and &lt;code&gt;pinentry-mac&lt;/code&gt; via &lt;code&gt;brew install gpg-agent pinentry-mac&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Uncomment &lt;code&gt;use-agent&lt;/code&gt; line in &lt;code&gt;~/.gnupg/gpg.conf&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Add the following lines into &lt;code&gt;~/.gnupg/gpg-agent.conf&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   use-standard-socket
-   pinentry-program /usr/local/bin/pinentry-mac
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Link pinentry and agent together by adding the following to &lt;code&gt;~/.bash_profile&lt;/code&gt; (or your case might be &lt;code&gt;~/.profile&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; -f ~/.gnupg/.gpg-agent-info -a -n &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pgrep gpg-agent&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
-     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.gnupg/.gpg-agent-info
-     &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;GPG_AGENT_INFO
-     &lt;span class=&quot;nv&quot;&gt;GPG_TTY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;tty&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;GPG_TTY
-   &lt;span class=&quot;k&quot;&gt;else
-     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Now whenever you do &lt;code&gt;git commit&lt;/code&gt;, it will ask for passphrase for the &lt;strong&gt;first&lt;/strong&gt; time only, save it to keychain, then next time it will automatically enter that for you in every commit.&lt;/p&gt;
-
-&lt;p&gt;You will have &lt;code&gt;verified&lt;/code&gt; status tagged along with each commit on Github.&lt;br&gt;
-Now go and get verified developers!&lt;/p&gt;
-</description>
-        <pubDate>Sat, 11 Feb 2017 19:06:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/02/11/as-developers-you-dont-need-normal-social-account-verified-but-you-might-need-this-instead.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/02/11/as-developers-you-dont-need-normal-social-account-verified-but-you-might-need-this-instead.html</guid>
-        
-        <category>github</category>
-        
-        <category>social</category>
-        
-        <category>developers</category>
-        
-        <category>verify</category>
-        
-        <category>verified</category>
-        
-        <category>account</category>
-        
-        <category>git</category>
-        
-        <category>gpg</category>
         
         
         <category>blog</category>
