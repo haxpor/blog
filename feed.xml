@@ -6,9 +6,109 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 03 Sep 2017 17:50:15 +0800</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2017 17:50:15 +0800</lastBuildDate>
+    <pubDate>Thu, 28 Sep 2017 09:20:06 +0800</pubDate>
+    <lastBuildDate>Thu, 28 Sep 2017 09:20:06 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>SwitchResX to Help Set up Ultra-Wide LG Monitor on macOS</title>
+        <description>&lt;p&gt;I have an Ultra-Wide LG monitor (specifically &lt;a href=&quot;http://www.lg.com/us/monitors/lg-29UM68-P-ultrawide-monitor&quot;&gt;LG-29UM68-P&lt;/a&gt;) as my day-to-day working setup. It helps in boosting productivity as more windows can be laid and I can see them all advance.&lt;/p&gt;
+
+&lt;p&gt;Anyway still there is an issue of macOS won&amp;#39;t be able to recognize such ultra-wide resolution that is suitable for the monitor. Native resolutions as provided are either lesser in resolution, or scaled in non-proper ratio that makes it non-working and bad for eyes.&lt;/p&gt;
+
+&lt;p&gt;The first time I have such ultra-wide screen in my possession, I need to do research to solve such problem. Only viable and practical solution with no requirement to buy new accessories I&amp;#39;ve found is &lt;a href=&quot;http://www.madrau.com/srx_download/download.html&quot;&gt;SwitchResX&lt;/a&gt; that works for macOS even before Sierra and up.&lt;/p&gt;
+
+&lt;p&gt;The reason I decided to write this article is that I&amp;#39;ve come back to repeat the steps every single time I update/upgrade macOS version. Whenever we update, it seems to erase data that SwitchResX rely on for resolution settings thus we need to start it over. I&amp;#39;ve done this for several times so I decide to note it down to this piece of writing once and for all.&lt;/p&gt;
+
+&lt;h1 id=&quot;who-is-this-guide-for&quot;&gt;Who is This Guide for?&lt;/h1&gt;
+
+&lt;p&gt;If you have ultra-wide monitor such as with resolution 2560x1080, it&amp;#39;s high chance that macOS won&amp;#39;t be able to recognize such resolution setting. So use this article to solve the problem.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-set-up&quot;&gt;How to Set Up?&lt;/h1&gt;
+
+&lt;p&gt;Firstly, you need to install &lt;a href=&quot;http://www.madrau.com/srx_download/download.html&quot;&gt;SwitchResX&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you&amp;#39;re on El Capitan and up, macOS has introduced so called SIP (System Integrity Protection) thus to make SwitchResX works for you, you have to temporarily disable it, run SwitchResX to save resolution settings, then you&amp;#39;re free enable it back again.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We need to disable SIP first by rebooting the system, then hold &lt;em&gt;Cmd+R&lt;/em&gt; long enough to see apple logo to enter recovery mode.&lt;/p&gt;
+
+&lt;p&gt;Click on &lt;em&gt;Utilities-&amp;gt;Terminal&lt;/em&gt; then enter &lt;code&gt;csrutil disable&lt;/code&gt; to disable SIP.&lt;/p&gt;
+
+&lt;p&gt;Now you reboot the system either by clicking through the UI, or enter &lt;code&gt;reboot&lt;/code&gt; at terminal prompt.&lt;/p&gt;
+
+&lt;p&gt;This time when you log in to macOS system. Open SwitchResX.&lt;/p&gt;
+
+&lt;p&gt;If it&amp;#39;s not open already, you can find and open it via &lt;em&gt;System Preferences-&amp;gt;SwitchResX&lt;/em&gt;. You will see the following screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/switchresx/switchresx-setting.png&quot;&gt;&lt;img alt=&quot;switchresx main setting&quot; src=&quot;/assets/images/switchresx/switchresx-setting.png&quot;/&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Then try to add new resolution settings by clicking on &lt;em&gt;+&lt;/em&gt; symbol at the bottom. Enter the information at below for both 53Hz, and 60Hz. I cannot get it to work for 60Hz, but in case it works for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;a href=&quot;/assets/images/switchresx/53hz.png&quot;&gt;&lt;img alt=&quot;switchresx resolution setting for 53hz&quot; src=&quot;/assets/images/switchresx/53hz.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;53Hz of 2560x1080 setting&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/switchresx/60hz.png&quot;&gt;&lt;img alt=&quot;switchresx resolution setting for 60hz&quot; src=&quot;/assets/images/switchresx/60hz.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;60Hz of 2560x1080 setting&lt;/sub&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Save the settings. Close SwitchResX program. If it asks whether or not you want to save, make sure to click yes. You should see at least one of your settings you entered is active. Then try to change the current setting by clicking on &lt;em&gt;Current Resolution&lt;/em&gt; tab then finally select a proper one.&lt;/p&gt;
+
+&lt;p&gt;It should be working. Verify this that UI as shown on screen is not scaled in non-proper ratio, and it&amp;#39;s good for your eyes.&lt;/p&gt;
+
+&lt;p&gt;Now you should reboot the system, then go back to &lt;em&gt;Recovery mode&lt;/em&gt; again to enable SIP. Just repeat the steps I mentioned above, but change command to &lt;code&gt;csrutil enable&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Done.&lt;/p&gt;
+
+&lt;h1 id=&quot;whenever-update-upgrade-macos-it-breaks-switchresx-from-working&quot;&gt;Whenever Update/Upgrade macOS, It Breaks SwitchResX from Working?&lt;/h1&gt;
+
+&lt;p&gt;The situation is different. From my experience, when I update/upgrade macOS, it suddenly invalidates the state of SwitchResX thus makes it not working.&lt;/p&gt;
+
+&lt;p&gt;I did research and found this &lt;a href=&quot;https://gist.github.com/erichrobinson/9755ba1f3ec45b289c40#gistcomment-2116695&quot;&gt;solution&lt;/a&gt; with a slightly adapted &lt;a href=&quot;https://gist.github.com/erichrobinson/9755ba1f3ec45b289c40#gistcomment-2119816&quot;&gt;solution of mine&lt;/a&gt; to make it work.&lt;/p&gt;
+
+&lt;p&gt;So what you need to do is firstly uninstall SwitchResX.&lt;br&gt;
+Then disable SIP by going to Recovery Mode and disable SIP via command line. &lt;/p&gt;
+
+&lt;p&gt;Now whenever you go back to macOS. Create a new normal (not necessary to be admin) user. Log out from current user, then log in with that new user you created.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This might sound weird as why we need to creae a new user. But doing it as before doesn&amp;#39;t work. We need to create a new user.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Next install SwitchResX and make sure to install it for all users when it promptly asks.&lt;/p&gt;
+
+&lt;p&gt;Enter above resolution settings as I mentioned above. Save it. You should see it working fine now.&lt;/p&gt;
+
+&lt;p&gt;As we don&amp;#39;t want to let a new user to be cluttered, we are going to completely remove such user out from the system. Just log out and log in as your normal main user you&amp;#39;ve used before. Remove such user via &lt;em&gt;System Preferences-&amp;gt;Users and Groups&lt;/em&gt; and select to remove its user directory as well. It&amp;#39;s safe as we install such app globally.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;If you update/upgrade macOS again in the future, so just follow the steps as laid out in &lt;em&gt;What to do if I update/upgrade macOS&lt;/em&gt; then it should be working. Also I&amp;#39;m surprise to see how generous it is of SwitchResX itself that even when trial period is over, you still can use it without a problem.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Sep 2017 06:29:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/09/28/switchresx-to-help-set-up-ultrawide-lg-monitor-on-macos.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/09/28/switchresx-to-help-set-up-ultrawide-lg-monitor-on-macos.html</guid>
+        
+        <category>switchresx</category>
+        
+        <category>ultrawide</category>
+        
+        <category>monitor</category>
+        
+        <category>lg</category>
+        
+        <category>macos</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Monthly Report - August 2017</title>
@@ -1984,358 +2084,6 @@ Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and 
         <category>ios</category>
         
         <category>model</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Set up and Verify Applications and Terminal Commands to Work Reliably with Proxy on macOS and Linux</title>
-        <description>&lt;p&gt;If you live behind firewall i.e. &lt;a href=&quot;https://en.wikipedia.org/wiki/Great_Firewall&quot;&gt;GFW&lt;/a&gt; and interact with terminal commands a lot in day-to-day basis and of course surfing Internet, I believe you usually utilize proxy to carry on your request in Internet world.&lt;/p&gt;
-
-&lt;p&gt;Without a doubt, verifying that those applications espcially browser and commands behave as you set and expect it to be is crucial. Wasting hours in waiting for return from &lt;code&gt;npm install&lt;/code&gt; command, or even &lt;code&gt;git clone &amp;lt;project-url&amp;gt;&lt;/code&gt; for project with huge amount of files but not necessary in bigger size without knowing whether it&amp;#39;s going to succeed or not is not a good way to ruin your productive day. Leave alone seeing result from non-working proxy setup on browser, athough it&amp;#39;s immediate and a lot faster to troubleshoot but it is also applied.&lt;/p&gt;
-
-&lt;p&gt;Thus this time, I think it&amp;#39;s a good idea to sit down and make sure those applications and commands works reliably with proxy setup (by any mean).&lt;/p&gt;
-
-&lt;h2 id=&quot;proxy-setup&quot;&gt;Proxy Setup&lt;/h2&gt;
-
-&lt;p&gt;Your proxy setup can be anything. It just needs to be a middle man between you and destination, and acts as a gatekeeper to forward your request to destination in which destination will not know that such request is coming from you but proxy itself.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;re interested in &lt;strong&gt;HTTP/HTTPs&lt;/strong&gt;, and &lt;strong&gt;SOCKS5&lt;/strong&gt; proxy.&lt;/p&gt;
-
-&lt;p&gt;There&amp;#39;re bunch of options to setup proxy. It can be Shadowsocks (which operates on HTTP, and SOCKS5 proxy), or just normal HTTP proxy (several out there such as &lt;a href=&quot;https://www.charlesproxy.com/&quot;&gt;Charles Proxy&lt;/a&gt;, &lt;a href=&quot;https://tinyproxy.github.io/&quot;&gt;TinyProxy&lt;/a&gt;, etc).&lt;/p&gt;
-
-&lt;p&gt;Solution presented in this writing aims for macOS, and Linux.&lt;/p&gt;
-
-&lt;p&gt;For my case, I&amp;#39;m on macOS &lt;code&gt;10.12.4&lt;/code&gt;, with Shadowsock proxy set up. This mean my local machine provides HTTP, and SOCKS5 proxy. So I have options to either set proxy to use HTTP, or SOCKS5.&lt;/p&gt;
-
-&lt;h2 id=&quot;set-up-to-use-proxy-for-ui-based-applications&quot;&gt;Set up to Use Proxy for UI-based applications&lt;/h2&gt;
-
-&lt;p&gt;Although not limited to browser, it is a prime example of this kind of application.&lt;br&gt;
-Let&amp;#39;s proceed with Chrome as it&amp;#39;s widely used, and is a top choice to debug and work with by developers. It should be very similar steps for other variant of browsers as well.&lt;/p&gt;
-
-&lt;p&gt;Press &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt; or enter &lt;code&gt;chrome://settings&lt;/code&gt; to open Settings.&lt;br&gt;
-Find &lt;code&gt;Network&lt;/code&gt; section, and click on &lt;code&gt;Change proxy settings...&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/14/chrome-network-settings.png&quot; alt=&quot;Chrome Network Settings&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Then you will see a dialog window similar to below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/14/set-chrome-http-proxy.png&quot; alt=&quot;Set Chrome HTTP Proxy&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;as my proxy on local machine provides HTTP, and SOCKS5, then I set it via&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Proxy (HTTP)&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1087&lt;/code&gt;&lt;br&gt;
-Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;code&gt;1087&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Secure Web Proxy (HTTPS)&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1087&lt;/code&gt;&lt;br&gt;
-My proxy doesn&amp;#39;t provide HTTPS thus I set it to just normally use what it provides in HTTP. So this means it will forward HTTPS request to HTTP one.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Personally, I don&amp;#39;t think we really need HTTPS for local proxy stuff as it waste time and resource on doing handshake, encryption and decryption in which we don&amp;#39;t really need it if we know we are on the secure side. Of course proxy will handle secure request after that (if we browse or request to secure site).&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;SOCKS Proxy&lt;/strong&gt; - &lt;code&gt;127.0.0.1&lt;/code&gt; with port &lt;code&gt;1086&lt;/code&gt;&lt;br&gt;
-Check your port according to your proxy setup. In this case, it&amp;#39;s &lt;code&gt;1086&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We&amp;#39;re done.&lt;/p&gt;
-
-&lt;p&gt;We will see how we can verify whether it can operate as expect in &lt;a href=&quot;#verifying&quot;&gt;Verifying&lt;/a&gt; section later. Now if you can browse without 404 error, that means most likely it works as expect.&lt;/p&gt;
-
-&lt;p&gt;In additional, from my use case I didn&amp;#39;t have other UI-based applications that needs to be configured its network to be through proxy. So in case you have some other applications that need to work with proxy. Occasionally, that application should provide such configuration similar to what we&amp;#39;ve done above. Just look inside its preferences, or setting somewhere.&lt;/p&gt;
-
-&lt;h2 id=&quot;set-up-to-use-proxy-for-terminal-commands&quot;&gt;Set up to Use Proxy for Terminal Commands&lt;/h2&gt;
-
-&lt;p&gt;This part might need slightly more effort. Some commands have their own way of configuring proxy setting. They might need to be set via either environment variables, or specific configuration file. Some commands might not work with SOCKS proxy but only HTTP proxy.&lt;/p&gt;
-
-&lt;p&gt;I will cover specifically for the following terminal commands&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;other misc commands&lt;/code&gt; - utilize system-wide setup of proxy setting via environment variables&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;git&quot;&gt;git&lt;/h3&gt;
-
-&lt;p&gt;Set it globally via &lt;code&gt;git-config&lt;/code&gt; as follows&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP Proxy&lt;/strong&gt;&lt;br&gt;
-&lt;code&gt;git config --global http.proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HTTPS Proxy&lt;/strong&gt;&lt;br&gt;
-&lt;code&gt;git config --global https.proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SOCKS5 Proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   git config --global http.proxy socks5://127.0.0.1:1086
-   git config --global https.proxy socks5://127.0.0.1:1086
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;or you can also configure it manually by editing &lt;code&gt;~/.gitconfig&lt;/code&gt; to add the following lines appendingly into a file&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
-   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https]
-     proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http://127.0.0.1:1087
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SOCKS proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
-   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https]
-     proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; socks5://127.0.0.1:1086
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;npm&quot;&gt;npm&lt;/h3&gt;
-
-&lt;p&gt;Set it via &lt;code&gt;npm config&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt; - &lt;code&gt;npm config set proxy http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;or you can manually configure &lt;code&gt;~/.npmrc&lt;/code&gt; file by adding the following line&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt; - &lt;code&gt;proxy=http://127.0.0.1:1087&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It &lt;a href=&quot;https://github.com/npm/npm/issues/6204#issuecomment-55836088&quot;&gt;doesn&amp;#39;t&lt;/a&gt; support SOCKS5.&lt;/p&gt;
-
-&lt;h3 id=&quot;curl&quot;&gt;curl&lt;/h3&gt;
-
-&lt;p&gt;Set its proxy setting by creating (if not yet exist) &lt;code&gt;~/.curlrc&lt;/code&gt; file with the following content&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:1087&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SOCKS5 proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   socks5 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:1086&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;other-misc-commands&quot;&gt;Other misc commands&lt;/h3&gt;
-
-&lt;p&gt;For other commands, usually we can just set proxy globally for system-wide via environment variables by adding following lines into your &lt;code&gt;~/.bash_profile&lt;/code&gt; (but use &lt;code&gt;~/.bashrc&lt;/code&gt; on Linux).&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/HTTPS proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;http_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:1087
-   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;https_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:1087
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SOCKS5 proxy&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;http_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;socks5://127.0.0.1:1086
-   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;https_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;socks5://127.0.0.1:1086
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After that execute &lt;code&gt;source ~/.bash_profile&lt;/code&gt; to source the setting and make sure those environment variables are taken into effect. I recommend to configure it with your &lt;code&gt;~/.bash_profile&lt;/code&gt; script as it will take effect even after reboot.&lt;/p&gt;
-
-&lt;p&gt;Beware that if you set it to SOCKS5 proxy, commands that doesn&amp;#39;t support SOCKS5 will shout out error. A great example is &lt;code&gt;ngrok&lt;/code&gt; which doesn&amp;#39;t support SOCKS5 but it will let you know.&lt;/p&gt;
-
-&lt;p&gt;So in general case, HTTP/HTTPS proxy might serve you better unless you&amp;#39;re willing to re-configure it back and forth.&lt;/p&gt;
-
-&lt;h2 id=&quot;verifying&quot;&gt;&lt;a id=&quot;verifying&quot;&gt;&lt;/a&gt;Verifying&lt;/h2&gt;
-
-&lt;p&gt;Now it&amp;#39;s time to verify our proxy configuration no matter which way you had done to configure it.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You have an option to use UI-based application i.e. &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;WireShark&lt;/a&gt;. But I prefer commandline-based solution. Anyway, the same concept can be applied to use with WireShark too.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;preparation&quot;&gt;Preparation&lt;/h3&gt;
-
-&lt;p&gt;We&amp;#39;re going to use &lt;code&gt;ngrep&lt;/code&gt; to capture packets for our &lt;strong&gt;local network interface&lt;/strong&gt; filtering for port we&amp;#39;re interested in knowing either &lt;code&gt;1087&lt;/code&gt; for HTTP/HTTPS, or &lt;code&gt;1086&lt;/code&gt; for SOCKS5.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install &lt;code&gt;ngrep&lt;/code&gt; by executing &lt;code&gt;brew install ngrep&lt;/code&gt; (or &lt;code&gt;apt-get install apt-get&lt;/code&gt; on Linux).&lt;/li&gt;
-&lt;li&gt;Then check out the name of your local network interface as we will use its name as parameter to &lt;code&gt;ngrep&lt;/code&gt; to capture packets live.&lt;br&gt;
-Execute &lt;code&gt;ifconfig&lt;/code&gt;.&lt;br&gt;
-Result would be similar to as follows.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ifconfig
-   lo0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8149&amp;lt;UP,LOOPBACK,RUNNING,PROMISC,MULTICAST&amp;gt; mtu 16384
-       &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1203&amp;lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&amp;gt;
-       inet 127.0.0.1 netmask 0xff000000
-       inet6 ::1 prefixlen 128
-       inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
-       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
-   gif0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8010&amp;lt;POINTOPOINT,MULTICAST&amp;gt; mtu 1280
-   stf0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&amp;lt;&amp;gt; mtu 1280
-   en1: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8863&amp;lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&amp;gt; mtu 1500
-       ether 20:c9:d0:d7:17:c5
-       inet6 fe80::888:7a63:946e:c358%en1 prefixlen 64 secured scopeid 0x4
-       inet 192.168.0.100 netmask 0xffffff00 broadcast 192.168.0.255
-       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
-       media: autoselect
-       status: active
-   en0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8863&amp;lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&amp;gt; mtu 1500
-       &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10b&amp;lt;RXCSUM,TXCSUM,VLAN_HWTAGGING,AV&amp;gt;
-       ether a8:20:66:2a:77:2f
-       nd6 &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;201&amp;lt;PERFORMNUD,DAD&amp;gt;
-       media: autoselect &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       status: inactive
-   fw0: &lt;span class=&quot;nv&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8822&amp;lt;BROADCAST,SMART,SIMPLEX,MULTICAST&amp;gt; mtu 4078
-       lladdr a8:20:66:ff:fe:7d:48:0a
-       media: autoselect &amp;lt;full-duplex&amp;gt;
-       status: inactive
-   ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;From result, we know that our local network interface&amp;#39;s name is &lt;code&gt;lo0&lt;/code&gt; which you can see it has IP address of &lt;code&gt;127.0.0.1&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;verify-npm&quot;&gt;Verify npm&lt;/h3&gt;
-
-&lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name already. Next we&amp;#39;re going to verify &lt;code&gt;npm install bfet&lt;/code&gt; command whether it actually went through our proxy as set to be on HTTP/HTTPS (port &lt;code&gt;1087&lt;/code&gt;) setting or not.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Execute &lt;code&gt;sudo ngrep -q -d lo0 -W byline port 1087&lt;/code&gt;&lt;br&gt;
-There&amp;#39;re bunch of options used in this command. You can see this &lt;a href=&quot;https://linux.die.net/man/8/ngrep&quot;&gt;man&lt;/a&gt; page for explanation of each parameter used in above command. Basically, it will start to capture packets on &lt;code&gt;lo0&lt;/code&gt; network interface filtering for packets involving port &lt;code&gt;1087&lt;/code&gt; with other options affecting how much of information should printed out on console.&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You can also remove &lt;code&gt;port 1087&lt;/code&gt; out thus more packets although might not be the one you&amp;#39;re interested will show on console but for the ease in digesting information here let&amp;#39;s go with port filtering.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ngrep -q -d en1 -W byline port 1087
-   Password:
-   interface: en1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;192.168.0.0/255.255.255.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-   filter: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ip or ip6&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; port 1087 &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Leave it running, and don&amp;#39;t worry if you see some logs coming out already.&lt;br&gt;
-   We will go back to see its result according to our execution of target command later.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Open a new terminal window, then execute &lt;code&gt;npm install bfet&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Go back to see result from &lt;code&gt;ngrep&lt;/code&gt; as it&amp;#39;s running at the moment.&lt;br&gt;
-You should see something similar to following. Also you can hit &lt;code&gt;Cmd&lt;/code&gt; + &lt;code&gt;F&lt;/code&gt; to search for text in interest to see.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
-   CONNECT registry.npmjs.org:443 HTTP/1.1.
-   accept-encoding: gzip.
-   accept: application/json.
-   referer: install bfet.
-   user-agent: npm/4.1.2 node/v7.5.0 darwin x64.
-   host: registry.npmjs.org:443.
-   Connection: close.
-   .
-
-
-   T 127.0.0.1:1087 -&amp;gt; 127.0.0.1:63066 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
-   HTTP/1.1 200 Connection established.
-   .
-
-
-   T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
-   ....
-   ........?&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;..:s.....b....&amp;amp;.n.T..n.
-   &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.xi..n./.+.0.,...&lt;span class=&quot;s1&quot;&gt;'.g.(.k.$...
-   .........j.i.h.9.8.7.6.2...*.&amp;amp;.......=.5.#...........@.?.&amp;gt;.3.2.1.0.1.-.).%.......&amp;lt;./.....o.........registry.npmjs.org.........
-   .............................
-   .#..... ................................3t..
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;#39;s inspect packets we got above.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 [AP]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;It uses HTTP &lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.9&quot;&gt;CONNECT method&lt;/a&gt; to initiate &lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP_tunnel&quot;&gt;HTTP tunneling&lt;/a&gt; by which the command (running on port &lt;code&gt;63066&lt;/code&gt;) asks local proxy server (port &lt;code&gt;1087&lt;/code&gt;) to forward such HTTPS request. The tunnel (thus CONNECT method) is especially created for requesting HTTPS website which is &lt;code&gt;registry.npmjs.org:443&lt;/code&gt; as seen in this case.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:1087 -&amp;gt; 127.0.0.1:63066 [AP]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Proxy sent acknowledge packet back indicating that it&amp;#39;s successfully created a HTTP tunnel. It&amp;#39;s ready to exchange data through proxy from now on.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;T 127.0.0.1:63066 -&amp;gt; 127.0.0.1:1087 [AP]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;One of many packets sending back and forth during HTTP tunneling session. In this case, &lt;code&gt;npm&lt;/code&gt; command usually sends some request for a package at &lt;code&gt;registry.npmjs.org&lt;/code&gt;. It is encrypted due to SSL as it&amp;#39;s end-to-end communication. The dot (&lt;code&gt;.&lt;/code&gt;) we see is default character to show when such character is non-printable.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So you can see that the connection is well made with proxy. Basically verified that it works as expect.&lt;/p&gt;
-
-&lt;h3 id=&quot;verify-curl&quot;&gt;Verify curl&lt;/h3&gt;
-
-&lt;p&gt;We had &lt;code&gt;ngrep&lt;/code&gt; and local network interface name as previously tested. Next we&amp;#39;re going to verify &lt;code&gt;curl -i http://blog.wasin.io&lt;/code&gt; command whether it actually went through our proxy as set to be on SOCKS5 (port &lt;code&gt;1086&lt;/code&gt;) or not.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Reason to use &lt;code&gt;http://blog.wasin.io&lt;/code&gt; is that it&amp;#39;s not HTTPS thus we&amp;#39;re going to see actual text result from request to such target website.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Execute &lt;code&gt;sudo ngrep -q -d lo0 -W byline port 1086&lt;/code&gt;&lt;br&gt;
-You will see&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   haxpors-mbp:~ haxpor&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ngrep -q -d en1 -W byline port 1086
-   Password:
-   interface: en1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;192.168.0.0/255.255.255.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-   filter: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ip or ip6&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; port 1086 &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Open a new terminal window, then execute &lt;code&gt;curl -i http://blog.wasin.io&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Go back to see result from &lt;code&gt;ngrep&lt;/code&gt; as it&amp;#39;s running at the moment.&lt;br&gt;
-You should see something similar to following.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;   T 127.0.0.1:52924 -&amp;gt; 127.0.0.1:1086 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
-   GET / HTTP/1.1.
-   Host: blog.wasin.io.
-   User-Agent: curl/7.50.3.
-   Accept: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.
-   .
-
-
-   T 127.0.0.1:1086 -&amp;gt; 127.0.0.1:52924 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AP]
-   HTTP/1.1 200 OK.
-   Server: GitHub.com.
-   Content-Type: text/html; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8.
-   Last-Modified: Fri, 10 Mar 2017 19:23:24 GMT.
-   Access-Control-Allow-Origin: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.
-   Expires: Mon, 13 Mar 2017 19:33:23 GMT.
-   Cache-Control: max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;600.
-   X-GitHub-Request-Id: 3E76:06EE:41E22E9:53B6101:58C6F1AB.
-   Content-Length: 19899.
-   Accept-Ranges: bytes.
-   Date: Mon, 13 Mar 2017 20:42:39 GMT.
-   Via: 1.1 varnish.
-   Age: 380.
-   Connection: keep-alive.
-   X-Served-By: cache-hkg6825-HKG.
-   X-Cache: HIT.
-   X-Cache-Hits: 1.
-   X-Timer: S1489437759.092925,VS0,VE0.
-   Vary: Accept-Encoding.
-   X-Fastly-Request-ID: 60215ccfdc736e50178b0268f4fc9b3053c1e14d.
-   .
-   &amp;lt;!DOCTYPE html&amp;gt;
-   &amp;lt;html&amp;gt;
-   ... the less or HTML code ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You see that such command on port &lt;code&gt;52924&lt;/code&gt; created a request message in SOCKS5 message and sent it to local proxy server listening on port &lt;code&gt;1086&lt;/code&gt;. In return, proxy gets the actual response back including website&amp;#39;s source code in HTML.&lt;/p&gt;
-
-&lt;p&gt;So it works as expect.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;We have learned how to properly configure proxy setting for UI-based applications and terminal commands. Also we knew a basic way to verify that our tools are working as expect via &lt;code&gt;ngrep&lt;/code&gt;. Combine these together to carry out Internet operation through proxy in network environment that needs it, and be able to troubleshoot the problem when we faced with a long waiting time in getting a result back from using application or commandlines.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Mar 2017 00:03:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/03/14/setup-and-verify-applications-and-terminal-commands-to-work-reliably-with-proxy-on-macos-and-linux.html</guid>
-        
-        <category>command</category>
-        
-        <category>commands</category>
-        
-        <category>terminal</category>
-        
-        <category>proxy</category>
-        
-        <category>network</category>
-        
-        <category>linux</category>
-        
-        <category>macos</category>
         
         
         <category>blog</category>
