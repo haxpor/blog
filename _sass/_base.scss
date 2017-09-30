@@ -337,6 +337,10 @@ img {
     display: table;
     margin: 0 auto;
 }
+img.normal {
+    display: inherit;
+    margin: 0;
+}
 sub.img-tagline {
     text-align: center;
     display: table;
