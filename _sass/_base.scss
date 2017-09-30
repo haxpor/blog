@@ -117,7 +117,7 @@ a {
  * Blockquotes
  */
 blockquote {
-  background: #f9f9f9;
+  background: #FFFCE6;
   font-size: 1em;
   border-left: .7em solid #ccc;
   margin: 1em .5em;
@@ -154,16 +154,12 @@ blockquote:last-child {
  */
 pre,
 code {
-    font-size: 15px;
-    border-radius: 5px;
-    background-color: #e8e8e8;
-    box-shadow: 1px 1px 2px #888888;
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
-code {
-    padding: 1px 5px;
+    font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    padding: 3px 15px;
+    color: #333
 }
 
 pre {
@@ -328,4 +324,27 @@ hr {
     border-left-width: 1px;
     border-right-width: 1px;
     border-style: solid;
+}
+
+/** increase icon for each of article */
+.weui-media-box_appmsg .weui-media-box__hd {
+    width: 100px;
+    height: 100px;
+}
+
+/** override image behavior */
+img {
+    display: table;
+    margin: 0 auto;
+}
+sub.img-tagline {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+    font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #FFF9D1;
+    padding: 2px 5px;
+    color: #333
 }
