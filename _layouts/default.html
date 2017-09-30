@@ -15,7 +15,9 @@
       </div>
     </div>
 
-    <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="weui-btn weui-btn_primary" style="border-radius: 0px">subscribe via RSS</a>
+    <hr style="width:70%;margin: auto;border: 0; height: 0; border-top:1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);"> 
+
+    {% include email-subscription.html %}
 
     {% include footer.html %}
 
