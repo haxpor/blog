@@ -6,9 +6,163 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 30 Sep 2017 13:07:04 +0800</pubDate>
-    <lastBuildDate>Sat, 30 Sep 2017 13:07:04 +0800</lastBuildDate>
+    <pubDate>Sat, 30 Sep 2017 22:18:53 +0800</pubDate>
+    <lastBuildDate>Sat, 30 Sep 2017 22:18:53 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Transfer Money Across Border to China Mainland via Paypal &amp; LianLianPay</title>
+        <description>&lt;p&gt;With a quest to find a cheapest and obviously online money transferring service that works when transfer money in/out of China mainland, as far as of now the viable possible way is only via Paypal &amp;amp; LianLianPay.&lt;/p&gt;
+
+&lt;p&gt;I did check notable services out there such as &lt;a href=&quot;https://transferwise.com&quot;&gt;TransferWise&lt;/a&gt;, &lt;a href=&quot;https://www.revolut.com&quot;&gt;Revolut&lt;/a&gt; and even payment gateway like &lt;a href=&quot;https://www.omise.co/&quot;&gt;Omise&lt;/a&gt;, and &lt;a href=&quot;https://stripe.com&quot;&gt;Stripe&lt;/a&gt;. Why do I have to hustle checking those services out? Because they do have lower fee as advertised as compared to Paypal at &lt;code&gt;4%&lt;/code&gt;, lower widthdrawal fee, and most &lt;strong&gt;importantly whether it could operate in China or not&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately those services cannot operate with Chinese bank/territory.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hong Kong is available for some of those services as it&amp;#39;s technically not in &lt;a href=&quot;https://en.wikipedia.org/wiki/Mainland_China&quot;&gt;mainland&lt;/a&gt; China.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This mean I only have Paypal as an option. Goods news, Paypal partnered with &lt;a href=&quot;https://fx.lianlianpay.com&quot;&gt;LianLianPay&lt;/a&gt;, this reduces the fee significantly and it can be considered an (as far as I did research) best option we have here as well.&lt;/p&gt;
+
+&lt;p&gt;So in this post, I will walk you through the process and steps to transfer money across border from outside China mainland to China mainland itself. Transferring money from China mainland to outside; still through Paypal; is easy as mainly it would use the normal way just to move money from Paypal account to another. Only thing to deal with is to link your homeland&amp;#39;s local bank account to another end of your Paypal account.&lt;/p&gt;
+
+&lt;p&gt;Thus I will focus solely on transferring money from outside to China mainland only.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-thing-first-fee&quot;&gt;First Thing First: &lt;strong&gt;Fee&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;#39;s first talk about fee as it&amp;#39;s the very first thing we would be considering whether or not we will go forward.&lt;/p&gt;
+
+&lt;p&gt;Assume we want to transfer &lt;code&gt;$300&lt;/code&gt; (or per se &lt;code&gt;~10,000 THB&lt;/code&gt;, or &lt;code&gt;~2,000 RMB&lt;/code&gt; as I round the number for easy in demonstration) from outside of China mainland to China mainland. &lt;/p&gt;
+
+&lt;p&gt;We will be charged 2 times (exclude currency exchange)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Money transfer fee between Paypal account across border; at &lt;code&gt;4%&lt;/code&gt; of amount transfer + &lt;code&gt;0.30¢&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Widthdrawal fee from Paypal to bank account; at &lt;code&gt;1.2%&lt;/code&gt; of widthdraw amount (in case of LianLianPay) compared to &lt;code&gt;$35&lt;/code&gt; per time (in case of Wire Transfer)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this article, we will go with LianLianPay. &lt;font color=&quot;red&quot;&gt;*&lt;/font&gt;But keep in mind there will be circumstance that Wire Transfer is more cost saving especially when you transfer a huge amount of money for more than &lt;code&gt;~$3,000&lt;/code&gt; (or &lt;code&gt;~100,000 THB&lt;/code&gt; or &lt;code&gt;~20,000 RMB&lt;/code&gt;) as the widthdrawal fee is fixed at &lt;code&gt;$35&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Exact amount (as of 30 Sep for currency exchange rate) of money when Wire Transfer fee starts to be cheaper is above &lt;code&gt;$2916.67&lt;/code&gt; (or &lt;code&gt;19,356.77 RMB&lt;/code&gt;, or &lt;code&gt;97,212.61 THB&lt;/code&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Check &lt;a href=&quot;https://www.paypal.com/c2/selfhelp/article/what-are-the-fees-for-withdrawing-funds-from-my-paypal-balance-faq2285/3&quot;&gt;Paypal&amp;#39;s Widthdrawal fee&lt;/a&gt; included timeframe for more info.&lt;/p&gt;
+
+&lt;h1 id=&quot;overall-process&quot;&gt;Overall Process&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Transfer money from &lt;em&gt;Paypal Account A&lt;/em&gt; to &lt;em&gt;Paypal Account B&lt;/em&gt; (instantly)&lt;/li&gt;
+&lt;li&gt;Widthdraw money from &lt;em&gt;Paypal Account B&lt;/em&gt; through LianLianPay (complete within 2-3 business days)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;requirement&quot;&gt;Requirement&lt;/h1&gt;
+
+&lt;p&gt;You need to have ...&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;2 Paypal accounts; one for your homeland, and another for China mainland&lt;/li&gt;
+&lt;li&gt;LianLianPay account&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You need one Paypal account based in your homeland, and linked with your homeland&amp;#39;s local bank account. Let your Chinese friend registers another Paypal account, and LianLianPay account.&lt;/p&gt;
+
+&lt;p&gt;You need to let your Chinese friend registers Paypal account to reduce the risk of rejection from LianLianPay in verifying account as it needs both Paypal and LianLianPay to have the same real name; owner of the account.&lt;/p&gt;
+
+&lt;h1 id=&quot;important-notice&quot;&gt;Important Notice&lt;/h1&gt;
+
+&lt;p&gt;If you don&amp;#39;t have Chinese business license or you do have but your business scope doesn&amp;#39;t involve physical goods then only option is to verify via &lt;strong&gt;Chinese citizen ID&lt;/strong&gt; on LianLianPay. Business that is solely based online cannot go through.&lt;/p&gt;
+
+&lt;p&gt;That means you need a Chinese friend to register LianLianPay account and help you with the process. Money will be transferred to your friend&amp;#39;s Paypal account, then widthdraw to his/her bank account. Finally you can let your friend transfers money to you either via WeChat or Alipay.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;WeChat and Alipay started to charge (since 2016) a small fee of &lt;code&gt;0.1%&lt;/code&gt; of amount of money widthdrawed to user&amp;#39;s bank account; each with slightly different rule applied. See rules for &lt;a href=&quot;https://chinachannel.co/new-wechat-service-charge/&quot;&gt;WeChat&lt;/a&gt;, and &lt;a href=&quot;https://www.pymnts.com/news/payment-methods/2016/alipay-withdrawal-fee-charge/&quot;&gt;Alipay&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;how-step-by-step&quot;&gt;How? Step by Step&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;#39;s start from the beginning on how to do this.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Scenario&lt;/strong&gt;: Transfer $300 from Thailand to China.&lt;br&gt;
+&lt;strong&gt;Recap&lt;/strong&gt;: We will be using 2 Paypal + 1 LianLianPay account. 1 Paypal account is yours based on your homeland, another is for your Chinese friend. At last, your friend also owns LianLianPay account.&lt;/p&gt;
+
+&lt;p&gt;Let make a short mapping for easiness.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A -&amp;gt; You, or user outside China mainland&lt;/li&gt;
+&lt;li&gt;B -&amp;gt; Your Chinese friend based in China mainland&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Set up account for B&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Registers Paypal account, and link to at least one of debit/credit card (if not link any, LianLianPay&amp;#39;s account verification will fail when link Paypal account to it)&lt;/li&gt;
+&lt;li&gt;Register LianLianPay account at &lt;a href=&quot;https://fx.lianlianpay.com&quot;&gt;https://fx.lianlianpay.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Link Paypal account with LianLianPay as per instruction on screen.&lt;/li&gt;
+&lt;li&gt;Verify account via Individual option (click on 账户信息-&amp;gt;认证信息-&amp;gt;Select individual icon)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Make sure it shows as succeed. Now B is ready to widthdraw money after receive it on Paypal; in which we will do next.&lt;/p&gt;
+
+&lt;p&gt;The less is to send money to B, and widthdraw money on behalf of B&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;B requests money from A through Paypal account&lt;/li&gt;
+&lt;li&gt;A sends money to B as per requested&lt;/li&gt;
+&lt;li&gt;B receives money, then proceed to widthdraw on LianLianPay.&lt;/li&gt;
+&lt;li&gt;B logs in on LianLianPay. At the home page, click on widthdraw button (button with 提现 as label)&lt;/li&gt;
+&lt;li&gt;B enters amount to widthdraw. It needs to be at least 50 RMB.&lt;/li&gt;
+&lt;li&gt;B finally verifies the process via SMS code.&lt;/li&gt;
+&lt;li&gt;Within 2-3 business days money will be transferred to B&amp;#39;s bank account.&lt;/li&gt;
+&lt;li&gt;B transfers money to A via WeChat or Alipay app.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A minimum amount allowing to widthdraw on Paypal is &lt;code&gt;$150&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;chronological-order-of-steps&quot;&gt;Chronological Order of Steps&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/send-money.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/send-money.png&quot; alt=&quot;paypal send money&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;A sends money to B via Paypal as per B&amp;#39;s request (A is outside of China mainland, but not B)&lt;sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/receive-money.jpg&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/receive-money.jpg&quot; alt=&quot;paypal receive money&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;B receives money from A through Paypal&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/start-to-widthdraw.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/start-to-widthdraw.png&quot; alt=&quot;paypal instruction to withdraw moenty on lianlianpay&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;Whenever B wants to widthdraw received money to RMB (or CNY) from within Paypal, it will shows instruction to proceed on LianLianPay&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/lianlianpay-login.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/lianlianpay-login.png&quot; alt=&quot;widthdraw money from LianLianPay&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;B logs in on LianLianPay and start to widthdraw by clicking on 提现 button.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/form-widthdraw.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/form-widthdraw.png&quot; alt=&quot;enter information to widthdraw money from LianLianPay&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;B enters information to widthdraw money. At least, it needs to be 50 RMB.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/form2-widthdraw.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/form2-widthdraw.png&quot; alt=&quot;enter information 2 to widthdraw money from LianLianPay&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;LianLianPay will show how much calculated fee, and final amount you would get in RMB (or CNY).&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/successfully-widthdraw.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/successfully-widthdraw.png&quot; alt=&quot;result from operation&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;B successfully widthdraws money from LianLianPay to local bank account. The process takes 2-3 business days.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/paypal-lianlianpay/widthdraw-result.png&quot;&gt;&lt;img src=&quot;/assets/images/paypal-lianlianpay/widthdraw-result.png&quot; alt=&quot;transaction history on LianLianPay&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;img-tagline&quot;&gt;Transaction as shown on LianLianPay&lt;/sub&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Sep 2017 14:43:00 +0800</pubDate>
+        <link>http://blog.wasin.io/blog/2017/09/30/transfer-money-across-border-to-china-mainland-via-paypal-and-lianlianpay.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/09/30/transfer-money-across-border-to-china-mainland-via-paypal-and-lianlianpay.html</guid>
+        
+        <category>paypal</category>
+        
+        <category>lianlianpay</category>
+        
+        <category>money</category>
+        
+        <category>china</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>SwitchResX to Help Set up Ultra-Wide LG Monitor on macOS</title>
@@ -1857,233 +2011,6 @@ As it&amp;#39;s an addition to TCP protocol, it is compatible for all proxy appl
         <category>network</category>
         
         <category>tcp-bbr</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Model &amp; Approach for Private Delivery of iOS Frameworks Using Cocoapods</title>
-        <description>&lt;p&gt;Lately, I&amp;#39;ve been thinking about the way to deliver &lt;strong&gt;private&lt;/strong&gt; iOS frameworks to users using &lt;a href=&quot;https://cocoapods.org/&quot;&gt;Cocoapods&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Firstly, don&amp;#39;t get me wrong, I do love open source, I embrace the way of its approach, and even put tagline &lt;em&gt;Open source by default&lt;/em&gt; on my &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;Twitter profile&lt;/a&gt;. Yup, I do understand that not every situation or entity can go all-in with such approach. There will be certain circumstance that the project needs to be in closed-source forever, or for certain time period until it can be open, or due to as part of the deal that makes open source is not an option.&lt;/p&gt;
-
-&lt;p&gt;Whatever the reason it might be, having Cocoapods as your delivery and dependency management is still a leading choice. I do point it out because if we&amp;#39;re going to deliver frameworks privately through Cocoapod, there&amp;#39;s going to be additional effort.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s first understand the underlying system of Cocoapods, until we come to overall big picture of model to use it.&lt;/p&gt;
-
-&lt;h2 id=&quot;underlying&quot;&gt;Underlying&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Under the hood, there are 2 main things that work together for Cocoapods.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.podspec&lt;/code&gt; files&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;Specs&lt;/code&gt; repo contains multiple &lt;code&gt;.podspec&lt;/code&gt; files. Main &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;Spec repo&lt;/a&gt; of Cocoapods is used to serve general public frameworks to users. Your &lt;code&gt;pod install&lt;/code&gt; command will check to see information from this repo, and go down to check &lt;code&gt;.podspec&lt;/code&gt; file for specific version of target framework in order to know URL to pull down framework&amp;#39;s source code then finally integrate it with your Xcode project. See example of &lt;code&gt;.podspec&lt;/code&gt; file &lt;a href=&quot;https://github.com/CocoaPods/Specs/blob/master/Specs/d/a/2/Alamofire/4.4.0/Alamofire.podspec.json&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You notice that Spec repo is public, thus also &lt;code&gt;.podspec&lt;/code&gt; file. Anyone can take a peek, and get relavent information. Now you see the problem that such information can lead to information breached in term of closed-source approach. They might get to know which client you work with, or github URL. With those two information, competitors can imply or even try to download the project source code (if permission is not set properly, yup github project as served on Cocoapods can be set to be private. It&amp;#39;s just a matter how who can access.).&lt;/p&gt;
-
-&lt;p&gt;&lt;a id=&quot;steps&quot;&gt;&lt;/a&gt;What we need to do is&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Self-host &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
-&lt;li&gt;Build framework in universal binary without exposing source code&lt;/li&gt;
-&lt;li&gt;Upload result framework to public server for user to grab&lt;/li&gt;
-&lt;li&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file and set its &lt;code&gt;source&lt;/code&gt; field to use URL as result from 3.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;self-host-spec-repo&quot;&gt;Self-host Spec repo&lt;/h3&gt;
-
-&lt;p&gt;To gain the benefit of setting the permission of &lt;code&gt;Specs&lt;/code&gt; repo, you have only option which is to do self-host of it.
-Even you do self-host, you also have an option of setting access permission to be in public or private. In this case, we&amp;#39;re primarily interested in private access.&lt;/p&gt;
-
-&lt;p&gt;Cocoapods has official document on &lt;a href=&quot;https://guides.cocoapods.org/making/private-cocoapods.html&quot;&gt;how to host private Specs repo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;build-framework-in-universal-binary-without-exposing-source-code&quot;&gt;Build framework in universal binary without exposing source code&lt;/h3&gt;
-
-&lt;p&gt;I came across this well explained &lt;a href=&quot;https://eladnava.com/publish-a-universal-binary-ios-framework-in-swift-using-cocoapods/&quot;&gt;article&lt;/a&gt; of how to publish a universal binary iOS framework using Cocoapods.&lt;/p&gt;
-
-&lt;p&gt;Only difference from what we&amp;#39;re trying achieving compared to that article is that, the author publishes it publicly. But we want it in private. Thus we have no need to involve using &lt;code&gt;pod trunk ...&lt;/code&gt; command as we don&amp;#39;t publish to the main public &lt;code&gt;Specs&lt;/code&gt; repo but to our private one.&lt;/p&gt;
-
-&lt;h3 id=&quot;upload-result-framework-to-public-server&quot;&gt;Upload result framework to public server&lt;/h3&gt;
-
-&lt;p&gt;Upload such built frameworks to our public server. Ensure that it&amp;#39;s in universal binary form thus it can be used to run on device and simulator. Ensure that you didn&amp;#39;t include any source code with it. Normally, aim for &lt;code&gt;.zip&lt;/code&gt; file. The content of &lt;code&gt;.zip&lt;/code&gt; file mainly contains &lt;code&gt;.framework&lt;/code&gt; along with &lt;code&gt;README&lt;/code&gt; or any relavent files if you need. All of them are at the same level. It might be as follows.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;framework-result.zip
-               |_ myFW.framework
-               |_ README
-               |_ strip-frameworks.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;strip-frameworks.sh&lt;/code&gt; is usually needed at the end when users want to publish the result application to AppStore. It will help stripping un-needed architecture from frameworks being in use. You can see and make use of &lt;a href=&quot;https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh&quot;&gt;strip-frameworks.sh&lt;/a&gt; by Realm. Insert it insidee &lt;em&gt;Build Phases&lt;/em&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;create-a-proper-podspec-file&quot;&gt;Create a proper &lt;code&gt;.podspec&lt;/code&gt; file&lt;/h3&gt;
-
-&lt;p&gt;Properly create a &lt;code&gt;.podspec&lt;/code&gt; file to match the version of such framework. The most important thing is &lt;code&gt;source&lt;/code&gt; field instead of providing github URL, you provide the end-result of URL of &lt;code&gt;.zip&lt;/code&gt; for users to download.&lt;/p&gt;
-
-&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Now it&amp;#39;s time for a big picture to see how everything gets involved.
-Please note that I observe the main &lt;code&gt;Specs&lt;/code&gt; repo&amp;#39;s file structure then compare with our private one, there is slightly difference. So I include it here too.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Main &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
-  |_ 0
-     |_ 0
-         |_ framework-A
-                   |_ 1.0.0
-                         |_ framework-A.podspec
-                   |_ 1.0.1
-                         |_ framework-A.podspec
-                   |_ 1.1.0
-                         |_ framework-A.podspec
-         |_ framework-B
-                   |_ 1.0.0
-                         |_ framework-B.podspec
-         |_ 1
-            |_ ...
-         |_ 2
-            |_ ...
-    |_ 1
-       |_ 0
-          |_ ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Our private &lt;code&gt;Specs&lt;/code&gt; repo&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Specs
-   |_ framework-A
-       |_ 1.0.0
-           |_ framework-A.podspec
-       |_ 1.0.1
-           |_ framework-A.podspec
-       |_ 1.1.0
-           |_ framework-A.podspec
-   |_ framework-B
-       |_ 1.0.0
-           |_ framework-B.podspec
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I cloned the project and inspected, the following is what I found.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Each directory holds up to 40 MB&lt;/li&gt;
-&lt;li&gt;There are 3 layers of numerical directory for each framework to reside in i.e. &lt;code&gt;Specs/0/0/0/framework-A&lt;/code&gt;, &lt;code&gt;Specs/0/1/0/framework-B&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Each layer of numerical directory consists of directory ranging from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;9&lt;/code&gt;, also &lt;code&gt;a&lt;/code&gt; to &lt;code&gt;f&lt;/code&gt; in total of 16 directories&lt;/li&gt;
-&lt;li&gt;(as above for what I&amp;#39;ve found) &lt;code&gt;Specs&lt;/code&gt; repo can hold up to 163.84 GB in total. Right now it&amp;#39;s at 583 MB (0.584 GB) or 0.003%. I suspect this part is to optimize the directory system, not to make each individual directory too large&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I came up with two possible models; Variant A, and B.&lt;/p&gt;
-
-&lt;h3 id=&quot;variant-a&quot;&gt;Variant A&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantA.png&quot; alt=&quot;Model Variant A&quot;&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
-&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
-&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; Each circle is &lt;strong&gt;private&lt;/strong&gt; &lt;code&gt;Specs&lt;/code&gt; repo exposed to selected external party (client)&lt;br&gt;
-&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties spanning into multiple groups&lt;/p&gt;
-
-&lt;h4 id=&quot;requirements&quot;&gt;Requirements&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
-&lt;li&gt;Paid Github acccount to have ability to create private repositories ($7/month)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;feature&quot;&gt;Feature&lt;/h4&gt;
-
-&lt;p&gt;It allows another layer to control which party (client) can see such &lt;code&gt;Specs&lt;/code&gt; repo.
-Imagine if we have 2 clients. Each client might use multiple of frameworks and are different from ones used by another client.&lt;br&gt;
-Thus we will have 2 private &lt;code&gt;Specs&lt;/code&gt; repo one for each client.&lt;/p&gt;
-
-&lt;p&gt;We need to allow users (github account) to have read access towards such &lt;code&gt;Specs&lt;/code&gt; repo. So when they pull down via configured &lt;code&gt;Podfile&lt;/code&gt;, it will be fine.&lt;/p&gt;
-
-&lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
-
-&lt;h5 id=&quot;pros&quot;&gt;Pros&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Additional layer to manage and control which party can have access to which frameworks via private &lt;code&gt;Specs&lt;/code&gt; repo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;cons&quot;&gt;Cons&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Need to manage and allow access for users towards such &lt;code&gt;Specs&lt;/code&gt; repo&lt;/li&gt;
-&lt;li&gt;Might not be feasible for who which doesn&amp;#39;t want to pay monthly in order to use Github&amp;#39;s private repositories feature&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;variant-b&quot;&gt;Variant B&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/cocoapods/VariantB.png&quot; alt=&quot;Model Variant B&quot;&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt; ---&amp;gt; Ownership (included just to show authentic owenership)&lt;br&gt;
-&lt;strong&gt;2&lt;/strong&gt; ---&amp;gt; Public server to host built (.zip) frameworks&lt;br&gt;
-&lt;strong&gt;3&lt;/strong&gt; ---&amp;gt; One single &lt;code&gt;Specs&lt;/code&gt; repo exposed to general public&lt;br&gt;
-&lt;strong&gt;4&lt;/strong&gt; ---&amp;gt; Multiple of client parties treated as a single public group&lt;/p&gt;
-
-&lt;h4 id=&quot;requirement&quot;&gt;Requirement&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Public server to host built (.zip) frameworks.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;feature&quot;&gt;Feature&lt;/h4&gt;
-
-&lt;p&gt;It has no control layer over which party or users should have access towards our framework.
-Thus there is no need to create private &lt;code&gt;Specs&lt;/code&gt; repo and manage (allow users access) to it.&lt;/p&gt;
-
-&lt;p&gt;One caveat is that if users inspect the content inside &lt;code&gt;Specs&lt;/code&gt; repo, they will have information for all frameworks we have, and might be able to know which client we work with. But it might be less likely for normal users as when they&amp;#39;re done with configuring &lt;code&gt;Podfile&lt;/code&gt;, usually they have no time or interest to study our &lt;code&gt;Specs&lt;/code&gt; repo. Even if they do so, they have to try by trial and error to use the framework as most likely we will deliver document to client privately too.&lt;/p&gt;
-
-&lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
-
-&lt;h5 id=&quot;pros&quot;&gt;Pros&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;No additional effort to manage each private &lt;code&gt;Specs&lt;/code&gt; repository as there is none to manage.&lt;/li&gt;
-&lt;li&gt;No additional cost, normal Github account will do the work&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;cons&quot;&gt;Cons&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Users might gain information about our all frameworks and where to download; and possible to know which client we&amp;#39;ve worked with.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;final-words&quot;&gt;Final words&lt;/h2&gt;
-
-&lt;p&gt;Now we get to know models to use in delivery frameworks to clients privately, and even has options to choose one that is more suitable to use. To go further than that, it&amp;#39;s possible to reduce &lt;a href=&quot;#steps&quot;&gt;steps&lt;/a&gt; needed especially 2, 3, and 4 which are building framework, uploading, and creating a proper &lt;code&gt;.podspec&lt;/code&gt; via automated script.&lt;/p&gt;
-
-&lt;p&gt;Then even more advanced, for build step, we can make it more robust using automated build system (CI). The overall combination should be pleasant and extremely automated.&lt;/p&gt;
-
-&lt;p&gt;I might consider writing about automated build, and how to combine it with models we&amp;#39;ve learned for next articles. For now, we have models and technical background included with steps to accomplish as a foundation to further utilize Cocoapod in delivery and automated flow.&lt;/p&gt;
-
-&lt;p&gt;Until next time...&lt;/p&gt;
-</description>
-        <pubDate>Sat, 25 Mar 2017 00:03:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/03/25/model-and-approach-for-private-delivery-of-ios-frameworks-using-cocoapods.html</guid>
-        
-        <category>cocoapods</category>
-        
-        <category>pod</category>
-        
-        <category>private</category>
-        
-        <category>framework</category>
-        
-        <category>ios</category>
-        
-        <category>model</category>
         
         
         <category>blog</category>
