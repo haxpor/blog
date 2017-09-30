@@ -60,6 +60,16 @@
             </a>
           </li>
           {% endif %}
+
+          <li>
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+              <span class="icon" style="text-align: center">
+                <img src="/assets/images/sites/rss-feed-icon.png" width="32px">
+              </span>
+
+              <span class="username">{{ site.twitter_username }}</span>
+            </a>
+          </li>
         </ul>
       </div>
 
