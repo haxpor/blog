@@ -6,9 +6,263 @@
 </description>
     <link>http://blog.wasin.io/</link>
     <atom:link href="http://blog.wasin.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 30 Sep 2017 22:30:17 +0800</pubDate>
-    <lastBuildDate>Sat, 30 Sep 2017 22:30:17 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Oct 2017 17:47:12 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Oct 2017 17:47:12 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Monthly Report - September 2017</title>
+        <description>&lt;p&gt;Here comes September report.&lt;/p&gt;
+
+&lt;h1 id=&quot;total-hours-spent&quot;&gt;Total hours spent&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/big-picture-hours-Sep-2017.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/big-picture-hours-Sep-2017.png&quot; alt=&quot;big picture hours spent&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/project-hours-spent-Sep-2017.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/project-hours-spent-Sep-2017.png&quot; alt=&quot;projects hours spent&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Click for full resolution&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pivot-again&quot;&gt;Pivot Again?!?!&lt;/h2&gt;
+
+&lt;p&gt;After I&amp;#39;ve stated the direction since last month to base thing on WeChat&amp;#39;s mini-program (thus webdev and web apps), and games targeting on Android platform. For latter, since then I have invested and committed to use Android phone (Huawei G9 Lite specifically) heavily for a month long.&lt;/p&gt;
+
+&lt;p&gt;Android ecosystem is interesting and pretty much open. Development tools and environment can be based off just command line alone (and works out-of-box) in which I like it alot. App developers have control and able to override even a tiny thing such as whether or not to allow the app to be installed on SDCard etc. Sadly in terms of performance, day-to-day usage, quality of available apps, and my familarity with it in terms of user and developer (slightly biased as I&amp;#39;ve long been iOS user and developer), it slows me down and I just feel I&amp;#39;m not 100% efficient when use Android phone. This affects my decision in last month.&lt;/p&gt;
+
+&lt;p&gt;I decided it&amp;#39;s not for me if I&amp;#39;ll need to &lt;strong&gt;mainly&lt;/strong&gt; and &lt;strong&gt;heavily&lt;/strong&gt; base business on Android. I can&amp;#39;t keep my enthusiastic, and motivation level to continue using it although in terms of market share in China and potential is way better.&lt;/p&gt;
+
+&lt;p&gt;Combine with the reason that I&amp;#39;ve lost faith in libgdx. It&amp;#39;s an open source game library that I heavily base on since May 2017. libgdx regards Android as first-class citizen, and from there you develop to include iOS and PC. It uses Kotlin, and tools Android developers use. This means Android is not viable and healthy direction for me to proceed.&lt;/p&gt;
+
+&lt;p&gt;So again I pivot. See more detail in &lt;a href=&quot;#pivot&quot;&gt;Pivot&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;h2 id=&quot;progress&quot;&gt;Progress&lt;/h2&gt;
+
+&lt;p&gt;Talk about progress. I dropped commercial version of &lt;a href=&quot;/monthly-report/2017/07/report.html#asteroids&quot;&gt;Asteroids&lt;/a&gt; as I lost interest in it. Open source version is still on &lt;a href=&quot;https://github.com/haxpor/asteroids&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Reasonable progress made on &lt;a href=&quot;/monthly-report/2017/08/report.html#heatap&quot;&gt;Heatap&lt;/a&gt;. It has blocking issue regarding to micro payment approval. It has been rejected for 5-6 times in this month alone. 1 week I spent on making &lt;a href=&quot;https://abzi.co&quot;&gt;company&amp;#39;s website&lt;/a&gt;. 2 weeks on top of that has been used to modify the site to satisfy auditors. Although there&amp;#39;s no more issue relating to website, but still auditors didn&amp;#39;t seem to believe or sure about what kind of things our company trying to sell (which is completely online stuff &amp;amp; service!!!). It&amp;#39;s not approved yet up until now. See more info in &lt;a href=&quot;#heatap&quot;&gt;Heatap&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;p&gt;Apart from that, this month I spent time in blogging almost the same for the past 4 months combined. Tracked at 32.4 hours (past 4 months combined at ~33.x hours) included hours in writing &lt;a href=&quot;/monthly-report/2017/08/report.html&quot;&gt;previous report&lt;/a&gt; as well. I think mainly I take more time in thinking process especially monthly report to sum up every possible of things into writing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I wrote every month report at the first day of every month thus hours spent on current month report is tracked in next month.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As well, I wrote &lt;a href=&quot;/blog/2017/09/28/switchresx-to-help-set-up-ultrawide-lg-monitor-on-macos.html&quot;&gt;SwitchResX to Help Set up Ultra-Wide LG Monitor on macOS&lt;/a&gt;, and &lt;a href=&quot;/blog/2017/09/30/transfer-money-across-border-to-china-mainland-via-paypal-and-lianlianpay.html&quot;&gt;Transfer Money Across Border to China Mainland via Paypal &amp;amp; LianLianPay&lt;/a&gt; post.&lt;/p&gt;
+
+&lt;p&gt;At last, I finally found a solution to transfer money across border to China mainland. Specifically to transfer money from my homeland (Thailand) to China by using Paypal + LianLianPay in which I wrote about it as you can see at the link above. As well, there&amp;#39;s another service I happen to know after I tried and finished that article. See more info at &lt;a href=&quot;#money-transfer-across-border-to-china-mainland&quot;&gt;Money Transfer Across Border to China Mainland&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;h1 id=&quot;pivot&quot;&gt;Pivot&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;For web-tech direction, it&amp;#39;s still the same. Going forward for long term on WeChat mini-program platform, and web app in general. This is the same, left intact.&lt;/p&gt;
+
+&lt;p&gt;For game direction, clearly it&amp;#39;s not mainly based on Android anymore. Back of my mind tells me to go back to iOS, pick up what I left off to continue what I&amp;#39;ve invested in this platform for quite long time accumulating mainly from my experience in contracting in the past before. To maintain knowledge and familarity without too much context time switching for both app &amp;amp; game development, then focusing on a single platform is a good idea.&lt;/p&gt;
+
+&lt;p&gt;Combine with there&amp;#39;s more and more people fork &lt;a href=&quot;https://github.com/haxpor/Potatso&quot;&gt;Potatso&lt;/a&gt; the project, filed issues, and use it. I feel that by going into this direction. I will have more chance to go back there and contribute. More people can access to Internet freely in China. I can&amp;#39;t promise, but as I said there&amp;#39;s more chance if I turn my focus on iOS.&lt;/p&gt;
+
+&lt;h1 id=&quot;icp-license&quot;&gt;ICP License&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I&amp;#39;m happy to say that we successfully acquired ICP license for &lt;a href=&quot;https://abzi.co&quot;&gt;abzi.co&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ICP record result from within QCloud (cloud service that also provides ICP record application by Tencent).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/icp-approved-qcloud.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/icp-approved-qcloud.png&quot; alt=&quot;ICP record result from within QCloud&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;ICP record result from within QCloud&amp;#39;s Beian dashboard&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/abzico-icp-license.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/abzico-icp-license.png&quot; alt=&quot;ICP license detail for abzi.co&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;ICP license detail for abzi.co&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s safe to show above information because it&amp;#39;s public that anyone can search through government system at &lt;a href=&quot;http://www.miitbeian.gov.cn/publish/query/indexFirst.action&quot;&gt;miitbeian.gov.cn&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also it&amp;#39;s the first ever time for me in making website that I need to include a license number, then linked it to government website at the bottom of the page.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/abzico-icp-license-at-bottom.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/abzico-icp-license-at-bottom.png&quot; alt=&quot;ICP license at bottom of abzico website&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;ICP license number linked to government website at abzi.co. You have to do this.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;So it&amp;#39;s all good. Recall that ICP license is basically in need to develop application or having website up and running in China mainland. Especially in case of WeChat&amp;#39;s mini-program, in order to call external API at your own server, you need those API urls to be ICP-approved. Non-ICP-approved works only during development, but not at launching time.&lt;/p&gt;
+
+&lt;h1 id=&quot;heatap&quot;&gt;Heatap&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I added the following things&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Toggleable icons between outline-based and normal for markers showing on the map&lt;/li&gt;
+&lt;li&gt;Filtering system against UI options at the top&lt;/li&gt;
+&lt;li&gt;Culling for circles and markers for much better performance in rendering&lt;/li&gt;
+&lt;li&gt;Better UI/UX to show loading spinner at first when load map&lt;/li&gt;
+&lt;li&gt;Dynamic permission asking for the app from users at startup&lt;/li&gt;
+&lt;li&gt;Strip out un-needed css file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is the result so far.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/heatap-september-1.jpg&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/heatap-september-1.jpg&quot; alt=&quot;heatap screenshot in September&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Marker Icons introduced into the app. Filtering system works now as well.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/heatap-september-2.jpg&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/heatap-september-2.jpg&quot; alt=&quot;heatap screenshot 2 in September&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Adding a pin message&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;and here video in action&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/GoiwePbvqp8&quot; frameborder=&quot;0&quot; allowfullscreen align=&quot;center&quot; style=&quot;display:block; text-align: center; margin: 0 auto&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;sub class=&quot;tagline margin&quot;&gt;HeaTap in action video (on youtube)&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pursue-of-micro-payment&quot;&gt;Pursue of Micro Payment&lt;/h2&gt;
+
+&lt;p&gt;Apart from development itself, the blocking issue is with &lt;strong&gt;micro payment&lt;/strong&gt; approval on WeChat platform. My partner helps me in calling the support team to ask of what is the root problem they keep rejecting our proposal. Almost all of reasons are that our website doesn&amp;#39;t provide enough information about what kind of business we&amp;#39;re doing. This is fair enough that Chinese government is strict in ability for certain type of business can do this or that or not, in turn 3rd party platforms have to adhere to rules and regulations as set by government.&lt;/p&gt;
+
+&lt;p&gt;Anyway, let&amp;#39;s see how this thing went from start.&lt;/p&gt;
+
+&lt;p&gt;Within 1st week, I&amp;#39;ve come up with website design, and have working version ready up and running.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/abzico-website-design.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/abzico-website-design.png&quot; alt=&quot;abzico 1st version website design&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Abzi.co 1st version website design. Click for full resolution.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;From my understanding, WeChat OA (Official Account) is the parent account (think Facebook Page) that holds several mini-program (or call applet). You can bind mini-program to WeChat OA. In order to have an ability to recieve payment from customers through your mini-program, you need to apply for micro payment. Apply once for WeChat OA, then enable and bind such ability for each mini-program itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/2-options-to-bind-mp.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/2-options-to-bind-mp.png&quot; alt=&quot;bind micro payment to wechat mini program&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Two options to enable micro payment for individual mini-program is to newly apply (if not yet), or bind with approved one from WeChat OA.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;The path I&amp;#39;ve taken is &amp;quot;once and for all&amp;quot; (there is also a chance that this might be wrong, I&amp;#39;ll update you in next report). That is apply once for WeChat OA then propagate that payment ability to all children of mini-program. It requires more effort than what I expect, much more.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/monthly-report/september-2017/micro-payment-step-in-approval.png&quot;&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/micro-payment-step-in-approval.png&quot; alt=&quot;steps in being approved for micro payment for WeChat OA&quot;&gt;&lt;/a&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Steps in being approved for WeChat OA&amp;#39;s micro payment&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;In general, it takes around 1-5 working days to be reviewed and initially approved. Steps after that should be very smooth as Tencent will test sending money via wire transfer to your business&amp;#39;s bank account, you received and log on to the merchant platform to verify such amount of other verifying information Tencent sent to you, then finally we sign a contract (I guess digitally) then it&amp;#39;s all done.&lt;/p&gt;
+
+&lt;p&gt;We didn&amp;#39;t pass the first step yet! Support call told my partner to launch the product first, even we told them we need to integrate micro payment or at least make it ready even we don&amp;#39;t charge customers at launch. To have micro payment API integrated, tested, and ready even we didn&amp;#39;t use it yet is much better.&lt;/p&gt;
+
+&lt;p&gt;See more info (in Chinese) &lt;a href=&quot;https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_10&amp;index=1&quot;&gt;here&lt;/a&gt;, and &lt;a href=&quot;https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_11&amp;index=2&quot;&gt;here&lt;/a&gt;. It looks to be aligned with what I&amp;#39;m understanding.&lt;/p&gt;
+
+&lt;p&gt;So the plan right now is to launch to satisfy the auditors before we can update new version integrated with micro payment to charge users in the future.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, the characteristic of HeaTap falls into is crowd-source based thus it&amp;#39;s good to launch first to gather content inputting from users. No immediate need to charge right away. Then whenever it has enough traction, charging can be done later. Anyway all in all, I don&amp;#39;t like this as I said earlier having well-test payment API even we don&amp;#39;t use it before launch, and knew we could charge anytime we want is a much better position to be in. &lt;/p&gt;
+
+&lt;h2 id=&quot;website-webdev&quot;&gt;Website + WebDev&lt;/h2&gt;
+
+&lt;p&gt;Finally I got to experience of how it feel like to support older browser especially IE8 and up from working on &lt;a href=&quot;https://abzi.co&quot;&gt;abzi.co&lt;/a&gt; website.&lt;/p&gt;
+
+&lt;p&gt;Browser support, Browser support, ... everywhere :)&lt;/p&gt;
+
+&lt;p&gt;Why do I need to care much about IE8 by the way? It&amp;#39;s because I want company&amp;#39;s front page to be able to consumed by anyone especially users in China (government and auditors are prime example). To minimize any risk that they could not browse to look for information on website.&lt;/p&gt;
+
+&lt;p&gt;I happen to know that &lt;code&gt;border-radius&lt;/code&gt; supported since IE9+. So I switched to use circle image instead to make it support included important part like team avatar. Also no .svg images, no &lt;code&gt;flexbox&lt;/code&gt; or any modern &amp;amp; fancy stuff. As I have Windows XP with IE8 running on VirtualBox, I test it at the end of each iteration of website work to see how it looks. If all is well in general, and nothing blocks core information from accessible or breaks UI (except &lt;code&gt;box-shadow&lt;/code&gt; :) then it&amp;#39;s all OK!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/ie-broken.gif&quot; alt=&quot;ie broken because of `border-radius` and `flexbox`&quot;&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;IE8 broken because of &lt;em&gt;border-radius&lt;/em&gt; and &lt;em&gt;flexbox&lt;/em&gt;&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;As well, majority of China users use WeChat. They scan and scan. Users are friendly to just add people to connect, either in business or they are interested in your view. They want to always learn from you. It happens to me quite several times that from within WeChat group, after I exchange thought, ask questions, or give some valueable/helps/feedback, a few Chinese people will send me WeChat&amp;#39;s friend request. I&amp;#39;m happy to accept no matter what.&lt;/p&gt;
+
+&lt;p&gt;Thus it&amp;#39;s better idea to integrate QRCode at front page for easy adding. Yes, in terms of indie and small company like I&amp;#39;m doing. There&amp;#39;s no need to act like corporate or level that I&amp;#39;m not at. Friendly and flexible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/monthly-report/september-2017/qrcode.gif&quot; alt=&quot;QRcode to add as contact at front page&quot;&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;Showing QRCode at front page.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;I feel to myself that I&amp;#39;ve learned a lot in webdev this month. Also feel that I&amp;#39;ve &lt;em&gt;internally&lt;/em&gt; leveled up my webdev skill (the same way whenever you feel you&amp;#39;ve come to next English fluential level). It&amp;#39;s gradually going to be more natural. Really happy about this.&lt;/p&gt;
+
+&lt;p&gt;Path ahead will involve more of webdev skill as I focus on WeChat mini-program, and web tech going forward. Always learn.&lt;/p&gt;
+
+&lt;h2 id=&quot;website-deploy-tool&quot;&gt;Website Deploy Tool&lt;/h2&gt;
+
+&lt;p&gt;I also created deploy tool to minimize my time that could be wasted in manual zip, upload to server, etc. Now it&amp;#39;s all in one shot automatically.&lt;/p&gt;
+
+&lt;p&gt;One notable and neat thing I found is to use&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;ssh user@targethost.com &lt;span class=&quot;s2&quot;&gt;&quot;ls &amp;amp;&amp;amp; your_command_here &amp;amp;&amp;amp; blah &amp;amp;&amp;amp; blah&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to remotely execute commands on server. Pretty handy.&lt;br&gt;
+Just set up your server to only allow SSH-Key authentication to log on and disable normal way of accepting password. See my old &lt;a href=&quot;/blog/2016/12/21/ssh-key-based-authentication-on-ubuntu.html&quot;&gt;post&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;Another notable command is extracting zip file into current directory without parent directory path. You can strip it out like the following&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;tar xzvf build.tar.gz -C ./ --strip-components&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Assume that directory tree inside &lt;code&gt;build.tar.gz&lt;/code&gt; has &lt;code&gt;build/&lt;/code&gt; directory leading, and you just want to extract only files out in target directory. You need &lt;code&gt;--strip-components=1&lt;/code&gt; to help out in this case.&lt;/p&gt;
+
+&lt;p&gt;Above will extract &lt;code&gt;build.tar.gz&lt;/code&gt; into current directory by strip out leading directory by 1 level.&lt;/p&gt;
+
+&lt;h1 id=&quot;money-transfer-across-border-to-china-mainland&quot;&gt;Money Transfer Across Border to China Mainland&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I need to find a way to fund my endeavor here. Moving money across border into China mainland. Finally tried the option of using &lt;a href=&quot;/blog/2017/09/30/transfer-money-across-border-to-china-mainland-via-paypal-and-lianlianpay.html&quot;&gt;Paypal + LianLianPay&lt;/a&gt;. It works well, I got my money in 2 working days although there&amp;#39;s fees there. But at least it&amp;#39;s method that works for me right now.&lt;/p&gt;
+
+&lt;p&gt;Suddenly after published my article about Paypal + LianLianPay, &lt;a href=&quot;https://twitter.com/tianyuf&quot;&gt;@tianyuf&lt;/a&gt; &lt;a href=&quot;https://twitter.com/tianyuf/status/914135740619075584&quot;&gt;suggested me&lt;/a&gt; to take a look at &lt;a href=&quot;https://twitter.com/sendwyre&quot;&gt;@sendwyre&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;have you tried &lt;a href=&quot;https://twitter.com/sendwyre?ref_src=twsrc%5Etfw&quot;&gt;@sendwyre&lt;/a&gt;? &lt;a href=&quot;https://t.co/Uul8gqc6F7&quot;&gt;&lt;a href=&quot;https://t.co/Uul8gqc6F7&quot;&gt;https://t.co/Uul8gqc6F7&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tianyu M. Fang (@tianyuf) &lt;a href=&quot;https://twitter.com/tianyuf/status/914135740619075584?ref_src=twsrc%5Etfw&quot;&gt;September 30, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/center&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;I&amp;#39;m suggested to try Wyre&lt;/sub&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Compare to Paypal + LianLianPay, I can save ~100 RMB per ~2,000 RMB transfer. It&amp;#39;s going to be huge when send large amount of money.&lt;/p&gt;
+
+&lt;p&gt;Combine with &lt;a href=&quot;https://twitter.com/dopetard/status/914148669636567041&quot;&gt;suggestion&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/dopetard&quot;&gt;@dopetard&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;One cheaper option is to buy bitcoins and get  it in your mainland account by selling it on localbitcoin.&lt;/p&gt;&amp;mdash; Ankur Kumar (@dopetard) &lt;a href=&quot;https://twitter.com/dopetard/status/914148669636567041?ref_src=twsrc%5Etfw&quot;&gt;September 30, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/center&gt;
+&lt;sub class=&quot;tagline margin&quot;&gt;This leads me to do more research about blockchain, and bitcoin.&lt;/sub&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Following 👇 is based on my observation. You&amp;#39;re warned...&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Altogether, I checked out wyre and digged further information then find out that its platform is based on blockchain! That is the reason why it can offer lower fee. &lt;strong&gt;My thought&lt;/strong&gt; about this is that the service requires you to deposit money into its own system. This is like you transfer money to someone else to manage. That amount of money will be transfered between its own system via blockchain. I believe it should be in the same way as bitcoin, thus there would be no fee for them to operate such thing. Due to there&amp;#39;s no central market or global exchange rate like banking system to mitigate the movement of the market. It&amp;#39;s just a matter of both end in dealing for such transaction. So they can sell and buy at the same price point, no loss or gain over customer&amp;#39;s money.&lt;/p&gt;
+
+&lt;p&gt;So service could be consisting of two ends of bitcoin-like accounts to automate transfering at he same price-point (&lt;em&gt;bid&lt;/em&gt; and &lt;em&gt;ask&lt;/em&gt; amount). In turn that will move customer&amp;#39;s money from one end to another in which each of the account locates to different part of territory the service supports and be able to cash out at local bank.&lt;/p&gt;
+
+&lt;p&gt;It might be the case that the company is well funded so it can operate moving large amount of customer&amp;#39;s money at a time, or it might gradually upper the limit of amount of money when there&amp;#39;s more customers using the service; thus more fee commissioned.&lt;/p&gt;
+
+&lt;p&gt;Above is my pure observation and a single day research to know more about blockchain and bitcoin. Feel free to correct me if I&amp;#39;m wrong in the comment section.&lt;/p&gt;
+
+&lt;h1 id=&quot;automated-server-backing-up-script&quot;&gt;Automated Server Backing up Script&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Early this month I do realize that I need to tighten up server diaster recovery directly in terms of backing up.&lt;/p&gt;
+
+&lt;p&gt;So I made two automated scripts to back up system, and open source them as well&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/digitaloceanbackup&quot;&gt;DigitalOceanBackup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/haxpor/qcloudbackup&quot;&gt;QCloudBackup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;VPS services might have different favor of backing up approach. It might limit in number of snapshots, price point (per hour? per month?, is there penalty if remove file before month ends like in case of AWS Glacier or S3?), etc.&lt;/p&gt;
+
+&lt;p&gt;Especially in case of DigitalOcean as its pricing calculation is flexible and will be based on per hour-basis if you delete a snapshot before month ends. Thus the concept is that if you can keep number of snapshots low, and continue deleting un-needed ones but keep latest N snapshots. You&amp;#39;re fine in terms of cost per month. Cheap.&lt;/p&gt;
+
+&lt;p&gt;QCloud limits 7 number of snapshots per disk. Creation operation is smooth and fast, thus simple than DigitalOcean.&lt;/p&gt;
+
+&lt;p&gt;More information is at those Github project, in case you use either one or both of them.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;That&amp;#39;s it for this month report. I hope you enjoy my sharing for everything possible I&amp;#39;ve touched and worked on so far.&lt;/p&gt;
+
+&lt;p&gt;As usual, if you have a chance to check out any project above or have any question to clarify, feel free to let me know what you think. I love feedback, and discussion, hit me up via comment section down below. Or if you don&amp;#39;t see it, ping me on twitter &lt;a href=&quot;https://twitter.com/haxpor&quot;&gt;@haxpor&lt;/a&gt; or email haxpor {at} gmail {dot} com.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Oct 2017 17:33:00 +0800</pubDate>
+        <link>http://blog.wasin.io/monthly-report/2017/09/report.html</link>
+        <guid isPermaLink="true">http://blog.wasin.io/monthly-report/2017/09/report.html</guid>
+        
+        <category>monthly-report</category>
+        
+        
+        <category>monthly-report</category>
+        
+      </item>
     
       <item>
         <title>Transfer Money Across Border to China Mainland via Paypal &amp; LianLianPay</title>
@@ -1874,146 +2128,6 @@ Keep an eye for this kind of post again when next month ends.&lt;/p&gt;
         
         
         <category>monthly-report</category>
-        
-      </item>
-    
-      <item>
-        <title>How TCP-BBR Could Help Speed Up Internet</title>
-        <description>&lt;p&gt;I&amp;#39;ve come back to stay in Shenzhen, China since exactly 2 weeks ago.&lt;/p&gt;
-
-&lt;p&gt;Coming this time, Internet quality is pretty much worse than previous time in which I thought it was quite stable after fighting with GFW alot. Now the speed is quite low (lowest point can be &amp;lt; &lt;code&gt;1 Mb/s&lt;/code&gt;), and I cannot watch video online with good enough quality to enjoy the content. If it can be &lt;code&gt;144p&lt;/code&gt; in smooth manner, that&amp;#39;s what the best I could ask for.&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s like GFW really knows how to adapt. It learns from analyzing ton of packets flowing within China, and across the border. It learns to cut my SSR connection (prior to this it was still Ok). I need to find a reactive solution to fight back.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I connected through my Shadowsocks server. Long before it was always SSR. Now I&amp;#39;m fully using SS. It&amp;#39;s better strategy to have alternatives or back ups plan for your connection available.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;tcp-bbr&quot;&gt;TCP-BBR&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;I came across to find this terminology by reading &lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-org/issues/26&quot;&gt;discussion&lt;/a&gt; on shadowsocks-org repository on Github. Especially &lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-org/issues/26#issuecomment-269444798&quot;&gt;this&lt;/a&gt;, and &lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-org/issues/26#issuecomment-269456260&quot;&gt;this&lt;/a&gt; comment that shows the result of speed testing using TCP-BBR which is a lot higher.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m so hooked up with that. Thus I further did research on the topic on how to enable such feature on my proxy server.&lt;/p&gt;
-
-&lt;p&gt;Question found in &lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-org/issues/26#issuecomment-269487933&quot;&gt;comment&lt;/a&gt; that whether or not we need to enable it on both end of communication. Answer is no, so it&amp;#39;s great as I&amp;#39;m quite aware that macOS won&amp;#39;t likely to support and really need to catch up in pace. Take example of &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=543653&quot;&gt;Fast TCP Open&lt;/a&gt; feature for Chrome on macOS. It still doesn&amp;#39;t support!&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-it&quot;&gt;What Is It?&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Refer to &lt;a href=&quot;https://github.com/google/bbr/blob/master/Documentation/bbr-quick-start.md&quot;&gt;google/bbr&lt;/a&gt; and especially this &lt;a href=&quot;http://git.kernel.org/cgit/linux/kernel/git/davem/net-next.git/commit/?id=0f8782ea14974ce992618b55f0c041ef43ed0b78&quot;&gt;Linux Kernerl - TCP BBR commit&lt;/a&gt;, if you want to dig deep right away for how it works, and algorithm in general.&lt;/p&gt;
-
-&lt;p&gt;In short and human word (in which by no mean I&amp;#39;m an expert on network matter, and I don&amp;#39;t like to act like one), TCP-BBR is another algorithm in TCP congestion control. It improves what has already been there via loss-based congestion control which is predominantly used since 1980s.&lt;/p&gt;
-
-&lt;p&gt;This new scheme is contributed by Google which commited back to Linux kernel for general public to use.&lt;/p&gt;
-
-&lt;p&gt;Refer to these notable excerpts I captured from its commit link.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/tcp-bbr/excerpt1.png&quot; alt=&quot;excerpt tcp-bbr 1&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/tcp-bbr/excerpt2.png&quot; alt=&quot;excerpt tcp-bbr 2&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;The factor of improvement is magnificent. Although numbers stated above would be as high as ~2kx. From what I got as tested it&amp;#39;s roughly &lt;code&gt;~600x&lt;/code&gt; when pull content from upstream via Github clone command, or &lt;code&gt;~30x&lt;/code&gt; in downstream Internet speed in general. It&amp;#39;s way better than before.&lt;/p&gt;
-
-&lt;h1 id=&quot;how-to-enable-it-on-your-ubuntu-14-01-server&quot;&gt;How to Enable It On Your Ubuntu 14.01 Server?&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;I learned the steps much from this &lt;a href=&quot;https://github.com/iMeiji/shadowsocks_install/wiki/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95&quot;&gt;guide&lt;/a&gt; (in Chinese). So big shoutout to him. Allow me to replicate steps in English with slightly modified here.&lt;/p&gt;
-
-&lt;p&gt;I have Ubuntu &lt;code&gt;14.01&lt;/code&gt; in which this kernel version doesn&amp;#39;t support TCP-BBR just yet. You have to upgrade your kernel.&lt;br&gt;
-Kernerl version &lt;code&gt;4.9+&lt;/code&gt; is at least to support.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;For other Linux distros rather than Ubuntu, please follow this &lt;a href=&quot;https://github.com/iMeiji/shadowsocks_install/wiki/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95&quot;&gt;guide&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Follows the following steps&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Download the lastest kernel&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also just head to &lt;a href=&quot;http://kernel.ubuntu.com/%7Ekernel-ppa/mainline/&quot;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt; to select latest version by yourself in which case it might be newer after this article published. Download it to your system.  &lt;/p&gt;
-
-&lt;p&gt;Or just execute the following command,  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.9/linux-image-4.10.9-041009-generic_4.10.9-041009.201704080516_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Install the kernel&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;dpkg -i linux-image-4.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Update grub system, then reboot&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;update-grub
-reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After your system has rebooted...&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Check your kernel version&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;uname -r
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You should get something like &lt;code&gt;4.10.X-XXXXXX-generic&lt;/code&gt;. Make sure it starts with &lt;code&gt;4.9&lt;/code&gt; or &lt;code&gt;4.10&lt;/code&gt;, but if you follow all commands above it should be &lt;code&gt;4.10&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Edit &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; to have following lines&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;net.core.default_qdisc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fq
-net.ipv4.tcp_congestion_control&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;bbr
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This will instruct system to use &lt;code&gt;bbr&lt;/code&gt; as congestion control for TCP.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Save to make it effective&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sysctl -p
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Check to confirm that settings are taken into effect&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sysctl net.ipv4.tcp_available_congestion_control
-sysctl net.ipv4.tcp_congestion_control
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You should see output like &lt;code&gt;net.ipv4.tcp_available_congestion_control = bbr hybla cubic reno&lt;/code&gt;, and
-&lt;code&gt;net.ipv4.tcp_congestion_control = bbr&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;and lastly&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;lsmod | grep bbr
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;you should see &lt;code&gt;tcp_bbr&lt;/code&gt; there in output.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;result&quot;&gt;Result&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Speed gained as tested over &lt;a href=&quot;speedtest.net&quot;&gt;speedtest.net&lt;/a&gt;, or via tool like &lt;a href=&quot;https://pypi.python.org/pypi/speedtest-cli/&quot;&gt;speedtest-cli&lt;/a&gt; might not be tremondous high. I gained speed like &lt;code&gt;10-30x&lt;/code&gt; more, with lower ping (-&lt;code&gt;~20ms&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;But that increased speed plays a key role in consuming online content, in addition to performing Github commands i.e. cloning.&lt;/p&gt;
-
-&lt;p&gt;Result from my Github clone of big project in which normally I can clone it with average speed of around &lt;code&gt;~4KB/s&lt;/code&gt; then sometimes it would stall then connection broken. It only can succeed for small to almost medium size project with good Internet time (not too much traffic). But now I do get the following&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/tcp-bbr/tcp-bbr-more-speed.png&quot; alt=&quot;github clone speed improved&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Average speed is good which is &lt;code&gt;2MB/s&lt;/code&gt; and reliable.&lt;/p&gt;
-
-&lt;p&gt;It is not only Github, but also NPM which if you depend and use NodeJS-based packages, you will pull down lots of packages from it from time to time. Loads of files, and some certain package is very large in size. Thus they are much more better and reliable.&lt;/p&gt;
-
-&lt;p&gt;Finally, consuming video content online is much more pleasant without waiting for it to finishes buffering first. 360p quality in video is a norm, but if I need to go high like HD, I can do so too but slightly waiting in initial time might be required depends on traffic at that time. I also can watch live streaming without problem. Anyway, 360p quality is good enough for experience in my case of consuming educational, tutorial, songs kind of video.&lt;/p&gt;
-
-&lt;p&gt;In short, TCP-BBR helps significantly with minimal effort in upgrading your kernel to support it.&lt;br&gt;
-As it&amp;#39;s an addition to TCP protocol, it is compatible for all proxy applications you&amp;#39;re using.&lt;/p&gt;
-
-&lt;p&gt;Give TCP-BBR a try. I strongly believe you will experience much better quality of Internet speed.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 08 May 2017 19:54:00 +0800</pubDate>
-        <link>http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html</link>
-        <guid isPermaLink="true">http://blog.wasin.io/blog/2017/05/08/how-tcp-bbr-could-help-speed-up-internet.html</guid>
-        
-        <category>tcp</category>
-        
-        <category>bbr</category>
-        
-        <category>network</category>
-        
-        <category>tcp-bbr</category>
-        
-        
-        <category>blog</category>
         
       </item>
     

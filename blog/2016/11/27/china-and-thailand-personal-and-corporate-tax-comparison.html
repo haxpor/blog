@@ -57,7 +57,7 @@
 https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css">
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"></script>
-	<script type="text/javascript">mermaid.initialize({startOnLoad:true});</script>
+	<script type="text/javascript">if(mermaid) { mermaid.initialize({startOnLoad:true}); }</script>
 </head>
 
 
@@ -244,6 +244,7 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="max-width: 500px;margin: 30px auto;display:block;">
   <form id="emailSubForm" style="text-align: center; background-color: whitesmoke; border:1px solid #ccc;padding:15px 3px;text-align:center;border-radius:10px;margin-left: 8px;margin-right: 8px" action="https://tinyletter.com/haxpor" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/haxpor', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
     <p><label for="tlemail" style="font-size:22px">Enter your email address</label></p>
+    <p><label style="font-size:18px;color:#888">To subscribe to my newsletter</label></p>
     <p><input type="text" style="width:200px;padding: 10px 10px;font-size:22px" name="email" id="tlemail"></p>
     <input type="hidden" value="1" name="embed"><a style="cursor: pointer;width:70%;color:white" class="weui-btn weui-btn_warn" onclick="document.getElementById('emailSubForm').submit();">Subscribe</a>
   </form>
@@ -334,6 +335,35 @@ s.setAttribute('data-timestamp', +new Date());
 
 </footer>
 
-
+    <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
   </body>
 </html>
