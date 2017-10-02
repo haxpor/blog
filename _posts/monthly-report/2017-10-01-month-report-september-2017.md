@@ -93,7 +93,7 @@ Here is the result so far.
 
 and here video in action
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GoiwePbvqp8" frameborder="0" allowfullscreen align="center" style="display:block; text-align: center; margin: 0 auto"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/GoiwePbvqp8" frameborder="0" allowfullscreen align="center" style="display:block; text-align: center; margin: 0 auto"></iframe>
 
 <sub class="tagline margin">HeaTap in action video (on youtube)</sub>
 

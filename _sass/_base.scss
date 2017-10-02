@@ -352,11 +352,32 @@ sub.tagline {
     font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
     font-size: 12px;
     border-radius: 4px;
-    background-color: #FFF9D1;
+    background-color: #fafafa;
     padding: 2px 5px;
     color: #333;
 }
 sub.margin {
     margin-top: 5px;
     margin-bottom: 40px;
+}
+
+/** apply rainbow style for code block */
+div.highlight pre:first-child {
+    left: calc((100vw - 700px) / 2 * -1);
+    padding-left: calc((100vw - 700px) / 2);
+    width: calc(100vw - (100vw - 690px)/2);
+    border: 0 solid #f0f0f0;
+    border-width: 1px 0;
+    display: block;
+    background-color: #f3f3f3;
+    position: relative;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+    div.highlight pre:first-child {
+        left: auto;
+        padding-left: auto;
+        width: 100%;
+    }
 }
