@@ -118,16 +118,17 @@ a {
  */
 blockquote {
   background: #FFFCE6;
-  font-size: 1em;
-  border-left: .7em solid #ccc;
+  font-size: 1.2em;
+  border-left: .7em solid #FBCE68;
   margin: 1em .5em;
   padding: 1em 1.3em;
   line-height: 1.2em;
   quotes: "\201C""\201D";
+  box-shadow: 1px 1px 3px #DDD;
 }
 
 blockquote:before {
-  color: #808080;
+  color: #000;
   content: open-quote;
   font-size: 4em;
   line-height: 0;
@@ -167,7 +168,7 @@ pre {
     overflow-x: auto;
     padding-bottom: 17px;
     background-color: #f9f9f9;
-    box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 4px #BBB;
 
     > code {
         border: 0;
@@ -336,19 +337,47 @@ hr {
 img {
     display: table;
     margin: 0 auto;
+    max-height: 600px;
+    box-shadow: 0px 0px 4px #ddd;
 }
 img.normal {
     display: inherit;
     margin: 0;
+    box-shadow: none;
 }
-sub.img-tagline {
+sub.tagline {
     text-align: center;
     display: table;
     margin: 0 auto;
     font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
     font-size: 12px;
     border-radius: 4px;
-    background-color: #FFF9D1;
+    background-color: #fafafa;
     padding: 2px 5px;
-    color: #333
+    color: #333;
+}
+sub.margin {
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+/** apply rainbow style for code block */
+div.highlight pre:first-child {
+    left: calc((100vw - 700px) / 2 * -1);
+    padding-left: calc((100vw - 700px) / 2);
+    width: calc(100vw - (100vw - 690px)/2);
+    border: 0 solid #f0f0f0;
+    border-width: 1px 0;
+    display: block;
+    background-color: #fafafa;
+    position: relative;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+    div.highlight pre:first-child {
+        left: auto;
+        padding-left: auto;
+        width: 100%;
+    }
 }
