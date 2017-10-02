@@ -196,7 +196,7 @@ Suddenly after published my article about Paypal + LianLianPay, [@tianyuf](https
 <center>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">have you tried <a href="https://twitter.com/sendwyre?ref_src=twsrc%5Etfw">@sendwyre</a>? <a href="https://t.co/Uul8gqc6F7">https://t.co/Uul8gqc6F7</a></p>&mdash; Tianyu M. Fang (@tianyuf) <a href="https://twitter.com/tianyuf/status/914135740619075584?ref_src=twsrc%5Etfw">September 30, 2017</a></blockquote>
 </center>
-<sub class="tagline margin">I'm suggested to try Wyre</sub>
+<sub class="tagline margin">Thanks for fast suggestion!</sub>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Compare to Paypal + LianLianPay, I can save ~100 RMB per ~2,000 RMB transfer. It's going to be huge when send large amount of money.
