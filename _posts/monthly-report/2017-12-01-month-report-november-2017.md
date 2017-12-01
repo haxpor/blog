@@ -29,9 +29,9 @@ Speaking from looking at the data alone, I've been quite low on hours spent desp
 [![past 5 months total hours spent and programming hours](/assets/images/monthly-report/november-2017/5-months-chart.png)](/assets/images/monthly-report/november-2017/5-months-chart.png)
 <sub class="tagline margin">Click for full resolution.</sub>
 
-I relialized I spent too much time contemplating the future plan, and direction back and forth rather than making things. That lost hours speak for itself from the data. Yes, data can't lie. This is according to the up-coming time around Jan 2018 which is the scheduled and marked time to review performance thus far. It will allow chance for me to measure my capability in doing business essentially mostly in solo operation, and to adapt or pave plan ahead as necessary.
+I relialized I spent too much time contemplating the future plan, and direction back and forth rather than making things. Those lost hours speak for itself from the data. Yes, data can't lie. This is according to the up-coming time around Jan 2018 which is the scheduled for myself to review my own performance thus far. This means there'd be possible for plan slightly changed or adapted as necessary.
 
-In terms of projects.  
+Speaking in terms of projects.  
 
 I've switched from HeaTap since the end of October to work on a 2nd mini-program project codename _crac_ which has been in development since mid of November, and in parallel a game project codename _DwellDown_ which at this stage is in idea phase. Not to mention another mini-program project codename _ivly_ is also in the backlog which passed ideation phase already with still unsure in its fate.
 
@@ -40,36 +40,36 @@ The less went to tools and modules/systems I did and released. Read more below.
 # crac
 ---
 
-_crac_ is the idea of of brining bot to end users, or simply bot as a service.
+_crac_ is the idea of of bringing bot to end users, or simply bot as a service.
 
-Due to Tencent doesn't expose any API for normal WeChat user to consume information, only possible way is to scrape things on website; yes extract from DOM.
+Due to Tencent doesn't expose any API for normal WeChat user to consume information, only a possible way is to scrape things on website; yes extract from DOM.
 
-A popular and well community adoption project namely [wechaty](https://github.com/Chatie/wechaty) can help you do the low level of tedious work unless you want to mess around with DOM manipulation and extract information from DOM in [wx.qq.com](https://wx.qq.com). For _crac_, I decided to **implement** my own as part of learning experience, be more familar with DOM manipulation, and just (I knew it silly) that I want to implement all core systems myself.
+A popular and well-adopted by community [wechaty](https://github.com/Chatie/wechaty) can help you do low-level tedious stuff unless you want to mess around with DOM manipulation and website interaction in [wx.qq.com](https://wx.qq.com) yourself. For _crac_, I decided to **implement** my own as part of learning experience, be more familar with DOM manipulation, and just (I knew it silly) that I want to implement all core systems myself.
 
-The idea is to act like user interacting with website UI to read/send message to friends. To be able to operate on server which there would be no browser UI whatsoever, you need headless browser like [PhantomJS](https://github.com/ariya/phantomjs/), or [Puppeteer](https://github.com/GoogleChrome/puppeteer). Commonly both are based on WebKit.
+The idea is to act like user; interacting with website UI to read/send message to friends. To be able to operate on server which there is no browser UI whatsoever, you need headless browser like [PhantomJS](https://github.com/ariya/phantomjs/), or [Puppeteer](https://github.com/GoogleChrome/puppeteer). Commonly both are based on WebKit.
 
 I firstly found out about these headless browsers via PhantomJS, so basically I started with it and based on it to create [wxbotserv](https://github.com/abzico/wxbotserv). This is going to be the backend powering _crac_.
 
 [![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-loggin-in-steps.png)](/assets/images/monthly-report/november-2017/wxbotserv-loggin-in-steps.png)
 <sub class="tagline margin">Click for full resolution.</sub>
 
-Tencent well thought out the security for its stuff. Logging in process requires a real QR Scan from your WeChat app. You cannot just save an image, then extract from it from within the app. You have to scan. This requirement alone leads to cumbersome process in onboarding / logging in users. As you might guess, you have to send QR image to user in creative way that allows them to flexibly scan. It requires high effort to log in.
+Tencent well thought out the security for the platform. Logging in process requires a real QR Scan from your WeChat app. You cannot just save an image, then extract from it from within the app. You have to scan. This requirement alone leads to cumbersome process in onboarding / logging in users. As you might guess, you have to send QR image to user in creative way that allows them to flexibly scan. It requires high effort to log in.
 
 [![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/crac-arch.jpg)](/assets/images/monthly-report/november-2017/crac-arch.jpg)
 <sub class="tagline margin">_crac_ overview plan and architecture.</sub>
 
-The bot itself should not restart often, if so, potential target users will be less and less.
+See more on-going information about this project below in each section.
 
 ## Devlog Images
 
-This section I shared with you on-going development images for interesting part.
+I shared with you on-going development images for interesting part.
 
 * Detect a new message, parse it before returning result
 
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-1.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-1.png)
 <sub class="tagline margin">Click for full resolution.</sub>
 
-* File Transfer, a resting place before proceeding operation
+* File Transfer, a buffer place before proceeding operation
 
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-2.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-2.png)
 <sub class="tagline margin">Click for full resolution.</sub>
@@ -77,14 +77,14 @@ This section I shared with you on-going development images for interesting part.
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-3.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-3.png)
 <sub class="tagline margin">Click for full resolution.</sub>
 
-	A little tricky. File Transfer as part of your contact, you can send and receive message from it (mostly you send to yourself). As if you are in the current active conversation with one another, you won't have a clear performance-wise chance to receive a new message as you need to keep polling message from DOM. Better is to click on File transfer then detect a red dot notification over any contact that has new message(s) for you. That's tricky.
+	A little tricky. File Transfer as part of your contact, you can send and receive message from it (mostly you send to yourself). As if you are in the current active conversation with one another, you won't have a clear performance-wise chance to receive a new message as you need to keep polling message from DOM. Better is to click on File transfer then detect a red dot indicator (in DOM) over any contact that has new message(s) for you. That's tricky.
 
 * Get multiple messages at once for unmuted chat
 
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-4.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-4.png)
 <sub class="tagline margin">Click for full resolution.</sub>
 
-	Unmuted chat has number of new messages showing inside the red dot. So you know how many new messages you need to parse and process. Unlike muted chat as there's no such number, thus a system in-place to keep track of latest message and process the less as such whenever new messages came is need.
+	Unmuted chat has number of new messages showing inside the red dot. So you know how many new messages you need to parse and process. Unlike muted chat as there's no such number, thus a system in-place to keep track of latest message and process the less as such whenever new messages came is need. Currently I didn't implement the latter just yet.
 
 * Sending message
 
@@ -97,14 +97,16 @@ This section I shared with you on-going development images for interesting part.
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-7.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-7.png)
 <sub class="tagline margin">Test initiate sending messages to File Transfer</sub>
 
-	Sending message is painful. You just can't set text in DOM then click send. WeChat web won't recognize you've entered anything unless you click on File Transfer and back in the chat to click send first.
+	Sending message is painful. You just can't set text in DOM then click send. WeChat web won't recognize you've entered anything unless you click on File Transfer and go back in the chat first before clicking on a send button.
 
 ## PhantomJS Performance
 
-I've run a test case over my server, you can see how much CPU uage and memory it uses. It should be clear that this kind of service cannot be freely scaled, only certain number of users you can serve until you hit the ceiling. Niche, and only users that really need to automate their stuff without any setup would use it.
+I've run a test case over my server, you can see how much CPU uage and memory it uses. This is only for one single user. It should be clear that this kind of service cannot be freely scaled, only certain number of users you can serve until you hit the ceiling. Niche, and only users that really need to automate their stuff without any setup would use it.
 
 [![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/wxbotserv-dev-8.png)](/assets/images/monthly-report/november-2017/wxbotserv-dev-8.png)
 <sub class="tagline margin">Click for full resolution.</sub>
+
+As well, someone [benchmarked performance between Headless Chrome vs PhantomJS](https://hackernoon.com/benchmark-headless-chrome-vs-phantomjs-e7f44c6956c). I could expand this further to include Headless Chrome as backend in future.
 
 ## WeChaty Developer's Story
 
