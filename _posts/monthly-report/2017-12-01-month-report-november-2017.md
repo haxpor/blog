@@ -116,20 +116,12 @@ I came across this (slightly shocking at first but by now I'm calm down) story f
 I can see that this is possible. Normal working person user can have several (and several) of group chats. If you're out-going person, or technical person that has way to accept friends (like via on Github if you develop something great) you can reach high number.
 
 # FuckUp Night Vol.2 Shenzhen
+---
 
-Great [event](https://mp.weixin.qq.com/s/NEJQBYTOv_QBDpMUDKFtyg). Absolute great night, and plesure to connect with like-minded people there.
+Great [event](https://mp.weixin.qq.com/s/NEJQBYTOv_QBDpMUDKFtyg), and great night. My plesure to connect with like-minded people there.
 
 [![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/fuckup-night-vol2-1.jpg)](/assets/images/monthly-report/november-2017/fuckup-night-vol2-1.jpg)
-<sub class="tagline margin">Click for full resolution</sub>
-
-[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/fuckup-night-vol2-2.jpg)](/assets/images/monthly-report/november-2017/fuckup-night-vol2-2.jpg)
-<sub class="tagline margin">Click for full resolution</sub>
-
-[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/fuckup-night-vol2-3.jpg)](/assets/images/monthly-report/november-2017/fuckup-night-vol2-3.jpg)
-<sub class="tagline margin">Click for full resolution</sub>
-
-[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/fuckup-night-vol2-4.jpg)](/assets/images/monthly-report/november-2017/fuckup-night-vol2-4.jpg)
-<sub class="tagline margin">Click for full resolution</sub>
+<sub class="tagline margin">While sharing story</sub>
 
 
 # Opensource Projects
