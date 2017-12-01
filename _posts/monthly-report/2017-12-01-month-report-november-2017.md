@@ -145,7 +145,7 @@ List of updates pushed to opensource projects this month
 
 	Added ability to notify you with the result of operation through WeChat official/subscription account that has ability to send templated message to user.
 
-	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/backingup-result.png)](/assets/images/monthly-report/november-2017/backingup-server-log.png)
+	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/backingup-server-log.png)](/assets/images/monthly-report/november-2017/backingup-server-log.png)
 <sub class="tagline margin">Backing up's server log</sub>
 
 	[![wxbotser's logging-in steps](/assets/images/monthly-report/november-2017/backingup-templated-message.jpg)](/assets/images/monthly-report/november-2017/backingup-templated-message.jpg)
