@@ -4,6 +4,8 @@ title: Tech
 permalink: /tech/
 ---
 
+Apart from provide mobile development service to customers either via contracting/freelancing. The following is the projects that I've built.
+
 ## IndiedevBkk
 ---
 

@@ -4,6 +4,8 @@ title: Games
 permalink: /games/
 ---
 
+I have interest towards game development. Game projects can range from experimental projects, game jams, and commercial ones. See it below.
+
 ## RealKo
 ---
    
