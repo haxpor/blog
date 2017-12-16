@@ -83,35 +83,37 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-}
-
-
-
-/**
- * Links
- */
-a {
-    color: #07C;
     font-weight: 400;
-    text-decoration: none;
-
-    &:visited {
-        color: #005999;
-    }
-
-    &:hover {
-        color: #27c;
-    }
-}
-/* only take effect of showing offseted underline when it's inside post-content */
-.post-content a {
-    &:hover {
-        padding-bottom: 2px;
-        border-bottom: 1px solid #27c;
-    }
 }
 
+a {
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 2px dotted #888888;
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #888888;
+
+  &:visited {
+    color: #005999;
+  }
+
+  &:hover, &:focus {
+    border-color: #0049BC;
+  color: #0049BC;
+  text-decoration: none;
+  }
+
+  img {
+    &hover, &focus {
+        cursor: zoom-in;
+    }
+  }
+}
+
+.no-line {
+    border-bottom: none;
+}
 
 /**
  * Blockquotes
@@ -178,7 +180,6 @@ pre {
         box-shadow: none;
     }
 }
-
 
 
 /**
@@ -361,18 +362,7 @@ sub.margin {
     margin-bottom: 40px;
 }
 
-/** apply rainbow style for code block */
-div.highlight pre:first-child {
-    left: calc((100vw - 700px) / 2 * -1);
-    padding-left: calc((100vw - 700px) / 2);
-    width: calc(100vw - (100vw - 690px)/2);
-    border: 0 solid #f0f0f0;
-    border-width: 1px 0;
-    display: block;
-    background-color: #fafafa;
-    position: relative;
-    box-shadow: none;
-}
+
 
 @media screen and (max-width: 700px) {
     div.highlight pre:first-child {

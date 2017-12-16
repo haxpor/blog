@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="wrapper">
-    <a class="site-title-white-bold" href="{{ site.baseurl }}"/>{{ site.title_part1 }}</a><a class="site-title" href="{{ site.baseurl }}/">{{ site.title_part2 }}</a>
+    <a class="site-title-white-bold no-line" href="{{ site.baseurl }}"/>{{ site.title_part1 }}</a><a class="site-title" href="{{ site.baseurl }}/">{{ site.title_part2 }}</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon" id="hamburgerBtn" onClick="if (window.getComputedStyle(this).getPropertyValue('display') != 'none') { showMainPagePicker('{{ site.dashboardurl }}'); }">
@@ -11,10 +11,10 @@
         </svg>
       </a>
       <div class="trigger">
-        <a class="page-link" href="{{ site.dashboardurl }}">Back to Dashboard</a>
+        <a class="page-link no-line" href="{{ site.dashboardurl }}">Back to Dashboard</a>
         {% for page in pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a class="page-link no-line" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
