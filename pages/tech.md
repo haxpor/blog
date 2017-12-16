@@ -79,4 +79,8 @@ Apart from provide mobile development service to customers either via contractin
 
   <br />
 
+  **Video**
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/GoiwePbvqp8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
+
   You can use WeChat to scan the QR Code image above to start using this app.
