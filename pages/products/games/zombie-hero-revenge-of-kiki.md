@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Zombie Hero : Revenge of Kiki"
-permalink: /products/games/zombie-hero-revenge-of-kiki
+permalink: /products/games/zombie-hero-revenge-of-kiki/
 comments: true
 ---
 

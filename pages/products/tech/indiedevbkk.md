@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "IndiedevBkk"
-permalink: /products/tech/indiedevbkk
+permalink: /products/tech/indiedevbkk/
 comments: true
 ---
 

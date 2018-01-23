@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Tank"
-permalink: /products/games/tank
+permalink: /products/games/tank/
 comments: true
 ---
 

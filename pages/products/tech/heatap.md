@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Heatap"
-permalink: /products/tech/heatap
+permalink: /products/tech/heatap/
 comments: true
 ---
 

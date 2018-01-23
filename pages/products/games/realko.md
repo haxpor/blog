@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Realko
-permalink: /products/games/realko
+permalink: /products/games/realko/
 comments: true
 ---
 
