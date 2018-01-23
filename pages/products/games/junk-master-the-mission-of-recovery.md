@@ -1,6 +1,6 @@
 ---
 layout: product
-title: "Junk Master : The Quest to Glory"
+title: "Junk Master : The Mission of Recovery"
 permalink: /products/games/junk-master-the-mission-of-recovery/
 comments: true
 ---
