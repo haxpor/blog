@@ -29,6 +29,7 @@ assets:
     - "*.png"
     - "*.jpg"
     - "*.jpeg"
+    - "*.svg"
     - "*.gif"
     - "*.html"
 
