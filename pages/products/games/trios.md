@@ -1,12 +1,12 @@
 ---
 layout: product
-title: "Trios"
-permalink: /products/games/trios/
+title: "Trois"
+permalink: /products/games/trois/
 comments: true
 ---
 
-<center><img src="/assets/images/games/trios.png" alt="Trios"/></center>  
-Trios is a game made in 72 hours during Ludumdare 25 (combo). I made this game with [@suebphatt](https://twitter.com/suebphatt) as I take care of programming part, and he took care of art asset but at the end due to time constraint and mis-communication, art asset was never used in the game.
+<center><img src="/assets/images/games/trios.png" alt="Trois"/></center>  
+Trois is a game made in 72 hours during Ludumdare 25 (combo). I made this game with [@suebphatt](https://twitter.com/suebphatt) as I take care of programming part, and he took care of art asset but at the end due to time constraint and mis-communication, art asset was never used in the game.
 
 ![art asset which never used in the game](https://24.media.tumblr.com/6e4d29057fb97f6cac708357adcec99b/tumblr_mfaeby63Gm1rilxg5o1_500.png)
 <center><sub>Art asset which never used in the game</sub></center>
