@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Wasinbot"
-permalink: /products/tech/wasinbot
+permalink: /products/tech/wasinbot/
 comments: true
 ---
 

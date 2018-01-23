@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Raceplant"
-permalink: /products/games/raceplant
+permalink: /products/games/raceplant/
 comments: true
 ---
 

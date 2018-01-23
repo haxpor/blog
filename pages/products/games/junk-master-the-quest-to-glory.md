@@ -1,14 +1,14 @@
 ---
 layout: product
 title: "Junk Master : The Quest to Glory"
-permalink: /products/games/junk-master-the-quest-to-glory
+permalink: /products/games/junk-master-the-quest-to-glory/
 comments: true
 ---
 
 <center><img src="/assets/images/games/junkmaster-2.jpg" alt="Junk Master : The Quest to Glory"/></center>  
 A sequel of Junk Master Series for Windows Phone.
 
-Similar to [Junk Master : The Journey to Junk Lord](/products/games/junk-master-the-journey-to-junk-lord), I led the team and took responsibility on gameplay and engine programmming.
+Similar to [Junk Master : The Journey to Junk Lord](/products/games/junk-master-the-journey-to-junk-lord/), I led the team and took responsibility on gameplay and engine programmming.
 
 See gameplay video below
 

@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Junk Master : The Journey to Junk Lord"
-permalink: /products/games/junk-master-the-journey-to-junk-lord
+permalink: /products/games/junk-master-the-journey-to-junk-lord/
 comments: true
 ---
 

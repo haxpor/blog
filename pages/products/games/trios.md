@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "Trios"
-permalink: /products/games/trios
+permalink: /products/games/trios/
 comments: true
 ---
 

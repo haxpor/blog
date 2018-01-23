@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "ForeignKit"
-permalink: /products/tech/fkit
+permalink: /products/tech/fkit/
 comments: true
 ---
 

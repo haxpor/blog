@@ -1,7 +1,7 @@
 ---
 layout: product
 title: "CLD1"
-permalink: /products/games/cld1
+permalink: /products/games/cld1/
 comments: true
 ---
 
