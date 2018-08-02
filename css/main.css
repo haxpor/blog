@@ -65,24 +65,26 @@ li > ol {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
+  font-weight: 400; }
 
-/**
- * Links
- */
 a {
-  color: #07C;
   font-weight: 400;
-  text-decoration: none; }
+  cursor: pointer;
+  border-bottom: 2px dotted #888888;
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #888888; }
   a:visited {
     color: #005999; }
-  a:hover {
-    color: #27c; }
+  a:hover, a:focus {
+    border-color: #0049BC;
+    color: #0049BC;
+    text-decoration: none; }
+  a imghover, a imgfocus {
+    cursor: zoom-in; }
 
-/* only take effect of showing offseted underline when it's inside post-content */
-.post-content a:hover {
-  padding-bottom: 2px;
-  border-bottom: 1px solid #27c; }
+.no-line {
+  border-bottom: none; }
 
 /**
  * Blockquotes
@@ -286,18 +288,6 @@ sub.margin {
   margin-top: 5px;
   margin-bottom: 40px; }
 
-/** apply rainbow style for code block */
-div.highlight pre:first-child {
-  left: calc((100vw - 700px) / 2 * -1);
-  padding-left: calc((100vw - 700px) / 2);
-  width: calc(100vw - (100vw - 690px)/2);
-  border: 0 solid #f0f0f0;
-  border-width: 1px 0;
-  display: block;
-  background-color: #fafafa;
-  position: relative;
-  box-shadow: none; }
-
 @media screen and (max-width: 700px) {
   div.highlight pre:first-child {
     left: auto;
@@ -317,7 +307,8 @@ div.highlight pre:first-child {
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
-  font-weight: 700; }
+  font-weight: 700;
+  border-bottom: none; }
   .site-title-white-bold, .site-title-white-bold:visited {
     color: white;
     text-decoration: none; }
@@ -333,7 +324,8 @@ div.highlight pre:first-child {
   line-height: 56px;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left; }
+  float: left;
+  border-bottom: none; }
   .site-title, .site-title:visited {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none; }
@@ -351,7 +343,8 @@ div.highlight pre:first-child {
     display: none; }
   .site-nav .page-link {
     color: #EEEEEE;
-    line-height: 1.7; }
+    line-height: 1.7;
+    border-bottom: none; }
     .site-nav .page-link, .site-nav .page-link:visited {
       color: rgba(255, 255, 255, 0.75);
       text-decoration: none; }
@@ -401,6 +394,8 @@ div.highlight pre:first-child {
   border-top: 0px solid #e8e8e8;
   padding: 30px 0;
   background-color: rgba(0, 0, 0, 0.9); }
+  .site-footer a {
+    border-bottom: none; }
   .site-footer a:link {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none; }
@@ -680,3 +675,10 @@ div.highlight pre:first-child {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+hr {
+  margin: auto;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
