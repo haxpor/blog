@@ -83,3 +83,12 @@ As we don't want to let a new user to be cluttered, we are going to completely r
 # Conclusion
 
 If you update/upgrade macOS again in the future, so just follow the steps as laid out in _What to do if I update/upgrade macOS_ then it should be working. Also I'm surprise to see how generous it is of SwitchResX itself that even when trial period is over, you still can use it without a problem.
+
+## Updated 26 Sept 2018
+
+I've used this article myself for quite several times whenever I upgraded from one to another, and now I'm on Mojave. Just a day late from its official public release.
+
+The point is I spotted this and that step that could be optimized as follows
+
+* Before you create a new user to install SwitchResX, I recommend download latest version of SwitchResX from your main user and save a downloaded file into Shared directory at `/Users/Shared/`. So whenever you log in as a newly created user, you don't have to open browser, download, unzip, etc. This will solve a problem when you rely on proxy and fresh install of macOS won't allow you to access Internet. So this will save you reasonably amount of time.
+* SwitchResX will show popup suggesting that you enable additional modules as it claims to work best with them. In my experience, not necessary to enable any of them. So you can just uncheck all of module option and follow along with the guideline above. You will be fine.
