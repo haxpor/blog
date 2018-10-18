@@ -3,7 +3,6 @@ layout: post
 title:  "Statically Build SDL2 Application"
 date:   2018-10-18 11:00
 thumbnail: /assets/images/post-thumbnail/textpost.png
-categories: blog
 tags: [sdl2]
 comments: true
 og_image: /assets/images/post-thumbnail/textpost.png

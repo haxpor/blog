@@ -3,7 +3,6 @@ layout: post
 title:  "Build SDL2 Application on iOS"
 date:   2018-10-19 3:32
 thumbnail: /assets/images/post-thumbnail/textpost.png
-categories: blog
 tags: [sdl2, ios]
 comments: true
 og_image: /assets/images/post-thumbnail/textpost.png
