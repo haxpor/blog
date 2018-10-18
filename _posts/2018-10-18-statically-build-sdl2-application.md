@@ -36,8 +36,7 @@ If we need to link against **static** one, we do the following steps.
 	```swift
 	gcc -Wall appcode.c /usr/local/lib/libSDL2.a -lm -liconv -Wl,-framework,CoreAudio -Wl,-framework,AudioToolbox -Wl,-framework,ForceFeedback -lobjc -Wl,-framework,CoreVideo -Wl,-framework,Cocoa -Wl,-framework,Carbon -Wl,-framework,IOKit -Wl,-weak_framework,QuartzCore -Wl,-weak_framework,Metal
 	```
-
-   You can see that we also supply `/usr/local/lib/libSDL2.a` to link against its object files inside `libSDL2.a`.
+	You can see that we also supply `/usr/local/lib/libSDL2.a` to link against its object files inside `libSDL2.a`.
 
 3. Inspect result executable file via `otool -L a.out`. You should not see anything about SDL2 related libraries. This means it works!
 
