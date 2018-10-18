@@ -49,3 +49,5 @@ Just for checking.
 ## What's Next
 
 Now you can add more sample source files into `src` directory then create a new Xcode target duplicating from what we currently have for `sdl-ios` in order to run another sample.
+
+As well, you can even include `Icon.png` and setup `Default.png` to launch screen as seen in `<your SDL source directory>/Xcode-iOS/Demos` to your Xcode project to let it has default icon and launch screen shown.
