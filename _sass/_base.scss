@@ -119,14 +119,14 @@ a {
  * Blockquotes
  */
 blockquote {
-  background: #FFFCE6;
+  background: #fff;
   font-size: 1.2em;
-  border-left: .7em solid #FBCE68;
+  border-left: .7em solid #000000;
   margin: 1em .5em;
   padding: 1em 1.3em;
   line-height: 1.2em;
   quotes: "\201C""\201D";
-  box-shadow: 1px 1px 3px #DDD;
+  box-shadow: 1px 1px 3px #aaa;
 }
 
 blockquote:before {
@@ -157,10 +157,10 @@ blockquote:last-child {
  */
 pre,
 code {
-    font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
+    font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
     font-size: 14px;
-    border-radius: 4px;
-    background-color: #F2F2F2;
+    border-radius: 3px;
+    background-color: lightyellow;
     padding: 3px 15px;
     color: #333
 }
@@ -169,14 +169,14 @@ pre {
     padding: 8px 12px;
     overflow-x: auto;
     padding-bottom: 17px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 0px 4px #BBB;
+    background-color: lightyellow;
+    box-shadow: 0px 0px 4px #666;
 
     > code {
         border: 0;
         padding-right: 0;
         padding-left: 0;
-        background-color: #f9f9f9;
+        background-color: lightyellow;
         box-shadow: none;
     }
 }
