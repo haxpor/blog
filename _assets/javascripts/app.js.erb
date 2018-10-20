@@ -14,17 +14,17 @@ function showMainPagePicker(rooturl) {
 
 	weui.picker([
 	{
-		label: "Back to Dashboard",
+		label: "Back to Wasin.io",
 		value: 0,
 	},
-	{
-		label: "Blog Home",
-		value: 1
-	},
-	{
-    label: "Things I Built",
-    value: 2
+  {
+    label: "Games",
+    value: 1
   },
+  {
+    label: "Tech",
+    value: 2
+  }
   ], {
       defaultValue: [defaultValue],
       onChange: function (result) {
@@ -36,10 +36,10 @@ function showMainPagePicker(rooturl) {
           	window.location = rooturl;
           }
           else if (value == 1) {
-          	window.location = "<% environment.jekyll.baseurl %>/";
+          	window.location = "<% environment.jekyll.baseurl %>/games/";
           }
           else if (value == 2) {
-          	window.location = "<% environment.jekyll.baseurl %>/things-i-built/";
+          	window.location = "<% environment.jekyll.baseurl %>/tech/";
           }
       },
       id: 'hamburgerBtn'
