@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   I blog about projects I'm working on. Mostly about mobile games, tech, web service, little tiny things I built for myself or for public, and tech/game industry-wide. Currently I'm living in Shenzhen, China. I'm running a small creative company with my girlfriend here.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://blog.wasin.io" # the base hostname & protocol for your site
-dashboardurl: "https://wasin.io/dashboard" # blog is another sub-domain, this is for its dashboard
+dashboardurl: "https://wasin.io" # blog is another sub-domain
 twitter_username: haxpor
 github_username:  haxpor
 instagram_username: haxpor
