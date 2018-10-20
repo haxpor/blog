@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cross Compile SDL2 (both library and app) on Windows from macOS"
-date:   2018-10-21 3:32
+date:   2018-10-21 3:09
 thumbnail: /assets/images/post-thumbnail/textpost.png
 tags: [sdl2, cross-compile]
 comments: true

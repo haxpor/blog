@@ -370,4 +370,6 @@ div.highlight {
   background-color: #333;
   text-align: center;
   box-shadow: 0px 0px 4px #eee;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
