@@ -3,6 +3,8 @@ layout: product
 title: Realko
 permalink: /products/games/realko/
 comments: true
+header_img_url: https://c1.staticflickr.com/7/6040/6217164702_eb4544f3e5_b.jpg
+tagline: Contract / XNA
 ---
 
 <center><img src="/assets/images/games/realko.jpg" alt="Drawing"/></center>  

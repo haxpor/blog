@@ -3,6 +3,8 @@ layout: product
 title: "Tank"
 permalink: /products/games/tank/
 comments: true
+header_img_url: /assets/images/games/tank.png
+tagline: Experimental / XNA
 ---
 
 <center><img src="/assets/images/games/tank.png" alt="cld1"/></center>  

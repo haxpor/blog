@@ -3,6 +3,8 @@ layout: product
 title: "Raceplant"
 permalink: /products/games/raceplant/
 comments: true
+header_img_url: /assets/images/games/raceplant-sum.png
+tagline: CIGA Game Jam 2017 in Shenzhen
 ---
 
 <center><img src="https://blog.wasin.io/assets/images/raceplant-ciga2017/screenshot.jpg" alt="cld1" /></center>  

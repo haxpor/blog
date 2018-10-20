@@ -3,6 +3,8 @@ layout: product
 title: "Junk Master : The Journey to Junk Lord"
 permalink: /products/games/junk-master-the-journey-to-junk-lord/
 comments: true
+header_img_url: /assets/images/games/junkmaster-1.jpg
+tagline: Imagine Cup 2009/2011 Finalist/2nd Award
 ---
 
 <center><img src="/assets/images/games/junkmaster-1.jpg" alt="Junk Master : The Journey To Junk Lord"/></center>  

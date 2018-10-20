@@ -162,15 +162,18 @@ code {
     border-radius: 3px;
     background-color: lightyellow;
     padding: 3px 5px;
-    color: #333
+    color: #333;
+    margin: 0 auto;
 }
 
 pre {
-    padding: 8px 12px;
+    padding: 12px 25px;
     overflow-x: auto;
     padding-bottom: 17px;
     background-color: lightyellow;
-    box-shadow: 0px 0px 4px #666;
+    box-shadow: 0px 0px 4px #eee;
+    display: inline-block;
+    text-align: left;
 
     > code {
         border: 0;
@@ -362,7 +365,14 @@ sub.margin {
     margin-bottom: 40px;
 }
 
-
+div.highlight {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: lightyellow;
+  text-align: center;
+}
 
 @media screen and (max-width: 700px) {
     div.highlight pre:first-child {

@@ -3,6 +3,8 @@ layout: product
 title: "Heatap"
 permalink: /products/tech/heatap/
 comments: true
+header_img_url: /assets/images/tech/heatap.png
+tagline: Crowd-sourced Point of Interest in Shenzhen / Wechat Mini-Program
 ---
 
 <center><img src="/assets/images/tech/heatap.png" alt="heatap" style="max-width: 350px; border-radius: 10px; "/></center>

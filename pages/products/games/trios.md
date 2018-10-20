@@ -3,6 +3,8 @@ layout: product
 title: "Trois"
 permalink: /products/games/trois/
 comments: true
+header_img_url: https://media.tumblr.com/a2b2d6e1b0eab1a252863c4d41ee7136/tumblr_inline_mfudxjdj8d1qj5i9r.jpg
+tagline: Ludumdare 25 (combo) Game Jam
 ---
 
 <center><img src="/assets/images/games/trios.png" alt="Trois"/></center>  

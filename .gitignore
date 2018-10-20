@@ -3,3 +3,7 @@ _site/
 .asset-cache/
 .sass-cache/
 .jekyll-metadata
+
+# swap files for vim
+*.swp
+*.swo

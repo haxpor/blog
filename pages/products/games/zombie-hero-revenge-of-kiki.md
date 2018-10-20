@@ -1,6 +1,8 @@
 ---
 layout: product
 title: "Zombie Hero : Revenge of Kiki"
+header_img_url: /assets/images/games/zombiehero.jpg
+tagline: Old School Beat'em Up / iOS
 permalink: /products/games/zombie-hero-revenge-of-kiki/
 comments: true
 ---

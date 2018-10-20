@@ -1,4 +1,28 @@
 ---
-layout: post
+layout: default-nopadding
 ---
-{{ content }}
+<div class="post">
+  <header class="post-header post-header-img-content fadeincolor" style="background-image: url({{ page.header_img_url }})">
+    <div class="post-header-inner">
+      <div class="post-header-inner-content">
+        <div class="post-full-meta">
+          <p>{{ page.tagline }}</p>
+          <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+        </div>
+        <h1 class="post-title">{{ page.title }}</h1>
+      </div>
+      
+    </div>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  {% if page.tags.size > 0 %}
+  	<span class="post-tags">Tag{% if page.tags.size > 1 %}s{% endif %}</span>:
+  	{{ page.tags | sort | join: ", " }}
+	{% endif %}
+
+  {% include disqus.html %}
+</div>

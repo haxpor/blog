@@ -3,6 +3,8 @@ layout: product
 title: "CLD1"
 permalink: /products/games/cld1/
 comments: true
+header_img_url: /assets/images/games/cld1.png
+tagline: Charity Game Jam
 ---
 
 <center><img src="/assets/images/games/cld1.png" alt="cld1"/></center>  

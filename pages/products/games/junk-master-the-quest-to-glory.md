@@ -3,6 +3,8 @@ layout: product
 title: "Junk Master : The Quest to Glory"
 permalink: /products/games/junk-master-the-quest-to-glory/
 comments: true
+header_img_url: /assets/images/games/junkmaster-2.jpg
+tagline: Windows Phone
 ---
 
 <center><img src="/assets/images/games/junkmaster-2.jpg" alt="Junk Master : The Quest to Glory"/></center>  

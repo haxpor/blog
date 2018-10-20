@@ -3,6 +3,8 @@ layout: product
 title: "ForeignKit"
 permalink: /products/tech/fkit/
 comments: true
+header_img_url: /assets/images/tech/foreigner-kit-002.png
+tagline: App to Help Foreigners Living in China / Wechat Subscription Account
 ---
 
 <center><img src="/assets/images/tech/foreigner-kit.png" alt="Foreigner-Kit"/></center>  

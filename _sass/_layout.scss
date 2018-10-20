@@ -249,7 +249,10 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+	padding: $spacing-unit 0;
+}
+.page-content-nopadding {
+	padding: 0 0;
 }
 
 .page-heading {
@@ -284,13 +287,111 @@
     margin-bottom: $spacing-unit;
 }
 
+.post-header-img-content:after, .post-header-img-content:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 0;
+	display: block;
+}
+.post-header-img-content:before {
+	bottom: 0;
+	background: rgba(0,0,0,.70);
+}
+.post-header-img-content {
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
+	min-height: 200px;
+	max-height: 450px;
+	text-align: center;
+	padding: 65% 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	background: #090a0b no-repeat 50%;
+	background-size: cover;
+	color: #fff;
+}
+
+@-webkit-keyframes fadeincolor {
+	0% {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+	100% {
+		-webkit-filter: grayscale(0%);
+		filter: none;
+	}
+}
+@keyframes fadeincolor {
+	0% {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+	100% {
+		-webkit-filter: grayscale(0%);
+		filter: none;
+	}
+}
+.fadeincolor {
+	-webkit-animation-name: fadeincolor;
+	-webkit-animation-duration: 3s;
+	-webkit-fill-mode: forwards;
+	animation-name: fadeincolor;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+.color-in-header-img {
+	-webkit-filter: grayscale(0%);
+	filter: none;
+	-o-transition: filter .5s ease-out;
+	-ms-transition: filter .5s ease-out;
+	-moz-transition: filter .5s ease-out;
+	-webkit-transition: filter .5s ease-out;
+	transition: filter .5s ease-out;
+}
+
+.post-header-inner-content {
+	padding-bottom: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 0 4vw;
+	max-height: none;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 200px;
+	text-align: center;
+}
+.post-full-meta {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #eee;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
 .post-title {
-    font-size: 42px;
+    font-size: 4em;
     letter-spacing: -1px;
     line-height: 1;
+	font-weight: 700;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        font-size: 3em;
     }
 }
 

@@ -3,6 +3,8 @@ layout: product
 title: "IndiedevBkk"
 permalink: /products/tech/indiedevbkk/
 comments: true
+header_img_url: /assets/images/tech/indiedevbkk-feature.jpg
+tagline: Indiedev Community Meetup Group in Bangkok
 ---
 
 <center><img src="/assets/images/tech/indiedevbkk.png" alt="IndiedevBkk"/></center>  

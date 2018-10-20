@@ -3,6 +3,8 @@ layout: product
 title: "Junk Master : The Mission of Recovery"
 permalink: /products/games/junk-master-the-mission-of-recovery/
 comments: true
+header_img_url: /assets/images/games/junkmaster-3.png
+tagline: Facebook Game
 ---
 
 <center><img src="/assets/images/games/junkmaster-3.png" alt="Junk Master : The Mission of Recovery"/></center>  
