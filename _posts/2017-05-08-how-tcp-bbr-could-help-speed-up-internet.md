@@ -59,69 +59,69 @@ Follows the following steps
 
 * **Download the lastest kernel**
 
-    You can also just head to [http://kernel.ubuntu.com/~kernel-ppa/mainline/](http://kernel.ubuntu.com/~kernel-ppa/mainline/) to select latest version by yourself in which case it might be newer after this article published. Download it to your system.  
+You can also just head to [http://kernel.ubuntu.com/~kernel-ppa/mainline/](http://kernel.ubuntu.com/~kernel-ppa/mainline/) to select latest version by yourself in which case it might be newer after this article published. Download it to your system.  
 
-    Or just execute the following command,  
+Or just execute the following command,  
 
-    ```shell
-    wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.9/linux-image-4.10.9-041009-generic_4.10.9-041009.201704080516_amd64.deb
-    ``` 
+```shell
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.9/linux-image-4.10.9-041009-generic_4.10.9-041009.201704080516_amd64.deb
+``` 
 
 * **Install the kernel**
 
-    ```shell
-    dpkg -i linux-image-4.*.deb
-    ```
+```shell
+dpkg -i linux-image-4.*.deb
+```
 
 * **Update grub system, then reboot**
 
-    ```shell
-    update-grub
-    reboot
-    ```
+```shell
+update-grub
+reboot
+```
 
 After your system has rebooted...
 
 * **Check your kernel version**
 
-    ```shell
-    uname -r
-    ```
+```shell
+uname -r
+```
 
-    You should get something like `4.10.X-XXXXXX-generic`. Make sure it starts with `4.9` or `4.10`, but if you follow all commands above it should be `4.10`.
+You should get something like `4.10.X-XXXXXX-generic`. Make sure it starts with `4.9` or `4.10`, but if you follow all commands above it should be `4.10`.
 
 * **Edit `/etc/sysctl.conf` to have following lines**
 
-    ```shell
-    net.core.default_qdisc=fq
-    net.ipv4.tcp_congestion_control=bbr
-    ```
+```shell
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
+```
 
-    This will instruct system to use `bbr` as congestion control for TCP.
+This will instruct system to use `bbr` as congestion control for TCP.
 
 * **Save to make it effective**
 
-    ```shell
-    sysctl -p
-    ```
+```shell
+sysctl -p
+```
 
 * **Check to confirm that settings are taken into effect**
 
-    ```shell
-    sysctl net.ipv4.tcp_available_congestion_control
-    sysctl net.ipv4.tcp_congestion_control
-    ```
+```shell
+sysctl net.ipv4.tcp_available_congestion_control
+sysctl net.ipv4.tcp_congestion_control
+```
 
-    You should see output like `net.ipv4.tcp_available_congestion_control = bbr hybla cubic reno`, and
-    `net.ipv4.tcp_congestion_control = bbr`.
+You should see output like `net.ipv4.tcp_available_congestion_control = bbr hybla cubic reno`, and
+`net.ipv4.tcp_congestion_control = bbr`.
 
-    and lastly
+and lastly
 
-    ```shell
-    lsmod | grep bbr
-    ```
+```shell
+lsmod | grep bbr
+```
 
-    you should see `tcp_bbr` there in output.
+you should see `tcp_bbr` there in output.
 
 # Result
 
