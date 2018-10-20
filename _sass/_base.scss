@@ -160,18 +160,16 @@ code {
     font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
     font-size: 14px;
     border-radius: 3px;
-    background-color: lightyellow;
+    background-color: #333;
     padding: 3px 5px;
-    color: #333;
+    color: #fff;
     margin: 0 auto;
 }
 
 pre {
-    padding: 12px 25px;
+    padding: 12px 0;
     overflow-x: auto;
     padding-bottom: 17px;
-    background-color: lightyellow;
-    box-shadow: 0px 0px 4px #eee;
     display: inline-block;
     text-align: left;
 
@@ -179,8 +177,6 @@ pre {
         border: 0;
         padding-right: 0;
         padding-left: 0;
-        background-color: lightyellow;
-        box-shadow: none;
     }
 }
 
@@ -322,7 +318,7 @@ tr:nth-child(even) {
 
 /** Main app */
 .monthlyreport-head {
-    background-color: yellow;
+    background-color: #333;
 }
 hr {
     border-bottom-width: 1px;
@@ -367,17 +363,11 @@ sub.margin {
 
 div.highlight {
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  margin-left: 50%;
+  transform: translateX(-50%);
   padding-left: 0px;
   padding-right: 0px;
-  background-color: lightyellow;
+  background-color: #333;
   text-align: center;
-}
-
-@media screen and (max-width: 700px) {
-    div.highlight pre:first-child {
-        left: auto;
-        padding-left: auto;
-        width: 100%;
-    }
+  box-shadow: 0px 0px 4px #eee;
 }
