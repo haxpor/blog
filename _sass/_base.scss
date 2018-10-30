@@ -9,13 +9,6 @@ dl, dd, ol, ul, figure {
 }
 
 /**
- * Bottom margin for hr
- */
-hr {
-    margin-bottom: 25px;
-}
-
-/**
  * Basic styling
  */
 body {
@@ -85,23 +78,21 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
+h1 {
+  font-weight: 600;
+}
 
 a {
   font-weight: 400;
   cursor: pointer;
-  border-bottom: 2px dotted #888888;
+  border-bottom: 1px solid #3eb0ef;
   padding-bottom: 2px;
   text-decoration: none;
-  color: #888888;
-
-  &:visited {
-    color: #005999;
-  }
+  color: #333;
 
   &:hover, &:focus {
-    border-color: #0049BC;
-  color: #0049BC;
-  text-decoration: none;
+    color: #26a8ed;
+    text-decoration: none;
   }
 
   img {
@@ -325,6 +316,8 @@ hr {
     border-left-width: 1px;
     border-right-width: 1px;
     border-style: solid;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 /** increase icon for each of article */

@@ -44,9 +44,7 @@ $on-laptop:        800px;
 
 // override thick hr for post
 hr {
-	margin: auto;
 	border: 0;
 	height: 0;
-	border-top:1px solid rgba(0, 0, 0, 0.15);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	border-top:1px solid #e3e9ed;
 }
