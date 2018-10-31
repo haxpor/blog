@@ -74,6 +74,10 @@ We have 2 options here.
 
 The fact that those platform implementation files are based on C++, thus we need to link against C++ library via `-lc++` in linking phase although we use `gcc` to compile our main source file in C.
 
+Final result after clicking Menu->... to show additional windows will be along the line of following
+
+[![sdl2-cimgui-demo](/assets/images/sdl2-cimgui/result-sdl2-cimgui-demo.png)](/assets/images/sdl2-cimgui/result-sdl2-cimgui-demo.png)
+
 ---
 
 Check above setup over my repsitory on Github at [haxpor/sdl2-cimgui-demo](https://github.com/haxpor/sdl2-cimgui-demo).  
