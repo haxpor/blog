@@ -32,6 +32,13 @@ By doing this, we disable normal SSH login with password. This increases securit
       ```  
    You shoul add the last two commands into `~/.bashrc`. So that it will take effect every time you log in and even rebooting.
 
+## Updated
+
+More information on how to do this.
+
+* You have an option to do it manually by inspecting a system `~/.ssh/id_rsa.pub` that will be logging in to remote server then appending such line into remote server's `~/.ssh/authorized_key`. That's basically what `ssh-copy-id` does the job.
+* If there's no `~/.ssh/id_rsa.pub` does not yet exist yet, then create it with `ssh-keygen -t rsa -b 4096` which has better security in which it uses 4096 bit instead of default 2048.
+
 ## Resource
 
 I reference the steps above from the following links
