@@ -151,10 +151,18 @@ code {
     font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
     font-size: 14px;
     border-radius: 3px;
-    background-color: #333;
-    padding: 3px 5px;
+    background-color: #666;
+    padding: 6px 6px;
     color: #fff;
     margin: 0 auto;
+}
+
+div > pre {
+  background-color: #333;
+}
+
+pre > code {
+  background-color: #333;
 }
 
 pre {
