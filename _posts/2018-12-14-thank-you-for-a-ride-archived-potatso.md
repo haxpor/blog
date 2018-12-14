@@ -31,6 +31,8 @@ This project allows me to feel getting some donation money from Chinese users in
 
 I took screenshots of receipt or notification about donation coming in. I kept it in my Favorites album.
 
+Some of donations ...
+
 ![donation 1](/assets/images/potatso/donation1.png)
 
 ![donation 2](/assets/images/potatso/donation2.png)
@@ -39,7 +41,7 @@ I took screenshots of receipt or notification about donation coming in. I kept i
 
 ![donation 4](/assets/images/potatso/donation4.png)
 
-and a few praises I got personally got
+and a couple of praises from few more others I personally got
 
 ![praise 1](/assets/images/potatso/praise1.png)
 
