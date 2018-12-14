@@ -8,7 +8,7 @@ comments: true
 og_image: /assets/images/post-thumbnail/textpost.png
 ---
 
-Today I archived Potatso. The project that helped me use Internet freely without being blocked by GFW (Great Chinese Firewall).
+Today I archived [Potatso](https://github.com/haxpor/Potatso). The project that helped me use Internet freely without being blocked by GFW (Great Chinese Firewall).
 
 **First of all** I need to say thank you to [icodesign](https://github.com/icodesign) for doing this project and opened source code of Potatso on Github although now it's no more.
 It's around 2 years ago since I moved to China that I make use of this project to serve Internet freely on my iPhone. In which I've contributed huge migration changes to make it buildable on device, and benefit other users that keep an eye on this project as well.
