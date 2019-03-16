@@ -2,7 +2,7 @@
 layout: post
 title:  "Integrate imgui via cimgui with SDL2 + OpenGL3 In C Code"
 date:   2018-10-31 4:00
-updated: 2019-03-16 14:26
+updated: 2019-03-17 14:05
 thumbnail: /assets/images/post-thumbnail/textpost.png
 tags: [sdl2, cimgui, imgui, c]
 comments: true
@@ -13,16 +13,16 @@ This time, I'd like to note on how to integrate [imgui](https://github.com/ocorn
 
 If you work with C++ code then it will be no problem and you won't probably see any issue to solve. But in this case, I mainly use C thus we have something to solve. This post will reflect that.
 
-imgui is written in C++. It provides platform [implementation sample files](https://github.com/ocornut/imgui/tree/master/examples) to hook up with various platforms/API of choice not just SDL2 i.e. allegro, native Windows API, metal on macOS etc.
+imgui is written in C++. It provides platform [implementation sample files](https://github.com/ocornut/imgui/tree/master/examples) to hook up with various platforms/API of choice not just SDL2 but also allegro, native Windows API, metal on macOS etc.
 
-What we need is hooking up with SDL2 + OpenGL3 on either gl3w or glew. Thus the following files are what we will be looking at
+What we need is hooking up with SDL2 + OpenGL3 with the loader either gl3w or glew. Thus the following files are what we will be looking at
 
 1. [imgui_impl_opengl3.cpp](https://github.com/ocornut/imgui/blob/master/examples/imgui_impl_opengl3.cpp)
 2. [imgui_impl_opengl3.h](https://github.com/ocornut/imgui/blob/master/examples/imgui_impl_opengl3.h)
 3. [imgui_impl_sdl.cpp](https://github.com/ocornut/imgui/blob/master/examples/imgui_impl_sdl.cpp)
 4. [imgui_impl_sdl.h](https://github.com/ocornut/imgui/blob/master/examples/imgui_impl_sdl.h)
 
-The approach I use is to compile both sdl, and opengl3 implementation source files against correct SDL2 and OpenGL version as installed on the system. This will produce object files to be linking with our main program. We need to make sure our main program also uses the same version of SDL2 and OpenGL as used by those implementation files; to minimize the conflicts and issues. You may want to compile them into shared library and use it to link against your main source file instead, it's OK too.
+The approach I use is to compile both sdl, and opengl3 implementation source files against correct SDL2 and OpenGL version as installed on the system, the same version you intend to be using with your main program. This will produce object files to be linking with our main program. We need to make sure our main program also uses the same version of SDL2 and OpenGL as used by those implementation files; to minimize the conflicts and issues.
 
 Let's drill down what's to look for.
 
@@ -33,14 +33,14 @@ Let's drill down what's to look for.
 
 In `imgui_impl_sdl.h`, we see `IMGUI_IMPL_API`. This is clever move from author and contributors of imgui.
 
-Having such `IMGUI_IMPL_API` in front of each declaration of function in header file like this allows us to inject a compilation flag to make this C++ based implementation be able to supports C linkage so we can use it in our main program which is implemented in C. So in our `Makefile` script, we must add `-DIMGUI_IMPL_API="extern \"C\""`.
+Having such `IMGUI_IMPL_API` in front of each declaration of function in header file like this allows us to inject a compilation flag to make this C++ based implementation  able to support C linkage so we can use it in our main program which is implemented in C. So in our `Makefile` script, we must add `-DIMGUI_IMPL_API="extern \"C\""`.
 
 ## • struct SDL_Window
 
 In C, whenever we want to refer to struct we need to have keyword `struct` in front. But in C++, it's optional, and isn't required.
 
 We need to put `struct` in front of `SDL_Window` occurrences both in its header and implementation files. 
-I don't want to use `typedef struct SDL_Window SDL_Window` as it's not exposed for public usage in SDL2 although internally it makes use of it.
+I don't want to use `typedef struct SDL_Window SDL_Window` as it's not exposed for public usage by SDL2 although internally it makes use of it.
 
 Thus from the original source code of `imgui_impl_sdl.h`
 
@@ -68,7 +68,7 @@ IMGUI_IMPL_API bool     ImGui_ImplSDL2_ProcessEvent(SDL_Event* event);
 ```
 PS. Notice additional of `struct` at function's parameter.
 
-Another notice is that the platform implementation defined `typedef` over `SDL_Event`. This redefines what is already done by SDL2, thus there's a warning.
+Another one to notice `typedef union SDL_Event SDL_Event`. This redefines what is already done by SDL2, thus there's a warning.
 
 ```c
 In file included from src/main.c:6:
@@ -83,7 +83,7 @@ typedef union SDL_Event SDL_Event;
 1 warning generated.
 ```
 
-Although it said definition is first found in imgui's implementation header, but that's because in `main.c`, it included such header first before `SDL.h`. I leave this as a notice as I still cannot think about the way to resolve this cleanly. Usually this is a trick as `union` struct is treated as anonymous struct that we just can't forward declared like we did previously. If you have any idea, feel free to comment below the article.
+Although it said the definition is first found in imgui's implementation header, but that's because in `main.c`, it included such header first before `SDL.h`. I leave this as a notice as I still cannot think about the way to resolve this cleanly. I tend to think this is a trick as `union` struct is treated as anonymous struct that we just cannot forward declare like we did previously. If you have any idea, feel free to comment below.
 
 # imgui_impl_opengl3.(h/cpp)
 ---
@@ -113,7 +113,7 @@ There are 4 options presented in the code to handle loading OpenGL functions.
 3. glad
 4. Custom
 
-It depends which one you want to use, just make sure you have its header and source file on your system. In this case, I have `glew` installed, as well as provided `gl3w` alongside the sample project. So at compile time, if we want to use `glew` as a loader then specify `-DIMGUI_IMPL_OPENGL_LOADER_GLEW`. For `gl3w`, no need to specify anything as implementation source code will default to it when no specific loader is supplied.
+It depends on which one you want to use, just make sure you have its header and source file on your system. In this case, I have `glew` installed, as well as provided `gl3w` alongside the sample project. So at compile time, if we want to use `glew` as a loader then specify `-DIMGUI_IMPL_OPENGL_LOADER_GLEW`. For `gl3w`, no need to specify anything as implementation source code will default to it when no specific loader is supplied.
 
 The following code as seen in `imgui_impl_opengl3.h`.
 
@@ -129,6 +129,8 @@ The following code as seen in `imgui_impl_opengl3.h`.
 ...
 ```
 
+But for our main source file, we do specify `-DIMGUI_IMPL_OPENGL_LOADER_GL3W`. You can modify it to be in similar way to above, anyway in this case I just go along with what is already there in what imgui provided for us.
+
 # main.c
 ---
 
@@ -139,7 +141,9 @@ As we use cimgui, we need to call its functions instead of directly use from img
 * `ImGui::Begin()` -> `igBegin`
 * for type, it's still the same, but just the initialization that you might have to set value one by one for each of its attribute of structure.
 
-That's pretty much it, not much really for main source file to worry about.
+One gotcha we need to do is to define `#define CIMGUI_DEFINE_ENUMS_AND_STRUCTS` at the top of the source file, before `#include "cimgui.h"`. This is important to let cimgui exposes C interface of functions and strcuts for us.
+
+That's pretty much it!
 
 # Link against _cimgui.dylib_
 ---
@@ -149,12 +153,12 @@ Building cimgui will produce `cimgui.dylib` without `lib...` in front. Check its
 We have 2 options here.
 
 1. Create relative path symlink as `libcimgui.dylib` -> `cimgui.dylib` (use `ln -s cimgui.dylib libcimgui.dylib`)
-2. Directly use `cimgui.dylib` in linking phase (I used this approach)
+2. Directly use `cimgui.dylib` (with no `-l` specified in front) in linking phase (I used this approach)
 
 # Build
 ---
 
-The fact that those platform implementation files are based in C++, thus we need to link against C++ library via `-lc++` with `gcc`. 
+The fact that those platform implementation files are based in C++, thus we need to link against C++ library via `-lc++` with `gcc`. You can see this reflected in Makefile.
 
 There are 3 build targets
 
@@ -172,17 +176,17 @@ If click on `Menu->...` on the right popup to show additional windows; you will 
 # Recap
 ---
 
-The sample project has cimgui as dependencies, and in turn cimgui has imgui as dependencies as well. Dependencies are via git submodule.
+The sample project has cimgui as dependency, and in turn cimgui has imgui as dependency as well. Dependencies done through git submodule.
 
-Thus we refer to relevant headers and some supporting implementation source files in imgui project directory (nested inside cimgui) but just a few source files that we copied and modified to make it compatible with C realm as seen in the previous section.
+Thus we directly refer to relevant headers and some supporting implementation source files in imgui project directory (nested inside cimgui) except for just a few source files that we copied and modified to make it compatible with C as seen in the previous section.
 
-When build the project, it will build cimgui, then copy the result dynamica library file into its root directory in order to implicitly makes rpath towards library correct without hassle.
+When build the project, it will build cimgui, then copy the result dynamic library file into its root directory in order to implicitly makes `rpath` towards library correct without hassle.
 
-At last, check inside `Makefile` for which source files to look for when you integrate cimgui with your SDL2 + OpenGL3 program.
+At last, check inside `Makefile` for full detail.
 
 ---
 
-Check above setup over my repsitory on Github at [haxpor/sdl2-cimgui-demo](https://github.com/haxpor/sdl2-cimgui-demo).  
+All above setup can be found on Github at [haxpor/sdl2-cimgui-demo](https://github.com/haxpor/sdl2-cimgui-demo).  
 I tested with SDL2 2.0.9 (commit: `12569:05aff4771d9a` as of Jan, 21, 2019), cimgui (check commit hash in git repo via `git submodule status`), glew v.2.1.0.
 
 ---
