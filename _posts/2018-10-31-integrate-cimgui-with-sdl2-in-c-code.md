@@ -129,6 +129,18 @@ The following code as seen in `imgui_impl_opengl3.h`.
 ...
 ```
 
+# main.c
+---
+
+As we use cimgui, we need to call its functions instead of directly use from imgui one, fortunately it's very simple to port. This better demonstrated via examples.
+
+* `ImGui::Render()` -> `igRender`
+* `ImGui::GetDrawData()` -> `igGetDrawData()`
+* `ImGui::Begin()` -> `igBegin`
+* for type, it's still the same, but just the initialization that you might have to set value one by one for each of its attribute of structure.
+
+That's pretty much it, not much really for main source file to worry about.
+
 # Link against _cimgui.dylib_
 ---
 
@@ -171,7 +183,7 @@ At last, check inside `Makefile` for which source files to look for when you int
 ---
 
 Check above setup over my repsitory on Github at [haxpor/sdl2-cimgui-demo](https://github.com/haxpor/sdl2-cimgui-demo).  
-I tested with SDL2 2.0.9 (latest development as of 29 October), cimgui (check commit hash in git repo via `git submodule status`), glew v.2.1.0.
+I tested with SDL2 2.0.9 (commit: `12569:05aff4771d9a` as of Jan, 21, 2019), cimgui (check commit hash in git repo via `git submodule status`), glew v.2.1.0.
 
 ---
 
