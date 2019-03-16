@@ -146,15 +146,24 @@ blockquote:last-child {
 /**
  * Code formatting
  */
-pre,
+pre {
+  font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #666;
+  padding: 6px 6px;
+  color: #fff;
+  margin: 0 auto;
+}
 code {
-    font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
-    font-size: 14px;
-    border-radius: 3px;
-    background-color: #666;
-    padding: 6px 6px;
-    color: #fff;
-    margin: 0 auto;
+  font-family: "Consolas", monospace;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #f1f1f1;
+  padding: 6px 6px;
+  color: #000;
+  margin: 0 auto;
+  font-style: italic;
 }
 
 div > pre {
@@ -163,6 +172,9 @@ div > pre {
 
 pre > code {
   background-color: #333;
+  color: #fff;
+  font-family: "Andale Monaco", "Monaco", "Consolas", monospace;
+  font-style: normal;
 }
 
 pre {
