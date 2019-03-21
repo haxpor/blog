@@ -18,7 +18,11 @@ layout: default
 
   {% if page.tags.size > 0 %}
   	<span class="post-tags">Tag{% if page.tags.size > 1 %}s{% endif %}</span>:
-  	{{ page.tags | sort | join: ", " }}
+  	{% for tag in page.tags %}
+      <span class="post-tags element">
+      {{ tag | strip}}
+      </span>
+    {% endfor %}
 	{% endif %}
 
   {% include disqus.html %}

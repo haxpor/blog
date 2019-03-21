@@ -299,7 +299,18 @@ tr:nth-child(even) {
 }
 
 .post-tags {
-    font-weight: 400;
+  font-weight: 400;
+  font-family: "Monaco", "Consolas", "Andale Monaco", monospace;
+  font-size: 14px;
+  padding: 2px 5px;
+  color: #333;
+}
+.post-tags.element {
+  border-radius: 7px; 
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin: 4px;
 }
 
 /**
